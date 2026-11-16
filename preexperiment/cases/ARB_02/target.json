@@ -1,0 +1,18 @@
+{
+  "target_id": "ARB_02",
+  "parent_id": "ARB_02",
+  "top": "XsRRArbiter",
+  "title": "实际接受传输互斥",
+  "contract": "两个输入不能同时完成有效传输；空闲输入的 ready 不要求互斥。",
+  "source_lines": [
+    54,
+    55
+  ],
+  "source_type": "rtl_derived_candidate_contract",
+  "spec_review_status": "pending_external_spec_review",
+  "reference": {
+    "timing": "overlap",
+    "antecedent": "1'b1",
+    "consequent": "!(io_in_0_valid && io_in_0_ready && io_in_1_valid && io_in_1_ready)"
+  }
+}

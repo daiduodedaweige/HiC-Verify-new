@@ -1,0 +1,18 @@
+{
+  "target_id": "EX_04",
+  "parent_id": "EX_04",
+  "top": "ExclusiveMonitorEntry",
+  "title": "停用后清除工作状态",
+  "contract": "停用在下一采样周期清除工作状态，即使同时存在对应请求也一样。",
+  "source_lines": [
+    48,
+    50
+  ],
+  "source_type": "rtl_derived_candidate_contract",
+  "spec_review_status": "pending_external_spec_review",
+  "reference": {
+    "timing": "next",
+    "antecedent": "io_deact",
+    "consequent": "!working"
+  }
+}

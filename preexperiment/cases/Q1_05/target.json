@@ -1,0 +1,20 @@
+{
+  "target_id": "Q1_05",
+  "parent_id": "Q1_05",
+  "top": "Queue1_UInt8",
+  "title": "入队数据采样",
+  "contract": "下一采样周期输出的是接受入队时的数据，不是下一周期的输入数据。",
+  "source_lines": [
+    15,
+    24,
+    26,
+    42
+  ],
+  "source_type": "rtl_derived_candidate_contract",
+  "spec_review_status": "pending_external_spec_review",
+  "reference": {
+    "timing": "next",
+    "antecedent": "io_enq_ready && io_enq_valid",
+    "consequent": "io_deq_bits == $past(io_enq_bits)"
+  }
+}

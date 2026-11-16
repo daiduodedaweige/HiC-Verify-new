@@ -1,0 +1,18 @@
+{
+  "target_id": "ENC_03",
+  "parent_id": "ENC_03",
+  "top": "PriorityEncoderOneHotLow8",
+  "title": "输出只能选择有效输入位",
+  "contract": "输出只能选中输入中为 1 的位，但多位输入有效时输出不需要复制所有位。",
+  "source_lines": [
+    7,
+    16
+  ],
+  "source_type": "rtl_derived_candidate_contract",
+  "spec_review_status": "pending_external_spec_review",
+  "reference": {
+    "timing": "comb",
+    "antecedent": "1'b1",
+    "consequent": "(o_code & ~i_data) == 8'h00"
+  }
+}

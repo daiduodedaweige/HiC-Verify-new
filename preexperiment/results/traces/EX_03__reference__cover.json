@@ -1,0 +1,36 @@
+{ "signal": [
+    { "name": "reset", "wave": "410.............1" },
+    { "name": "io_starving", "wave": "40..............." },
+    { "name": "io_rsp_vld", "wave": "40..............." },
+    { "name": "io_rsp_succ", "wave": "41..............." },
+    { "name": "io_req_vld", "wave": "40101............" },
+    { "name": "io_req_tag_sze", "wave": "4====............", "data": ["", "001", "000", "010", "000"] },
+    { "name": "io_req_tag_mem", "wave": "4=.==............", "data": ["", "0000", "0101", "0000"] },
+    { "name": "io_req_tag_lpid", "wave": "4====............", "data": ["", "11011110", "00000000", "11101101", "00000000"] },
+    { "name": "io_req_tag_adr", "wave": "4====............", "data": ["", "11011110", "00000000", "10101111", "00000000"] },
+    { "name": "io_req_succ", "wave": "40..............." },
+    { "name": "io_req_ld", "wave": "40..............1" },
+    { "name": "io_req_exok", "wave": "40..1............" },
+    { "name": "io_req_eid", "wave": "4====............", "data": ["", "0111111000", "0000000000", "0111111110", "0000000000"] },
+    { "name": "io_eid", "wave": "4==..............", "data": ["", "0000000101", "0000000000"] },
+    { "name": "io_deact", "wave": "410............10" },
+    { "name": "io_clear", "wave": "40..............." },
+    { "name": "clock", "wave": "40..............." },
+    { "name": "tag_sze", "wave": "=..=.............", "data": ["001", "000"] },
+    { "name": "tag_mem", "wave": "=................", "data": ["0000"] },
+    { "name": "tag_lpid", "wave": "=..=.............", "data": ["11011110", "00000000"] },
+    { "name": "tag_adr", "wave": "=..=.............", "data": ["11011110", "00000000"] },
+    { "name": "pilot_past_valid", "wave": "0.1.............." },
+    { "name": "pilot_active", "wave": "0..10............" },
+    { "name": "$auto$async2sync.cc:228:execute$109", "wave": "0................" },
+    { "name": "$auto$async2sync.cc:228:execute$107", "wave": "=................", "data": ["00000000"] },
+    { "name": "$auto$async2sync.cc:228:execute$105", "wave": "0..1............0" },
+    { "name": "$auto$async2sync.cc:110:execute$97", "wave": "1................" },
+    { "name": "$auto$async2sync.cc:110:execute$103", "wave": "1..0............." },
+    { "name": "$auto$async2sync.cc:101:execute$99", "wave": "0.10............." },
+    { "name": "$auto$async2sync.cc:101:execute$93", "wave": "0..1............." }
+  ],
+  "config": {
+    "hscale": 2.50
+  }
+}

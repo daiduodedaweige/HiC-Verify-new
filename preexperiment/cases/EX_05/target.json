@@ -1,0 +1,18 @@
+{
+  "target_id": "EX_05",
+  "parent_id": "EX_05",
+  "top": "ExclusiveMonitorEntry",
+  "title": "对应请求记录地址标签",
+  "contract": "对应请求到达后，地址标签记录该请求的地址字段，不是逻辑处理器字段。",
+  "source_lines": [
+    35,
+    41
+  ],
+  "source_type": "rtl_derived_candidate_contract",
+  "spec_review_status": "pending_external_spec_review",
+  "reference": {
+    "timing": "next",
+    "antecedent": "corrReq",
+    "consequent": "tag_adr == $past(io_req_tag_adr)"
+  }
+}

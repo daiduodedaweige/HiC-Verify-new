@@ -1,0 +1,452 @@
+
+-- Executing script file `/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q1_02__reference__assert/query.ys' --
+
+1. Executing Verilog-2005 frontend: /nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q1_02__reference__assert/design.sv
+Parsing formal SystemVerilog input from `/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q1_02__reference__assert/design.sv' to AST representation.
+Generating RTLIL representation for module `\Queue1_UInt8'.
+Successfully finished Verilog frontend.
+
+2. Executing PREP pass.
+
+2.1. Executing HIERARCHY pass (managing design hierarchy).
+
+2.1.1. Analyzing design hierarchy..
+Top module:  \Queue1_UInt8
+
+2.1.2. Analyzing design hierarchy..
+Top module:  \Queue1_UInt8
+Removed 0 unused modules.
+Module Queue1_UInt8 directly or indirectly contains formal properties -> setting "keep" attribute.
+
+2.2. Executing PROC pass (convert processes to netlists).
+
+2.2.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+2.2.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 1 switch rules as full_case in process $proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q1_02__reference__assert/design.sv:18$8 in module Queue1_UInt8.
+Removed a total of 0 dead cases.
+
+2.2.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 0 redundant assignments.
+Promoted 8 assignments to connections.
+
+2.2.4. Executing PROC_INIT pass (extract init attributes).
+Found init rule in `\Queue1_UInt8.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q1_02__reference__assert/design.sv:51$37'.
+  Set init value: \pilot_active = 1'0
+Found init rule in `\Queue1_UInt8.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q1_02__reference__assert/design.sv:46$36'.
+  Set init value: \pilot_past_valid = 1'0
+
+2.2.5. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \reset in `\Queue1_UInt8.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q1_02__reference__assert/design.sv:18$8'.
+
+2.2.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~4 debug messages>
+
+2.2.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\Queue1_UInt8.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q1_02__reference__assert/design.sv:51$37'.
+Creating decoders for process `\Queue1_UInt8.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q1_02__reference__assert/design.sv:46$36'.
+Creating decoders for process `\Queue1_UInt8.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q1_02__reference__assert/design.sv:52$15'.
+     1/1: $assert$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q1_02__reference__assert/design.sv:54$29_EN
+Creating decoders for process `\Queue1_UInt8.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q1_02__reference__assert/design.sv:47$12'.
+     1/1: $assume$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q1_02__reference__assert/design.sv:49$14_EN
+Creating decoders for process `\Queue1_UInt8.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q1_02__reference__assert/design.sv:24$11'.
+     1/1: $0\ram[7:0]
+Creating decoders for process `\Queue1_UInt8.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q1_02__reference__assert/design.sv:18$8'.
+     1/1: $0\maybe_full[0:0]
+
+2.2.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+2.2.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\Queue1_UInt8.\pilot_active' using process `\Queue1_UInt8.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q1_02__reference__assert/design.sv:52$15'.
+  created $dff cell `$procdff$46' with positive edge clock.
+Creating register for signal `\Queue1_UInt8.$past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q1_02__reference__assert/design.sv:53$1$0' using process `\Queue1_UInt8.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q1_02__reference__assert/design.sv:52$15'.
+  created $dff cell `$procdff$47' with positive edge clock.
+Creating register for signal `\Queue1_UInt8.$past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q1_02__reference__assert/design.sv:53$2$0' using process `\Queue1_UInt8.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q1_02__reference__assert/design.sv:52$15'.
+  created $dff cell `$procdff$48' with positive edge clock.
+Creating register for signal `\Queue1_UInt8.$past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q1_02__reference__assert/design.sv:54$3$0' using process `\Queue1_UInt8.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q1_02__reference__assert/design.sv:52$15'.
+  created $dff cell `$procdff$49' with positive edge clock.
+Creating register for signal `\Queue1_UInt8.$past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q1_02__reference__assert/design.sv:54$4$0' using process `\Queue1_UInt8.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q1_02__reference__assert/design.sv:52$15'.
+  created $dff cell `$procdff$50' with positive edge clock.
+Creating register for signal `\Queue1_UInt8.\pilot_past_valid' using process `\Queue1_UInt8.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q1_02__reference__assert/design.sv:47$12'.
+  created $dff cell `$procdff$51' with positive edge clock.
+Creating register for signal `\Queue1_UInt8.\ram' using process `\Queue1_UInt8.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q1_02__reference__assert/design.sv:24$11'.
+  created $dff cell `$procdff$52' with positive edge clock.
+Creating register for signal `\Queue1_UInt8.\maybe_full' using process `\Queue1_UInt8.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q1_02__reference__assert/design.sv:18$8'.
+  created $adff cell `$procdff$55' with positive edge clock and positive level reset.
+
+2.2.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+2.2.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Removing empty process `Queue1_UInt8.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q1_02__reference__assert/design.sv:51$37'.
+Removing empty process `Queue1_UInt8.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q1_02__reference__assert/design.sv:46$36'.
+Found and cleaned up 1 empty switch in `\Queue1_UInt8.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q1_02__reference__assert/design.sv:52$15'.
+Removing empty process `Queue1_UInt8.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q1_02__reference__assert/design.sv:52$15'.
+Found and cleaned up 1 empty switch in `\Queue1_UInt8.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q1_02__reference__assert/design.sv:47$12'.
+Removing empty process `Queue1_UInt8.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q1_02__reference__assert/design.sv:47$12'.
+Found and cleaned up 1 empty switch in `\Queue1_UInt8.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q1_02__reference__assert/design.sv:24$11'.
+Removing empty process `Queue1_UInt8.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q1_02__reference__assert/design.sv:24$11'.
+Found and cleaned up 1 empty switch in `\Queue1_UInt8.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q1_02__reference__assert/design.sv:18$8'.
+Removing empty process `Queue1_UInt8.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q1_02__reference__assert/design.sv:18$8'.
+Cleaned up 4 empty switches.
+
+2.2.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module Queue1_UInt8.
+<suppressed ~2 debug messages>
+
+2.3. Executing FUTURE pass.
+
+2.4. Executing OPT_EXPR pass (perform const folding).
+Optimizing module Queue1_UInt8.
+
+2.5. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \Queue1_UInt8..
+Removed 1 unused cells and 20 unused wires.
+<suppressed ~2 debug messages>
+
+2.6. Executing CHECK pass (checking for obvious problems).
+Checking module Queue1_UInt8...
+Found and reported 0 problems.
+
+2.7. Executing OPT pass (performing simple optimizations).
+
+2.7.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module Queue1_UInt8.
+
+2.7.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\Queue1_UInt8'.
+<suppressed ~12 debug messages>
+Removed a total of 4 cells.
+
+2.7.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \Queue1_UInt8..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~4 debug messages>
+
+2.7.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \Queue1_UInt8.
+Performed a total of 0 changes.
+
+2.7.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\Queue1_UInt8'.
+Removed a total of 0 cells.
+
+2.7.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \Queue1_UInt8..
+Removed 0 unused cells and 4 unused wires.
+<suppressed ~1 debug messages>
+
+2.7.7. Executing OPT_EXPR pass (perform const folding).
+Optimizing module Queue1_UInt8.
+
+2.7.8. Rerunning OPT passes. (Maybe there is more to do..)
+
+2.7.9. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \Queue1_UInt8..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~4 debug messages>
+
+2.7.10. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \Queue1_UInt8.
+Performed a total of 0 changes.
+
+2.7.11. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\Queue1_UInt8'.
+Removed a total of 0 cells.
+
+2.7.12. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \Queue1_UInt8..
+
+2.7.13. Executing OPT_EXPR pass (perform const folding).
+Optimizing module Queue1_UInt8.
+
+2.7.14. Finished OPT passes. (There is nothing left to do.)
+
+2.8. Executing WREDUCE pass (reducing word size of cells).
+
+2.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \Queue1_UInt8..
+
+2.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+2.11. Executing OPT pass (performing simple optimizations).
+
+2.11.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module Queue1_UInt8.
+
+2.11.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\Queue1_UInt8'.
+Removed a total of 0 cells.
+
+2.11.3. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \Queue1_UInt8..
+
+2.11.4. Finished fast OPT passes.
+
+2.12. Printing statistics.
+
+=== Queue1_UInt8 ===
+
+   Number of wires:                 36
+   Number of wire bits:             64
+   Number of public wires:          14
+   Number of public wire bits:      35
+   Number of ports:                  8
+   Number of port bits:             22
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 30
+     $adff                           1
+     $and                            2
+     $check                          2
+     $dff                            7
+     $logic_and                      5
+     $logic_not                      5
+     $logic_or                       1
+     $mux                            4
+     $ne                             1
+     $not                            1
+     $or                             1
+
+2.13. Executing CHECK pass (checking for obvious problems).
+Checking module Queue1_UInt8...
+Found and reported 0 problems.
+
+3. Executing FLATTEN pass (flatten design).
+
+4. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+
+5. Executing ASYNC2SYNC pass.
+Replacing Queue1_UInt8.$procdff$55 ($adff): ARST=\reset, D=$0\maybe_full[0:0], Q=\maybe_full
+
+6. Executing DFFUNMAP pass (unmap clock enable and synchronous reset from FFs).
+
+7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \Queue1_UInt8..
+Removed 6 unused cells and 6 unused wires.
+<suppressed ~7 debug messages>
+
+8. Executing SAT pass (solving SAT problems in the circuit).
+
+Setting up time step 1:
+Final constraint equation: { } = { }
+Imported 36 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:110:execute$66 when $auto$async2sync.cc:101:execute$62.
+Import set-constraint from init attribute: $auto$async2sync.cc:101:execute$56 = 1'0
+Import set-constraint from init attribute: $auto$async2sync.cc:101:execute$62 = 1'0
+Import set-constraint from init attribute: $auto$async2sync.cc:110:execute$60 = 1'1
+Import set-constraint from init attribute: $auto$async2sync.cc:110:execute$66 = 1'1
+Import set-constraint from init attribute: \pilot_active = 1'0
+Import set-constraint from init attribute: \pilot_past_valid = 1'0
+Final init constraint equation: { \pilot_past_valid \pilot_active $auto$async2sync.cc:110:execute$66 $auto$async2sync.cc:110:execute$60 $auto$async2sync.cc:101:execute$62 $auto$async2sync.cc:101:execute$56 } = 6'001100
+
+Setting up time step 2:
+Final constraint equation: { } = { }
+Imported 36 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:110:execute$66 when $auto$async2sync.cc:101:execute$62.
+
+Setting up time step 1:
+Final constraint equation: { } = { }
+Imported 36 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:110:execute$66 when $auto$async2sync.cc:101:execute$62.
+Import proof for assert: $auto$async2sync.cc:110:execute$60 when $auto$async2sync.cc:101:execute$56.
+
+** Trying induction with length 1 **
+
+Setting up time step 3:
+Final constraint equation: { } = { }
+Imported 36 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:110:execute$66 when $auto$async2sync.cc:101:execute$62.
+Import proof for assert: $auto$async2sync.cc:110:execute$60 when $auto$async2sync.cc:101:execute$56.
+Import show expression: \pilot_active
+Import show expression: \clock
+Import show expression: \io_deq_ready
+Import show expression: \io_enq_bits
+Import show expression: \io_enq_valid
+Import show expression: \reset
+Import show expression: \io_deq_bits
+Import show expression: \io_deq_valid
+Import show expression: \io_enq_ready
+Import show expression: $auto$async2sync.cc:228:execute$68
+Import show expression: \ram
+Import show expression: \pilot_past_valid
+Import show expression: $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q1_02__reference__assert/design.sv:54$4$0
+Import show expression: $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q1_02__reference__assert/design.sv:54$3$0
+Import show expression: $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q1_02__reference__assert/design.sv:53$2$0
+Import show expression: $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q1_02__reference__assert/design.sv:53$1$0
+Import show expression: \pilot_active
+Import show expression: $auto$async2sync.cc:110:execute$66
+Import show expression: $auto$async2sync.cc:110:execute$60
+Import show expression: $auto$async2sync.cc:101:execute$62
+Import show expression: $auto$async2sync.cc:101:execute$56
+
+[base case 1] Solving problem with 709 variables and 1720 clauses..
+Base case for induction length 1 proven.
+
+Setting up time step 2:
+Final constraint equation: { } = { }
+Imported 36 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:110:execute$66 when $auto$async2sync.cc:101:execute$62.
+Import proof for assert: $auto$async2sync.cc:110:execute$60 when $auto$async2sync.cc:101:execute$56.
+Import show expression: \pilot_active
+Import show expression: \clock
+Import show expression: \io_deq_ready
+Import show expression: \io_enq_bits
+Import show expression: \io_enq_valid
+Import show expression: \reset
+Import show expression: \io_deq_bits
+Import show expression: \io_deq_valid
+Import show expression: \io_enq_ready
+Import show expression: $auto$async2sync.cc:228:execute$68
+Import show expression: \ram
+Import show expression: \pilot_past_valid
+Import show expression: $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q1_02__reference__assert/design.sv:54$4$0
+Import show expression: $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q1_02__reference__assert/design.sv:54$3$0
+Import show expression: $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q1_02__reference__assert/design.sv:53$2$0
+Import show expression: $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q1_02__reference__assert/design.sv:53$1$0
+Import show expression: \pilot_active
+Import show expression: $auto$async2sync.cc:110:execute$66
+Import show expression: $auto$async2sync.cc:110:execute$60
+Import show expression: $auto$async2sync.cc:101:execute$62
+Import show expression: $auto$async2sync.cc:101:execute$56
+
+[induction step 1] Solving problem with 448 variables and 1062 clauses..
+Induction step failed. Incrementing induction length.
+
+  Time Signal Name                                                                                                                        Dec       Hex           Bin
+  ---- -------------------------------------------------------------------------------------------------------------------------- ----------- --------- -------------
+  init $auto$async2sync.cc:101:execute$56                                                                                                   0         0             0
+  init $auto$async2sync.cc:101:execute$62                                                                                                   0         0             0
+  init $auto$async2sync.cc:110:execute$60                                                                                                   0         0             0
+  init $auto$async2sync.cc:110:execute$66                                                                                                   0         0             0
+  init $auto$async2sync.cc:228:execute$68                                                                                                   0         0             0
+  init $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q1_02__reference__assert/design.sv:53$1$0                0         0             0
+  init $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q1_02__reference__assert/design.sv:53$2$0                0         0             0
+  init $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q1_02__reference__assert/design.sv:54$3$0                0         0             0
+  init $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q1_02__reference__assert/design.sv:54$4$0                1         1             1
+  init \pilot_active                                                                                                                        0         0             0
+  init \pilot_past_valid                                                                                                                    1         1             1
+  init \ram                                                                                                                                 0         0      00000000
+  ---- -------------------------------------------------------------------------------------------------------------------------- ----------- --------- -------------
+     1 $auto$async2sync.cc:101:execute$56                                                                                                   0         0             0
+     1 $auto$async2sync.cc:101:execute$62                                                                                                   0         0             0
+     1 $auto$async2sync.cc:110:execute$60                                                                                                   0         0             0
+     1 $auto$async2sync.cc:110:execute$66                                                                                                   0         0             0
+     1 $auto$async2sync.cc:228:execute$68                                                                                                   0         0             0
+     1 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q1_02__reference__assert/design.sv:53$1$0                0         0             0
+     1 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q1_02__reference__assert/design.sv:53$2$0                0         0             0
+     1 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q1_02__reference__assert/design.sv:54$3$0                0         0             0
+     1 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q1_02__reference__assert/design.sv:54$4$0                1         1             1
+     1 \clock                                                                                                                               0         0             0
+     1 \io_deq_bits                                                                                                                         0         0      00000000
+     1 \io_deq_ready                                                                                                                        1         1             1
+     1 \io_deq_valid                                                                                                                        0         0             0
+     1 \io_enq_bits                                                                                                                         0         0      00000000
+     1 \io_enq_ready                                                                                                                        1         1             1
+     1 \io_enq_valid                                                                                                                        0         0             0
+     1 \pilot_active                                                                                                                        0         0             0
+     1 \pilot_past_valid                                                                                                                    1         1             1
+     1 \ram                                                                                                                                 0         0      00000000
+     1 \reset                                                                                                                               0         0             0
+  ---- -------------------------------------------------------------------------------------------------------------------------- ----------- --------- -------------
+     2 $auto$async2sync.cc:101:execute$56                                                                                                   1         1             1
+     2 $auto$async2sync.cc:101:execute$62                                                                                                   0         0             0
+     2 $auto$async2sync.cc:110:execute$60                                                                                                   0         0             0
+     2 $auto$async2sync.cc:110:execute$66                                                                                                   0         0             0
+     2 $auto$async2sync.cc:228:execute$68                                                                                                   0         0             0
+     2 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q1_02__reference__assert/design.sv:53$1$0                0         0             0
+     2 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q1_02__reference__assert/design.sv:53$2$0                0         0             0
+     2 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q1_02__reference__assert/design.sv:54$3$0                0         0             0
+     2 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q1_02__reference__assert/design.sv:54$4$0                0         0             0
+     2 \clock                                                                                                                               0         0             0
+     2 \io_deq_bits                                                                                                                         0         0      00000000
+     2 \io_deq_ready                                                                                                                        1         1             1
+     2 \io_deq_valid                                                                                                                        0         0             0
+     2 \io_enq_bits                                                                                                                         0         0      00000000
+     2 \io_enq_ready                                                                                                                        1         1             1
+     2 \io_enq_valid                                                                                                                        0         0             0
+     2 \pilot_active                                                                                                                        0         0             0
+     2 \pilot_past_valid                                                                                                                    1         1             1
+     2 \ram                                                                                                                                 0         0      00000000
+     2 \reset                                                                                                                               1         1             1
+
+** Trying induction with length 2 **
+
+Setting up time step 4:
+Final constraint equation: { } = { }
+Imported 36 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:110:execute$66 when $auto$async2sync.cc:101:execute$62.
+Import proof for assert: $auto$async2sync.cc:110:execute$60 when $auto$async2sync.cc:101:execute$56.
+Import show expression: \pilot_active
+Import show expression: \clock
+Import show expression: \io_deq_ready
+Import show expression: \io_enq_bits
+Import show expression: \io_enq_valid
+Import show expression: \reset
+Import show expression: \io_deq_bits
+Import show expression: \io_deq_valid
+Import show expression: \io_enq_ready
+Import show expression: $auto$async2sync.cc:228:execute$68
+Import show expression: \ram
+Import show expression: \pilot_past_valid
+Import show expression: $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q1_02__reference__assert/design.sv:54$4$0
+Import show expression: $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q1_02__reference__assert/design.sv:54$3$0
+Import show expression: $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q1_02__reference__assert/design.sv:53$2$0
+Import show expression: $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q1_02__reference__assert/design.sv:53$1$0
+Import show expression: \pilot_active
+Import show expression: $auto$async2sync.cc:110:execute$66
+Import show expression: $auto$async2sync.cc:110:execute$60
+Import show expression: $auto$async2sync.cc:101:execute$62
+Import show expression: $auto$async2sync.cc:101:execute$56
+
+[base case 2] Solving problem with 1019 variables and 2539 clauses..
+Base case for induction length 2 proven.
+
+Setting up time step 3:
+Final constraint equation: { } = { }
+Imported 36 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:110:execute$66 when $auto$async2sync.cc:101:execute$62.
+Import proof for assert: $auto$async2sync.cc:110:execute$60 when $auto$async2sync.cc:101:execute$56.
+Import show expression: \pilot_active
+Import show expression: \clock
+Import show expression: \io_deq_ready
+Import show expression: \io_enq_bits
+Import show expression: \io_enq_valid
+Import show expression: \reset
+Import show expression: \io_deq_bits
+Import show expression: \io_deq_valid
+Import show expression: \io_enq_ready
+Import show expression: $auto$async2sync.cc:228:execute$68
+Import show expression: \ram
+Import show expression: \pilot_past_valid
+Import show expression: $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q1_02__reference__assert/design.sv:54$4$0
+Import show expression: $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q1_02__reference__assert/design.sv:54$3$0
+Import show expression: $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q1_02__reference__assert/design.sv:53$2$0
+Import show expression: $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q1_02__reference__assert/design.sv:53$1$0
+Import show expression: \pilot_active
+Import show expression: $auto$async2sync.cc:110:execute$66
+Import show expression: $auto$async2sync.cc:110:execute$60
+Import show expression: $auto$async2sync.cc:101:execute$62
+Import show expression: $auto$async2sync.cc:101:execute$56
+
+[induction step 2] Solving problem with 816 variables and 2073 clauses..
+Induction step proven: SUCCESS!
+
+                  /$$$$$$      /$$$$$$$$     /$$$$$$$    
+                 /$$__  $$    | $$_____/    | $$__  $$   
+                | $$  \ $$    | $$          | $$  \ $$   
+                | $$  | $$    | $$$$$       | $$  | $$   
+                | $$  | $$    | $$__/       | $$  | $$   
+                | $$/$$ $$    | $$          | $$  | $$   
+                |  $$$$$$/ /$$| $$$$$$$$ /$$| $$$$$$$//$$
+                 \____ $$$|__/|________/|__/|_______/|__/
+                       \__/                              
+

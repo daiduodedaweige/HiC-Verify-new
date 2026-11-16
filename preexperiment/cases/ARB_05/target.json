@@ -1,0 +1,18 @@
+{
+  "target_id": "ARB_05",
+  "parent_id": "ARB_05",
+  "top": "XsRRArbiter",
+  "title": "轮询状态仅在接受时更新",
+  "contract": "输出完成传输后记录本次选择；只有 valid 而没有 ready 时不保证更新授权历史。",
+  "source_lines": [
+    33,
+    41
+  ],
+  "source_type": "rtl_derived_candidate_contract",
+  "spec_review_status": "pending_external_spec_review",
+  "reference": {
+    "timing": "next",
+    "antecedent": "io_out_valid && io_out_ready",
+    "consequent": "arb_ctrl_validMask_grantMask_lastGrant == $past(arb_io_chosen_choice)"
+  }
+}

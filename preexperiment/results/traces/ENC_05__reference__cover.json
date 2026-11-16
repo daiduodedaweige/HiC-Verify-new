@@ -1,0 +1,9 @@
+{ "signal": [
+    { "name": "pilot_active", "wave": "14" },
+    { "name": "o_code", "wave": "=4", "data": ["00000010", ""] },
+    { "name": "i_data", "wave": "=4", "data": ["00000010", ""] }
+  ],
+  "config": {
+    "hscale": 2.00
+  }
+}

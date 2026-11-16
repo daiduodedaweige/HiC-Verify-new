@@ -1,0 +1,11 @@
+--- rtl_reference/Queue6_UInt2.sv
++++ rtl_mutants/M_Q6_WRAP/Queue6_UInt2.sv
+@@ -28,7 +28,7 @@
+     end
+     else begin
+       if (do_enq)
+-        enq_ptr_value <= enq_ptr_value == 3'h5 ? 3'h0 : 3'(enq_ptr_value + 3'h1);
++        enq_ptr_value <= enq_ptr_value == 3'h5 ? 3'h6 : 3'(enq_ptr_value + 3'h1);
+       if (do_deq)
+         deq_ptr_value <= deq_ptr_value == 3'h5 ? 3'h0 : 3'(deq_ptr_value + 3'h1);
+       if (do_enq != do_deq)

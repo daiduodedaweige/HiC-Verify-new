@@ -1,0 +1,20 @@
+{
+  "target_id": "Q1_04",
+  "parent_id": "Q1_04",
+  "top": "Queue1_UInt8",
+  "title": "接受后下一周期有效",
+  "contract": "本周期接受入队后，下一采样周期输出有效；空队列不要求当拍有效。",
+  "source_lines": [
+    15,
+    18,
+    22,
+    41
+  ],
+  "source_type": "rtl_derived_candidate_contract",
+  "spec_review_status": "pending_external_spec_review",
+  "reference": {
+    "timing": "next",
+    "antecedent": "io_enq_ready && io_enq_valid",
+    "consequent": "io_deq_valid"
+  }
+}

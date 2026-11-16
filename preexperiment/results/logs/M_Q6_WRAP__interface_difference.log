@@ -1,0 +1,1932 @@
+
+-- Executing script file `/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/M_Q6_WRAP__interface_difference/query.ys' --
+
+1. Executing Verilog-2005 frontend: /nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/M_Q6_WRAP__interface_difference/design.sv
+Parsing formal SystemVerilog input from `/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/M_Q6_WRAP__interface_difference/design.sv' to AST representation.
+Generating RTLIL representation for module `\pilot_gold'.
+Generating RTLIL representation for module `\pilot_bad'.
+Generating RTLIL representation for module `\pilot_miter'.
+Successfully finished Verilog frontend.
+
+2. Executing Verilog-2005 frontend: /nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/rtl_reference/ram_6x2.sv
+Parsing formal SystemVerilog input from `/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/rtl_reference/ram_6x2.sv' to AST representation.
+Generating RTLIL representation for module `\ram_6x2'.
+Successfully finished Verilog frontend.
+
+3. Executing PREP pass.
+
+3.1. Executing HIERARCHY pass (managing design hierarchy).
+
+3.1.1. Analyzing design hierarchy..
+Top module:  \pilot_miter
+Used module:     \pilot_bad
+Used module:         \ram_6x2
+Used module:     \pilot_gold
+
+3.1.2. Analyzing design hierarchy..
+Top module:  \pilot_miter
+Used module:     \pilot_bad
+Used module:         \ram_6x2
+Used module:     \pilot_gold
+Removed 0 unused modules.
+Module pilot_miter directly or indirectly contains formal properties -> setting "keep" attribute.
+
+3.2. Executing PROC pass (convert processes to netlists).
+
+3.2.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+3.2.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 1 switch rules as full_case in process $proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/rtl_reference/ram_6x2.sv:16$65 in module ram_6x2.
+Marked 1 switch rules as full_case in process $proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/M_Q6_WRAP__interface_difference/design.sv:91$39 in module pilot_bad.
+Marked 1 switch rules as full_case in process $proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/M_Q6_WRAP__interface_difference/design.sv:23$15 in module pilot_gold.
+Removed a total of 0 dead cases.
+
+3.2.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 0 redundant assignments.
+Promoted 5 assignments to connections.
+
+3.2.4. Executing PROC_INIT pass (extract init attributes).
+Found init rule in `\pilot_miter.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/M_Q6_WRAP__interface_difference/design.sv:153$63'.
+  Set init value: \pilot_past_valid = 1'0
+
+3.2.5. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \reset in `\pilot_bad.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/M_Q6_WRAP__interface_difference/design.sv:91$39'.
+Found async reset \reset in `\pilot_gold.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/M_Q6_WRAP__interface_difference/design.sv:23$15'.
+
+3.2.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~9 debug messages>
+
+3.2.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\ram_6x2.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/rtl_reference/ram_6x2.sv:16$65'.
+     1/3: $1$memwr$\Memory$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/rtl_reference/ram_6x2.sv:18$64_EN[1:0]$71
+     2/3: $1$memwr$\Memory$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/rtl_reference/ram_6x2.sv:18$64_DATA[1:0]$70
+     3/3: $1$memwr$\Memory$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/rtl_reference/ram_6x2.sv:18$64_ADDR[2:0]$69
+Creating decoders for process `\pilot_miter.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/M_Q6_WRAP__interface_difference/design.sv:153$63'.
+Creating decoders for process `\pilot_miter.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/M_Q6_WRAP__interface_difference/design.sv:154$56'.
+     1/2: $assert$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/M_Q6_WRAP__interface_difference/design.sv:157$61_EN
+     2/2: $assume$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/M_Q6_WRAP__interface_difference/design.sv:156$58_EN
+Creating decoders for process `\pilot_bad.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/M_Q6_WRAP__interface_difference/design.sv:91$39'.
+     1/3: $0\maybe_full[0:0]
+     2/3: $0\deq_ptr_value[2:0]
+     3/3: $0\enq_ptr_value[2:0]
+Creating decoders for process `\pilot_gold.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/M_Q6_WRAP__interface_difference/design.sv:23$15'.
+     1/3: $0\maybe_full[0:0]
+     2/3: $0\deq_ptr_value[2:0]
+     3/3: $0\enq_ptr_value[2:0]
+
+3.2.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+3.2.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\ram_6x2.$memwr$\Memory$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/rtl_reference/ram_6x2.sv:18$64_ADDR' using process `\ram_6x2.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/rtl_reference/ram_6x2.sv:16$65'.
+  created $dff cell `$procdff$98' with positive edge clock.
+Creating register for signal `\ram_6x2.$memwr$\Memory$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/rtl_reference/ram_6x2.sv:18$64_DATA' using process `\ram_6x2.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/rtl_reference/ram_6x2.sv:16$65'.
+  created $dff cell `$procdff$99' with positive edge clock.
+Creating register for signal `\ram_6x2.$memwr$\Memory$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/rtl_reference/ram_6x2.sv:18$64_EN' using process `\ram_6x2.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/rtl_reference/ram_6x2.sv:16$65'.
+  created $dff cell `$procdff$100' with positive edge clock.
+Creating register for signal `\pilot_miter.\pilot_past_valid' using process `\pilot_miter.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/M_Q6_WRAP__interface_difference/design.sv:154$56'.
+  created $dff cell `$procdff$101' with positive edge clock.
+Creating register for signal `\pilot_bad.\enq_ptr_value' using process `\pilot_bad.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/M_Q6_WRAP__interface_difference/design.sv:91$39'.
+  created $adff cell `$procdff$104' with positive edge clock and positive level reset.
+Creating register for signal `\pilot_bad.\deq_ptr_value' using process `\pilot_bad.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/M_Q6_WRAP__interface_difference/design.sv:91$39'.
+  created $adff cell `$procdff$107' with positive edge clock and positive level reset.
+Creating register for signal `\pilot_bad.\maybe_full' using process `\pilot_bad.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/M_Q6_WRAP__interface_difference/design.sv:91$39'.
+  created $adff cell `$procdff$110' with positive edge clock and positive level reset.
+Creating register for signal `\pilot_gold.\enq_ptr_value' using process `\pilot_gold.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/M_Q6_WRAP__interface_difference/design.sv:23$15'.
+  created $adff cell `$procdff$113' with positive edge clock and positive level reset.
+Creating register for signal `\pilot_gold.\deq_ptr_value' using process `\pilot_gold.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/M_Q6_WRAP__interface_difference/design.sv:23$15'.
+  created $adff cell `$procdff$116' with positive edge clock and positive level reset.
+Creating register for signal `\pilot_gold.\maybe_full' using process `\pilot_gold.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/M_Q6_WRAP__interface_difference/design.sv:23$15'.
+  created $adff cell `$procdff$119' with positive edge clock and positive level reset.
+
+3.2.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+3.2.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 1 empty switch in `\ram_6x2.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/rtl_reference/ram_6x2.sv:16$65'.
+Removing empty process `ram_6x2.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/rtl_reference/ram_6x2.sv:16$65'.
+Removing empty process `pilot_miter.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/M_Q6_WRAP__interface_difference/design.sv:153$63'.
+Found and cleaned up 2 empty switches in `\pilot_miter.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/M_Q6_WRAP__interface_difference/design.sv:154$56'.
+Removing empty process `pilot_miter.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/M_Q6_WRAP__interface_difference/design.sv:154$56'.
+Found and cleaned up 3 empty switches in `\pilot_bad.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/M_Q6_WRAP__interface_difference/design.sv:91$39'.
+Removing empty process `pilot_bad.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/M_Q6_WRAP__interface_difference/design.sv:91$39'.
+Found and cleaned up 3 empty switches in `\pilot_gold.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/M_Q6_WRAP__interface_difference/design.sv:23$15'.
+Removing empty process `pilot_gold.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/M_Q6_WRAP__interface_difference/design.sv:23$15'.
+Cleaned up 9 empty switches.
+
+3.2.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ram_6x2.
+Optimizing module pilot_miter.
+<suppressed ~1 debug messages>
+Optimizing module pilot_bad.
+<suppressed ~3 debug messages>
+Optimizing module pilot_gold.
+<suppressed ~3 debug messages>
+
+3.3. Executing FUTURE pass.
+
+3.4. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ram_6x2.
+Optimizing module pilot_miter.
+Optimizing module pilot_bad.
+Optimizing module pilot_gold.
+
+3.5. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ram_6x2..
+Finding unused cells or wires in module \pilot_miter..
+Finding unused cells or wires in module \pilot_bad..
+Finding unused cells or wires in module \pilot_gold..
+Removed 4 unused cells and 55 unused wires.
+<suppressed ~8 debug messages>
+
+3.6. Executing CHECK pass (checking for obvious problems).
+Checking module pilot_bad...
+Checking module pilot_gold...
+Checking module pilot_miter...
+Checking module ram_6x2...
+Found and reported 0 problems.
+
+3.7. Executing OPT pass (performing simple optimizations).
+
+3.7.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module pilot_bad.
+Optimizing module pilot_gold.
+Optimizing module pilot_miter.
+Optimizing module ram_6x2.
+
+3.7.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\pilot_bad'.
+<suppressed ~6 debug messages>
+Finding identical cells in module `\pilot_gold'.
+<suppressed ~6 debug messages>
+Finding identical cells in module `\pilot_miter'.
+Finding identical cells in module `\ram_6x2'.
+Removed a total of 4 cells.
+
+3.7.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \pilot_bad..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \pilot_gold..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \pilot_miter..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \ram_6x2..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~13 debug messages>
+
+3.7.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \pilot_bad.
+  Optimizing cells in module \pilot_gold.
+  Optimizing cells in module \pilot_miter.
+  Optimizing cells in module \ram_6x2.
+    Consolidated identical input bits for $mux cell $procmux$74:
+      Old ports: A=2'00, B=2'11, Y=$0$memwr$\Memory$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/rtl_reference/ram_6x2.sv:18$64_EN[1:0]$68
+      New ports: A=1'0, B=1'1, Y=$0$memwr$\Memory$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/rtl_reference/ram_6x2.sv:18$64_EN[1:0]$68 [0]
+      New connections: $0$memwr$\Memory$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/rtl_reference/ram_6x2.sv:18$64_EN[1:0]$68 [1] = $0$memwr$\Memory$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/rtl_reference/ram_6x2.sv:18$64_EN[1:0]$68 [0]
+  Optimizing cells in module \ram_6x2.
+Performed a total of 1 changes.
+
+3.7.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\pilot_bad'.
+Finding identical cells in module `\pilot_gold'.
+Finding identical cells in module `\pilot_miter'.
+Finding identical cells in module `\ram_6x2'.
+Removed a total of 0 cells.
+
+3.7.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \pilot_bad..
+Finding unused cells or wires in module \pilot_gold..
+Finding unused cells or wires in module \pilot_miter..
+Finding unused cells or wires in module \ram_6x2..
+Removed 0 unused cells and 4 unused wires.
+<suppressed ~2 debug messages>
+
+3.7.7. Executing OPT_EXPR pass (perform const folding).
+Optimizing module pilot_bad.
+Optimizing module pilot_gold.
+Optimizing module pilot_miter.
+Optimizing module ram_6x2.
+
+3.7.8. Rerunning OPT passes. (Maybe there is more to do..)
+
+3.7.9. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \pilot_bad..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \pilot_gold..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \pilot_miter..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \ram_6x2..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~13 debug messages>
+
+3.7.10. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \pilot_bad.
+  Optimizing cells in module \pilot_gold.
+  Optimizing cells in module \pilot_miter.
+  Optimizing cells in module \ram_6x2.
+Performed a total of 0 changes.
+
+3.7.11. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\pilot_bad'.
+Finding identical cells in module `\pilot_gold'.
+Finding identical cells in module `\pilot_miter'.
+Finding identical cells in module `\ram_6x2'.
+Removed a total of 0 cells.
+
+3.7.12. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \pilot_bad..
+Finding unused cells or wires in module \pilot_gold..
+Finding unused cells or wires in module \pilot_miter..
+Finding unused cells or wires in module \ram_6x2..
+
+3.7.13. Executing OPT_EXPR pass (perform const folding).
+Optimizing module pilot_bad.
+Optimizing module pilot_gold.
+Optimizing module pilot_miter.
+Optimizing module ram_6x2.
+
+3.7.14. Finished OPT passes. (There is nothing left to do.)
+
+3.8. Executing WREDUCE pass (reducing word size of cells).
+Removed top 2 bits (of 3) from port B of cell pilot_bad.$add$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/M_Q6_WRAP__interface_difference/design.sv:99$41 ($add).
+Removed top 2 bits (of 3) from port B of cell pilot_bad.$add$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/M_Q6_WRAP__interface_difference/design.sv:101$44 ($add).
+Removed top 2 bits (of 3) from port B of cell pilot_gold.$add$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/M_Q6_WRAP__interface_difference/design.sv:31$17 ($add).
+Removed top 2 bits (of 3) from port B of cell pilot_gold.$add$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/M_Q6_WRAP__interface_difference/design.sv:33$20 ($add).
+
+3.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \pilot_bad..
+Finding unused cells or wires in module \pilot_gold..
+Finding unused cells or wires in module \pilot_miter..
+Finding unused cells or wires in module \ram_6x2..
+
+3.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+3.11. Executing OPT pass (performing simple optimizations).
+
+3.11.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module pilot_bad.
+Optimizing module pilot_gold.
+Optimizing module pilot_miter.
+Optimizing module ram_6x2.
+
+3.11.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\pilot_bad'.
+Finding identical cells in module `\pilot_gold'.
+Finding identical cells in module `\pilot_miter'.
+Finding identical cells in module `\ram_6x2'.
+Removed a total of 0 cells.
+
+3.11.3. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \pilot_bad..
+Finding unused cells or wires in module \pilot_gold..
+Finding unused cells or wires in module \pilot_miter..
+Finding unused cells or wires in module \ram_6x2..
+
+3.11.4. Finished fast OPT passes.
+
+3.12. Printing statistics.
+
+=== pilot_bad ===
+
+   Number of wires:                 34
+   Number of wire bits:             53
+   Number of public wires:          18
+   Number of public wire bits:      25
+   Number of ports:                  8
+   Number of port bits:             10
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 28
+     $add                            2
+     $adff                           3
+     $and                            7
+     $eq                             3
+     $mux                            6
+     $ne                             1
+     $not                            4
+     $or                             1
+     ram_6x2                         1
+
+=== pilot_gold ===
+
+   Number of wires:                 34
+   Number of wire bits:             53
+   Number of public wires:          18
+   Number of public wire bits:      25
+   Number of ports:                  8
+   Number of port bits:             10
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 28
+     $add                            2
+     $adff                           3
+     $and                            7
+     $eq                             3
+     $mux                            6
+     $ne                             1
+     $not                            4
+     $or                             1
+     ram_6x2                         1
+
+=== pilot_miter ===
+
+   Number of wires:                 24
+   Number of wire bits:             27
+   Number of public wires:          13
+   Number of public wire bits:      16
+   Number of ports:                  5
+   Number of port bits:              6
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 17
+     $check                          2
+     $dff                            1
+     $logic_and                      3
+     $logic_not                      2
+     $logic_or                       2
+     $mux                            2
+     $ne                             3
+     pilot_bad                       1
+     pilot_gold                      1
+
+=== ram_6x2 ===
+
+   Number of wires:                 11
+   Number of wire bits:             21
+   Number of public wires:           8
+   Number of public wire bits:      14
+   Number of ports:                  8
+   Number of port bits:             14
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  4
+     $mem_v2                         1
+     $mux                            3
+
+=== design hierarchy ===
+
+   pilot_miter                       1
+     pilot_bad                       1
+       ram_6x2                       1
+     pilot_gold                      1
+       ram_6x2                       1
+
+   Number of wires:                114
+   Number of wire bits:            175
+   Number of public wires:          65
+   Number of public wire bits:      94
+   Number of ports:                 37
+   Number of port bits:             54
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 77
+     $add                            4
+     $adff                           6
+     $and                           14
+     $check                          2
+     $dff                            1
+     $eq                             6
+     $logic_and                      3
+     $logic_not                      2
+     $logic_or                       2
+     $mem_v2                         2
+     $mux                           20
+     $ne                             5
+     $not                            8
+     $or                             2
+
+3.13. Executing CHECK pass (checking for obvious problems).
+Checking module pilot_bad...
+Checking module pilot_gold...
+Checking module pilot_miter...
+Checking module ram_6x2...
+Found and reported 0 problems.
+
+4. Executing FLATTEN pass (flatten design).
+Deleting now unused module pilot_bad.
+Deleting now unused module pilot_gold.
+Deleting now unused module ram_6x2.
+<suppressed ~4 debug messages>
+
+5. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+Mapping memory \bad_dut.ram_ext.Memory in module \pilot_miter:
+  created 6 $dff cells and 0 static cells of width 2.
+  read interface: 0 $dff and 7 $mux cells.
+  write interface: 6 write mux blocks.
+Mapping memory \gold_dut.ram_ext.Memory in module \pilot_miter:
+  created 6 $dff cells and 0 static cells of width 2.
+  read interface: 0 $dff and 7 $mux cells.
+  write interface: 6 write mux blocks.
+
+6. Executing ASYNC2SYNC pass.
+Replacing pilot_miter.$flatten\bad_dut.$procdff$110 ($adff): ARST=\bad_dut.reset, D=$flatten\bad_dut.$0\maybe_full[0:0], Q=\bad_dut.maybe_full
+Replacing pilot_miter.$flatten\bad_dut.$procdff$107 ($adff): ARST=\bad_dut.reset, D=$flatten\bad_dut.$0\deq_ptr_value[2:0], Q=\bad_dut.deq_ptr_value
+Replacing pilot_miter.$flatten\bad_dut.$procdff$104 ($adff): ARST=\bad_dut.reset, D=$flatten\bad_dut.$0\enq_ptr_value[2:0], Q=\bad_dut.enq_ptr_value
+Replacing pilot_miter.$flatten\gold_dut.$procdff$119 ($adff): ARST=\gold_dut.reset, D=$flatten\gold_dut.$0\maybe_full[0:0], Q=\gold_dut.maybe_full
+Replacing pilot_miter.$flatten\gold_dut.$procdff$116 ($adff): ARST=\gold_dut.reset, D=$flatten\gold_dut.$0\deq_ptr_value[2:0], Q=\gold_dut.deq_ptr_value
+Replacing pilot_miter.$flatten\gold_dut.$procdff$113 ($adff): ARST=\gold_dut.reset, D=$flatten\gold_dut.$0\enq_ptr_value[2:0], Q=\gold_dut.enq_ptr_value
+
+7. Executing DFFUNMAP pass (unmap clock enable and synchronous reset from FFs).
+
+8. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \pilot_miter..
+Removed 6 unused cells and 30 unused wires.
+<suppressed ~7 debug messages>
+
+9. Executing SAT pass (solving SAT problems in the circuit).
+
+Setting up time step 1:
+Final constraint equation: { } = { }
+Imported 175 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:110:execute$321 when $auto$async2sync.cc:101:execute$317.
+Import set-constraint from init attribute: $auto$async2sync.cc:101:execute$311 = 1'0
+Import set-constraint from init attribute: $auto$async2sync.cc:101:execute$317 = 1'0
+Import set-constraint from init attribute: $auto$async2sync.cc:110:execute$315 = 1'1
+Import set-constraint from init attribute: $auto$async2sync.cc:110:execute$321 = 1'1
+Import set-constraint from init attribute: \pilot_past_valid = 1'0
+Final init constraint equation: { \pilot_past_valid $auto$async2sync.cc:110:execute$321 $auto$async2sync.cc:110:execute$315 $auto$async2sync.cc:101:execute$317 $auto$async2sync.cc:101:execute$311 } = 5'01100
+Import proof for assert: $auto$async2sync.cc:110:execute$315 when $auto$async2sync.cc:101:execute$311.
+
+Setting up time step 2:
+Final constraint equation: { } = { }
+Imported 175 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:110:execute$321 when $auto$async2sync.cc:101:execute$317.
+Import proof for assert: $auto$async2sync.cc:110:execute$315 when $auto$async2sync.cc:101:execute$311.
+
+Setting up time step 3:
+Final constraint equation: { } = { }
+Imported 175 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:110:execute$321 when $auto$async2sync.cc:101:execute$317.
+Import proof for assert: $auto$async2sync.cc:110:execute$315 when $auto$async2sync.cc:101:execute$311.
+
+Setting up time step 4:
+Final constraint equation: { } = { }
+Imported 175 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:110:execute$321 when $auto$async2sync.cc:101:execute$317.
+Import proof for assert: $auto$async2sync.cc:110:execute$315 when $auto$async2sync.cc:101:execute$311.
+
+Setting up time step 5:
+Final constraint equation: { } = { }
+Imported 175 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:110:execute$321 when $auto$async2sync.cc:101:execute$317.
+Import proof for assert: $auto$async2sync.cc:110:execute$315 when $auto$async2sync.cc:101:execute$311.
+
+Setting up time step 6:
+Final constraint equation: { } = { }
+Imported 175 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:110:execute$321 when $auto$async2sync.cc:101:execute$317.
+Import proof for assert: $auto$async2sync.cc:110:execute$315 when $auto$async2sync.cc:101:execute$311.
+
+Setting up time step 7:
+Final constraint equation: { } = { }
+Imported 175 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:110:execute$321 when $auto$async2sync.cc:101:execute$317.
+Import proof for assert: $auto$async2sync.cc:110:execute$315 when $auto$async2sync.cc:101:execute$311.
+
+Setting up time step 8:
+Final constraint equation: { } = { }
+Imported 175 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:110:execute$321 when $auto$async2sync.cc:101:execute$317.
+Import proof for assert: $auto$async2sync.cc:110:execute$315 when $auto$async2sync.cc:101:execute$311.
+
+Setting up time step 9:
+Final constraint equation: { } = { }
+Imported 175 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:110:execute$321 when $auto$async2sync.cc:101:execute$317.
+Import proof for assert: $auto$async2sync.cc:110:execute$315 when $auto$async2sync.cc:101:execute$311.
+
+Setting up time step 10:
+Final constraint equation: { } = { }
+Imported 175 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:110:execute$321 when $auto$async2sync.cc:101:execute$317.
+Import proof for assert: $auto$async2sync.cc:110:execute$315 when $auto$async2sync.cc:101:execute$311.
+
+Setting up time step 11:
+Final constraint equation: { } = { }
+Imported 175 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:110:execute$321 when $auto$async2sync.cc:101:execute$317.
+Import proof for assert: $auto$async2sync.cc:110:execute$315 when $auto$async2sync.cc:101:execute$311.
+
+Setting up time step 12:
+Final constraint equation: { } = { }
+Imported 175 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:110:execute$321 when $auto$async2sync.cc:101:execute$317.
+Import proof for assert: $auto$async2sync.cc:110:execute$315 when $auto$async2sync.cc:101:execute$311.
+
+Setting up time step 13:
+Final constraint equation: { } = { }
+Imported 175 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:110:execute$321 when $auto$async2sync.cc:101:execute$317.
+Import proof for assert: $auto$async2sync.cc:110:execute$315 when $auto$async2sync.cc:101:execute$311.
+
+Setting up time step 14:
+Final constraint equation: { } = { }
+Imported 175 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:110:execute$321 when $auto$async2sync.cc:101:execute$317.
+Import proof for assert: $auto$async2sync.cc:110:execute$315 when $auto$async2sync.cc:101:execute$311.
+
+Setting up time step 15:
+Final constraint equation: { } = { }
+Imported 175 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:110:execute$321 when $auto$async2sync.cc:101:execute$317.
+Import proof for assert: $auto$async2sync.cc:110:execute$315 when $auto$async2sync.cc:101:execute$311.
+
+Setting up time step 16:
+Final constraint equation: { } = { }
+Imported 175 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:110:execute$321 when $auto$async2sync.cc:101:execute$317.
+Import proof for assert: $auto$async2sync.cc:110:execute$315 when $auto$async2sync.cc:101:execute$311.
+Import show expression: \pilot_difference
+Import show expression: \clock
+Import show expression: \io_deq_ready
+Import show expression: \io_enq_bits
+Import show expression: \io_enq_valid
+Import show expression: \reset
+Import show expression: \bad_dut._ram_ext_R0_data
+Import show expression: \bad_dut.clock
+Import show expression: \bad_dut.deq_ptr_value
+Import show expression: \bad_dut.do_deq
+Import show expression: \bad_dut.do_enq
+Import show expression: \bad_dut.empty
+Import show expression: \bad_dut.enq_ptr_value
+Import show expression: \bad_dut.full
+Import show expression: \bad_dut.io_deq_bits
+Import show expression: \bad_dut.io_deq_ready
+Import show expression: \bad_dut.io_deq_valid
+Import show expression: \bad_dut.io_deq_valid_0
+Import show expression: \bad_dut.io_enq_bits
+Import show expression: \bad_dut.io_enq_ready
+Import show expression: \bad_dut.io_enq_valid
+Import show expression: \bad_dut.maybe_full
+Import show expression: \bad_dut.ptr_match
+Import show expression: \bad_dut.ram_ext.Memory[0]
+Import show expression: \bad_dut.ram_ext.Memory[1]
+Import show expression: \bad_dut.ram_ext.Memory[2]
+Import show expression: \bad_dut.ram_ext.Memory[3]
+Import show expression: \bad_dut.ram_ext.Memory[4]
+Import show expression: \bad_dut.ram_ext.Memory[5]
+Import show expression: \bad_dut.ram_ext.R0_addr
+Import show expression: \bad_dut.ram_ext.R0_clk
+Import show expression: \bad_dut.ram_ext.R0_data
+Import show expression: \bad_dut.ram_ext.R0_en
+Import show expression: \bad_dut.ram_ext.W0_addr
+Import show expression: \bad_dut.ram_ext.W0_clk
+Import show expression: \bad_dut.ram_ext.W0_data
+Import show expression: \bad_dut.ram_ext.W0_en
+Import show expression: \bad_dut.reset
+Import show expression: \bad_io_deq_bits
+Import show expression: \bad_io_deq_valid
+Import show expression: \bad_io_enq_ready
+Import show expression: \clock
+Import show expression: \gold_dut._ram_ext_R0_data
+Import show expression: \gold_dut.clock
+Import show expression: \gold_dut.deq_ptr_value
+Import show expression: \gold_dut.do_deq
+Import show expression: \gold_dut.do_enq
+Import show expression: \gold_dut.empty
+Import show expression: \gold_dut.enq_ptr_value
+Import show expression: \gold_dut.full
+Import show expression: \gold_dut.io_deq_bits
+Import show expression: \gold_dut.io_deq_ready
+Import show expression: \gold_dut.io_deq_valid
+Import show expression: \gold_dut.io_deq_valid_0
+Import show expression: \gold_dut.io_enq_bits
+Import show expression: \gold_dut.io_enq_ready
+Import show expression: \gold_dut.io_enq_valid
+Import show expression: \gold_dut.maybe_full
+Import show expression: \gold_dut.ptr_match
+Import show expression: \gold_dut.ram_ext.Memory[0]
+Import show expression: \gold_dut.ram_ext.Memory[1]
+Import show expression: \gold_dut.ram_ext.Memory[2]
+Import show expression: \gold_dut.ram_ext.Memory[3]
+Import show expression: \gold_dut.ram_ext.Memory[4]
+Import show expression: \gold_dut.ram_ext.Memory[5]
+Import show expression: \gold_dut.ram_ext.R0_addr
+Import show expression: \gold_dut.ram_ext.R0_clk
+Import show expression: \gold_dut.ram_ext.R0_data
+Import show expression: \gold_dut.ram_ext.R0_en
+Import show expression: \gold_dut.ram_ext.W0_addr
+Import show expression: \gold_dut.ram_ext.W0_clk
+Import show expression: \gold_dut.ram_ext.W0_data
+Import show expression: \gold_dut.ram_ext.W0_en
+Import show expression: \gold_dut.reset
+Import show expression: \gold_io_deq_bits
+Import show expression: \gold_io_deq_valid
+Import show expression: \gold_io_enq_ready
+Import show expression: \io_deq_ready
+Import show expression: \io_enq_bits
+Import show expression: \io_enq_valid
+Import show expression: \pilot_difference
+Import show expression: \pilot_past_valid
+Import show expression: \reset
+
+Solving problem with 24875 variables and 65638 clauses..
+SAT proof finished - model found: FAIL!
+
+   ______                   ___       ___       _ _            _ _ 
+  (_____ \                 / __)     / __)     (_) |          | | |
+   _____) )___ ___   ___ _| |__    _| |__ _____ _| | _____  __| | |
+  |  ____/ ___) _ \ / _ (_   __)  (_   __|____ | | || ___ |/ _  |_|
+  | |   | |  | |_| | |_| || |       | |  / ___ | | || ____( (_| |_ 
+  |_|   |_|   \___/ \___/ |_|       |_|  \_____|_|\_)_____)\____|_|
+
+
+  Time Signal Name                                      Dec       Hex           Bin
+  ---- ---------------------------------------- ----------- --------- -------------
+  init $auto$async2sync.cc:101:execute$311                0         0             0
+  init $auto$async2sync.cc:101:execute$317                0         0             0
+  init $auto$async2sync.cc:110:execute$315                1         1             1
+  init $auto$async2sync.cc:110:execute$321                1         1             1
+  init $auto$async2sync.cc:228:execute$299                0         0             0
+  init $auto$async2sync.cc:228:execute$301                0         0           000
+  init $auto$async2sync.cc:228:execute$303                0         0           000
+  init $auto$async2sync.cc:228:execute$305                0         0             0
+  init $auto$async2sync.cc:228:execute$307                0         0           000
+  init $auto$async2sync.cc:228:execute$309                0         0           000
+  init \bad_dut.ram_ext.Memory[0]                         0         0            00
+  init \bad_dut.ram_ext.Memory[1]                         0         0            00
+  init \bad_dut.ram_ext.Memory[2]                         0         0            00
+  init \bad_dut.ram_ext.Memory[3]                         0         0            00
+  init \bad_dut.ram_ext.Memory[4]                         0         0            00
+  init \bad_dut.ram_ext.Memory[5]                         0         0            00
+  init \gold_dut.ram_ext.Memory[0]                        0         0            00
+  init \gold_dut.ram_ext.Memory[1]                        0         0            00
+  init \gold_dut.ram_ext.Memory[2]                        0         0            00
+  init \gold_dut.ram_ext.Memory[3]                        0         0            00
+  init \gold_dut.ram_ext.Memory[4]                        2         2            10
+  init \gold_dut.ram_ext.Memory[5]                        2         2            10
+  init \pilot_past_valid                                  0         0             0
+  ---- ---------------------------------------- ----------- --------- -------------
+     1 \bad_dut._ram_ext_R0_data                          0         0            00
+     1 \bad_dut.clock                                     0         0             0
+     1 \bad_dut.deq_ptr_value                             0         0           000
+     1 \bad_dut.do_deq                                    0         0             0
+     1 \bad_dut.do_enq                                    0         0             0
+     1 \bad_dut.empty                                     1         1             1
+     1 \bad_dut.enq_ptr_value                             0         0           000
+     1 \bad_dut.full                                      0         0             0
+     1 \bad_dut.io_deq_bits                               0         0            00
+     1 \bad_dut.io_deq_ready                              1         1             1
+     1 \bad_dut.io_deq_valid                              0         0             0
+     1 \bad_dut.io_deq_valid_0                            0         0             0
+     1 \bad_dut.io_enq_bits                               0         0            00
+     1 \bad_dut.io_enq_ready                              1         1             1
+     1 \bad_dut.io_enq_valid                              0         0             0
+     1 \bad_dut.maybe_full                                0         0             0
+     1 \bad_dut.ptr_match                                 1         1             1
+     1 \bad_dut.ram_ext.Memory[0]                         0         0            00
+     1 \bad_dut.ram_ext.Memory[1]                         0         0            00
+     1 \bad_dut.ram_ext.Memory[2]                         0         0            00
+     1 \bad_dut.ram_ext.Memory[3]                         0         0            00
+     1 \bad_dut.ram_ext.Memory[4]                         0         0            00
+     1 \bad_dut.ram_ext.Memory[5]                         0         0            00
+     1 \bad_dut.ram_ext.R0_addr                           0         0           000
+     1 \bad_dut.ram_ext.R0_clk                            0         0             0
+     1 \bad_dut.ram_ext.R0_data                           0         0            00
+     1 \bad_dut.ram_ext.R0_en                             1         1             1
+     1 \bad_dut.ram_ext.W0_addr                           0         0           000
+     1 \bad_dut.ram_ext.W0_clk                            0         0             0
+     1 \bad_dut.ram_ext.W0_data                           0         0            00
+     1 \bad_dut.ram_ext.W0_en                             0         0             0
+     1 \bad_dut.reset                                     1         1             1
+     1 \bad_io_deq_bits                                   0         0            00
+     1 \bad_io_deq_valid                                  0         0             0
+     1 \bad_io_enq_ready                                  1         1             1
+     1 \clock                                             0         0             0
+     1 \gold_dut._ram_ext_R0_data                         0         0            00
+     1 \gold_dut.clock                                    0         0             0
+     1 \gold_dut.deq_ptr_value                            0         0           000
+     1 \gold_dut.do_deq                                   0         0             0
+     1 \gold_dut.do_enq                                   0         0             0
+     1 \gold_dut.empty                                    1         1             1
+     1 \gold_dut.enq_ptr_value                            0         0           000
+     1 \gold_dut.full                                     0         0             0
+     1 \gold_dut.io_deq_bits                              0         0            00
+     1 \gold_dut.io_deq_ready                             1         1             1
+     1 \gold_dut.io_deq_valid                             0         0             0
+     1 \gold_dut.io_deq_valid_0                           0         0             0
+     1 \gold_dut.io_enq_bits                              0         0            00
+     1 \gold_dut.io_enq_ready                             1         1             1
+     1 \gold_dut.io_enq_valid                             0         0             0
+     1 \gold_dut.maybe_full                               0         0             0
+     1 \gold_dut.ptr_match                                1         1             1
+     1 \gold_dut.ram_ext.Memory[0]                        0         0            00
+     1 \gold_dut.ram_ext.Memory[1]                        0         0            00
+     1 \gold_dut.ram_ext.Memory[2]                        0         0            00
+     1 \gold_dut.ram_ext.Memory[3]                        0         0            00
+     1 \gold_dut.ram_ext.Memory[4]                        2         2            10
+     1 \gold_dut.ram_ext.Memory[5]                        2         2            10
+     1 \gold_dut.ram_ext.R0_addr                          0         0           000
+     1 \gold_dut.ram_ext.R0_clk                           0         0             0
+     1 \gold_dut.ram_ext.R0_data                          0         0            00
+     1 \gold_dut.ram_ext.R0_en                            1         1             1
+     1 \gold_dut.ram_ext.W0_addr                          0         0           000
+     1 \gold_dut.ram_ext.W0_clk                           0         0             0
+     1 \gold_dut.ram_ext.W0_data                          0         0            00
+     1 \gold_dut.ram_ext.W0_en                            0         0             0
+     1 \gold_dut.reset                                    1         1             1
+     1 \gold_io_deq_bits                                  0         0            00
+     1 \gold_io_deq_valid                                 0         0             0
+     1 \gold_io_enq_ready                                 1         1             1
+     1 \io_deq_ready                                      1         1             1
+     1 \io_enq_bits                                       0         0            00
+     1 \io_enq_valid                                      0         0             0
+     1 \pilot_difference                                  0         0             0
+     1 \pilot_past_valid                                  0         0             0
+     1 \reset                                             1         1             1
+  ---- ---------------------------------------- ----------- --------- -------------
+     2 \bad_dut._ram_ext_R0_data                          0         0            00
+     2 \bad_dut.clock                                     0         0             0
+     2 \bad_dut.deq_ptr_value                             0         0           000
+     2 \bad_dut.do_deq                                    0         0             0
+     2 \bad_dut.do_enq                                    1         1             1
+     2 \bad_dut.empty                                     1         1             1
+     2 \bad_dut.enq_ptr_value                             0         0           000
+     2 \bad_dut.full                                      0         0             0
+     2 \bad_dut.io_deq_bits                               3         3            11
+     2 \bad_dut.io_deq_ready                              0         0             0
+     2 \bad_dut.io_deq_valid                              1         1             1
+     2 \bad_dut.io_deq_valid_0                            1         1             1
+     2 \bad_dut.io_enq_bits                               3         3            11
+     2 \bad_dut.io_enq_ready                              1         1             1
+     2 \bad_dut.io_enq_valid                              1         1             1
+     2 \bad_dut.maybe_full                                0         0             0
+     2 \bad_dut.ptr_match                                 1         1             1
+     2 \bad_dut.ram_ext.Memory[0]                         0         0            00
+     2 \bad_dut.ram_ext.Memory[1]                         0         0            00
+     2 \bad_dut.ram_ext.Memory[2]                         0         0            00
+     2 \bad_dut.ram_ext.Memory[3]                         0         0            00
+     2 \bad_dut.ram_ext.Memory[4]                         0         0            00
+     2 \bad_dut.ram_ext.Memory[5]                         0         0            00
+     2 \bad_dut.ram_ext.R0_addr                           0         0           000
+     2 \bad_dut.ram_ext.R0_clk                            0         0             0
+     2 \bad_dut.ram_ext.R0_data                           0         0            00
+     2 \bad_dut.ram_ext.R0_en                             1         1             1
+     2 \bad_dut.ram_ext.W0_addr                           0         0           000
+     2 \bad_dut.ram_ext.W0_clk                            0         0             0
+     2 \bad_dut.ram_ext.W0_data                           3         3            11
+     2 \bad_dut.ram_ext.W0_en                             1         1             1
+     2 \bad_dut.reset                                     0         0             0
+     2 \bad_io_deq_bits                                   3         3            11
+     2 \bad_io_deq_valid                                  1         1             1
+     2 \bad_io_enq_ready                                  1         1             1
+     2 \clock                                             0         0             0
+     2 \gold_dut._ram_ext_R0_data                         0         0            00
+     2 \gold_dut.clock                                    0         0             0
+     2 \gold_dut.deq_ptr_value                            0         0           000
+     2 \gold_dut.do_deq                                   0         0             0
+     2 \gold_dut.do_enq                                   1         1             1
+     2 \gold_dut.empty                                    1         1             1
+     2 \gold_dut.enq_ptr_value                            0         0           000
+     2 \gold_dut.full                                     0         0             0
+     2 \gold_dut.io_deq_bits                              3         3            11
+     2 \gold_dut.io_deq_ready                             0         0             0
+     2 \gold_dut.io_deq_valid                             1         1             1
+     2 \gold_dut.io_deq_valid_0                           1         1             1
+     2 \gold_dut.io_enq_bits                              3         3            11
+     2 \gold_dut.io_enq_ready                             1         1             1
+     2 \gold_dut.io_enq_valid                             1         1             1
+     2 \gold_dut.maybe_full                               0         0             0
+     2 \gold_dut.ptr_match                                1         1             1
+     2 \gold_dut.ram_ext.Memory[0]                        0         0            00
+     2 \gold_dut.ram_ext.Memory[1]                        0         0            00
+     2 \gold_dut.ram_ext.Memory[2]                        0         0            00
+     2 \gold_dut.ram_ext.Memory[3]                        0         0            00
+     2 \gold_dut.ram_ext.Memory[4]                        2         2            10
+     2 \gold_dut.ram_ext.Memory[5]                        2         2            10
+     2 \gold_dut.ram_ext.R0_addr                          0         0           000
+     2 \gold_dut.ram_ext.R0_clk                           0         0             0
+     2 \gold_dut.ram_ext.R0_data                          0         0            00
+     2 \gold_dut.ram_ext.R0_en                            1         1             1
+     2 \gold_dut.ram_ext.W0_addr                          0         0           000
+     2 \gold_dut.ram_ext.W0_clk                           0         0             0
+     2 \gold_dut.ram_ext.W0_data                          3         3            11
+     2 \gold_dut.ram_ext.W0_en                            1         1             1
+     2 \gold_dut.reset                                    0         0             0
+     2 \gold_io_deq_bits                                  3         3            11
+     2 \gold_io_deq_valid                                 1         1             1
+     2 \gold_io_enq_ready                                 1         1             1
+     2 \io_deq_ready                                      0         0             0
+     2 \io_enq_bits                                       3         3            11
+     2 \io_enq_valid                                      1         1             1
+     2 \pilot_difference                                  0         0             0
+     2 \pilot_past_valid                                  1         1             1
+     2 \reset                                             0         0             0
+  ---- ---------------------------------------- ----------- --------- -------------
+     3 \bad_dut._ram_ext_R0_data                          3         3            11
+     3 \bad_dut.clock                                     0         0             0
+     3 \bad_dut.deq_ptr_value                             0         0           000
+     3 \bad_dut.do_deq                                    1         1             1
+     3 \bad_dut.do_enq                                    1         1             1
+     3 \bad_dut.empty                                     0         0             0
+     3 \bad_dut.enq_ptr_value                             1         1           001
+     3 \bad_dut.full                                      0         0             0
+     3 \bad_dut.io_deq_bits                               3         3            11
+     3 \bad_dut.io_deq_ready                              1         1             1
+     3 \bad_dut.io_deq_valid                              1         1             1
+     3 \bad_dut.io_deq_valid_0                            1         1             1
+     3 \bad_dut.io_enq_bits                               0         0            00
+     3 \bad_dut.io_enq_ready                              1         1             1
+     3 \bad_dut.io_enq_valid                              1         1             1
+     3 \bad_dut.maybe_full                                1         1             1
+     3 \bad_dut.ptr_match                                 0         0             0
+     3 \bad_dut.ram_ext.Memory[0]                         3         3            11
+     3 \bad_dut.ram_ext.Memory[1]                         0         0            00
+     3 \bad_dut.ram_ext.Memory[2]                         0         0            00
+     3 \bad_dut.ram_ext.Memory[3]                         0         0            00
+     3 \bad_dut.ram_ext.Memory[4]                         0         0            00
+     3 \bad_dut.ram_ext.Memory[5]                         0         0            00
+     3 \bad_dut.ram_ext.R0_addr                           0         0           000
+     3 \bad_dut.ram_ext.R0_clk                            0         0             0
+     3 \bad_dut.ram_ext.R0_data                           3         3            11
+     3 \bad_dut.ram_ext.R0_en                             1         1             1
+     3 \bad_dut.ram_ext.W0_addr                           1         1           001
+     3 \bad_dut.ram_ext.W0_clk                            0         0             0
+     3 \bad_dut.ram_ext.W0_data                           0         0            00
+     3 \bad_dut.ram_ext.W0_en                             1         1             1
+     3 \bad_dut.reset                                     0         0             0
+     3 \bad_io_deq_bits                                   3         3            11
+     3 \bad_io_deq_valid                                  1         1             1
+     3 \bad_io_enq_ready                                  1         1             1
+     3 \clock                                             0         0             0
+     3 \gold_dut._ram_ext_R0_data                         3         3            11
+     3 \gold_dut.clock                                    0         0             0
+     3 \gold_dut.deq_ptr_value                            0         0           000
+     3 \gold_dut.do_deq                                   1         1             1
+     3 \gold_dut.do_enq                                   1         1             1
+     3 \gold_dut.empty                                    0         0             0
+     3 \gold_dut.enq_ptr_value                            1         1           001
+     3 \gold_dut.full                                     0         0             0
+     3 \gold_dut.io_deq_bits                              3         3            11
+     3 \gold_dut.io_deq_ready                             1         1             1
+     3 \gold_dut.io_deq_valid                             1         1             1
+     3 \gold_dut.io_deq_valid_0                           1         1             1
+     3 \gold_dut.io_enq_bits                              0         0            00
+     3 \gold_dut.io_enq_ready                             1         1             1
+     3 \gold_dut.io_enq_valid                             1         1             1
+     3 \gold_dut.maybe_full                               1         1             1
+     3 \gold_dut.ptr_match                                0         0             0
+     3 \gold_dut.ram_ext.Memory[0]                        3         3            11
+     3 \gold_dut.ram_ext.Memory[1]                        0         0            00
+     3 \gold_dut.ram_ext.Memory[2]                        0         0            00
+     3 \gold_dut.ram_ext.Memory[3]                        0         0            00
+     3 \gold_dut.ram_ext.Memory[4]                        2         2            10
+     3 \gold_dut.ram_ext.Memory[5]                        2         2            10
+     3 \gold_dut.ram_ext.R0_addr                          0         0           000
+     3 \gold_dut.ram_ext.R0_clk                           0         0             0
+     3 \gold_dut.ram_ext.R0_data                          3         3            11
+     3 \gold_dut.ram_ext.R0_en                            1         1             1
+     3 \gold_dut.ram_ext.W0_addr                          1         1           001
+     3 \gold_dut.ram_ext.W0_clk                           0         0             0
+     3 \gold_dut.ram_ext.W0_data                          0         0            00
+     3 \gold_dut.ram_ext.W0_en                            1         1             1
+     3 \gold_dut.reset                                    0         0             0
+     3 \gold_io_deq_bits                                  3         3            11
+     3 \gold_io_deq_valid                                 1         1             1
+     3 \gold_io_enq_ready                                 1         1             1
+     3 \io_deq_ready                                      1         1             1
+     3 \io_enq_bits                                       0         0            00
+     3 \io_enq_valid                                      1         1             1
+     3 \pilot_difference                                  0         0             0
+     3 \pilot_past_valid                                  1         1             1
+     3 \reset                                             0         0             0
+  ---- ---------------------------------------- ----------- --------- -------------
+     4 \bad_dut._ram_ext_R0_data                          0         0            00
+     4 \bad_dut.clock                                     0         0             0
+     4 \bad_dut.deq_ptr_value                             1         1           001
+     4 \bad_dut.do_deq                                    1         1             1
+     4 \bad_dut.do_enq                                    1         1             1
+     4 \bad_dut.empty                                     0         0             0
+     4 \bad_dut.enq_ptr_value                             2         2           010
+     4 \bad_dut.full                                      0         0             0
+     4 \bad_dut.io_deq_bits                               0         0            00
+     4 \bad_dut.io_deq_ready                              1         1             1
+     4 \bad_dut.io_deq_valid                              1         1             1
+     4 \bad_dut.io_deq_valid_0                            1         1             1
+     4 \bad_dut.io_enq_bits                               2         2            10
+     4 \bad_dut.io_enq_ready                              1         1             1
+     4 \bad_dut.io_enq_valid                              1         1             1
+     4 \bad_dut.maybe_full                                1         1             1
+     4 \bad_dut.ptr_match                                 0         0             0
+     4 \bad_dut.ram_ext.Memory[0]                         3         3            11
+     4 \bad_dut.ram_ext.Memory[1]                         0         0            00
+     4 \bad_dut.ram_ext.Memory[2]                         0         0            00
+     4 \bad_dut.ram_ext.Memory[3]                         0         0            00
+     4 \bad_dut.ram_ext.Memory[4]                         0         0            00
+     4 \bad_dut.ram_ext.Memory[5]                         0         0            00
+     4 \bad_dut.ram_ext.R0_addr                           1         1           001
+     4 \bad_dut.ram_ext.R0_clk                            0         0             0
+     4 \bad_dut.ram_ext.R0_data                           0         0            00
+     4 \bad_dut.ram_ext.R0_en                             1         1             1
+     4 \bad_dut.ram_ext.W0_addr                           2         2           010
+     4 \bad_dut.ram_ext.W0_clk                            0         0             0
+     4 \bad_dut.ram_ext.W0_data                           2         2            10
+     4 \bad_dut.ram_ext.W0_en                             1         1             1
+     4 \bad_dut.reset                                     0         0             0
+     4 \bad_io_deq_bits                                   0         0            00
+     4 \bad_io_deq_valid                                  1         1             1
+     4 \bad_io_enq_ready                                  1         1             1
+     4 \clock                                             0         0             0
+     4 \gold_dut._ram_ext_R0_data                         0         0            00
+     4 \gold_dut.clock                                    0         0             0
+     4 \gold_dut.deq_ptr_value                            1         1           001
+     4 \gold_dut.do_deq                                   1         1             1
+     4 \gold_dut.do_enq                                   1         1             1
+     4 \gold_dut.empty                                    0         0             0
+     4 \gold_dut.enq_ptr_value                            2         2           010
+     4 \gold_dut.full                                     0         0             0
+     4 \gold_dut.io_deq_bits                              0         0            00
+     4 \gold_dut.io_deq_ready                             1         1             1
+     4 \gold_dut.io_deq_valid                             1         1             1
+     4 \gold_dut.io_deq_valid_0                           1         1             1
+     4 \gold_dut.io_enq_bits                              2         2            10
+     4 \gold_dut.io_enq_ready                             1         1             1
+     4 \gold_dut.io_enq_valid                             1         1             1
+     4 \gold_dut.maybe_full                               1         1             1
+     4 \gold_dut.ptr_match                                0         0             0
+     4 \gold_dut.ram_ext.Memory[0]                        3         3            11
+     4 \gold_dut.ram_ext.Memory[1]                        0         0            00
+     4 \gold_dut.ram_ext.Memory[2]                        0         0            00
+     4 \gold_dut.ram_ext.Memory[3]                        0         0            00
+     4 \gold_dut.ram_ext.Memory[4]                        2         2            10
+     4 \gold_dut.ram_ext.Memory[5]                        2         2            10
+     4 \gold_dut.ram_ext.R0_addr                          1         1           001
+     4 \gold_dut.ram_ext.R0_clk                           0         0             0
+     4 \gold_dut.ram_ext.R0_data                          0         0            00
+     4 \gold_dut.ram_ext.R0_en                            1         1             1
+     4 \gold_dut.ram_ext.W0_addr                          2         2           010
+     4 \gold_dut.ram_ext.W0_clk                           0         0             0
+     4 \gold_dut.ram_ext.W0_data                          2         2            10
+     4 \gold_dut.ram_ext.W0_en                            1         1             1
+     4 \gold_dut.reset                                    0         0             0
+     4 \gold_io_deq_bits                                  0         0            00
+     4 \gold_io_deq_valid                                 1         1             1
+     4 \gold_io_enq_ready                                 1         1             1
+     4 \io_deq_ready                                      1         1             1
+     4 \io_enq_bits                                       2         2            10
+     4 \io_enq_valid                                      1         1             1
+     4 \pilot_difference                                  0         0             0
+     4 \pilot_past_valid                                  1         1             1
+     4 \reset                                             0         0             0
+  ---- ---------------------------------------- ----------- --------- -------------
+     5 \bad_dut._ram_ext_R0_data                          2         2            10
+     5 \bad_dut.clock                                     0         0             0
+     5 \bad_dut.deq_ptr_value                             2         2           010
+     5 \bad_dut.do_deq                                    1         1             1
+     5 \bad_dut.do_enq                                    1         1             1
+     5 \bad_dut.empty                                     0         0             0
+     5 \bad_dut.enq_ptr_value                             3         3           011
+     5 \bad_dut.full                                      0         0             0
+     5 \bad_dut.io_deq_bits                               2         2            10
+     5 \bad_dut.io_deq_ready                              1         1             1
+     5 \bad_dut.io_deq_valid                              1         1             1
+     5 \bad_dut.io_deq_valid_0                            1         1             1
+     5 \bad_dut.io_enq_bits                               0         0            00
+     5 \bad_dut.io_enq_ready                              1         1             1
+     5 \bad_dut.io_enq_valid                              1         1             1
+     5 \bad_dut.maybe_full                                1         1             1
+     5 \bad_dut.ptr_match                                 0         0             0
+     5 \bad_dut.ram_ext.Memory[0]                         3         3            11
+     5 \bad_dut.ram_ext.Memory[1]                         0         0            00
+     5 \bad_dut.ram_ext.Memory[2]                         2         2            10
+     5 \bad_dut.ram_ext.Memory[3]                         0         0            00
+     5 \bad_dut.ram_ext.Memory[4]                         0         0            00
+     5 \bad_dut.ram_ext.Memory[5]                         0         0            00
+     5 \bad_dut.ram_ext.R0_addr                           2         2           010
+     5 \bad_dut.ram_ext.R0_clk                            0         0             0
+     5 \bad_dut.ram_ext.R0_data                           2         2            10
+     5 \bad_dut.ram_ext.R0_en                             1         1             1
+     5 \bad_dut.ram_ext.W0_addr                           3         3           011
+     5 \bad_dut.ram_ext.W0_clk                            0         0             0
+     5 \bad_dut.ram_ext.W0_data                           0         0            00
+     5 \bad_dut.ram_ext.W0_en                             1         1             1
+     5 \bad_dut.reset                                     0         0             0
+     5 \bad_io_deq_bits                                   2         2            10
+     5 \bad_io_deq_valid                                  1         1             1
+     5 \bad_io_enq_ready                                  1         1             1
+     5 \clock                                             0         0             0
+     5 \gold_dut._ram_ext_R0_data                         2         2            10
+     5 \gold_dut.clock                                    0         0             0
+     5 \gold_dut.deq_ptr_value                            2         2           010
+     5 \gold_dut.do_deq                                   1         1             1
+     5 \gold_dut.do_enq                                   1         1             1
+     5 \gold_dut.empty                                    0         0             0
+     5 \gold_dut.enq_ptr_value                            3         3           011
+     5 \gold_dut.full                                     0         0             0
+     5 \gold_dut.io_deq_bits                              2         2            10
+     5 \gold_dut.io_deq_ready                             1         1             1
+     5 \gold_dut.io_deq_valid                             1         1             1
+     5 \gold_dut.io_deq_valid_0                           1         1             1
+     5 \gold_dut.io_enq_bits                              0         0            00
+     5 \gold_dut.io_enq_ready                             1         1             1
+     5 \gold_dut.io_enq_valid                             1         1             1
+     5 \gold_dut.maybe_full                               1         1             1
+     5 \gold_dut.ptr_match                                0         0             0
+     5 \gold_dut.ram_ext.Memory[0]                        3         3            11
+     5 \gold_dut.ram_ext.Memory[1]                        0         0            00
+     5 \gold_dut.ram_ext.Memory[2]                        2         2            10
+     5 \gold_dut.ram_ext.Memory[3]                        0         0            00
+     5 \gold_dut.ram_ext.Memory[4]                        2         2            10
+     5 \gold_dut.ram_ext.Memory[5]                        2         2            10
+     5 \gold_dut.ram_ext.R0_addr                          2         2           010
+     5 \gold_dut.ram_ext.R0_clk                           0         0             0
+     5 \gold_dut.ram_ext.R0_data                          2         2            10
+     5 \gold_dut.ram_ext.R0_en                            1         1             1
+     5 \gold_dut.ram_ext.W0_addr                          3         3           011
+     5 \gold_dut.ram_ext.W0_clk                           0         0             0
+     5 \gold_dut.ram_ext.W0_data                          0         0            00
+     5 \gold_dut.ram_ext.W0_en                            1         1             1
+     5 \gold_dut.reset                                    0         0             0
+     5 \gold_io_deq_bits                                  2         2            10
+     5 \gold_io_deq_valid                                 1         1             1
+     5 \gold_io_enq_ready                                 1         1             1
+     5 \io_deq_ready                                      1         1             1
+     5 \io_enq_bits                                       0         0            00
+     5 \io_enq_valid                                      1         1             1
+     5 \pilot_difference                                  0         0             0
+     5 \pilot_past_valid                                  1         1             1
+     5 \reset                                             0         0             0
+  ---- ---------------------------------------- ----------- --------- -------------
+     6 \bad_dut._ram_ext_R0_data                          0         0            00
+     6 \bad_dut.clock                                     0         0             0
+     6 \bad_dut.deq_ptr_value                             3         3           011
+     6 \bad_dut.do_deq                                    1         1             1
+     6 \bad_dut.do_enq                                    0         0             0
+     6 \bad_dut.empty                                     0         0             0
+     6 \bad_dut.enq_ptr_value                             4         4           100
+     6 \bad_dut.full                                      0         0             0
+     6 \bad_dut.io_deq_bits                               0         0            00
+     6 \bad_dut.io_deq_ready                              1         1             1
+     6 \bad_dut.io_deq_valid                              1         1             1
+     6 \bad_dut.io_deq_valid_0                            1         1             1
+     6 \bad_dut.io_enq_bits                               0         0            00
+     6 \bad_dut.io_enq_ready                              1         1             1
+     6 \bad_dut.io_enq_valid                              0         0             0
+     6 \bad_dut.maybe_full                                1         1             1
+     6 \bad_dut.ptr_match                                 0         0             0
+     6 \bad_dut.ram_ext.Memory[0]                         3         3            11
+     6 \bad_dut.ram_ext.Memory[1]                         0         0            00
+     6 \bad_dut.ram_ext.Memory[2]                         2         2            10
+     6 \bad_dut.ram_ext.Memory[3]                         0         0            00
+     6 \bad_dut.ram_ext.Memory[4]                         0         0            00
+     6 \bad_dut.ram_ext.Memory[5]                         0         0            00
+     6 \bad_dut.ram_ext.R0_addr                           3         3           011
+     6 \bad_dut.ram_ext.R0_clk                            0         0             0
+     6 \bad_dut.ram_ext.R0_data                           0         0            00
+     6 \bad_dut.ram_ext.R0_en                             1         1             1
+     6 \bad_dut.ram_ext.W0_addr                           4         4           100
+     6 \bad_dut.ram_ext.W0_clk                            0         0             0
+     6 \bad_dut.ram_ext.W0_data                           0         0            00
+     6 \bad_dut.ram_ext.W0_en                             0         0             0
+     6 \bad_dut.reset                                     0         0             0
+     6 \bad_io_deq_bits                                   0         0            00
+     6 \bad_io_deq_valid                                  1         1             1
+     6 \bad_io_enq_ready                                  1         1             1
+     6 \clock                                             0         0             0
+     6 \gold_dut._ram_ext_R0_data                         0         0            00
+     6 \gold_dut.clock                                    0         0             0
+     6 \gold_dut.deq_ptr_value                            3         3           011
+     6 \gold_dut.do_deq                                   1         1             1
+     6 \gold_dut.do_enq                                   0         0             0
+     6 \gold_dut.empty                                    0         0             0
+     6 \gold_dut.enq_ptr_value                            4         4           100
+     6 \gold_dut.full                                     0         0             0
+     6 \gold_dut.io_deq_bits                              0         0            00
+     6 \gold_dut.io_deq_ready                             1         1             1
+     6 \gold_dut.io_deq_valid                             1         1             1
+     6 \gold_dut.io_deq_valid_0                           1         1             1
+     6 \gold_dut.io_enq_bits                              0         0            00
+     6 \gold_dut.io_enq_ready                             1         1             1
+     6 \gold_dut.io_enq_valid                             0         0             0
+     6 \gold_dut.maybe_full                               1         1             1
+     6 \gold_dut.ptr_match                                0         0             0
+     6 \gold_dut.ram_ext.Memory[0]                        3         3            11
+     6 \gold_dut.ram_ext.Memory[1]                        0         0            00
+     6 \gold_dut.ram_ext.Memory[2]                        2         2            10
+     6 \gold_dut.ram_ext.Memory[3]                        0         0            00
+     6 \gold_dut.ram_ext.Memory[4]                        2         2            10
+     6 \gold_dut.ram_ext.Memory[5]                        2         2            10
+     6 \gold_dut.ram_ext.R0_addr                          3         3           011
+     6 \gold_dut.ram_ext.R0_clk                           0         0             0
+     6 \gold_dut.ram_ext.R0_data                          0         0            00
+     6 \gold_dut.ram_ext.R0_en                            1         1             1
+     6 \gold_dut.ram_ext.W0_addr                          4         4           100
+     6 \gold_dut.ram_ext.W0_clk                           0         0             0
+     6 \gold_dut.ram_ext.W0_data                          0         0            00
+     6 \gold_dut.ram_ext.W0_en                            0         0             0
+     6 \gold_dut.reset                                    0         0             0
+     6 \gold_io_deq_bits                                  0         0            00
+     6 \gold_io_deq_valid                                 1         1             1
+     6 \gold_io_enq_ready                                 1         1             1
+     6 \io_deq_ready                                      1         1             1
+     6 \io_enq_bits                                       0         0            00
+     6 \io_enq_valid                                      0         0             0
+     6 \pilot_difference                                  0         0             0
+     6 \pilot_past_valid                                  1         1             1
+     6 \reset                                             0         0             0
+  ---- ---------------------------------------- ----------- --------- -------------
+     7 \bad_dut._ram_ext_R0_data                          0         0            00
+     7 \bad_dut.clock                                     0         0             0
+     7 \bad_dut.deq_ptr_value                             4         4           100
+     7 \bad_dut.do_deq                                    0         0             0
+     7 \bad_dut.do_enq                                    0         0             0
+     7 \bad_dut.empty                                     1         1             1
+     7 \bad_dut.enq_ptr_value                             4         4           100
+     7 \bad_dut.full                                      0         0             0
+     7 \bad_dut.io_deq_bits                               0         0            00
+     7 \bad_dut.io_deq_ready                              1         1             1
+     7 \bad_dut.io_deq_valid                              0         0             0
+     7 \bad_dut.io_deq_valid_0                            0         0             0
+     7 \bad_dut.io_enq_bits                               0         0            00
+     7 \bad_dut.io_enq_ready                              1         1             1
+     7 \bad_dut.io_enq_valid                              0         0             0
+     7 \bad_dut.maybe_full                                0         0             0
+     7 \bad_dut.ptr_match                                 1         1             1
+     7 \bad_dut.ram_ext.Memory[0]                         3         3            11
+     7 \bad_dut.ram_ext.Memory[1]                         0         0            00
+     7 \bad_dut.ram_ext.Memory[2]                         2         2            10
+     7 \bad_dut.ram_ext.Memory[3]                         0         0            00
+     7 \bad_dut.ram_ext.Memory[4]                         0         0            00
+     7 \bad_dut.ram_ext.Memory[5]                         0         0            00
+     7 \bad_dut.ram_ext.R0_addr                           4         4           100
+     7 \bad_dut.ram_ext.R0_clk                            0         0             0
+     7 \bad_dut.ram_ext.R0_data                           0         0            00
+     7 \bad_dut.ram_ext.R0_en                             1         1             1
+     7 \bad_dut.ram_ext.W0_addr                           4         4           100
+     7 \bad_dut.ram_ext.W0_clk                            0         0             0
+     7 \bad_dut.ram_ext.W0_data                           0         0            00
+     7 \bad_dut.ram_ext.W0_en                             0         0             0
+     7 \bad_dut.reset                                     0         0             0
+     7 \bad_io_deq_bits                                   0         0            00
+     7 \bad_io_deq_valid                                  0         0             0
+     7 \bad_io_enq_ready                                  1         1             1
+     7 \clock                                             0         0             0
+     7 \gold_dut._ram_ext_R0_data                         2         2            10
+     7 \gold_dut.clock                                    0         0             0
+     7 \gold_dut.deq_ptr_value                            4         4           100
+     7 \gold_dut.do_deq                                   0         0             0
+     7 \gold_dut.do_enq                                   0         0             0
+     7 \gold_dut.empty                                    1         1             1
+     7 \gold_dut.enq_ptr_value                            4         4           100
+     7 \gold_dut.full                                     0         0             0
+     7 \gold_dut.io_deq_bits                              0         0            00
+     7 \gold_dut.io_deq_ready                             1         1             1
+     7 \gold_dut.io_deq_valid                             0         0             0
+     7 \gold_dut.io_deq_valid_0                           0         0             0
+     7 \gold_dut.io_enq_bits                              0         0            00
+     7 \gold_dut.io_enq_ready                             1         1             1
+     7 \gold_dut.io_enq_valid                             0         0             0
+     7 \gold_dut.maybe_full                               0         0             0
+     7 \gold_dut.ptr_match                                1         1             1
+     7 \gold_dut.ram_ext.Memory[0]                        3         3            11
+     7 \gold_dut.ram_ext.Memory[1]                        0         0            00
+     7 \gold_dut.ram_ext.Memory[2]                        2         2            10
+     7 \gold_dut.ram_ext.Memory[3]                        0         0            00
+     7 \gold_dut.ram_ext.Memory[4]                        2         2            10
+     7 \gold_dut.ram_ext.Memory[5]                        2         2            10
+     7 \gold_dut.ram_ext.R0_addr                          4         4           100
+     7 \gold_dut.ram_ext.R0_clk                           0         0             0
+     7 \gold_dut.ram_ext.R0_data                          2         2            10
+     7 \gold_dut.ram_ext.R0_en                            1         1             1
+     7 \gold_dut.ram_ext.W0_addr                          4         4           100
+     7 \gold_dut.ram_ext.W0_clk                           0         0             0
+     7 \gold_dut.ram_ext.W0_data                          0         0            00
+     7 \gold_dut.ram_ext.W0_en                            0         0             0
+     7 \gold_dut.reset                                    0         0             0
+     7 \gold_io_deq_bits                                  0         0            00
+     7 \gold_io_deq_valid                                 0         0             0
+     7 \gold_io_enq_ready                                 1         1             1
+     7 \io_deq_ready                                      1         1             1
+     7 \io_enq_bits                                       0         0            00
+     7 \io_enq_valid                                      0         0             0
+     7 \pilot_difference                                  0         0             0
+     7 \pilot_past_valid                                  1         1             1
+     7 \reset                                             0         0             0
+  ---- ---------------------------------------- ----------- --------- -------------
+     8 \bad_dut._ram_ext_R0_data                          0         0            00
+     8 \bad_dut.clock                                     0         0             0
+     8 \bad_dut.deq_ptr_value                             4         4           100
+     8 \bad_dut.do_deq                                    0         0             0
+     8 \bad_dut.do_enq                                    1         1             1
+     8 \bad_dut.empty                                     1         1             1
+     8 \bad_dut.enq_ptr_value                             4         4           100
+     8 \bad_dut.full                                      0         0             0
+     8 \bad_dut.io_deq_bits                               0         0            00
+     8 \bad_dut.io_deq_ready                              0         0             0
+     8 \bad_dut.io_deq_valid                              1         1             1
+     8 \bad_dut.io_deq_valid_0                            1         1             1
+     8 \bad_dut.io_enq_bits                               0         0            00
+     8 \bad_dut.io_enq_ready                              1         1             1
+     8 \bad_dut.io_enq_valid                              1         1             1
+     8 \bad_dut.maybe_full                                0         0             0
+     8 \bad_dut.ptr_match                                 1         1             1
+     8 \bad_dut.ram_ext.Memory[0]                         3         3            11
+     8 \bad_dut.ram_ext.Memory[1]                         0         0            00
+     8 \bad_dut.ram_ext.Memory[2]                         2         2            10
+     8 \bad_dut.ram_ext.Memory[3]                         0         0            00
+     8 \bad_dut.ram_ext.Memory[4]                         0         0            00
+     8 \bad_dut.ram_ext.Memory[5]                         0         0            00
+     8 \bad_dut.ram_ext.R0_addr                           4         4           100
+     8 \bad_dut.ram_ext.R0_clk                            0         0             0
+     8 \bad_dut.ram_ext.R0_data                           0         0            00
+     8 \bad_dut.ram_ext.R0_en                             1         1             1
+     8 \bad_dut.ram_ext.W0_addr                           4         4           100
+     8 \bad_dut.ram_ext.W0_clk                            0         0             0
+     8 \bad_dut.ram_ext.W0_data                           0         0            00
+     8 \bad_dut.ram_ext.W0_en                             1         1             1
+     8 \bad_dut.reset                                     0         0             0
+     8 \bad_io_deq_bits                                   0         0            00
+     8 \bad_io_deq_valid                                  1         1             1
+     8 \bad_io_enq_ready                                  1         1             1
+     8 \clock                                             0         0             0
+     8 \gold_dut._ram_ext_R0_data                         2         2            10
+     8 \gold_dut.clock                                    0         0             0
+     8 \gold_dut.deq_ptr_value                            4         4           100
+     8 \gold_dut.do_deq                                   0         0             0
+     8 \gold_dut.do_enq                                   1         1             1
+     8 \gold_dut.empty                                    1         1             1
+     8 \gold_dut.enq_ptr_value                            4         4           100
+     8 \gold_dut.full                                     0         0             0
+     8 \gold_dut.io_deq_bits                              0         0            00
+     8 \gold_dut.io_deq_ready                             0         0             0
+     8 \gold_dut.io_deq_valid                             1         1             1
+     8 \gold_dut.io_deq_valid_0                           1         1             1
+     8 \gold_dut.io_enq_bits                              0         0            00
+     8 \gold_dut.io_enq_ready                             1         1             1
+     8 \gold_dut.io_enq_valid                             1         1             1
+     8 \gold_dut.maybe_full                               0         0             0
+     8 \gold_dut.ptr_match                                1         1             1
+     8 \gold_dut.ram_ext.Memory[0]                        3         3            11
+     8 \gold_dut.ram_ext.Memory[1]                        0         0            00
+     8 \gold_dut.ram_ext.Memory[2]                        2         2            10
+     8 \gold_dut.ram_ext.Memory[3]                        0         0            00
+     8 \gold_dut.ram_ext.Memory[4]                        2         2            10
+     8 \gold_dut.ram_ext.Memory[5]                        2         2            10
+     8 \gold_dut.ram_ext.R0_addr                          4         4           100
+     8 \gold_dut.ram_ext.R0_clk                           0         0             0
+     8 \gold_dut.ram_ext.R0_data                          2         2            10
+     8 \gold_dut.ram_ext.R0_en                            1         1             1
+     8 \gold_dut.ram_ext.W0_addr                          4         4           100
+     8 \gold_dut.ram_ext.W0_clk                           0         0             0
+     8 \gold_dut.ram_ext.W0_data                          0         0            00
+     8 \gold_dut.ram_ext.W0_en                            1         1             1
+     8 \gold_dut.reset                                    0         0             0
+     8 \gold_io_deq_bits                                  0         0            00
+     8 \gold_io_deq_valid                                 1         1             1
+     8 \gold_io_enq_ready                                 1         1             1
+     8 \io_deq_ready                                      0         0             0
+     8 \io_enq_bits                                       0         0            00
+     8 \io_enq_valid                                      1         1             1
+     8 \pilot_difference                                  0         0             0
+     8 \pilot_past_valid                                  1         1             1
+     8 \reset                                             0         0             0
+  ---- ---------------------------------------- ----------- --------- -------------
+     9 \bad_dut._ram_ext_R0_data                          0         0            00
+     9 \bad_dut.clock                                     0         0             0
+     9 \bad_dut.deq_ptr_value                             4         4           100
+     9 \bad_dut.do_deq                                    0         0             0
+     9 \bad_dut.do_enq                                    0         0             0
+     9 \bad_dut.empty                                     0         0             0
+     9 \bad_dut.enq_ptr_value                             5         5           101
+     9 \bad_dut.full                                      0         0             0
+     9 \bad_dut.io_deq_bits                               0         0            00
+     9 \bad_dut.io_deq_ready                              0         0             0
+     9 \bad_dut.io_deq_valid                              1         1             1
+     9 \bad_dut.io_deq_valid_0                            1         1             1
+     9 \bad_dut.io_enq_bits                               0         0            00
+     9 \bad_dut.io_enq_ready                              1         1             1
+     9 \bad_dut.io_enq_valid                              0         0             0
+     9 \bad_dut.maybe_full                                1         1             1
+     9 \bad_dut.ptr_match                                 0         0             0
+     9 \bad_dut.ram_ext.Memory[0]                         3         3            11
+     9 \bad_dut.ram_ext.Memory[1]                         0         0            00
+     9 \bad_dut.ram_ext.Memory[2]                         2         2            10
+     9 \bad_dut.ram_ext.Memory[3]                         0         0            00
+     9 \bad_dut.ram_ext.Memory[4]                         0         0            00
+     9 \bad_dut.ram_ext.Memory[5]                         0         0            00
+     9 \bad_dut.ram_ext.R0_addr                           4         4           100
+     9 \bad_dut.ram_ext.R0_clk                            0         0             0
+     9 \bad_dut.ram_ext.R0_data                           0         0            00
+     9 \bad_dut.ram_ext.R0_en                             1         1             1
+     9 \bad_dut.ram_ext.W0_addr                           5         5           101
+     9 \bad_dut.ram_ext.W0_clk                            0         0             0
+     9 \bad_dut.ram_ext.W0_data                           0         0            00
+     9 \bad_dut.ram_ext.W0_en                             0         0             0
+     9 \bad_dut.reset                                     0         0             0
+     9 \bad_io_deq_bits                                   0         0            00
+     9 \bad_io_deq_valid                                  1         1             1
+     9 \bad_io_enq_ready                                  1         1             1
+     9 \clock                                             0         0             0
+     9 \gold_dut._ram_ext_R0_data                         0         0            00
+     9 \gold_dut.clock                                    0         0             0
+     9 \gold_dut.deq_ptr_value                            4         4           100
+     9 \gold_dut.do_deq                                   0         0             0
+     9 \gold_dut.do_enq                                   0         0             0
+     9 \gold_dut.empty                                    0         0             0
+     9 \gold_dut.enq_ptr_value                            5         5           101
+     9 \gold_dut.full                                     0         0             0
+     9 \gold_dut.io_deq_bits                              0         0            00
+     9 \gold_dut.io_deq_ready                             0         0             0
+     9 \gold_dut.io_deq_valid                             1         1             1
+     9 \gold_dut.io_deq_valid_0                           1         1             1
+     9 \gold_dut.io_enq_bits                              0         0            00
+     9 \gold_dut.io_enq_ready                             1         1             1
+     9 \gold_dut.io_enq_valid                             0         0             0
+     9 \gold_dut.maybe_full                               1         1             1
+     9 \gold_dut.ptr_match                                0         0             0
+     9 \gold_dut.ram_ext.Memory[0]                        3         3            11
+     9 \gold_dut.ram_ext.Memory[1]                        0         0            00
+     9 \gold_dut.ram_ext.Memory[2]                        2         2            10
+     9 \gold_dut.ram_ext.Memory[3]                        0         0            00
+     9 \gold_dut.ram_ext.Memory[4]                        0         0            00
+     9 \gold_dut.ram_ext.Memory[5]                        2         2            10
+     9 \gold_dut.ram_ext.R0_addr                          4         4           100
+     9 \gold_dut.ram_ext.R0_clk                           0         0             0
+     9 \gold_dut.ram_ext.R0_data                          0         0            00
+     9 \gold_dut.ram_ext.R0_en                            1         1             1
+     9 \gold_dut.ram_ext.W0_addr                          5         5           101
+     9 \gold_dut.ram_ext.W0_clk                           0         0             0
+     9 \gold_dut.ram_ext.W0_data                          0         0            00
+     9 \gold_dut.ram_ext.W0_en                            0         0             0
+     9 \gold_dut.reset                                    0         0             0
+     9 \gold_io_deq_bits                                  0         0            00
+     9 \gold_io_deq_valid                                 1         1             1
+     9 \gold_io_enq_ready                                 1         1             1
+     9 \io_deq_ready                                      0         0             0
+     9 \io_enq_bits                                       0         0            00
+     9 \io_enq_valid                                      0         0             0
+     9 \pilot_difference                                  0         0             0
+     9 \pilot_past_valid                                  1         1             1
+     9 \reset                                             0         0             0
+  ---- ---------------------------------------- ----------- --------- -------------
+    10 \bad_dut._ram_ext_R0_data                          0         0            00
+    10 \bad_dut.clock                                     0         0             0
+    10 \bad_dut.deq_ptr_value                             4         4           100
+    10 \bad_dut.do_deq                                    0         0             0
+    10 \bad_dut.do_enq                                    1         1             1
+    10 \bad_dut.empty                                     0         0             0
+    10 \bad_dut.enq_ptr_value                             5         5           101
+    10 \bad_dut.full                                      0         0             0
+    10 \bad_dut.io_deq_bits                               0         0            00
+    10 \bad_dut.io_deq_ready                              0         0             0
+    10 \bad_dut.io_deq_valid                              1         1             1
+    10 \bad_dut.io_deq_valid_0                            1         1             1
+    10 \bad_dut.io_enq_bits                               3         3            11
+    10 \bad_dut.io_enq_ready                              1         1             1
+    10 \bad_dut.io_enq_valid                              1         1             1
+    10 \bad_dut.maybe_full                                1         1             1
+    10 \bad_dut.ptr_match                                 0         0             0
+    10 \bad_dut.ram_ext.Memory[0]                         3         3            11
+    10 \bad_dut.ram_ext.Memory[1]                         0         0            00
+    10 \bad_dut.ram_ext.Memory[2]                         2         2            10
+    10 \bad_dut.ram_ext.Memory[3]                         0         0            00
+    10 \bad_dut.ram_ext.Memory[4]                         0         0            00
+    10 \bad_dut.ram_ext.Memory[5]                         0         0            00
+    10 \bad_dut.ram_ext.R0_addr                           4         4           100
+    10 \bad_dut.ram_ext.R0_clk                            0         0             0
+    10 \bad_dut.ram_ext.R0_data                           0         0            00
+    10 \bad_dut.ram_ext.R0_en                             1         1             1
+    10 \bad_dut.ram_ext.W0_addr                           5         5           101
+    10 \bad_dut.ram_ext.W0_clk                            0         0             0
+    10 \bad_dut.ram_ext.W0_data                           3         3            11
+    10 \bad_dut.ram_ext.W0_en                             1         1             1
+    10 \bad_dut.reset                                     0         0             0
+    10 \bad_io_deq_bits                                   0         0            00
+    10 \bad_io_deq_valid                                  1         1             1
+    10 \bad_io_enq_ready                                  1         1             1
+    10 \clock                                             0         0             0
+    10 \gold_dut._ram_ext_R0_data                         0         0            00
+    10 \gold_dut.clock                                    0         0             0
+    10 \gold_dut.deq_ptr_value                            4         4           100
+    10 \gold_dut.do_deq                                   0         0             0
+    10 \gold_dut.do_enq                                   1         1             1
+    10 \gold_dut.empty                                    0         0             0
+    10 \gold_dut.enq_ptr_value                            5         5           101
+    10 \gold_dut.full                                     0         0             0
+    10 \gold_dut.io_deq_bits                              0         0            00
+    10 \gold_dut.io_deq_ready                             0         0             0
+    10 \gold_dut.io_deq_valid                             1         1             1
+    10 \gold_dut.io_deq_valid_0                           1         1             1
+    10 \gold_dut.io_enq_bits                              3         3            11
+    10 \gold_dut.io_enq_ready                             1         1             1
+    10 \gold_dut.io_enq_valid                             1         1             1
+    10 \gold_dut.maybe_full                               1         1             1
+    10 \gold_dut.ptr_match                                0         0             0
+    10 \gold_dut.ram_ext.Memory[0]                        3         3            11
+    10 \gold_dut.ram_ext.Memory[1]                        0         0            00
+    10 \gold_dut.ram_ext.Memory[2]                        2         2            10
+    10 \gold_dut.ram_ext.Memory[3]                        0         0            00
+    10 \gold_dut.ram_ext.Memory[4]                        0         0            00
+    10 \gold_dut.ram_ext.Memory[5]                        2         2            10
+    10 \gold_dut.ram_ext.R0_addr                          4         4           100
+    10 \gold_dut.ram_ext.R0_clk                           0         0             0
+    10 \gold_dut.ram_ext.R0_data                          0         0            00
+    10 \gold_dut.ram_ext.R0_en                            1         1             1
+    10 \gold_dut.ram_ext.W0_addr                          5         5           101
+    10 \gold_dut.ram_ext.W0_clk                           0         0             0
+    10 \gold_dut.ram_ext.W0_data                          3         3            11
+    10 \gold_dut.ram_ext.W0_en                            1         1             1
+    10 \gold_dut.reset                                    0         0             0
+    10 \gold_io_deq_bits                                  0         0            00
+    10 \gold_io_deq_valid                                 1         1             1
+    10 \gold_io_enq_ready                                 1         1             1
+    10 \io_deq_ready                                      0         0             0
+    10 \io_enq_bits                                       3         3            11
+    10 \io_enq_valid                                      1         1             1
+    10 \pilot_difference                                  0         0             0
+    10 \pilot_past_valid                                  1         1             1
+    10 \reset                                             0         0             0
+  ---- ---------------------------------------- ----------- --------- -------------
+    11 \bad_dut._ram_ext_R0_data                          0         0            00
+    11 \bad_dut.clock                                     0         0             0
+    11 \bad_dut.deq_ptr_value                             4         4           100
+    11 \bad_dut.do_deq                                    1         1             1
+    11 \bad_dut.do_enq                                    0         0             0
+    11 \bad_dut.empty                                     0         0             0
+    11 \bad_dut.enq_ptr_value                             6         6           110
+    11 \bad_dut.full                                      0         0             0
+    11 \bad_dut.io_deq_bits                               0         0            00
+    11 \bad_dut.io_deq_ready                              1         1             1
+    11 \bad_dut.io_deq_valid                              1         1             1
+    11 \bad_dut.io_deq_valid_0                            1         1             1
+    11 \bad_dut.io_enq_bits                               0         0            00
+    11 \bad_dut.io_enq_ready                              1         1             1
+    11 \bad_dut.io_enq_valid                              0         0             0
+    11 \bad_dut.maybe_full                                1         1             1
+    11 \bad_dut.ptr_match                                 0         0             0
+    11 \bad_dut.ram_ext.Memory[0]                         3         3            11
+    11 \bad_dut.ram_ext.Memory[1]                         0         0            00
+    11 \bad_dut.ram_ext.Memory[2]                         2         2            10
+    11 \bad_dut.ram_ext.Memory[3]                         0         0            00
+    11 \bad_dut.ram_ext.Memory[4]                         0         0            00
+    11 \bad_dut.ram_ext.Memory[5]                         3         3            11
+    11 \bad_dut.ram_ext.R0_addr                           4         4           100
+    11 \bad_dut.ram_ext.R0_clk                            0         0             0
+    11 \bad_dut.ram_ext.R0_data                           0         0            00
+    11 \bad_dut.ram_ext.R0_en                             1         1             1
+    11 \bad_dut.ram_ext.W0_addr                           6         6           110
+    11 \bad_dut.ram_ext.W0_clk                            0         0             0
+    11 \bad_dut.ram_ext.W0_data                           0         0            00
+    11 \bad_dut.ram_ext.W0_en                             0         0             0
+    11 \bad_dut.reset                                     0         0             0
+    11 \bad_io_deq_bits                                   0         0            00
+    11 \bad_io_deq_valid                                  1         1             1
+    11 \bad_io_enq_ready                                  1         1             1
+    11 \clock                                             0         0             0
+    11 \gold_dut._ram_ext_R0_data                         0         0            00
+    11 \gold_dut.clock                                    0         0             0
+    11 \gold_dut.deq_ptr_value                            4         4           100
+    11 \gold_dut.do_deq                                   1         1             1
+    11 \gold_dut.do_enq                                   0         0             0
+    11 \gold_dut.empty                                    0         0             0
+    11 \gold_dut.enq_ptr_value                            0         0           000
+    11 \gold_dut.full                                     0         0             0
+    11 \gold_dut.io_deq_bits                              0         0            00
+    11 \gold_dut.io_deq_ready                             1         1             1
+    11 \gold_dut.io_deq_valid                             1         1             1
+    11 \gold_dut.io_deq_valid_0                           1         1             1
+    11 \gold_dut.io_enq_bits                              0         0            00
+    11 \gold_dut.io_enq_ready                             1         1             1
+    11 \gold_dut.io_enq_valid                             0         0             0
+    11 \gold_dut.maybe_full                               1         1             1
+    11 \gold_dut.ptr_match                                0         0             0
+    11 \gold_dut.ram_ext.Memory[0]                        3         3            11
+    11 \gold_dut.ram_ext.Memory[1]                        0         0            00
+    11 \gold_dut.ram_ext.Memory[2]                        2         2            10
+    11 \gold_dut.ram_ext.Memory[3]                        0         0            00
+    11 \gold_dut.ram_ext.Memory[4]                        0         0            00
+    11 \gold_dut.ram_ext.Memory[5]                        3         3            11
+    11 \gold_dut.ram_ext.R0_addr                          4         4           100
+    11 \gold_dut.ram_ext.R0_clk                           0         0             0
+    11 \gold_dut.ram_ext.R0_data                          0         0            00
+    11 \gold_dut.ram_ext.R0_en                            1         1             1
+    11 \gold_dut.ram_ext.W0_addr                          0         0           000
+    11 \gold_dut.ram_ext.W0_clk                           0         0             0
+    11 \gold_dut.ram_ext.W0_data                          0         0            00
+    11 \gold_dut.ram_ext.W0_en                            0         0             0
+    11 \gold_dut.reset                                    0         0             0
+    11 \gold_io_deq_bits                                  0         0            00
+    11 \gold_io_deq_valid                                 1         1             1
+    11 \gold_io_enq_ready                                 1         1             1
+    11 \io_deq_ready                                      1         1             1
+    11 \io_enq_bits                                       0         0            00
+    11 \io_enq_valid                                      0         0             0
+    11 \pilot_difference                                  0         0             0
+    11 \pilot_past_valid                                  1         1             1
+    11 \reset                                             0         0             0
+  ---- ---------------------------------------- ----------- --------- -------------
+    12 \bad_dut._ram_ext_R0_data                          3         3            11
+    12 \bad_dut.clock                                     0         0             0
+    12 \bad_dut.deq_ptr_value                             5         5           101
+    12 \bad_dut.do_deq                                    0         0             0
+    12 \bad_dut.do_enq                                    0         0             0
+    12 \bad_dut.empty                                     0         0             0
+    12 \bad_dut.enq_ptr_value                             6         6           110
+    12 \bad_dut.full                                      0         0             0
+    12 \bad_dut.io_deq_bits                               3         3            11
+    12 \bad_dut.io_deq_ready                              0         0             0
+    12 \bad_dut.io_deq_valid                              1         1             1
+    12 \bad_dut.io_deq_valid_0                            1         1             1
+    12 \bad_dut.io_enq_bits                               0         0            00
+    12 \bad_dut.io_enq_ready                              1         1             1
+    12 \bad_dut.io_enq_valid                              0         0             0
+    12 \bad_dut.maybe_full                                0         0             0
+    12 \bad_dut.ptr_match                                 0         0             0
+    12 \bad_dut.ram_ext.Memory[0]                         3         3            11
+    12 \bad_dut.ram_ext.Memory[1]                         0         0            00
+    12 \bad_dut.ram_ext.Memory[2]                         2         2            10
+    12 \bad_dut.ram_ext.Memory[3]                         0         0            00
+    12 \bad_dut.ram_ext.Memory[4]                         0         0            00
+    12 \bad_dut.ram_ext.Memory[5]                         3         3            11
+    12 \bad_dut.ram_ext.R0_addr                           5         5           101
+    12 \bad_dut.ram_ext.R0_clk                            0         0             0
+    12 \bad_dut.ram_ext.R0_data                           3         3            11
+    12 \bad_dut.ram_ext.R0_en                             1         1             1
+    12 \bad_dut.ram_ext.W0_addr                           6         6           110
+    12 \bad_dut.ram_ext.W0_clk                            0         0             0
+    12 \bad_dut.ram_ext.W0_data                           0         0            00
+    12 \bad_dut.ram_ext.W0_en                             0         0             0
+    12 \bad_dut.reset                                     0         0             0
+    12 \bad_io_deq_bits                                   3         3            11
+    12 \bad_io_deq_valid                                  1         1             1
+    12 \bad_io_enq_ready                                  1         1             1
+    12 \clock                                             0         0             0
+    12 \gold_dut._ram_ext_R0_data                         3         3            11
+    12 \gold_dut.clock                                    0         0             0
+    12 \gold_dut.deq_ptr_value                            5         5           101
+    12 \gold_dut.do_deq                                   0         0             0
+    12 \gold_dut.do_enq                                   0         0             0
+    12 \gold_dut.empty                                    0         0             0
+    12 \gold_dut.enq_ptr_value                            0         0           000
+    12 \gold_dut.full                                     0         0             0
+    12 \gold_dut.io_deq_bits                              3         3            11
+    12 \gold_dut.io_deq_ready                             0         0             0
+    12 \gold_dut.io_deq_valid                             1         1             1
+    12 \gold_dut.io_deq_valid_0                           1         1             1
+    12 \gold_dut.io_enq_bits                              0         0            00
+    12 \gold_dut.io_enq_ready                             1         1             1
+    12 \gold_dut.io_enq_valid                             0         0             0
+    12 \gold_dut.maybe_full                               0         0             0
+    12 \gold_dut.ptr_match                                0         0             0
+    12 \gold_dut.ram_ext.Memory[0]                        3         3            11
+    12 \gold_dut.ram_ext.Memory[1]                        0         0            00
+    12 \gold_dut.ram_ext.Memory[2]                        2         2            10
+    12 \gold_dut.ram_ext.Memory[3]                        0         0            00
+    12 \gold_dut.ram_ext.Memory[4]                        0         0            00
+    12 \gold_dut.ram_ext.Memory[5]                        3         3            11
+    12 \gold_dut.ram_ext.R0_addr                          5         5           101
+    12 \gold_dut.ram_ext.R0_clk                           0         0             0
+    12 \gold_dut.ram_ext.R0_data                          3         3            11
+    12 \gold_dut.ram_ext.R0_en                            1         1             1
+    12 \gold_dut.ram_ext.W0_addr                          0         0           000
+    12 \gold_dut.ram_ext.W0_clk                           0         0             0
+    12 \gold_dut.ram_ext.W0_data                          0         0            00
+    12 \gold_dut.ram_ext.W0_en                            0         0             0
+    12 \gold_dut.reset                                    0         0             0
+    12 \gold_io_deq_bits                                  3         3            11
+    12 \gold_io_deq_valid                                 1         1             1
+    12 \gold_io_enq_ready                                 1         1             1
+    12 \io_deq_ready                                      0         0             0
+    12 \io_enq_bits                                       0         0            00
+    12 \io_enq_valid                                      0         0             0
+    12 \pilot_difference                                  0         0             0
+    12 \pilot_past_valid                                  1         1             1
+    12 \reset                                             0         0             0
+  ---- ---------------------------------------- ----------- --------- -------------
+    13 \bad_dut._ram_ext_R0_data                          3         3            11
+    13 \bad_dut.clock                                     0         0             0
+    13 \bad_dut.deq_ptr_value                             5         5           101
+    13 \bad_dut.do_deq                                    1         1             1
+    13 \bad_dut.do_enq                                    0         0             0
+    13 \bad_dut.empty                                     0         0             0
+    13 \bad_dut.enq_ptr_value                             6         6           110
+    13 \bad_dut.full                                      0         0             0
+    13 \bad_dut.io_deq_bits                               3         3            11
+    13 \bad_dut.io_deq_ready                              1         1             1
+    13 \bad_dut.io_deq_valid                              1         1             1
+    13 \bad_dut.io_deq_valid_0                            1         1             1
+    13 \bad_dut.io_enq_bits                               3         3            11
+    13 \bad_dut.io_enq_ready                              1         1             1
+    13 \bad_dut.io_enq_valid                              0         0             0
+    13 \bad_dut.maybe_full                                0         0             0
+    13 \bad_dut.ptr_match                                 0         0             0
+    13 \bad_dut.ram_ext.Memory[0]                         3         3            11
+    13 \bad_dut.ram_ext.Memory[1]                         0         0            00
+    13 \bad_dut.ram_ext.Memory[2]                         2         2            10
+    13 \bad_dut.ram_ext.Memory[3]                         0         0            00
+    13 \bad_dut.ram_ext.Memory[4]                         0         0            00
+    13 \bad_dut.ram_ext.Memory[5]                         3         3            11
+    13 \bad_dut.ram_ext.R0_addr                           5         5           101
+    13 \bad_dut.ram_ext.R0_clk                            0         0             0
+    13 \bad_dut.ram_ext.R0_data                           3         3            11
+    13 \bad_dut.ram_ext.R0_en                             1         1             1
+    13 \bad_dut.ram_ext.W0_addr                           6         6           110
+    13 \bad_dut.ram_ext.W0_clk                            0         0             0
+    13 \bad_dut.ram_ext.W0_data                           3         3            11
+    13 \bad_dut.ram_ext.W0_en                             0         0             0
+    13 \bad_dut.reset                                     0         0             0
+    13 \bad_io_deq_bits                                   3         3            11
+    13 \bad_io_deq_valid                                  1         1             1
+    13 \bad_io_enq_ready                                  1         1             1
+    13 \clock                                             0         0             0
+    13 \gold_dut._ram_ext_R0_data                         3         3            11
+    13 \gold_dut.clock                                    0         0             0
+    13 \gold_dut.deq_ptr_value                            5         5           101
+    13 \gold_dut.do_deq                                   1         1             1
+    13 \gold_dut.do_enq                                   0         0             0
+    13 \gold_dut.empty                                    0         0             0
+    13 \gold_dut.enq_ptr_value                            0         0           000
+    13 \gold_dut.full                                     0         0             0
+    13 \gold_dut.io_deq_bits                              3         3            11
+    13 \gold_dut.io_deq_ready                             1         1             1
+    13 \gold_dut.io_deq_valid                             1         1             1
+    13 \gold_dut.io_deq_valid_0                           1         1             1
+    13 \gold_dut.io_enq_bits                              3         3            11
+    13 \gold_dut.io_enq_ready                             1         1             1
+    13 \gold_dut.io_enq_valid                             0         0             0
+    13 \gold_dut.maybe_full                               0         0             0
+    13 \gold_dut.ptr_match                                0         0             0
+    13 \gold_dut.ram_ext.Memory[0]                        3         3            11
+    13 \gold_dut.ram_ext.Memory[1]                        0         0            00
+    13 \gold_dut.ram_ext.Memory[2]                        2         2            10
+    13 \gold_dut.ram_ext.Memory[3]                        0         0            00
+    13 \gold_dut.ram_ext.Memory[4]                        0         0            00
+    13 \gold_dut.ram_ext.Memory[5]                        3         3            11
+    13 \gold_dut.ram_ext.R0_addr                          5         5           101
+    13 \gold_dut.ram_ext.R0_clk                           0         0             0
+    13 \gold_dut.ram_ext.R0_data                          3         3            11
+    13 \gold_dut.ram_ext.R0_en                            1         1             1
+    13 \gold_dut.ram_ext.W0_addr                          0         0           000
+    13 \gold_dut.ram_ext.W0_clk                           0         0             0
+    13 \gold_dut.ram_ext.W0_data                          3         3            11
+    13 \gold_dut.ram_ext.W0_en                            0         0             0
+    13 \gold_dut.reset                                    0         0             0
+    13 \gold_io_deq_bits                                  3         3            11
+    13 \gold_io_deq_valid                                 1         1             1
+    13 \gold_io_enq_ready                                 1         1             1
+    13 \io_deq_ready                                      1         1             1
+    13 \io_enq_bits                                       3         3            11
+    13 \io_enq_valid                                      0         0             0
+    13 \pilot_difference                                  0         0             0
+    13 \pilot_past_valid                                  1         1             1
+    13 \reset                                             0         0             0
+  ---- ---------------------------------------- ----------- --------- -------------
+    14 \bad_dut._ram_ext_R0_data                          3         3            11
+    14 \bad_dut.clock                                     0         0             0
+    14 \bad_dut.deq_ptr_value                             0         0           000
+    14 \bad_dut.do_deq                                    0         0             0
+    14 \bad_dut.do_enq                                    1         1             1
+    14 \bad_dut.empty                                     0         0             0
+    14 \bad_dut.enq_ptr_value                             6         6           110
+    14 \bad_dut.full                                      0         0             0
+    14 \bad_dut.io_deq_bits                               3         3            11
+    14 \bad_dut.io_deq_ready                              0         0             0
+    14 \bad_dut.io_deq_valid                              1         1             1
+    14 \bad_dut.io_deq_valid_0                            1         1             1
+    14 \bad_dut.io_enq_bits                               1         1            01
+    14 \bad_dut.io_enq_ready                              1         1             1
+    14 \bad_dut.io_enq_valid                              1         1             1
+    14 \bad_dut.maybe_full                                0         0             0
+    14 \bad_dut.ptr_match                                 0         0             0
+    14 \bad_dut.ram_ext.Memory[0]                         3         3            11
+    14 \bad_dut.ram_ext.Memory[1]                         0         0            00
+    14 \bad_dut.ram_ext.Memory[2]                         2         2            10
+    14 \bad_dut.ram_ext.Memory[3]                         0         0            00
+    14 \bad_dut.ram_ext.Memory[4]                         0         0            00
+    14 \bad_dut.ram_ext.Memory[5]                         3         3            11
+    14 \bad_dut.ram_ext.R0_addr                           0         0           000
+    14 \bad_dut.ram_ext.R0_clk                            0         0             0
+    14 \bad_dut.ram_ext.R0_data                           3         3            11
+    14 \bad_dut.ram_ext.R0_en                             1         1             1
+    14 \bad_dut.ram_ext.W0_addr                           6         6           110
+    14 \bad_dut.ram_ext.W0_clk                            0         0             0
+    14 \bad_dut.ram_ext.W0_data                           1         1            01
+    14 \bad_dut.ram_ext.W0_en                             1         1             1
+    14 \bad_dut.reset                                     0         0             0
+    14 \bad_io_deq_bits                                   3         3            11
+    14 \bad_io_deq_valid                                  1         1             1
+    14 \bad_io_enq_ready                                  1         1             1
+    14 \clock                                             0         0             0
+    14 \gold_dut._ram_ext_R0_data                         3         3            11
+    14 \gold_dut.clock                                    0         0             0
+    14 \gold_dut.deq_ptr_value                            0         0           000
+    14 \gold_dut.do_deq                                   0         0             0
+    14 \gold_dut.do_enq                                   1         1             1
+    14 \gold_dut.empty                                    1         1             1
+    14 \gold_dut.enq_ptr_value                            0         0           000
+    14 \gold_dut.full                                     0         0             0
+    14 \gold_dut.io_deq_bits                              1         1            01
+    14 \gold_dut.io_deq_ready                             0         0             0
+    14 \gold_dut.io_deq_valid                             1         1             1
+    14 \gold_dut.io_deq_valid_0                           1         1             1
+    14 \gold_dut.io_enq_bits                              1         1            01
+    14 \gold_dut.io_enq_ready                             1         1             1
+    14 \gold_dut.io_enq_valid                             1         1             1
+    14 \gold_dut.maybe_full                               0         0             0
+    14 \gold_dut.ptr_match                                1         1             1
+    14 \gold_dut.ram_ext.Memory[0]                        3         3            11
+    14 \gold_dut.ram_ext.Memory[1]                        0         0            00
+    14 \gold_dut.ram_ext.Memory[2]                        2         2            10
+    14 \gold_dut.ram_ext.Memory[3]                        0         0            00
+    14 \gold_dut.ram_ext.Memory[4]                        0         0            00
+    14 \gold_dut.ram_ext.Memory[5]                        3         3            11
+    14 \gold_dut.ram_ext.R0_addr                          0         0           000
+    14 \gold_dut.ram_ext.R0_clk                           0         0             0
+    14 \gold_dut.ram_ext.R0_data                          3         3            11
+    14 \gold_dut.ram_ext.R0_en                            1         1             1
+    14 \gold_dut.ram_ext.W0_addr                          0         0           000
+    14 \gold_dut.ram_ext.W0_clk                           0         0             0
+    14 \gold_dut.ram_ext.W0_data                          1         1            01
+    14 \gold_dut.ram_ext.W0_en                            1         1             1
+    14 \gold_dut.reset                                    0         0             0
+    14 \gold_io_deq_bits                                  1         1            01
+    14 \gold_io_deq_valid                                 1         1             1
+    14 \gold_io_enq_ready                                 1         1             1
+    14 \io_deq_ready                                      0         0             0
+    14 \io_enq_bits                                       1         1            01
+    14 \io_enq_valid                                      1         1             1
+    14 \pilot_difference                                  1         1             1
+    14 \pilot_past_valid                                  1         1             1
+    14 \reset                                             0         0             0
+  ---- ---------------------------------------- ----------- --------- -------------
+    15 \bad_dut._ram_ext_R0_data                          3         3            11
+    15 \bad_dut.clock                                     0         0             0
+    15 \bad_dut.deq_ptr_value                             0         0           000
+    15 \bad_dut.do_deq                                    0         0             0
+    15 \bad_dut.do_enq                                    0         0             0
+    15 \bad_dut.empty                                     1         1             1
+    15 \bad_dut.enq_ptr_value                             0         0           000
+    15 \bad_dut.full                                      0         0             0
+    15 \bad_dut.io_deq_bits                               2         2            10
+    15 \bad_dut.io_deq_ready                              1         1             1
+    15 \bad_dut.io_deq_valid                              1         1             1
+    15 \bad_dut.io_deq_valid_0                            1         1             1
+    15 \bad_dut.io_enq_bits                               2         2            10
+    15 \bad_dut.io_enq_ready                              1         1             1
+    15 \bad_dut.io_enq_valid                              1         1             1
+    15 \bad_dut.maybe_full                                0         0             0
+    15 \bad_dut.ptr_match                                 1         1             1
+    15 \bad_dut.ram_ext.Memory[0]                         3         3            11
+    15 \bad_dut.ram_ext.Memory[1]                         0         0            00
+    15 \bad_dut.ram_ext.Memory[2]                         2         2            10
+    15 \bad_dut.ram_ext.Memory[3]                         0         0            00
+    15 \bad_dut.ram_ext.Memory[4]                         0         0            00
+    15 \bad_dut.ram_ext.Memory[5]                         3         3            11
+    15 \bad_dut.ram_ext.R0_addr                           0         0           000
+    15 \bad_dut.ram_ext.R0_clk                            0         0             0
+    15 \bad_dut.ram_ext.R0_data                           3         3            11
+    15 \bad_dut.ram_ext.R0_en                             1         1             1
+    15 \bad_dut.ram_ext.W0_addr                           0         0           000
+    15 \bad_dut.ram_ext.W0_clk                            0         0             0
+    15 \bad_dut.ram_ext.W0_data                           2         2            10
+    15 \bad_dut.ram_ext.W0_en                             0         0             0
+    15 \bad_dut.reset                                     1         1             1
+    15 \bad_io_deq_bits                                   2         2            10
+    15 \bad_io_deq_valid                                  1         1             1
+    15 \bad_io_enq_ready                                  1         1             1
+    15 \clock                                             0         0             0
+    15 \gold_dut._ram_ext_R0_data                         1         1            01
+    15 \gold_dut.clock                                    0         0             0
+    15 \gold_dut.deq_ptr_value                            0         0           000
+    15 \gold_dut.do_deq                                   0         0             0
+    15 \gold_dut.do_enq                                   0         0             0
+    15 \gold_dut.empty                                    1         1             1
+    15 \gold_dut.enq_ptr_value                            0         0           000
+    15 \gold_dut.full                                     0         0             0
+    15 \gold_dut.io_deq_bits                              2         2            10
+    15 \gold_dut.io_deq_ready                             1         1             1
+    15 \gold_dut.io_deq_valid                             1         1             1
+    15 \gold_dut.io_deq_valid_0                           1         1             1
+    15 \gold_dut.io_enq_bits                              2         2            10
+    15 \gold_dut.io_enq_ready                             1         1             1
+    15 \gold_dut.io_enq_valid                             1         1             1
+    15 \gold_dut.maybe_full                               0         0             0
+    15 \gold_dut.ptr_match                                1         1             1
+    15 \gold_dut.ram_ext.Memory[0]                        1         1            01
+    15 \gold_dut.ram_ext.Memory[1]                        0         0            00
+    15 \gold_dut.ram_ext.Memory[2]                        2         2            10
+    15 \gold_dut.ram_ext.Memory[3]                        0         0            00
+    15 \gold_dut.ram_ext.Memory[4]                        0         0            00
+    15 \gold_dut.ram_ext.Memory[5]                        3         3            11
+    15 \gold_dut.ram_ext.R0_addr                          0         0           000
+    15 \gold_dut.ram_ext.R0_clk                           0         0             0
+    15 \gold_dut.ram_ext.R0_data                          1         1            01
+    15 \gold_dut.ram_ext.R0_en                            1         1             1
+    15 \gold_dut.ram_ext.W0_addr                          0         0           000
+    15 \gold_dut.ram_ext.W0_clk                           0         0             0
+    15 \gold_dut.ram_ext.W0_data                          2         2            10
+    15 \gold_dut.ram_ext.W0_en                            0         0             0
+    15 \gold_dut.reset                                    1         1             1
+    15 \gold_io_deq_bits                                  2         2            10
+    15 \gold_io_deq_valid                                 1         1             1
+    15 \gold_io_enq_ready                                 1         1             1
+    15 \io_deq_ready                                      1         1             1
+    15 \io_enq_bits                                       2         2            10
+    15 \io_enq_valid                                      1         1             1
+    15 \pilot_difference                                  0         0             0
+    15 \pilot_past_valid                                  1         1             1
+    15 \reset                                             1         1             1
+  ---- ---------------------------------------- ----------- --------- -------------
+    16 \bad_dut._ram_ext_R0_data                          3         3            11
+    16 \bad_dut.clock                                     0         0             0
+    16 \bad_dut.deq_ptr_value                             0         0           000
+    16 \bad_dut.do_deq                                    0         0             0
+    16 \bad_dut.do_enq                                    0         0             0
+    16 \bad_dut.empty                                     1         1             1
+    16 \bad_dut.enq_ptr_value                             0         0           000
+    16 \bad_dut.full                                      0         0             0
+    16 \bad_dut.io_deq_bits                               3         3            11
+    16 \bad_dut.io_deq_ready                              1         1             1
+    16 \bad_dut.io_deq_valid                              1         1             1
+    16 \bad_dut.io_deq_valid_0                            1         1             1
+    16 \bad_dut.io_enq_bits                               3         3            11
+    16 \bad_dut.io_enq_ready                              1         1             1
+    16 \bad_dut.io_enq_valid                              1         1             1
+    16 \bad_dut.maybe_full                                0         0             0
+    16 \bad_dut.ptr_match                                 1         1             1
+    16 \bad_dut.ram_ext.Memory[0]                         3         3            11
+    16 \bad_dut.ram_ext.Memory[1]                         0         0            00
+    16 \bad_dut.ram_ext.Memory[2]                         2         2            10
+    16 \bad_dut.ram_ext.Memory[3]                         0         0            00
+    16 \bad_dut.ram_ext.Memory[4]                         0         0            00
+    16 \bad_dut.ram_ext.Memory[5]                         3         3            11
+    16 \bad_dut.ram_ext.R0_addr                           0         0           000
+    16 \bad_dut.ram_ext.R0_clk                            0         0             0
+    16 \bad_dut.ram_ext.R0_data                           3         3            11
+    16 \bad_dut.ram_ext.R0_en                             1         1             1
+    16 \bad_dut.ram_ext.W0_addr                           0         0           000
+    16 \bad_dut.ram_ext.W0_clk                            0         0             0
+    16 \bad_dut.ram_ext.W0_data                           3         3            11
+    16 \bad_dut.ram_ext.W0_en                             0         0             0
+    16 \bad_dut.reset                                     1         1             1
+    16 \bad_io_deq_bits                                   3         3            11
+    16 \bad_io_deq_valid                                  1         1             1
+    16 \bad_io_enq_ready                                  1         1             1
+    16 \clock                                             0         0             0
+    16 \gold_dut._ram_ext_R0_data                         1         1            01
+    16 \gold_dut.clock                                    0         0             0
+    16 \gold_dut.deq_ptr_value                            0         0           000
+    16 \gold_dut.do_deq                                   0         0             0
+    16 \gold_dut.do_enq                                   0         0             0
+    16 \gold_dut.empty                                    1         1             1
+    16 \gold_dut.enq_ptr_value                            0         0           000
+    16 \gold_dut.full                                     0         0             0
+    16 \gold_dut.io_deq_bits                              3         3            11
+    16 \gold_dut.io_deq_ready                             1         1             1
+    16 \gold_dut.io_deq_valid                             1         1             1
+    16 \gold_dut.io_deq_valid_0                           1         1             1
+    16 \gold_dut.io_enq_bits                              3         3            11
+    16 \gold_dut.io_enq_ready                             1         1             1
+    16 \gold_dut.io_enq_valid                             1         1             1
+    16 \gold_dut.maybe_full                               0         0             0
+    16 \gold_dut.ptr_match                                1         1             1
+    16 \gold_dut.ram_ext.Memory[0]                        1         1            01
+    16 \gold_dut.ram_ext.Memory[1]                        0         0            00
+    16 \gold_dut.ram_ext.Memory[2]                        2         2            10
+    16 \gold_dut.ram_ext.Memory[3]                        0         0            00
+    16 \gold_dut.ram_ext.Memory[4]                        0         0            00
+    16 \gold_dut.ram_ext.Memory[5]                        3         3            11
+    16 \gold_dut.ram_ext.R0_addr                          0         0           000
+    16 \gold_dut.ram_ext.R0_clk                           0         0             0
+    16 \gold_dut.ram_ext.R0_data                          1         1            01
+    16 \gold_dut.ram_ext.R0_en                            1         1             1
+    16 \gold_dut.ram_ext.W0_addr                          0         0           000
+    16 \gold_dut.ram_ext.W0_clk                           0         0             0
+    16 \gold_dut.ram_ext.W0_data                          3         3            11
+    16 \gold_dut.ram_ext.W0_en                            0         0             0
+    16 \gold_dut.reset                                    1         1             1
+    16 \gold_io_deq_bits                                  3         3            11
+    16 \gold_io_deq_valid                                 1         1             1
+    16 \gold_io_enq_ready                                 1         1             1
+    16 \io_deq_ready                                      1         1             1
+    16 \io_enq_bits                                       3         3            11
+    16 \io_enq_valid                                      1         1             1
+    16 \pilot_difference                                  0         0             0
+    16 \pilot_past_valid                                  1         1             1
+    16 \reset                                             1         1             1
+Dumping SAT model to VCD file /nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/traces/M_Q6_WRAP__interface_difference.vcd
+Dumping SAT model to WaveJSON file '/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/traces/M_Q6_WRAP__interface_difference.json'.

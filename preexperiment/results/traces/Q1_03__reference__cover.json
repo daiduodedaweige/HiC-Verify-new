@@ -1,0 +1,27 @@
+{ "signal": [
+    { "name": "reset", "wave": "41.010..........1" },
+    { "name": "io_enq_valid", "wave": "401....01.....0.1" },
+    { "name": "io_enq_ready", "wave": "41.....01.....0.1" },
+    { "name": "io_enq_bits", "wave": "4==============..", "data": ["", "00000000", "00000001", "10000010", "00000100", "01110100", "10000011", "00000000", "10010011", "11011101", "00100010", "11011100", "00000011", "11111100", "00000000"] },
+    { "name": "io_deq_valid", "wave": "40....1.........0" },
+    { "name": "io_deq_ready", "wave": "401..0101.....0.1" },
+    { "name": "io_deq_bits", "wave": "4=.=====.======..", "data": ["", "00101110", "00000001", "10000010", "00000100", "01110100", "10000011", "10010011", "11011101", "00100010", "11011100", "00000011", "11111100"] },
+    { "name": "clock", "wave": "40..............." },
+    { "name": "ram", "wave": "=..=====.======..", "data": ["00101110", "00000001", "10000010", "00000100", "01110100", "10000011", "10010011", "11011101", "00100010", "11011100", "00000011", "11111100"] },
+    { "name": "pilot_past_valid", "wave": "0.1.............." },
+    { "name": "pilot_active", "wave": "0........10.....1" },
+    { "name": "$past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q1_03__reference__cover/design.sv:54$5$0", "wave": "=.=.=====.======.", "data": ["00000011", "00101110", "00000001", "10000010", "00000100", "01110100", "10000011", "10010011", "11011101", "00100010", "11011100", "00000011", "11111100"] },
+    { "name": "$past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q1_03__reference__cover/design.sv:54$4$0", "wave": "1.0.....10.....1." },
+    { "name": "$past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q1_03__reference__cover/design.sv:54$3$0", "wave": "0.1.010.........." },
+    { "name": "$past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q1_03__reference__cover/design.sv:53$2$0", "wave": "0.......10.....1." },
+    { "name": "$past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q1_03__reference__cover/design.sv:53$1$0", "wave": "1...010.........." },
+    { "name": "$auto$async2sync.cc:228:execute$72", "wave": "0...101.........." },
+    { "name": "$auto$async2sync.cc:110:execute$70", "wave": "1...010.........." },
+    { "name": "$auto$async2sync.cc:110:execute$64", "wave": "1.01............." },
+    { "name": "$auto$async2sync.cc:101:execute$66", "wave": "0.10............." },
+    { "name": "$auto$async2sync.cc:101:execute$60", "wave": "0......1........." }
+  ],
+  "config": {
+    "hscale": 2.00
+  }
+}

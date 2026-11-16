@@ -1,0 +1,556 @@
+
+-- Executing script file `/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/ARB_05__reference__assert/query.ys' --
+
+1. Executing Verilog-2005 frontend: /nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/ARB_05__reference__assert/design.sv
+Parsing formal SystemVerilog input from `/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/ARB_05__reference__assert/design.sv' to AST representation.
+Generating RTLIL representation for module `\XsRRArbiter'.
+Successfully finished Verilog frontend.
+
+2. Executing PREP pass.
+
+2.1. Executing HIERARCHY pass (managing design hierarchy).
+
+2.1.1. Analyzing design hierarchy..
+Top module:  \XsRRArbiter
+
+2.1.2. Analyzing design hierarchy..
+Top module:  \XsRRArbiter
+Removed 0 unused modules.
+Module XsRRArbiter directly or indirectly contains formal properties -> setting "keep" attribute.
+
+2.2. Executing PROC pass (convert processes to netlists).
+
+2.2.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+2.2.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 1 switch rules as full_case in process $proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/ARB_05__reference__assert/design.sv:36$11 in module XsRRArbiter.
+Removed a total of 0 dead cases.
+
+2.2.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 0 redundant assignments.
+Promoted 9 assignments to connections.
+
+2.2.4. Executing PROC_INIT pass (extract init attributes).
+Found init rule in `\XsRRArbiter.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/ARB_05__reference__assert/design.sv:71$51'.
+  Set init value: \pilot_active = 1'0
+Found init rule in `\XsRRArbiter.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/ARB_05__reference__assert/design.sv:66$50'.
+  Set init value: \pilot_past_valid = 1'0
+
+2.2.5. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \reset in `\XsRRArbiter.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/ARB_05__reference__assert/design.sv:36$11'.
+
+2.2.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~3 debug messages>
+
+2.2.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\XsRRArbiter.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/ARB_05__reference__assert/design.sv:71$51'.
+Creating decoders for process `\XsRRArbiter.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/ARB_05__reference__assert/design.sv:66$50'.
+Creating decoders for process `\XsRRArbiter.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/ARB_05__reference__assert/design.sv:72$29'.
+     1/1: $assert$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/ARB_05__reference__assert/design.sv:74$44_EN
+Creating decoders for process `\XsRRArbiter.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/ARB_05__reference__assert/design.sv:67$26'.
+     1/1: $assume$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/ARB_05__reference__assert/design.sv:69$28_EN
+Creating decoders for process `\XsRRArbiter.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/ARB_05__reference__assert/design.sv:36$11'.
+     1/1: $0\arb_ctrl_validMask_grantMask_lastGrant[0:0]
+
+2.2.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+2.2.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\XsRRArbiter.\pilot_active' using process `\XsRRArbiter.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/ARB_05__reference__assert/design.sv:72$29'.
+  created $dff cell `$procdff$58' with positive edge clock.
+Creating register for signal `\XsRRArbiter.$past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/ARB_05__reference__assert/design.sv:73$1$0' using process `\XsRRArbiter.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/ARB_05__reference__assert/design.sv:72$29'.
+  created $dff cell `$procdff$59' with positive edge clock.
+Creating register for signal `\XsRRArbiter.$past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/ARB_05__reference__assert/design.sv:73$2$0' using process `\XsRRArbiter.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/ARB_05__reference__assert/design.sv:72$29'.
+  created $dff cell `$procdff$60' with positive edge clock.
+Creating register for signal `\XsRRArbiter.$past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/ARB_05__reference__assert/design.sv:74$3$0' using process `\XsRRArbiter.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/ARB_05__reference__assert/design.sv:72$29'.
+  created $dff cell `$procdff$61' with positive edge clock.
+Creating register for signal `\XsRRArbiter.$past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/ARB_05__reference__assert/design.sv:74$4$0' using process `\XsRRArbiter.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/ARB_05__reference__assert/design.sv:72$29'.
+  created $dff cell `$procdff$62' with positive edge clock.
+Creating register for signal `\XsRRArbiter.$past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/ARB_05__reference__assert/design.sv:74$5$0' using process `\XsRRArbiter.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/ARB_05__reference__assert/design.sv:72$29'.
+  created $dff cell `$procdff$63' with positive edge clock.
+Creating register for signal `\XsRRArbiter.\pilot_past_valid' using process `\XsRRArbiter.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/ARB_05__reference__assert/design.sv:67$26'.
+  created $dff cell `$procdff$64' with positive edge clock.
+Creating register for signal `\XsRRArbiter.\arb_ctrl_validMask_grantMask_lastGrant' using process `\XsRRArbiter.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/ARB_05__reference__assert/design.sv:36$11'.
+  created $adff cell `$procdff$67' with positive edge clock and positive level reset.
+
+2.2.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+2.2.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Removing empty process `XsRRArbiter.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/ARB_05__reference__assert/design.sv:71$51'.
+Removing empty process `XsRRArbiter.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/ARB_05__reference__assert/design.sv:66$50'.
+Found and cleaned up 1 empty switch in `\XsRRArbiter.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/ARB_05__reference__assert/design.sv:72$29'.
+Removing empty process `XsRRArbiter.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/ARB_05__reference__assert/design.sv:72$29'.
+Found and cleaned up 1 empty switch in `\XsRRArbiter.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/ARB_05__reference__assert/design.sv:67$26'.
+Removing empty process `XsRRArbiter.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/ARB_05__reference__assert/design.sv:67$26'.
+Found and cleaned up 1 empty switch in `\XsRRArbiter.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/ARB_05__reference__assert/design.sv:36$11'.
+Removing empty process `XsRRArbiter.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/ARB_05__reference__assert/design.sv:36$11'.
+Cleaned up 3 empty switches.
+
+2.2.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module XsRRArbiter.
+<suppressed ~2 debug messages>
+
+2.3. Executing FUTURE pass.
+
+2.4. Executing OPT_EXPR pass (perform const folding).
+Optimizing module XsRRArbiter.
+
+2.5. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \XsRRArbiter..
+Removed 1 unused cells and 28 unused wires.
+<suppressed ~2 debug messages>
+
+2.6. Executing CHECK pass (checking for obvious problems).
+Checking module XsRRArbiter...
+Found and reported 0 problems.
+
+2.7. Executing OPT pass (performing simple optimizations).
+
+2.7.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module XsRRArbiter.
+
+2.7.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\XsRRArbiter'.
+<suppressed ~12 debug messages>
+Removed a total of 4 cells.
+
+2.7.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \XsRRArbiter..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~10 debug messages>
+
+2.7.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \XsRRArbiter.
+Performed a total of 0 changes.
+
+2.7.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\XsRRArbiter'.
+Removed a total of 0 cells.
+
+2.7.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \XsRRArbiter..
+Removed 0 unused cells and 4 unused wires.
+<suppressed ~1 debug messages>
+
+2.7.7. Executing OPT_EXPR pass (perform const folding).
+Optimizing module XsRRArbiter.
+
+2.7.8. Rerunning OPT passes. (Maybe there is more to do..)
+
+2.7.9. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \XsRRArbiter..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~10 debug messages>
+
+2.7.10. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \XsRRArbiter.
+Performed a total of 0 changes.
+
+2.7.11. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\XsRRArbiter'.
+Removed a total of 0 cells.
+
+2.7.12. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \XsRRArbiter..
+
+2.7.13. Executing OPT_EXPR pass (perform const folding).
+Optimizing module XsRRArbiter.
+
+2.7.14. Finished OPT passes. (There is nothing left to do.)
+
+2.8. Executing WREDUCE pass (reducing word size of cells).
+
+2.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \XsRRArbiter..
+
+2.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+2.11. Executing OPT pass (performing simple optimizations).
+
+2.11.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module XsRRArbiter.
+
+2.11.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\XsRRArbiter'.
+Removed a total of 0 cells.
+
+2.11.3. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \XsRRArbiter..
+
+2.11.4. Finished fast OPT passes.
+
+2.12. Printing statistics.
+
+=== XsRRArbiter ===
+
+   Number of wires:                 58
+   Number of wire bits:            502
+   Number of public wires:          32
+   Number of public wire bits:     476
+   Number of ports:                 26
+   Number of port bits:            470
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 42
+     $adff                           1
+     $and                            4
+     $check                          2
+     $dff                            7
+     $eq                             1
+     $logic_and                      5
+     $logic_not                      4
+     $logic_or                       1
+     $mux                           10
+     $not                            4
+     $or                             3
+
+2.13. Executing CHECK pass (checking for obvious problems).
+Checking module XsRRArbiter...
+Found and reported 0 problems.
+
+3. Executing FLATTEN pass (flatten design).
+
+4. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+
+5. Executing ASYNC2SYNC pass.
+Replacing XsRRArbiter.$procdff$67 ($adff): ARST=\reset, D=$0\arb_ctrl_validMask_grantMask_lastGrant[0:0], Q=\arb_ctrl_validMask_grantMask_lastGrant
+
+6. Executing DFFUNMAP pass (unmap clock enable and synchronous reset from FFs).
+
+7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \XsRRArbiter..
+Removed 6 unused cells and 6 unused wires.
+<suppressed ~7 debug messages>
+
+8. Executing SAT pass (solving SAT problems in the circuit).
+
+Setting up time step 1:
+Final constraint equation: { } = { }
+Imported 48 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:110:execute$78 when $auto$async2sync.cc:101:execute$74.
+Import set-constraint from init attribute: $auto$async2sync.cc:101:execute$68 = 1'0
+Import set-constraint from init attribute: $auto$async2sync.cc:101:execute$74 = 1'0
+Import set-constraint from init attribute: $auto$async2sync.cc:110:execute$72 = 1'1
+Import set-constraint from init attribute: $auto$async2sync.cc:110:execute$78 = 1'1
+Import set-constraint from init attribute: \pilot_active = 1'0
+Import set-constraint from init attribute: \pilot_past_valid = 1'0
+Final init constraint equation: { \pilot_past_valid \pilot_active $auto$async2sync.cc:110:execute$78 $auto$async2sync.cc:110:execute$72 $auto$async2sync.cc:101:execute$74 $auto$async2sync.cc:101:execute$68 } = 6'001100
+
+Setting up time step 2:
+Final constraint equation: { } = { }
+Imported 48 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:110:execute$78 when $auto$async2sync.cc:101:execute$74.
+
+Setting up time step 1:
+Final constraint equation: { } = { }
+Imported 48 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:110:execute$78 when $auto$async2sync.cc:101:execute$74.
+Import proof for assert: $auto$async2sync.cc:110:execute$72 when $auto$async2sync.cc:101:execute$68.
+
+** Trying induction with length 1 **
+
+Setting up time step 3:
+Final constraint equation: { } = { }
+Imported 48 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:110:execute$78 when $auto$async2sync.cc:101:execute$74.
+Import proof for assert: $auto$async2sync.cc:110:execute$72 when $auto$async2sync.cc:101:execute$68.
+Import show expression: \pilot_active
+Import show expression: \clock
+Import show expression: \io_in_0_bits_Payload
+Import show expression: \io_in_0_bits_QoS
+Import show expression: \io_in_0_bits_SrcID
+Import show expression: \io_in_0_bits_TgtID
+Import show expression: \io_in_0_bits_TgtRS
+Import show expression: \io_in_0_bits_TxnID
+Import show expression: \io_in_0_valid
+Import show expression: \io_in_1_bits_Payload
+Import show expression: \io_in_1_bits_QoS
+Import show expression: \io_in_1_bits_SrcID
+Import show expression: \io_in_1_bits_TgtID
+Import show expression: \io_in_1_bits_TgtRS
+Import show expression: \io_in_1_bits_TxnID
+Import show expression: \io_in_1_valid
+Import show expression: \io_out_ready
+Import show expression: \reset
+Import show expression: \io_in_0_ready
+Import show expression: \io_in_1_ready
+Import show expression: \io_out_bits_Payload
+Import show expression: \io_out_bits_QoS
+Import show expression: \io_out_bits_SrcID
+Import show expression: \io_out_bits_TgtID
+Import show expression: \io_out_bits_TgtRS
+Import show expression: \io_out_bits_TxnID
+Import show expression: \io_out_valid
+Import show expression: $auto$async2sync.cc:228:execute$80
+Import show expression: \pilot_past_valid
+Import show expression: $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/ARB_05__reference__assert/design.sv:74$5$0
+Import show expression: $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/ARB_05__reference__assert/design.sv:74$4$0
+Import show expression: $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/ARB_05__reference__assert/design.sv:74$3$0
+Import show expression: $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/ARB_05__reference__assert/design.sv:73$2$0
+Import show expression: $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/ARB_05__reference__assert/design.sv:73$1$0
+Import show expression: \pilot_active
+Import show expression: $auto$async2sync.cc:110:execute$78
+Import show expression: $auto$async2sync.cc:110:execute$72
+Import show expression: $auto$async2sync.cc:101:execute$74
+Import show expression: $auto$async2sync.cc:101:execute$68
+
+[base case 1] Solving problem with 4717 variables and 10166 clauses..
+Base case for induction length 1 proven.
+
+Setting up time step 2:
+Final constraint equation: { } = { }
+Imported 48 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:110:execute$78 when $auto$async2sync.cc:101:execute$74.
+Import proof for assert: $auto$async2sync.cc:110:execute$72 when $auto$async2sync.cc:101:execute$68.
+Import show expression: \pilot_active
+Import show expression: \clock
+Import show expression: \io_in_0_bits_Payload
+Import show expression: \io_in_0_bits_QoS
+Import show expression: \io_in_0_bits_SrcID
+Import show expression: \io_in_0_bits_TgtID
+Import show expression: \io_in_0_bits_TgtRS
+Import show expression: \io_in_0_bits_TxnID
+Import show expression: \io_in_0_valid
+Import show expression: \io_in_1_bits_Payload
+Import show expression: \io_in_1_bits_QoS
+Import show expression: \io_in_1_bits_SrcID
+Import show expression: \io_in_1_bits_TgtID
+Import show expression: \io_in_1_bits_TgtRS
+Import show expression: \io_in_1_bits_TxnID
+Import show expression: \io_in_1_valid
+Import show expression: \io_out_ready
+Import show expression: \reset
+Import show expression: \io_in_0_ready
+Import show expression: \io_in_1_ready
+Import show expression: \io_out_bits_Payload
+Import show expression: \io_out_bits_QoS
+Import show expression: \io_out_bits_SrcID
+Import show expression: \io_out_bits_TgtID
+Import show expression: \io_out_bits_TgtRS
+Import show expression: \io_out_bits_TxnID
+Import show expression: \io_out_valid
+Import show expression: $auto$async2sync.cc:228:execute$80
+Import show expression: \pilot_past_valid
+Import show expression: $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/ARB_05__reference__assert/design.sv:74$5$0
+Import show expression: $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/ARB_05__reference__assert/design.sv:74$4$0
+Import show expression: $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/ARB_05__reference__assert/design.sv:74$3$0
+Import show expression: $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/ARB_05__reference__assert/design.sv:73$2$0
+Import show expression: $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/ARB_05__reference__assert/design.sv:73$1$0
+Import show expression: \pilot_active
+Import show expression: $auto$async2sync.cc:110:execute$78
+Import show expression: $auto$async2sync.cc:110:execute$72
+Import show expression: $auto$async2sync.cc:101:execute$74
+Import show expression: $auto$async2sync.cc:101:execute$68
+
+[induction step 1] Solving problem with 3127 variables and 6716 clauses..
+Induction step failed. Incrementing induction length.
+
+  Time Signal Name                                                                                                                         Dec       Hex                                                                                                             Bin
+  ---- --------------------------------------------------------------------------------------------------------------------------- ----------- --------- ---------------------------------------------------------------------------------------------------------------
+  init $auto$async2sync.cc:101:execute$68                                                                                                    0         0                                                                                                               0
+  init $auto$async2sync.cc:101:execute$74                                                                                                    0         0                                                                                                               0
+  init $auto$async2sync.cc:110:execute$72                                                                                                    0         0                                                                                                               0
+  init $auto$async2sync.cc:110:execute$78                                                                                                    0         0                                                                                                               0
+  init $auto$async2sync.cc:228:execute$80                                                                                                    1         1                                                                                                               1
+  init $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/ARB_05__reference__assert/design.sv:73$1$0                0         0                                                                                                               0
+  init $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/ARB_05__reference__assert/design.sv:73$2$0                0         0                                                                                                               0
+  init $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/ARB_05__reference__assert/design.sv:74$3$0                0         0                                                                                                               0
+  init $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/ARB_05__reference__assert/design.sv:74$4$0                1         1                                                                                                               1
+  init $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/ARB_05__reference__assert/design.sv:74$5$0                0         0                                                                                                               0
+  init \pilot_active                                                                                                                         0         0                                                                                                               0
+  init \pilot_past_valid                                                                                                                     1         1                                                                                                               1
+  ---- --------------------------------------------------------------------------------------------------------------------------- ----------- --------- ---------------------------------------------------------------------------------------------------------------
+     1 $auto$async2sync.cc:101:execute$68                                                                                                    0         0                                                                                                               0
+     1 $auto$async2sync.cc:101:execute$74                                                                                                    0         0                                                                                                               0
+     1 $auto$async2sync.cc:110:execute$72                                                                                                    0         0                                                                                                               0
+     1 $auto$async2sync.cc:110:execute$78                                                                                                    0         0                                                                                                               0
+     1 $auto$async2sync.cc:228:execute$80                                                                                                    1         1                                                                                                               1
+     1 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/ARB_05__reference__assert/design.sv:73$1$0                0         0                                                                                                               0
+     1 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/ARB_05__reference__assert/design.sv:73$2$0                0         0                                                                                                               0
+     1 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/ARB_05__reference__assert/design.sv:74$3$0                0         0                                                                                                               0
+     1 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/ARB_05__reference__assert/design.sv:74$4$0                1         1                                                                                                               1
+     1 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/ARB_05__reference__assert/design.sv:74$5$0                0         0                                                                                                               0
+     1 \clock                                                                                                                                0         0                                                                                                               0
+     1 \io_in_0_bits_Payload                                                                                                                --        --    000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+     1 \io_in_0_bits_QoS                                                                                                                     0         0                                                                                                            0000
+     1 \io_in_0_bits_SrcID                                                                                                                   0         0                                                                                                    000000000000
+     1 \io_in_0_bits_TgtID                                                                                                                   0         0                                                                                                    000000000000
+     1 \io_in_0_bits_TgtRS                                                                                                                   0         0                                                                                                          000000
+     1 \io_in_0_bits_TxnID                                                                                                                   0         0                                                                                                    000000000000
+     1 \io_in_0_ready                                                                                                                        1         1                                                                                                               1
+     1 \io_in_0_valid                                                                                                                        1         1                                                                                                               1
+     1 \io_in_1_bits_Payload                                                                                                                --        --    000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+     1 \io_in_1_bits_QoS                                                                                                                     0         0                                                                                                            0000
+     1 \io_in_1_bits_SrcID                                                                                                                   0         0                                                                                                    000000000000
+     1 \io_in_1_bits_TgtID                                                                                                                   0         0                                                                                                    000000000000
+     1 \io_in_1_bits_TgtRS                                                                                                                   0         0                                                                                                          000000
+     1 \io_in_1_bits_TxnID                                                                                                                   0         0                                                                                                    000000000000
+     1 \io_in_1_ready                                                                                                                        0         0                                                                                                               0
+     1 \io_in_1_valid                                                                                                                        0         0                                                                                                               0
+     1 \io_out_bits_Payload                                                                                                                 --        --    000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+     1 \io_out_bits_QoS                                                                                                                      0         0                                                                                                            0000
+     1 \io_out_bits_SrcID                                                                                                                    0         0                                                                                                    000000000000
+     1 \io_out_bits_TgtID                                                                                                                    0         0                                                                                                    000000000000
+     1 \io_out_bits_TgtRS                                                                                                                    0         0                                                                                                          000000
+     1 \io_out_bits_TxnID                                                                                                                    0         0                                                                                                    000000000000
+     1 \io_out_ready                                                                                                                         1         1                                                                                                               1
+     1 \io_out_valid                                                                                                                         1         1                                                                                                               1
+     1 \pilot_active                                                                                                                         0         0                                                                                                               0
+     1 \pilot_past_valid                                                                                                                     1         1                                                                                                               1
+     1 \reset                                                                                                                                0         0                                                                                                               0
+  ---- --------------------------------------------------------------------------------------------------------------------------- ----------- --------- ---------------------------------------------------------------------------------------------------------------
+     2 $auto$async2sync.cc:101:execute$68                                                                                                    1         1                                                                                                               1
+     2 $auto$async2sync.cc:101:execute$74                                                                                                    0         0                                                                                                               0
+     2 $auto$async2sync.cc:110:execute$72                                                                                                    0         0                                                                                                               0
+     2 $auto$async2sync.cc:110:execute$78                                                                                                    0         0                                                                                                               0
+     2 $auto$async2sync.cc:228:execute$80                                                                                                    0         0                                                                                                               0
+     2 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/ARB_05__reference__assert/design.sv:73$1$0                0         0                                                                                                               0
+     2 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/ARB_05__reference__assert/design.sv:73$2$0                1         1                                                                                                               1
+     2 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/ARB_05__reference__assert/design.sv:74$3$0                0         0                                                                                                               0
+     2 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/ARB_05__reference__assert/design.sv:74$4$0                1         1                                                                                                               1
+     2 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/ARB_05__reference__assert/design.sv:74$5$0                0         0                                                                                                               0
+     2 \clock                                                                                                                                0         0                                                                                                               0
+     2 \io_in_0_bits_Payload                                                                                                                --        --    000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+     2 \io_in_0_bits_QoS                                                                                                                     0         0                                                                                                            0000
+     2 \io_in_0_bits_SrcID                                                                                                                   0         0                                                                                                    000000000000
+     2 \io_in_0_bits_TgtID                                                                                                                   0         0                                                                                                    000000000000
+     2 \io_in_0_bits_TgtRS                                                                                                                   0         0                                                                                                          000000
+     2 \io_in_0_bits_TxnID                                                                                                                   0         0                                                                                                    000000000000
+     2 \io_in_0_ready                                                                                                                        0         0                                                                                                               0
+     2 \io_in_0_valid                                                                                                                        1         1                                                                                                               1
+     2 \io_in_1_bits_Payload                                                                                                                --        --    000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+     2 \io_in_1_bits_QoS                                                                                                                     0         0                                                                                                            0000
+     2 \io_in_1_bits_SrcID                                                                                                                   0         0                                                                                                    000000000000
+     2 \io_in_1_bits_TgtID                                                                                                                   0         0                                                                                                    000000000000
+     2 \io_in_1_bits_TgtRS                                                                                                                   0         0                                                                                                          000000
+     2 \io_in_1_bits_TxnID                                                                                                                   0         0                                                                                                    000000000000
+     2 \io_in_1_ready                                                                                                                        0         0                                                                                                               0
+     2 \io_in_1_valid                                                                                                                        0         0                                                                                                               0
+     2 \io_out_bits_Payload                                                                                                                 --        --    000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+     2 \io_out_bits_QoS                                                                                                                      0         0                                                                                                            0000
+     2 \io_out_bits_SrcID                                                                                                                    0         0                                                                                                    000000000000
+     2 \io_out_bits_TgtID                                                                                                                    0         0                                                                                                    000000000000
+     2 \io_out_bits_TgtRS                                                                                                                    0         0                                                                                                          000000
+     2 \io_out_bits_TxnID                                                                                                                    0         0                                                                                                    000000000000
+     2 \io_out_ready                                                                                                                         0         0                                                                                                               0
+     2 \io_out_valid                                                                                                                         1         1                                                                                                               1
+     2 \pilot_active                                                                                                                         0         0                                                                                                               0
+     2 \pilot_past_valid                                                                                                                     1         1                                                                                                               1
+     2 \reset                                                                                                                                1         1                                                                                                               1
+
+** Trying induction with length 2 **
+
+Setting up time step 4:
+Final constraint equation: { } = { }
+Imported 48 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:110:execute$78 when $auto$async2sync.cc:101:execute$74.
+Import proof for assert: $auto$async2sync.cc:110:execute$72 when $auto$async2sync.cc:101:execute$68.
+Import show expression: \pilot_active
+Import show expression: \clock
+Import show expression: \io_in_0_bits_Payload
+Import show expression: \io_in_0_bits_QoS
+Import show expression: \io_in_0_bits_SrcID
+Import show expression: \io_in_0_bits_TgtID
+Import show expression: \io_in_0_bits_TgtRS
+Import show expression: \io_in_0_bits_TxnID
+Import show expression: \io_in_0_valid
+Import show expression: \io_in_1_bits_Payload
+Import show expression: \io_in_1_bits_QoS
+Import show expression: \io_in_1_bits_SrcID
+Import show expression: \io_in_1_bits_TgtID
+Import show expression: \io_in_1_bits_TgtRS
+Import show expression: \io_in_1_bits_TxnID
+Import show expression: \io_in_1_valid
+Import show expression: \io_out_ready
+Import show expression: \reset
+Import show expression: \io_in_0_ready
+Import show expression: \io_in_1_ready
+Import show expression: \io_out_bits_Payload
+Import show expression: \io_out_bits_QoS
+Import show expression: \io_out_bits_SrcID
+Import show expression: \io_out_bits_TgtID
+Import show expression: \io_out_bits_TgtRS
+Import show expression: \io_out_bits_TxnID
+Import show expression: \io_out_valid
+Import show expression: $auto$async2sync.cc:228:execute$80
+Import show expression: \pilot_past_valid
+Import show expression: $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/ARB_05__reference__assert/design.sv:74$5$0
+Import show expression: $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/ARB_05__reference__assert/design.sv:74$4$0
+Import show expression: $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/ARB_05__reference__assert/design.sv:74$3$0
+Import show expression: $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/ARB_05__reference__assert/design.sv:73$2$0
+Import show expression: $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/ARB_05__reference__assert/design.sv:73$1$0
+Import show expression: \pilot_active
+Import show expression: $auto$async2sync.cc:110:execute$78
+Import show expression: $auto$async2sync.cc:110:execute$72
+Import show expression: $auto$async2sync.cc:101:execute$74
+Import show expression: $auto$async2sync.cc:101:execute$68
+
+[base case 2] Solving problem with 6335 variables and 13707 clauses..
+Base case for induction length 2 proven.
+
+Setting up time step 3:
+Final constraint equation: { } = { }
+Imported 48 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:110:execute$78 when $auto$async2sync.cc:101:execute$74.
+Import proof for assert: $auto$async2sync.cc:110:execute$72 when $auto$async2sync.cc:101:execute$68.
+Import show expression: \pilot_active
+Import show expression: \clock
+Import show expression: \io_in_0_bits_Payload
+Import show expression: \io_in_0_bits_QoS
+Import show expression: \io_in_0_bits_SrcID
+Import show expression: \io_in_0_bits_TgtID
+Import show expression: \io_in_0_bits_TgtRS
+Import show expression: \io_in_0_bits_TxnID
+Import show expression: \io_in_0_valid
+Import show expression: \io_in_1_bits_Payload
+Import show expression: \io_in_1_bits_QoS
+Import show expression: \io_in_1_bits_SrcID
+Import show expression: \io_in_1_bits_TgtID
+Import show expression: \io_in_1_bits_TgtRS
+Import show expression: \io_in_1_bits_TxnID
+Import show expression: \io_in_1_valid
+Import show expression: \io_out_ready
+Import show expression: \reset
+Import show expression: \io_in_0_ready
+Import show expression: \io_in_1_ready
+Import show expression: \io_out_bits_Payload
+Import show expression: \io_out_bits_QoS
+Import show expression: \io_out_bits_SrcID
+Import show expression: \io_out_bits_TgtID
+Import show expression: \io_out_bits_TgtRS
+Import show expression: \io_out_bits_TxnID
+Import show expression: \io_out_valid
+Import show expression: $auto$async2sync.cc:228:execute$80
+Import show expression: \pilot_past_valid
+Import show expression: $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/ARB_05__reference__assert/design.sv:74$5$0
+Import show expression: $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/ARB_05__reference__assert/design.sv:74$4$0
+Import show expression: $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/ARB_05__reference__assert/design.sv:74$3$0
+Import show expression: $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/ARB_05__reference__assert/design.sv:73$2$0
+Import show expression: $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/ARB_05__reference__assert/design.sv:73$1$0
+Import show expression: \pilot_active
+Import show expression: $auto$async2sync.cc:110:execute$78
+Import show expression: $auto$async2sync.cc:110:execute$72
+Import show expression: $auto$async2sync.cc:101:execute$74
+Import show expression: $auto$async2sync.cc:101:execute$68
+
+[induction step 2] Solving problem with 4782 variables and 10379 clauses..
+Induction step proven: SUCCESS!
+
+                  /$$$$$$      /$$$$$$$$     /$$$$$$$    
+                 /$$__  $$    | $$_____/    | $$__  $$   
+                | $$  \ $$    | $$          | $$  \ $$   
+                | $$  | $$    | $$$$$       | $$  | $$   
+                | $$  | $$    | $$__/       | $$  | $$   
+                | $$/$$ $$    | $$          | $$  | $$   
+                |  $$$$$$/ /$$| $$$$$$$$ /$$| $$$$$$$//$$
+                 \____ $$$|__/|________/|__/|_______/|__/
+                       \__/                              
+

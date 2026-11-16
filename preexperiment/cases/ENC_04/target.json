@@ -1,0 +1,18 @@
+{
+  "target_id": "ENC_04",
+  "parent_id": "ENC_04",
+  "top": "PriorityEncoderOneHotLow8",
+  "title": "输出允许零或独热",
+  "contract": "输出最多一位为 1；输入全零时允许输出全零。",
+  "source_lines": [
+    7,
+    16
+  ],
+  "source_type": "rtl_derived_candidate_contract",
+  "spec_review_status": "pending_external_spec_review",
+  "reference": {
+    "timing": "comb",
+    "antecedent": "1'b1",
+    "consequent": "$onehot0(o_code)"
+  }
+}

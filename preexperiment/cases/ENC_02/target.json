@@ -1,0 +1,17 @@
+{
+  "target_id": "ENC_02",
+  "parent_id": "ENC_02",
+  "top": "PriorityEncoderOneHotLow8",
+  "title": "最低位具有最高优先级",
+  "contract": "输入位 0 有效时，无论其他输入位如何，输出均选择位 0。",
+  "source_lines": [
+    8
+  ],
+  "source_type": "rtl_derived_candidate_contract",
+  "spec_review_status": "pending_external_spec_review",
+  "reference": {
+    "timing": "comb",
+    "antecedent": "i_data[0]",
+    "consequent": "o_code == 8'h01"
+  }
+}

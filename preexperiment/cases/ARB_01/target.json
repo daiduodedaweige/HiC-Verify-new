@@ -1,0 +1,19 @@
+{
+  "target_id": "ARB_01",
+  "parent_id": "ARB_01",
+  "top": "XsRRArbiter",
+  "title": "输出有效性",
+  "contract": "任一输入有效即存在有效输出，无须两个输入同时有效。",
+  "source_lines": [
+    32,
+    36,
+    56
+  ],
+  "source_type": "rtl_derived_candidate_contract",
+  "spec_review_status": "pending_external_spec_review",
+  "reference": {
+    "timing": "overlap",
+    "antecedent": "1'b1",
+    "consequent": "io_out_valid == (io_in_0_valid || io_in_1_valid)"
+  }
+}

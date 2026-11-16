@@ -1,0 +1,12 @@
+{
+  "mutant_id": "M_Q6_WRAP",
+  "target_id": "Q6_05",
+  "top": "Queue6_UInt2",
+  "description": "末项回绕到非法索引 6",
+  "path": "rtl_mutants/M_Q6_WRAP/Queue6_UInt2.sv",
+  "source_sha256": "bd3ba6da7b2f0589914010be9b3e2d3aea115bae7740b39982934a8d216fdb5d",
+  "mutant_sha256": "9dd7cf7f2e4b376129ce9e48e146e9f1067b1aa50dc1d1227138d84c6ff121b3",
+  "changed_line": 31,
+  "role": "controlled_rtl_mutation",
+  "validation_status": "see results/summary.json"
+}

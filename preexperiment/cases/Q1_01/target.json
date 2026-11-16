@@ -1,0 +1,20 @@
+{
+  "target_id": "Q1_01",
+  "parent_id": "Q1_01",
+  "top": "Queue1_UInt8",
+  "title": "流水入队就绪关系",
+  "contract": "队列未满或当前可以出队时允许入队；满且阻塞时禁止入队。",
+  "source_lines": [
+    14,
+    16,
+    40,
+    41
+  ],
+  "source_type": "rtl_derived_candidate_contract",
+  "spec_review_status": "pending_external_spec_review",
+  "reference": {
+    "timing": "overlap",
+    "antecedent": "1'b1",
+    "consequent": "io_enq_ready == (io_deq_ready || !io_deq_valid)"
+  }
+}

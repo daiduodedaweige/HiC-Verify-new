@@ -1,0 +1,12 @@
+{
+  "mutant_id": "M_ENC_PRIORITY",
+  "target_id": "ENC_02",
+  "top": "PriorityEncoderOneHotLow8",
+  "description": "交换最低两位优先级",
+  "path": "rtl_mutants/M_ENC_PRIORITY/PriorityEncoderOneHotLow8.sv",
+  "source_sha256": "e34981bc73e11b8c33c456c31a2650b8214f8a50bf17c77f83cd3af277ed4f6b",
+  "mutant_sha256": "d5ea669069c09c595d48f2096d2613b5e853f3376c39358f12e06bde1523e188",
+  "changed_line": 8,
+  "role": "controlled_rtl_mutation",
+  "validation_status": "see results/summary.json"
+}

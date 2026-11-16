@@ -1,0 +1,22 @@
+{ "signal": [
+    { "name": "reset", "wave": "410.............1" },
+    { "name": "io_enq_valid", "wave": "401010.....101.0." },
+    { "name": "io_enq_ready", "wave": "41.010....1.0101." },
+    { "name": "io_enq_bits", "wave": "4=...............", "data": ["", "00000000"] },
+    { "name": "io_deq_valid", "wave": "40.101....0.1010." },
+    { "name": "io_deq_ready", "wave": "40.1.0...10.101.0" },
+    { "name": "io_deq_bits", "wave": "4=...............", "data": ["", "00000000"] },
+    { "name": "clock", "wave": "40..............." },
+    { "name": "ram", "wave": "=................", "data": ["00000000"] },
+    { "name": "pilot_past_valid", "wave": "0.1.............." },
+    { "name": "pilot_active", "wave": "0..1............." },
+    { "name": "$auto$async2sync.cc:228:execute$49", "wave": "0..101....0.1010." },
+    { "name": "$auto$async2sync.cc:110:execute$47", "wave": "1..0............." },
+    { "name": "$auto$async2sync.cc:110:execute$41", "wave": "1...01....01.0101" },
+    { "name": "$auto$async2sync.cc:101:execute$43", "wave": "0.10............." },
+    { "name": "$auto$async2sync.cc:101:execute$37", "wave": "0..1............." }
+  ],
+  "config": {
+    "hscale": 2.00
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "target_id": "EX_02",
+  "parent_id": "EX_02",
+  "top": "ExclusiveMonitorEntry",
+  "title": "对应加载允许成功",
+  "contract": "对应实体的加载请求可成功；存储请求还需要工作状态和标签匹配。",
+  "source_lines": [
+    24,
+    72
+  ],
+  "source_type": "rtl_derived_candidate_contract",
+  "spec_review_status": "pending_external_spec_review",
+  "reference": {
+    "timing": "overlap",
+    "antecedent": "corrReq && io_req_ld",
+    "consequent": "io_req_exok"
+  }
+}

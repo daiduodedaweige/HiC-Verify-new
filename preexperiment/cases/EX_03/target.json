@@ -1,0 +1,21 @@
+{
+  "target_id": "EX_03",
+  "parent_id": "EX_03",
+  "top": "ExclusiveMonitorEntry",
+  "title": "无预留或标签不符时拒绝存储",
+  "contract": "对应实体的存储请求，在未工作或标签不匹配时不能独占成功；有效预留的匹配存储允许成功。",
+  "source_lines": [
+    29,
+    32,
+    48,
+    50,
+    72
+  ],
+  "source_type": "rtl_derived_candidate_contract",
+  "spec_review_status": "pending_external_spec_review",
+  "reference": {
+    "timing": "overlap",
+    "antecedent": "corrReq && !io_req_ld && (!working || !tagMatch)",
+    "consequent": "!io_req_exok"
+  }
+}

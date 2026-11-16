@@ -1,0 +1,18 @@
+{
+  "target_id": "ARB_04",
+  "parent_id": "ARB_04",
+  "top": "XsRRArbiter",
+  "title": "输入一事务身份转发",
+  "contract": "输入 1 被接受时，输出事务 ID 来自输入 1，不得混用输入 0 的身份。",
+  "source_lines": [
+    55,
+    59
+  ],
+  "source_type": "rtl_derived_candidate_contract",
+  "spec_review_status": "pending_external_spec_review",
+  "reference": {
+    "timing": "overlap",
+    "antecedent": "io_in_1_valid && io_in_1_ready",
+    "consequent": "io_out_valid && io_out_bits_TxnID == io_in_1_bits_TxnID"
+  }
+}

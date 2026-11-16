@@ -1,0 +1,18 @@
+{
+  "target_id": "Q6_05",
+  "parent_id": "Q6_05",
+  "top": "Queue6_UInt2",
+  "title": "两个指针均在合法范围",
+  "contract": "复位建立的状态中，两指针始终取 0 到 5；索引 5 是合法状态。",
+  "source_lines": [
+    24,
+    35
+  ],
+  "source_type": "rtl_derived_candidate_contract",
+  "spec_review_status": "pending_external_spec_review",
+  "reference": {
+    "timing": "overlap",
+    "antecedent": "1'b1",
+    "consequent": "enq_ptr_value < 3'd6 && deq_ptr_value < 3'd6"
+  }
+}

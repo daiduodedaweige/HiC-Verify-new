@@ -1,0 +1,12 @@
+{
+  "mutant_id": "M_ARB_ID",
+  "target_id": "ARB_04",
+  "top": "XsRRArbiter",
+  "description": "输入一事务错误使用输入零 ID",
+  "path": "rtl_mutants/M_ARB_ID/XsRRArbiter.sv",
+  "source_sha256": "2d274b464eb4edbd3acb721ce716c60a4563178a5ebe8806bbe8e3e614b83e62",
+  "mutant_sha256": "9f6e182ed25c0eb4ab6fd97be1ddcb6fbfaa3f1743e34b2ecd9f303fd8ca0ab7",
+  "changed_line": 59,
+  "role": "controlled_rtl_mutation",
+  "validation_status": "see results/summary.json"
+}

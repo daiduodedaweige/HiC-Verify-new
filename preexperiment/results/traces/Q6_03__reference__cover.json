@@ -1,0 +1,36 @@
+{ "signal": [
+    { "name": "reset", "wave": "410.............." },
+    { "name": "io_enq_valid", "wave": "401.....01...0.10" },
+    { "name": "io_enq_ready", "wave": "41...........0.10" },
+    { "name": "io_enq_bits", "wave": "4=====.===.=.....", "data": ["", "00", "01", "00", "01", "00", "01", "00", "01", "00"] },
+    { "name": "io_deq_valid", "wave": "401.............." },
+    { "name": "io_deq_ready", "wave": "40.....1.01.0.101" },
+    { "name": "io_deq_bits", "wave": "4==.....==.=...=.", "data": ["", "00", "01", "00", "01", "00", "01"] },
+    { "name": "clock", "wave": "40..............." },
+    { "name": "ram_ext.Memory[5]", "wave": "=.......=........", "data": ["00", "01"] },
+    { "name": "ram_ext.Memory[4]", "wave": "=................", "data": ["00"] },
+    { "name": "ram_ext.Memory[3]", "wave": "=................", "data": ["00"] },
+    { "name": "ram_ext.Memory[2]", "wave": "=....=......=....", "data": ["00", "01", "00"] },
+    { "name": "ram_ext.Memory[1]", "wave": "=..........=.....", "data": ["00", "01"] },
+    { "name": "ram_ext.Memory[0]", "wave": "=..=.............", "data": ["00", "01"] },
+    { "name": "pilot_past_valid", "wave": "0.1.............." },
+    { "name": "pilot_active", "wave": "0....1...0.10.1.0" },
+    { "name": "$past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:77$5$0", "wave": "=.==.....==.=...=", "data": ["01", "00", "01", "00", "01", "00", "01"] },
+    { "name": "$past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:77$4$0", "wave": "1.0.1...0.10.1.01" },
+    { "name": "$past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:77$3$0", "wave": "0.10............." },
+    { "name": "$past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:76$2$0", "wave": "0...1...0.10.1.01" },
+    { "name": "$past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:76$1$0", "wave": "1..0............." },
+    { "name": "$auto$async2sync.cc:228:execute$228", "wave": "0..1.....01....01" },
+    { "name": "$auto$async2sync.cc:228:execute$226", "wave": "=.......==.==..=.", "data": ["000", "001", "010", "011", "100", "101"] },
+    { "name": "$auto$async2sync.cc:228:execute$224", "wave": "=..======.====..=", "data": ["000", "001", "010", "011", "100", "101", "000", "001", "010", "011", "100", "101"] },
+    { "name": "$auto$async2sync.cc:110:execute$222", "wave": "1..0............." },
+    { "name": "$auto$async2sync.cc:110:execute$216", "wave": "1................" },
+    { "name": "$auto$async2sync.cc:110:execute$210", "wave": "1.01............." },
+    { "name": "$auto$async2sync.cc:101:execute$218", "wave": "0.10............." },
+    { "name": "$auto$async2sync.cc:101:execute$212", "wave": "0..1............." },
+    { "name": "$auto$async2sync.cc:101:execute$206", "wave": "0...1............" }
+  ],
+  "config": {
+    "hscale": 0.75
+  }
+}

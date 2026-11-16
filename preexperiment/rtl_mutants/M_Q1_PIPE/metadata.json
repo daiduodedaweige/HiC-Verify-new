@@ -1,0 +1,12 @@
+{
+  "mutant_id": "M_Q1_PIPE",
+  "target_id": "Q1_01",
+  "top": "Queue1_UInt8",
+  "description": "删除满队列随出队同时入队的路径",
+  "path": "rtl_mutants/M_Q1_PIPE/Queue1_UInt8.sv",
+  "source_sha256": "34213835465a25256286192f38dcec7effde3a0203fea5805a821f4f97abfd6a",
+  "mutant_sha256": "1d7359e30ef22ce311d4c799a55d9b54a4666eb8b5ea6dcdf4909f841601899d",
+  "changed_line": 16,
+  "role": "controlled_rtl_mutation",
+  "validation_status": "see results/summary.json"
+}

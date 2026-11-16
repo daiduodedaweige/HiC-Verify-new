@@ -1,0 +1,29 @@
+{ "signal": [
+    { "name": "reset", "wave": "410.10...10......" },
+    { "name": "io_enq_valid", "wave": "41.01...010.....1" },
+    { "name": "io_enq_ready", "wave": "41..............." },
+    { "name": "io_enq_bits", "wave": "4====...=.==.====", "data": ["", "11", "00", "01", "00", "01", "11", "10", "11", "10", "11", "10"] },
+    { "name": "io_deq_valid", "wave": "41........0.....1" },
+    { "name": "io_deq_ready", "wave": "410.....1.0......" },
+    { "name": "io_deq_bits", "wave": "4==......===.====", "data": ["", "11", "00", "01", "11", "10", "11", "10", "11", "10"] },
+    { "name": "clock", "wave": "40..............." },
+    { "name": "ram_ext.Memory[5]", "wave": "=................", "data": ["00"] },
+    { "name": "ram_ext.Memory[4]", "wave": "=................", "data": ["00"] },
+    { "name": "ram_ext.Memory[3]", "wave": "=................", "data": ["00"] },
+    { "name": "ram_ext.Memory[2]", "wave": "=................", "data": ["00"] },
+    { "name": "ram_ext.Memory[1]", "wave": "=................", "data": ["00"] },
+    { "name": "ram_ext.Memory[0]", "wave": "=................", "data": ["00"] },
+    { "name": "pilot_past_valid", "wave": "0.1.............." },
+    { "name": "pilot_active", "wave": "0..10.10........." },
+    { "name": "$auto$async2sync.cc:228:execute$190", "wave": "0..1.01..0......." },
+    { "name": "$auto$async2sync.cc:228:execute$188", "wave": "=........==......", "data": ["000", "001", "000"] },
+    { "name": "$auto$async2sync.cc:228:execute$186", "wave": "=..=.====.=......", "data": ["000", "001", "000", "001", "010", "011", "000"] },
+    { "name": "$auto$async2sync.cc:110:execute$184", "wave": "1..0.10...10....." },
+    { "name": "$auto$async2sync.cc:110:execute$178", "wave": "1................" },
+    { "name": "$auto$async2sync.cc:101:execute$180", "wave": "0.10............." },
+    { "name": "$auto$async2sync.cc:101:execute$174", "wave": "0..1.01...01....." }
+  ],
+  "config": {
+    "hscale": 0.75
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "target_id": "ENC_01",
+  "parent_id": "ENC_01",
+  "top": "PriorityEncoderOneHotLow8",
+  "title": "零输入产生零编码",
+  "contract": "没有任何输入位为 1 时，输出为 0。",
+  "source_lines": [
+    16
+  ],
+  "source_type": "rtl_derived_candidate_contract",
+  "spec_review_status": "pending_external_spec_review",
+  "reference": {
+    "timing": "comb",
+    "antecedent": "i_data == 8'h00",
+    "consequent": "o_code == 8'h00"
+  }
+}

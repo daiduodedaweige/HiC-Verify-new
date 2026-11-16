@@ -1,0 +1,1100 @@
+
+-- Executing script file `/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/M_Q1_PIPE__interface_difference/query.ys' --
+
+1. Executing Verilog-2005 frontend: /nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/M_Q1_PIPE__interface_difference/design.sv
+Parsing formal SystemVerilog input from `/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/M_Q1_PIPE__interface_difference/design.sv' to AST representation.
+Generating RTLIL representation for module `\pilot_gold'.
+Generating RTLIL representation for module `\pilot_bad'.
+Generating RTLIL representation for module `\pilot_miter'.
+Successfully finished Verilog frontend.
+
+2. Executing PREP pass.
+
+2.1. Executing HIERARCHY pass (managing design hierarchy).
+
+2.1.1. Analyzing design hierarchy..
+Top module:  \pilot_miter
+Used module:     \pilot_bad
+Used module:     \pilot_gold
+
+2.1.2. Analyzing design hierarchy..
+Top module:  \pilot_miter
+Used module:     \pilot_bad
+Used module:     \pilot_gold
+Removed 0 unused modules.
+Module pilot_miter directly or indirectly contains formal properties -> setting "keep" attribute.
+
+2.2. Executing PROC pass (convert processes to netlists).
+
+2.2.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+2.2.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 1 switch rules as full_case in process $proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/M_Q1_PIPE__interface_difference/design.sv:63$10 in module pilot_bad.
+Marked 1 switch rules as full_case in process $proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/M_Q1_PIPE__interface_difference/design.sv:18$4 in module pilot_gold.
+Removed a total of 0 dead cases.
+
+2.2.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 0 redundant assignments.
+Promoted 2 assignments to connections.
+
+2.2.4. Executing PROC_INIT pass (extract init attributes).
+Found init rule in `\pilot_miter.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/M_Q1_PIPE__interface_difference/design.sv:107$28'.
+  Set init value: \pilot_past_valid = 1'0
+
+2.2.5. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \reset in `\pilot_bad.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/M_Q1_PIPE__interface_difference/design.sv:63$10'.
+Found async reset \reset in `\pilot_gold.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/M_Q1_PIPE__interface_difference/design.sv:18$4'.
+
+2.2.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~6 debug messages>
+
+2.2.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\pilot_miter.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/M_Q1_PIPE__interface_difference/design.sv:107$28'.
+Creating decoders for process `\pilot_miter.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/M_Q1_PIPE__interface_difference/design.sv:108$21'.
+     1/2: $assert$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/M_Q1_PIPE__interface_difference/design.sv:111$26_EN
+     2/2: $assume$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/M_Q1_PIPE__interface_difference/design.sv:110$23_EN
+Creating decoders for process `\pilot_bad.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/M_Q1_PIPE__interface_difference/design.sv:69$13'.
+     1/1: $0\ram[7:0]
+Creating decoders for process `\pilot_bad.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/M_Q1_PIPE__interface_difference/design.sv:63$10'.
+     1/1: $0\maybe_full[0:0]
+Creating decoders for process `\pilot_gold.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/M_Q1_PIPE__interface_difference/design.sv:24$7'.
+     1/1: $0\ram[7:0]
+Creating decoders for process `\pilot_gold.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/M_Q1_PIPE__interface_difference/design.sv:18$4'.
+     1/1: $0\maybe_full[0:0]
+
+2.2.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+2.2.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\pilot_miter.\pilot_past_valid' using process `\pilot_miter.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/M_Q1_PIPE__interface_difference/design.sv:108$21'.
+  created $dff cell `$procdff$41' with positive edge clock.
+Creating register for signal `\pilot_bad.\ram' using process `\pilot_bad.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/M_Q1_PIPE__interface_difference/design.sv:69$13'.
+  created $dff cell `$procdff$42' with positive edge clock.
+Creating register for signal `\pilot_bad.\maybe_full' using process `\pilot_bad.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/M_Q1_PIPE__interface_difference/design.sv:63$10'.
+  created $adff cell `$procdff$45' with positive edge clock and positive level reset.
+Creating register for signal `\pilot_gold.\ram' using process `\pilot_gold.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/M_Q1_PIPE__interface_difference/design.sv:24$7'.
+  created $dff cell `$procdff$46' with positive edge clock.
+Creating register for signal `\pilot_gold.\maybe_full' using process `\pilot_gold.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/M_Q1_PIPE__interface_difference/design.sv:18$4'.
+  created $adff cell `$procdff$49' with positive edge clock and positive level reset.
+
+2.2.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+2.2.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Removing empty process `pilot_miter.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/M_Q1_PIPE__interface_difference/design.sv:107$28'.
+Found and cleaned up 2 empty switches in `\pilot_miter.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/M_Q1_PIPE__interface_difference/design.sv:108$21'.
+Removing empty process `pilot_miter.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/M_Q1_PIPE__interface_difference/design.sv:108$21'.
+Found and cleaned up 1 empty switch in `\pilot_bad.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/M_Q1_PIPE__interface_difference/design.sv:69$13'.
+Removing empty process `pilot_bad.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/M_Q1_PIPE__interface_difference/design.sv:69$13'.
+Found and cleaned up 1 empty switch in `\pilot_bad.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/M_Q1_PIPE__interface_difference/design.sv:63$10'.
+Removing empty process `pilot_bad.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/M_Q1_PIPE__interface_difference/design.sv:63$10'.
+Found and cleaned up 1 empty switch in `\pilot_gold.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/M_Q1_PIPE__interface_difference/design.sv:24$7'.
+Removing empty process `pilot_gold.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/M_Q1_PIPE__interface_difference/design.sv:24$7'.
+Found and cleaned up 1 empty switch in `\pilot_gold.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/M_Q1_PIPE__interface_difference/design.sv:18$4'.
+Removing empty process `pilot_gold.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/M_Q1_PIPE__interface_difference/design.sv:18$4'.
+Cleaned up 6 empty switches.
+
+2.2.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module pilot_miter.
+<suppressed ~1 debug messages>
+Optimizing module pilot_bad.
+<suppressed ~1 debug messages>
+Optimizing module pilot_gold.
+<suppressed ~1 debug messages>
+
+2.3. Executing FUTURE pass.
+
+2.4. Executing OPT_EXPR pass (perform const folding).
+Optimizing module pilot_miter.
+Optimizing module pilot_bad.
+Optimizing module pilot_gold.
+
+2.5. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \pilot_miter..
+Finding unused cells or wires in module \pilot_bad..
+Finding unused cells or wires in module \pilot_gold..
+Removed 1 unused cells and 22 unused wires.
+<suppressed ~4 debug messages>
+
+2.6. Executing CHECK pass (checking for obvious problems).
+Checking module pilot_bad...
+Checking module pilot_gold...
+Checking module pilot_miter...
+Found and reported 0 problems.
+
+2.7. Executing OPT pass (performing simple optimizations).
+
+2.7.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module pilot_bad.
+Optimizing module pilot_gold.
+Optimizing module pilot_miter.
+
+2.7.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\pilot_bad'.
+Finding identical cells in module `\pilot_gold'.
+Finding identical cells in module `\pilot_miter'.
+Removed a total of 0 cells.
+
+2.7.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \pilot_bad..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \pilot_gold..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \pilot_miter..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~6 debug messages>
+
+2.7.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \pilot_bad.
+  Optimizing cells in module \pilot_gold.
+  Optimizing cells in module \pilot_miter.
+Performed a total of 0 changes.
+
+2.7.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\pilot_bad'.
+Finding identical cells in module `\pilot_gold'.
+Finding identical cells in module `\pilot_miter'.
+Removed a total of 0 cells.
+
+2.7.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \pilot_bad..
+Finding unused cells or wires in module \pilot_gold..
+Finding unused cells or wires in module \pilot_miter..
+
+2.7.7. Executing OPT_EXPR pass (perform const folding).
+Optimizing module pilot_bad.
+Optimizing module pilot_gold.
+Optimizing module pilot_miter.
+
+2.7.8. Finished OPT passes. (There is nothing left to do.)
+
+2.8. Executing WREDUCE pass (reducing word size of cells).
+
+2.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \pilot_bad..
+Finding unused cells or wires in module \pilot_gold..
+Finding unused cells or wires in module \pilot_miter..
+
+2.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+2.11. Executing OPT pass (performing simple optimizations).
+
+2.11.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module pilot_bad.
+Optimizing module pilot_gold.
+Optimizing module pilot_miter.
+
+2.11.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\pilot_bad'.
+Finding identical cells in module `\pilot_gold'.
+Finding identical cells in module `\pilot_miter'.
+Removed a total of 0 cells.
+
+2.11.3. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \pilot_bad..
+Finding unused cells or wires in module \pilot_gold..
+Finding unused cells or wires in module \pilot_miter..
+
+2.11.4. Finished fast OPT passes.
+
+2.12. Printing statistics.
+
+=== pilot_bad ===
+
+   Number of wires:                 16
+   Number of wire bits:             44
+   Number of public wires:          12
+   Number of public wire bits:      33
+   Number of ports:                  8
+   Number of port bits:             22
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  8
+     $adff                           1
+     $and                            2
+     $dff                            1
+     $mux                            2
+     $ne                             1
+     $not                            1
+
+=== pilot_gold ===
+
+   Number of wires:                 17
+   Number of wire bits:             45
+   Number of public wires:          12
+   Number of public wire bits:      33
+   Number of ports:                  8
+   Number of port bits:             22
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  9
+     $adff                           1
+     $and                            2
+     $dff                            1
+     $mux                            2
+     $ne                             1
+     $not                            1
+     $or                             1
+
+=== pilot_miter ===
+
+   Number of wires:                 24
+   Number of wire bits:             45
+   Number of public wires:          13
+   Number of public wire bits:      34
+   Number of ports:                  5
+   Number of port bits:             12
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 17
+     $check                          2
+     $dff                            1
+     $logic_and                      3
+     $logic_not                      2
+     $logic_or                       2
+     $mux                            2
+     $ne                             3
+     pilot_bad                       1
+     pilot_gold                      1
+
+=== design hierarchy ===
+
+   pilot_miter                       1
+     pilot_bad                       1
+     pilot_gold                      1
+
+   Number of wires:                 57
+   Number of wire bits:            134
+   Number of public wires:          37
+   Number of public wire bits:     100
+   Number of ports:                 21
+   Number of port bits:             56
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 32
+     $adff                           2
+     $and                            4
+     $check                          2
+     $dff                            3
+     $logic_and                      3
+     $logic_not                      2
+     $logic_or                       2
+     $mux                            6
+     $ne                             5
+     $not                            2
+     $or                             1
+
+2.13. Executing CHECK pass (checking for obvious problems).
+Checking module pilot_bad...
+Checking module pilot_gold...
+Checking module pilot_miter...
+Found and reported 0 problems.
+
+3. Executing FLATTEN pass (flatten design).
+Deleting now unused module pilot_bad.
+Deleting now unused module pilot_gold.
+<suppressed ~2 debug messages>
+
+4. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+
+5. Executing ASYNC2SYNC pass.
+Replacing pilot_miter.$flatten\bad_dut.$procdff$45 ($adff): ARST=\bad_dut.reset, D=$flatten\bad_dut.$0\maybe_full[0:0], Q=\bad_dut.maybe_full
+Replacing pilot_miter.$flatten\gold_dut.$procdff$49 ($adff): ARST=\gold_dut.reset, D=$flatten\gold_dut.$0\maybe_full[0:0], Q=\gold_dut.maybe_full
+
+6. Executing DFFUNMAP pass (unmap clock enable and synchronous reset from FFs).
+
+7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \pilot_miter..
+Removed 6 unused cells and 6 unused wires.
+<suppressed ~7 debug messages>
+
+8. Executing SAT pass (solving SAT problems in the circuit).
+
+Setting up time step 1:
+Final constraint equation: { } = { }
+Imported 42 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:110:execute$66 when $auto$async2sync.cc:101:execute$62.
+Import set-constraint from init attribute: $auto$async2sync.cc:101:execute$56 = 1'0
+Import set-constraint from init attribute: $auto$async2sync.cc:101:execute$62 = 1'0
+Import set-constraint from init attribute: $auto$async2sync.cc:110:execute$60 = 1'1
+Import set-constraint from init attribute: $auto$async2sync.cc:110:execute$66 = 1'1
+Import set-constraint from init attribute: \pilot_past_valid = 1'0
+Final init constraint equation: { \pilot_past_valid $auto$async2sync.cc:110:execute$66 $auto$async2sync.cc:110:execute$60 $auto$async2sync.cc:101:execute$62 $auto$async2sync.cc:101:execute$56 } = 5'01100
+Import proof for assert: $auto$async2sync.cc:110:execute$60 when $auto$async2sync.cc:101:execute$56.
+
+Setting up time step 2:
+Final constraint equation: { } = { }
+Imported 42 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:110:execute$66 when $auto$async2sync.cc:101:execute$62.
+Import proof for assert: $auto$async2sync.cc:110:execute$60 when $auto$async2sync.cc:101:execute$56.
+
+Setting up time step 3:
+Final constraint equation: { } = { }
+Imported 42 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:110:execute$66 when $auto$async2sync.cc:101:execute$62.
+Import proof for assert: $auto$async2sync.cc:110:execute$60 when $auto$async2sync.cc:101:execute$56.
+
+Setting up time step 4:
+Final constraint equation: { } = { }
+Imported 42 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:110:execute$66 when $auto$async2sync.cc:101:execute$62.
+Import proof for assert: $auto$async2sync.cc:110:execute$60 when $auto$async2sync.cc:101:execute$56.
+
+Setting up time step 5:
+Final constraint equation: { } = { }
+Imported 42 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:110:execute$66 when $auto$async2sync.cc:101:execute$62.
+Import proof for assert: $auto$async2sync.cc:110:execute$60 when $auto$async2sync.cc:101:execute$56.
+
+Setting up time step 6:
+Final constraint equation: { } = { }
+Imported 42 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:110:execute$66 when $auto$async2sync.cc:101:execute$62.
+Import proof for assert: $auto$async2sync.cc:110:execute$60 when $auto$async2sync.cc:101:execute$56.
+
+Setting up time step 7:
+Final constraint equation: { } = { }
+Imported 42 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:110:execute$66 when $auto$async2sync.cc:101:execute$62.
+Import proof for assert: $auto$async2sync.cc:110:execute$60 when $auto$async2sync.cc:101:execute$56.
+
+Setting up time step 8:
+Final constraint equation: { } = { }
+Imported 42 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:110:execute$66 when $auto$async2sync.cc:101:execute$62.
+Import proof for assert: $auto$async2sync.cc:110:execute$60 when $auto$async2sync.cc:101:execute$56.
+
+Setting up time step 9:
+Final constraint equation: { } = { }
+Imported 42 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:110:execute$66 when $auto$async2sync.cc:101:execute$62.
+Import proof for assert: $auto$async2sync.cc:110:execute$60 when $auto$async2sync.cc:101:execute$56.
+
+Setting up time step 10:
+Final constraint equation: { } = { }
+Imported 42 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:110:execute$66 when $auto$async2sync.cc:101:execute$62.
+Import proof for assert: $auto$async2sync.cc:110:execute$60 when $auto$async2sync.cc:101:execute$56.
+
+Setting up time step 11:
+Final constraint equation: { } = { }
+Imported 42 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:110:execute$66 when $auto$async2sync.cc:101:execute$62.
+Import proof for assert: $auto$async2sync.cc:110:execute$60 when $auto$async2sync.cc:101:execute$56.
+
+Setting up time step 12:
+Final constraint equation: { } = { }
+Imported 42 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:110:execute$66 when $auto$async2sync.cc:101:execute$62.
+Import proof for assert: $auto$async2sync.cc:110:execute$60 when $auto$async2sync.cc:101:execute$56.
+
+Setting up time step 13:
+Final constraint equation: { } = { }
+Imported 42 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:110:execute$66 when $auto$async2sync.cc:101:execute$62.
+Import proof for assert: $auto$async2sync.cc:110:execute$60 when $auto$async2sync.cc:101:execute$56.
+
+Setting up time step 14:
+Final constraint equation: { } = { }
+Imported 42 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:110:execute$66 when $auto$async2sync.cc:101:execute$62.
+Import proof for assert: $auto$async2sync.cc:110:execute$60 when $auto$async2sync.cc:101:execute$56.
+
+Setting up time step 15:
+Final constraint equation: { } = { }
+Imported 42 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:110:execute$66 when $auto$async2sync.cc:101:execute$62.
+Import proof for assert: $auto$async2sync.cc:110:execute$60 when $auto$async2sync.cc:101:execute$56.
+
+Setting up time step 16:
+Final constraint equation: { } = { }
+Imported 42 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:110:execute$66 when $auto$async2sync.cc:101:execute$62.
+Import proof for assert: $auto$async2sync.cc:110:execute$60 when $auto$async2sync.cc:101:execute$56.
+Import show expression: \pilot_difference
+Import show expression: \clock
+Import show expression: \io_deq_ready
+Import show expression: \io_enq_bits
+Import show expression: \io_enq_valid
+Import show expression: \reset
+Import show expression: \bad_dut.clock
+Import show expression: \bad_dut.do_enq
+Import show expression: \bad_dut.io_deq_bits
+Import show expression: \bad_dut.io_deq_ready
+Import show expression: \bad_dut.io_deq_valid
+Import show expression: \bad_dut.io_enq_bits
+Import show expression: \bad_dut.io_enq_ready
+Import show expression: \bad_dut.io_enq_ready_0
+Import show expression: \bad_dut.io_enq_valid
+Import show expression: \bad_dut.maybe_full
+Import show expression: \bad_dut.ram
+Import show expression: \bad_dut.reset
+Import show expression: \bad_io_deq_bits
+Import show expression: \bad_io_deq_valid
+Import show expression: \bad_io_enq_ready
+Import show expression: \clock
+Import show expression: \gold_dut.clock
+Import show expression: \gold_dut.do_enq
+Import show expression: \gold_dut.io_deq_bits
+Import show expression: \gold_dut.io_deq_ready
+Import show expression: \gold_dut.io_deq_valid
+Import show expression: \gold_dut.io_enq_bits
+Import show expression: \gold_dut.io_enq_ready
+Import show expression: \gold_dut.io_enq_ready_0
+Import show expression: \gold_dut.io_enq_valid
+Import show expression: \gold_dut.maybe_full
+Import show expression: \gold_dut.ram
+Import show expression: \gold_dut.reset
+Import show expression: \gold_io_deq_bits
+Import show expression: \gold_io_deq_valid
+Import show expression: \gold_io_enq_ready
+Import show expression: \io_deq_ready
+Import show expression: \io_enq_bits
+Import show expression: \io_enq_valid
+Import show expression: \pilot_difference
+Import show expression: \pilot_past_valid
+Import show expression: \reset
+
+Solving problem with 6167 variables and 15934 clauses..
+SAT proof finished - model found: FAIL!
+
+   ______                   ___       ___       _ _            _ _ 
+  (_____ \                 / __)     / __)     (_) |          | | |
+   _____) )___ ___   ___ _| |__    _| |__ _____ _| | _____  __| | |
+  |  ____/ ___) _ \ / _ (_   __)  (_   __|____ | | || ___ |/ _  |_|
+  | |   | |  | |_| | |_| || |       | |  / ___ | | || ____( (_| |_ 
+  |_|   |_|   \___/ \___/ |_|       |_|  \_____|_|\_)_____)\____|_|
+
+
+  Time Signal Name                                     Dec       Hex           Bin
+  ---- --------------------------------------- ----------- --------- -------------
+  init $auto$async2sync.cc:101:execute$56                0         0             0
+  init $auto$async2sync.cc:101:execute$62                0         0             0
+  init $auto$async2sync.cc:110:execute$60                1         1             1
+  init $auto$async2sync.cc:110:execute$66                1         1             1
+  init $auto$async2sync.cc:228:execute$52                0         0             0
+  init $auto$async2sync.cc:228:execute$54                0         0             0
+  init \bad_dut.ram                                    136        88      10001000
+  init \gold_dut.ram                                     1         1      00000001
+  init \pilot_past_valid                                 0         0             0
+  ---- --------------------------------------- ----------- --------- -------------
+     1 \bad_dut.clock                                    0         0             0
+     1 \bad_dut.do_enq                                   0         0             0
+     1 \bad_dut.io_deq_bits                            136        88      10001000
+     1 \bad_dut.io_deq_ready                             0         0             0
+     1 \bad_dut.io_deq_valid                             0         0             0
+     1 \bad_dut.io_enq_bits                              0         0      00000000
+     1 \bad_dut.io_enq_ready                             1         1             1
+     1 \bad_dut.io_enq_ready_0                           1         1             1
+     1 \bad_dut.io_enq_valid                             0         0             0
+     1 \bad_dut.maybe_full                               0         0             0
+     1 \bad_dut.ram                                    136        88      10001000
+     1 \bad_dut.reset                                    1         1             1
+     1 \bad_io_deq_bits                                136        88      10001000
+     1 \bad_io_deq_valid                                 0         0             0
+     1 \bad_io_enq_ready                                 1         1             1
+     1 \clock                                            0         0             0
+     1 \gold_dut.clock                                   0         0             0
+     1 \gold_dut.do_enq                                  0         0             0
+     1 \gold_dut.io_deq_bits                             1         1      00000001
+     1 \gold_dut.io_deq_ready                            0         0             0
+     1 \gold_dut.io_deq_valid                            0         0             0
+     1 \gold_dut.io_enq_bits                             0         0      00000000
+     1 \gold_dut.io_enq_ready                            1         1             1
+     1 \gold_dut.io_enq_ready_0                          1         1             1
+     1 \gold_dut.io_enq_valid                            0         0             0
+     1 \gold_dut.maybe_full                              0         0             0
+     1 \gold_dut.ram                                     1         1      00000001
+     1 \gold_dut.reset                                   1         1             1
+     1 \gold_io_deq_bits                                 1         1      00000001
+     1 \gold_io_deq_valid                                0         0             0
+     1 \gold_io_enq_ready                                1         1             1
+     1 \io_deq_ready                                     0         0             0
+     1 \io_enq_bits                                      0         0      00000000
+     1 \io_enq_valid                                     0         0             0
+     1 \pilot_difference                                 0         0             0
+     1 \pilot_past_valid                                 0         0             0
+     1 \reset                                            1         1             1
+  ---- --------------------------------------- ----------- --------- -------------
+     2 \bad_dut.clock                                    0         0             0
+     2 \bad_dut.do_enq                                   1         1             1
+     2 \bad_dut.io_deq_bits                            136        88      10001000
+     2 \bad_dut.io_deq_ready                             0         0             0
+     2 \bad_dut.io_deq_valid                             0         0             0
+     2 \bad_dut.io_enq_bits                              0         0      00000000
+     2 \bad_dut.io_enq_ready                             1         1             1
+     2 \bad_dut.io_enq_ready_0                           1         1             1
+     2 \bad_dut.io_enq_valid                             1         1             1
+     2 \bad_dut.maybe_full                               0         0             0
+     2 \bad_dut.ram                                    136        88      10001000
+     2 \bad_dut.reset                                    0         0             0
+     2 \bad_io_deq_bits                                136        88      10001000
+     2 \bad_io_deq_valid                                 0         0             0
+     2 \bad_io_enq_ready                                 1         1             1
+     2 \clock                                            0         0             0
+     2 \gold_dut.clock                                   0         0             0
+     2 \gold_dut.do_enq                                  1         1             1
+     2 \gold_dut.io_deq_bits                             1         1      00000001
+     2 \gold_dut.io_deq_ready                            0         0             0
+     2 \gold_dut.io_deq_valid                            0         0             0
+     2 \gold_dut.io_enq_bits                             0         0      00000000
+     2 \gold_dut.io_enq_ready                            1         1             1
+     2 \gold_dut.io_enq_ready_0                          1         1             1
+     2 \gold_dut.io_enq_valid                            1         1             1
+     2 \gold_dut.maybe_full                              0         0             0
+     2 \gold_dut.ram                                     1         1      00000001
+     2 \gold_dut.reset                                   0         0             0
+     2 \gold_io_deq_bits                                 1         1      00000001
+     2 \gold_io_deq_valid                                0         0             0
+     2 \gold_io_enq_ready                                1         1             1
+     2 \io_deq_ready                                     0         0             0
+     2 \io_enq_bits                                      0         0      00000000
+     2 \io_enq_valid                                     1         1             1
+     2 \pilot_difference                                 0         0             0
+     2 \pilot_past_valid                                 1         1             1
+     2 \reset                                            0         0             0
+  ---- --------------------------------------- ----------- --------- -------------
+     3 \bad_dut.clock                                    0         0             0
+     3 \bad_dut.do_enq                                   0         0             0
+     3 \bad_dut.io_deq_bits                              0         0      00000000
+     3 \bad_dut.io_deq_ready                             1         1             1
+     3 \bad_dut.io_deq_valid                             1         1             1
+     3 \bad_dut.io_enq_bits                              0         0      00000000
+     3 \bad_dut.io_enq_ready                             0         0             0
+     3 \bad_dut.io_enq_ready_0                           0         0             0
+     3 \bad_dut.io_enq_valid                             1         1             1
+     3 \bad_dut.maybe_full                               1         1             1
+     3 \bad_dut.ram                                      0         0      00000000
+     3 \bad_dut.reset                                    0         0             0
+     3 \bad_io_deq_bits                                  0         0      00000000
+     3 \bad_io_deq_valid                                 1         1             1
+     3 \bad_io_enq_ready                                 0         0             0
+     3 \clock                                            0         0             0
+     3 \gold_dut.clock                                   0         0             0
+     3 \gold_dut.do_enq                                  1         1             1
+     3 \gold_dut.io_deq_bits                             0         0      00000000
+     3 \gold_dut.io_deq_ready                            1         1             1
+     3 \gold_dut.io_deq_valid                            1         1             1
+     3 \gold_dut.io_enq_bits                             0         0      00000000
+     3 \gold_dut.io_enq_ready                            1         1             1
+     3 \gold_dut.io_enq_ready_0                          1         1             1
+     3 \gold_dut.io_enq_valid                            1         1             1
+     3 \gold_dut.maybe_full                              1         1             1
+     3 \gold_dut.ram                                     0         0      00000000
+     3 \gold_dut.reset                                   0         0             0
+     3 \gold_io_deq_bits                                 0         0      00000000
+     3 \gold_io_deq_valid                                1         1             1
+     3 \gold_io_enq_ready                                1         1             1
+     3 \io_deq_ready                                     1         1             1
+     3 \io_enq_bits                                      0         0      00000000
+     3 \io_enq_valid                                     1         1             1
+     3 \pilot_difference                                 1         1             1
+     3 \pilot_past_valid                                 1         1             1
+     3 \reset                                            0         0             0
+  ---- --------------------------------------- ----------- --------- -------------
+     4 \bad_dut.clock                                    0         0             0
+     4 \bad_dut.do_enq                                   1         1             1
+     4 \bad_dut.io_deq_bits                              0         0      00000000
+     4 \bad_dut.io_deq_ready                             0         0             0
+     4 \bad_dut.io_deq_valid                             0         0             0
+     4 \bad_dut.io_enq_bits                            188        bc      10111100
+     4 \bad_dut.io_enq_ready                             1         1             1
+     4 \bad_dut.io_enq_ready_0                           1         1             1
+     4 \bad_dut.io_enq_valid                             1         1             1
+     4 \bad_dut.maybe_full                               0         0             0
+     4 \bad_dut.ram                                      0         0      00000000
+     4 \bad_dut.reset                                    0         0             0
+     4 \bad_io_deq_bits                                  0         0      00000000
+     4 \bad_io_deq_valid                                 0         0             0
+     4 \bad_io_enq_ready                                 1         1             1
+     4 \clock                                            0         0             0
+     4 \gold_dut.clock                                   0         0             0
+     4 \gold_dut.do_enq                                  0         0             0
+     4 \gold_dut.io_deq_bits                             0         0      00000000
+     4 \gold_dut.io_deq_ready                            0         0             0
+     4 \gold_dut.io_deq_valid                            1         1             1
+     4 \gold_dut.io_enq_bits                           188        bc      10111100
+     4 \gold_dut.io_enq_ready                            0         0             0
+     4 \gold_dut.io_enq_ready_0                          0         0             0
+     4 \gold_dut.io_enq_valid                            1         1             1
+     4 \gold_dut.maybe_full                              1         1             1
+     4 \gold_dut.ram                                     0         0      00000000
+     4 \gold_dut.reset                                   0         0             0
+     4 \gold_io_deq_bits                                 0         0      00000000
+     4 \gold_io_deq_valid                                1         1             1
+     4 \gold_io_enq_ready                                0         0             0
+     4 \io_deq_ready                                     0         0             0
+     4 \io_enq_bits                                    188        bc      10111100
+     4 \io_enq_valid                                     1         1             1
+     4 \pilot_difference                                 1         1             1
+     4 \pilot_past_valid                                 1         1             1
+     4 \reset                                            0         0             0
+  ---- --------------------------------------- ----------- --------- -------------
+     5 \bad_dut.clock                                    0         0             0
+     5 \bad_dut.do_enq                                   0         0             0
+     5 \bad_dut.io_deq_bits                            188        bc      10111100
+     5 \bad_dut.io_deq_ready                             0         0             0
+     5 \bad_dut.io_deq_valid                             1         1             1
+     5 \bad_dut.io_enq_bits                              0         0      00000000
+     5 \bad_dut.io_enq_ready                             0         0             0
+     5 \bad_dut.io_enq_ready_0                           0         0             0
+     5 \bad_dut.io_enq_valid                             0         0             0
+     5 \bad_dut.maybe_full                               1         1             1
+     5 \bad_dut.ram                                    188        bc      10111100
+     5 \bad_dut.reset                                    0         0             0
+     5 \bad_io_deq_bits                                188        bc      10111100
+     5 \bad_io_deq_valid                                 1         1             1
+     5 \bad_io_enq_ready                                 0         0             0
+     5 \clock                                            0         0             0
+     5 \gold_dut.clock                                   0         0             0
+     5 \gold_dut.do_enq                                  0         0             0
+     5 \gold_dut.io_deq_bits                             0         0      00000000
+     5 \gold_dut.io_deq_ready                            0         0             0
+     5 \gold_dut.io_deq_valid                            1         1             1
+     5 \gold_dut.io_enq_bits                             0         0      00000000
+     5 \gold_dut.io_enq_ready                            0         0             0
+     5 \gold_dut.io_enq_ready_0                          0         0             0
+     5 \gold_dut.io_enq_valid                            0         0             0
+     5 \gold_dut.maybe_full                              1         1             1
+     5 \gold_dut.ram                                     0         0      00000000
+     5 \gold_dut.reset                                   0         0             0
+     5 \gold_io_deq_bits                                 0         0      00000000
+     5 \gold_io_deq_valid                                1         1             1
+     5 \gold_io_enq_ready                                0         0             0
+     5 \io_deq_ready                                     0         0             0
+     5 \io_enq_bits                                      0         0      00000000
+     5 \io_enq_valid                                     0         0             0
+     5 \pilot_difference                                 1         1             1
+     5 \pilot_past_valid                                 1         1             1
+     5 \reset                                            0         0             0
+  ---- --------------------------------------- ----------- --------- -------------
+     6 \bad_dut.clock                                    0         0             0
+     6 \bad_dut.do_enq                                   0         0             0
+     6 \bad_dut.io_deq_bits                            188        bc      10111100
+     6 \bad_dut.io_deq_ready                             0         0             0
+     6 \bad_dut.io_deq_valid                             1         1             1
+     6 \bad_dut.io_enq_bits                              0         0      00000000
+     6 \bad_dut.io_enq_ready                             0         0             0
+     6 \bad_dut.io_enq_ready_0                           0         0             0
+     6 \bad_dut.io_enq_valid                             0         0             0
+     6 \bad_dut.maybe_full                               1         1             1
+     6 \bad_dut.ram                                    188        bc      10111100
+     6 \bad_dut.reset                                    0         0             0
+     6 \bad_io_deq_bits                                188        bc      10111100
+     6 \bad_io_deq_valid                                 1         1             1
+     6 \bad_io_enq_ready                                 0         0             0
+     6 \clock                                            0         0             0
+     6 \gold_dut.clock                                   0         0             0
+     6 \gold_dut.do_enq                                  0         0             0
+     6 \gold_dut.io_deq_bits                             0         0      00000000
+     6 \gold_dut.io_deq_ready                            0         0             0
+     6 \gold_dut.io_deq_valid                            1         1             1
+     6 \gold_dut.io_enq_bits                             0         0      00000000
+     6 \gold_dut.io_enq_ready                            0         0             0
+     6 \gold_dut.io_enq_ready_0                          0         0             0
+     6 \gold_dut.io_enq_valid                            0         0             0
+     6 \gold_dut.maybe_full                              1         1             1
+     6 \gold_dut.ram                                     0         0      00000000
+     6 \gold_dut.reset                                   0         0             0
+     6 \gold_io_deq_bits                                 0         0      00000000
+     6 \gold_io_deq_valid                                1         1             1
+     6 \gold_io_enq_ready                                0         0             0
+     6 \io_deq_ready                                     0         0             0
+     6 \io_enq_bits                                      0         0      00000000
+     6 \io_enq_valid                                     0         0             0
+     6 \pilot_difference                                 1         1             1
+     6 \pilot_past_valid                                 1         1             1
+     6 \reset                                            0         0             0
+  ---- --------------------------------------- ----------- --------- -------------
+     7 \bad_dut.clock                                    0         0             0
+     7 \bad_dut.do_enq                                   0         0             0
+     7 \bad_dut.io_deq_bits                            188        bc      10111100
+     7 \bad_dut.io_deq_ready                             1         1             1
+     7 \bad_dut.io_deq_valid                             1         1             1
+     7 \bad_dut.io_enq_bits                              0         0      00000000
+     7 \bad_dut.io_enq_ready                             0         0             0
+     7 \bad_dut.io_enq_ready_0                           0         0             0
+     7 \bad_dut.io_enq_valid                             1         1             1
+     7 \bad_dut.maybe_full                               1         1             1
+     7 \bad_dut.ram                                    188        bc      10111100
+     7 \bad_dut.reset                                    0         0             0
+     7 \bad_io_deq_bits                                188        bc      10111100
+     7 \bad_io_deq_valid                                 1         1             1
+     7 \bad_io_enq_ready                                 0         0             0
+     7 \clock                                            0         0             0
+     7 \gold_dut.clock                                   0         0             0
+     7 \gold_dut.do_enq                                  1         1             1
+     7 \gold_dut.io_deq_bits                             0         0      00000000
+     7 \gold_dut.io_deq_ready                            1         1             1
+     7 \gold_dut.io_deq_valid                            1         1             1
+     7 \gold_dut.io_enq_bits                             0         0      00000000
+     7 \gold_dut.io_enq_ready                            1         1             1
+     7 \gold_dut.io_enq_ready_0                          1         1             1
+     7 \gold_dut.io_enq_valid                            1         1             1
+     7 \gold_dut.maybe_full                              1         1             1
+     7 \gold_dut.ram                                     0         0      00000000
+     7 \gold_dut.reset                                   0         0             0
+     7 \gold_io_deq_bits                                 0         0      00000000
+     7 \gold_io_deq_valid                                1         1             1
+     7 \gold_io_enq_ready                                1         1             1
+     7 \io_deq_ready                                     1         1             1
+     7 \io_enq_bits                                      0         0      00000000
+     7 \io_enq_valid                                     1         1             1
+     7 \pilot_difference                                 1         1             1
+     7 \pilot_past_valid                                 1         1             1
+     7 \reset                                            0         0             0
+  ---- --------------------------------------- ----------- --------- -------------
+     8 \bad_dut.clock                                    0         0             0
+     8 \bad_dut.do_enq                                   0         0             0
+     8 \bad_dut.io_deq_bits                            188        bc      10111100
+     8 \bad_dut.io_deq_ready                             0         0             0
+     8 \bad_dut.io_deq_valid                             0         0             0
+     8 \bad_dut.io_enq_bits                              0         0      00000000
+     8 \bad_dut.io_enq_ready                             1         1             1
+     8 \bad_dut.io_enq_ready_0                           1         1             1
+     8 \bad_dut.io_enq_valid                             0         0             0
+     8 \bad_dut.maybe_full                               0         0             0
+     8 \bad_dut.ram                                    188        bc      10111100
+     8 \bad_dut.reset                                    0         0             0
+     8 \bad_io_deq_bits                                188        bc      10111100
+     8 \bad_io_deq_valid                                 0         0             0
+     8 \bad_io_enq_ready                                 1         1             1
+     8 \clock                                            0         0             0
+     8 \gold_dut.clock                                   0         0             0
+     8 \gold_dut.do_enq                                  0         0             0
+     8 \gold_dut.io_deq_bits                             0         0      00000000
+     8 \gold_dut.io_deq_ready                            0         0             0
+     8 \gold_dut.io_deq_valid                            1         1             1
+     8 \gold_dut.io_enq_bits                             0         0      00000000
+     8 \gold_dut.io_enq_ready                            0         0             0
+     8 \gold_dut.io_enq_ready_0                          0         0             0
+     8 \gold_dut.io_enq_valid                            0         0             0
+     8 \gold_dut.maybe_full                              1         1             1
+     8 \gold_dut.ram                                     0         0      00000000
+     8 \gold_dut.reset                                   0         0             0
+     8 \gold_io_deq_bits                                 0         0      00000000
+     8 \gold_io_deq_valid                                1         1             1
+     8 \gold_io_enq_ready                                0         0             0
+     8 \io_deq_ready                                     0         0             0
+     8 \io_enq_bits                                      0         0      00000000
+     8 \io_enq_valid                                     0         0             0
+     8 \pilot_difference                                 1         1             1
+     8 \pilot_past_valid                                 1         1             1
+     8 \reset                                            0         0             0
+  ---- --------------------------------------- ----------- --------- -------------
+     9 \bad_dut.clock                                    0         0             0
+     9 \bad_dut.do_enq                                   0         0             0
+     9 \bad_dut.io_deq_bits                            188        bc      10111100
+     9 \bad_dut.io_deq_ready                             1         1             1
+     9 \bad_dut.io_deq_valid                             0         0             0
+     9 \bad_dut.io_enq_bits                              0         0      00000000
+     9 \bad_dut.io_enq_ready                             1         1             1
+     9 \bad_dut.io_enq_ready_0                           1         1             1
+     9 \bad_dut.io_enq_valid                             0         0             0
+     9 \bad_dut.maybe_full                               0         0             0
+     9 \bad_dut.ram                                    188        bc      10111100
+     9 \bad_dut.reset                                    0         0             0
+     9 \bad_io_deq_bits                                188        bc      10111100
+     9 \bad_io_deq_valid                                 0         0             0
+     9 \bad_io_enq_ready                                 1         1             1
+     9 \clock                                            0         0             0
+     9 \gold_dut.clock                                   0         0             0
+     9 \gold_dut.do_enq                                  0         0             0
+     9 \gold_dut.io_deq_bits                             0         0      00000000
+     9 \gold_dut.io_deq_ready                            1         1             1
+     9 \gold_dut.io_deq_valid                            1         1             1
+     9 \gold_dut.io_enq_bits                             0         0      00000000
+     9 \gold_dut.io_enq_ready                            1         1             1
+     9 \gold_dut.io_enq_ready_0                          1         1             1
+     9 \gold_dut.io_enq_valid                            0         0             0
+     9 \gold_dut.maybe_full                              1         1             1
+     9 \gold_dut.ram                                     0         0      00000000
+     9 \gold_dut.reset                                   0         0             0
+     9 \gold_io_deq_bits                                 0         0      00000000
+     9 \gold_io_deq_valid                                1         1             1
+     9 \gold_io_enq_ready                                1         1             1
+     9 \io_deq_ready                                     1         1             1
+     9 \io_enq_bits                                      0         0      00000000
+     9 \io_enq_valid                                     0         0             0
+     9 \pilot_difference                                 1         1             1
+     9 \pilot_past_valid                                 1         1             1
+     9 \reset                                            0         0             0
+  ---- --------------------------------------- ----------- --------- -------------
+    10 \bad_dut.clock                                    0         0             0
+    10 \bad_dut.do_enq                                   1         1             1
+    10 \bad_dut.io_deq_bits                            188        bc      10111100
+    10 \bad_dut.io_deq_ready                             0         0             0
+    10 \bad_dut.io_deq_valid                             0         0             0
+    10 \bad_dut.io_enq_bits                            136        88      10001000
+    10 \bad_dut.io_enq_ready                             1         1             1
+    10 \bad_dut.io_enq_ready_0                           1         1             1
+    10 \bad_dut.io_enq_valid                             1         1             1
+    10 \bad_dut.maybe_full                               0         0             0
+    10 \bad_dut.ram                                    188        bc      10111100
+    10 \bad_dut.reset                                    0         0             0
+    10 \bad_io_deq_bits                                188        bc      10111100
+    10 \bad_io_deq_valid                                 0         0             0
+    10 \bad_io_enq_ready                                 1         1             1
+    10 \clock                                            0         0             0
+    10 \gold_dut.clock                                   0         0             0
+    10 \gold_dut.do_enq                                  1         1             1
+    10 \gold_dut.io_deq_bits                             0         0      00000000
+    10 \gold_dut.io_deq_ready                            0         0             0
+    10 \gold_dut.io_deq_valid                            0         0             0
+    10 \gold_dut.io_enq_bits                           136        88      10001000
+    10 \gold_dut.io_enq_ready                            1         1             1
+    10 \gold_dut.io_enq_ready_0                          1         1             1
+    10 \gold_dut.io_enq_valid                            1         1             1
+    10 \gold_dut.maybe_full                              0         0             0
+    10 \gold_dut.ram                                     0         0      00000000
+    10 \gold_dut.reset                                   0         0             0
+    10 \gold_io_deq_bits                                 0         0      00000000
+    10 \gold_io_deq_valid                                0         0             0
+    10 \gold_io_enq_ready                                1         1             1
+    10 \io_deq_ready                                     0         0             0
+    10 \io_enq_bits                                    136        88      10001000
+    10 \io_enq_valid                                     1         1             1
+    10 \pilot_difference                                 0         0             0
+    10 \pilot_past_valid                                 1         1             1
+    10 \reset                                            0         0             0
+  ---- --------------------------------------- ----------- --------- -------------
+    11 \bad_dut.clock                                    0         0             0
+    11 \bad_dut.do_enq                                   0         0             0
+    11 \bad_dut.io_deq_bits                            136        88      10001000
+    11 \bad_dut.io_deq_ready                             1         1             1
+    11 \bad_dut.io_deq_valid                             1         1             1
+    11 \bad_dut.io_enq_bits                            191        bf      10111111
+    11 \bad_dut.io_enq_ready                             0         0             0
+    11 \bad_dut.io_enq_ready_0                           0         0             0
+    11 \bad_dut.io_enq_valid                             0         0             0
+    11 \bad_dut.maybe_full                               1         1             1
+    11 \bad_dut.ram                                    136        88      10001000
+    11 \bad_dut.reset                                    0         0             0
+    11 \bad_io_deq_bits                                136        88      10001000
+    11 \bad_io_deq_valid                                 1         1             1
+    11 \bad_io_enq_ready                                 0         0             0
+    11 \clock                                            0         0             0
+    11 \gold_dut.clock                                   0         0             0
+    11 \gold_dut.do_enq                                  0         0             0
+    11 \gold_dut.io_deq_bits                           136        88      10001000
+    11 \gold_dut.io_deq_ready                            1         1             1
+    11 \gold_dut.io_deq_valid                            1         1             1
+    11 \gold_dut.io_enq_bits                           191        bf      10111111
+    11 \gold_dut.io_enq_ready                            1         1             1
+    11 \gold_dut.io_enq_ready_0                          1         1             1
+    11 \gold_dut.io_enq_valid                            0         0             0
+    11 \gold_dut.maybe_full                              1         1             1
+    11 \gold_dut.ram                                   136        88      10001000
+    11 \gold_dut.reset                                   0         0             0
+    11 \gold_io_deq_bits                               136        88      10001000
+    11 \gold_io_deq_valid                                1         1             1
+    11 \gold_io_enq_ready                                1         1             1
+    11 \io_deq_ready                                     1         1             1
+    11 \io_enq_bits                                    191        bf      10111111
+    11 \io_enq_valid                                     0         0             0
+    11 \pilot_difference                                 1         1             1
+    11 \pilot_past_valid                                 1         1             1
+    11 \reset                                            0         0             0
+  ---- --------------------------------------- ----------- --------- -------------
+    12 \bad_dut.clock                                    0         0             0
+    12 \bad_dut.do_enq                                   0         0             0
+    12 \bad_dut.io_deq_bits                            136        88      10001000
+    12 \bad_dut.io_deq_ready                             0         0             0
+    12 \bad_dut.io_deq_valid                             0         0             0
+    12 \bad_dut.io_enq_bits                            183        b7      10110111
+    12 \bad_dut.io_enq_ready                             1         1             1
+    12 \bad_dut.io_enq_ready_0                           1         1             1
+    12 \bad_dut.io_enq_valid                             0         0             0
+    12 \bad_dut.maybe_full                               0         0             0
+    12 \bad_dut.ram                                    136        88      10001000
+    12 \bad_dut.reset                                    0         0             0
+    12 \bad_io_deq_bits                                136        88      10001000
+    12 \bad_io_deq_valid                                 0         0             0
+    12 \bad_io_enq_ready                                 1         1             1
+    12 \clock                                            0         0             0
+    12 \gold_dut.clock                                   0         0             0
+    12 \gold_dut.do_enq                                  0         0             0
+    12 \gold_dut.io_deq_bits                           136        88      10001000
+    12 \gold_dut.io_deq_ready                            0         0             0
+    12 \gold_dut.io_deq_valid                            0         0             0
+    12 \gold_dut.io_enq_bits                           183        b7      10110111
+    12 \gold_dut.io_enq_ready                            1         1             1
+    12 \gold_dut.io_enq_ready_0                          1         1             1
+    12 \gold_dut.io_enq_valid                            0         0             0
+    12 \gold_dut.maybe_full                              0         0             0
+    12 \gold_dut.ram                                   136        88      10001000
+    12 \gold_dut.reset                                   0         0             0
+    12 \gold_io_deq_bits                               136        88      10001000
+    12 \gold_io_deq_valid                                0         0             0
+    12 \gold_io_enq_ready                                1         1             1
+    12 \io_deq_ready                                     0         0             0
+    12 \io_enq_bits                                    183        b7      10110111
+    12 \io_enq_valid                                     0         0             0
+    12 \pilot_difference                                 0         0             0
+    12 \pilot_past_valid                                 1         1             1
+    12 \reset                                            0         0             0
+  ---- --------------------------------------- ----------- --------- -------------
+    13 \bad_dut.clock                                    0         0             0
+    13 \bad_dut.do_enq                                   0         0             0
+    13 \bad_dut.io_deq_bits                            136        88      10001000
+    13 \bad_dut.io_deq_ready                             0         0             0
+    13 \bad_dut.io_deq_valid                             0         0             0
+    13 \bad_dut.io_enq_bits                            149        95      10010101
+    13 \bad_dut.io_enq_ready                             1         1             1
+    13 \bad_dut.io_enq_ready_0                           1         1             1
+    13 \bad_dut.io_enq_valid                             0         0             0
+    13 \bad_dut.maybe_full                               0         0             0
+    13 \bad_dut.ram                                    136        88      10001000
+    13 \bad_dut.reset                                    0         0             0
+    13 \bad_io_deq_bits                                136        88      10001000
+    13 \bad_io_deq_valid                                 0         0             0
+    13 \bad_io_enq_ready                                 1         1             1
+    13 \clock                                            0         0             0
+    13 \gold_dut.clock                                   0         0             0
+    13 \gold_dut.do_enq                                  0         0             0
+    13 \gold_dut.io_deq_bits                           136        88      10001000
+    13 \gold_dut.io_deq_ready                            0         0             0
+    13 \gold_dut.io_deq_valid                            0         0             0
+    13 \gold_dut.io_enq_bits                           149        95      10010101
+    13 \gold_dut.io_enq_ready                            1         1             1
+    13 \gold_dut.io_enq_ready_0                          1         1             1
+    13 \gold_dut.io_enq_valid                            0         0             0
+    13 \gold_dut.maybe_full                              0         0             0
+    13 \gold_dut.ram                                   136        88      10001000
+    13 \gold_dut.reset                                   0         0             0
+    13 \gold_io_deq_bits                               136        88      10001000
+    13 \gold_io_deq_valid                                0         0             0
+    13 \gold_io_enq_ready                                1         1             1
+    13 \io_deq_ready                                     0         0             0
+    13 \io_enq_bits                                    149        95      10010101
+    13 \io_enq_valid                                     0         0             0
+    13 \pilot_difference                                 0         0             0
+    13 \pilot_past_valid                                 1         1             1
+    13 \reset                                            0         0             0
+  ---- --------------------------------------- ----------- --------- -------------
+    14 \bad_dut.clock                                    0         0             0
+    14 \bad_dut.do_enq                                   0         0             0
+    14 \bad_dut.io_deq_bits                            136        88      10001000
+    14 \bad_dut.io_deq_ready                             0         0             0
+    14 \bad_dut.io_deq_valid                             0         0             0
+    14 \bad_dut.io_enq_bits                            183        b7      10110111
+    14 \bad_dut.io_enq_ready                             1         1             1
+    14 \bad_dut.io_enq_ready_0                           1         1             1
+    14 \bad_dut.io_enq_valid                             0         0             0
+    14 \bad_dut.maybe_full                               0         0             0
+    14 \bad_dut.ram                                    136        88      10001000
+    14 \bad_dut.reset                                    0         0             0
+    14 \bad_io_deq_bits                                136        88      10001000
+    14 \bad_io_deq_valid                                 0         0             0
+    14 \bad_io_enq_ready                                 1         1             1
+    14 \clock                                            0         0             0
+    14 \gold_dut.clock                                   0         0             0
+    14 \gold_dut.do_enq                                  0         0             0
+    14 \gold_dut.io_deq_bits                           136        88      10001000
+    14 \gold_dut.io_deq_ready                            0         0             0
+    14 \gold_dut.io_deq_valid                            0         0             0
+    14 \gold_dut.io_enq_bits                           183        b7      10110111
+    14 \gold_dut.io_enq_ready                            1         1             1
+    14 \gold_dut.io_enq_ready_0                          1         1             1
+    14 \gold_dut.io_enq_valid                            0         0             0
+    14 \gold_dut.maybe_full                              0         0             0
+    14 \gold_dut.ram                                   136        88      10001000
+    14 \gold_dut.reset                                   0         0             0
+    14 \gold_io_deq_bits                               136        88      10001000
+    14 \gold_io_deq_valid                                0         0             0
+    14 \gold_io_enq_ready                                1         1             1
+    14 \io_deq_ready                                     0         0             0
+    14 \io_enq_bits                                    183        b7      10110111
+    14 \io_enq_valid                                     0         0             0
+    14 \pilot_difference                                 0         0             0
+    14 \pilot_past_valid                                 1         1             1
+    14 \reset                                            0         0             0
+  ---- --------------------------------------- ----------- --------- -------------
+    15 \bad_dut.clock                                    0         0             0
+    15 \bad_dut.do_enq                                   0         0             0
+    15 \bad_dut.io_deq_bits                            136        88      10001000
+    15 \bad_dut.io_deq_ready                             1         1             1
+    15 \bad_dut.io_deq_valid                             0         0             0
+    15 \bad_dut.io_enq_bits                              0         0      00000000
+    15 \bad_dut.io_enq_ready                             1         1             1
+    15 \bad_dut.io_enq_ready_0                           1         1             1
+    15 \bad_dut.io_enq_valid                             0         0             0
+    15 \bad_dut.maybe_full                               0         0             0
+    15 \bad_dut.ram                                    136        88      10001000
+    15 \bad_dut.reset                                    0         0             0
+    15 \bad_io_deq_bits                                136        88      10001000
+    15 \bad_io_deq_valid                                 0         0             0
+    15 \bad_io_enq_ready                                 1         1             1
+    15 \clock                                            0         0             0
+    15 \gold_dut.clock                                   0         0             0
+    15 \gold_dut.do_enq                                  0         0             0
+    15 \gold_dut.io_deq_bits                           136        88      10001000
+    15 \gold_dut.io_deq_ready                            1         1             1
+    15 \gold_dut.io_deq_valid                            0         0             0
+    15 \gold_dut.io_enq_bits                             0         0      00000000
+    15 \gold_dut.io_enq_ready                            1         1             1
+    15 \gold_dut.io_enq_ready_0                          1         1             1
+    15 \gold_dut.io_enq_valid                            0         0             0
+    15 \gold_dut.maybe_full                              0         0             0
+    15 \gold_dut.ram                                   136        88      10001000
+    15 \gold_dut.reset                                   0         0             0
+    15 \gold_io_deq_bits                               136        88      10001000
+    15 \gold_io_deq_valid                                0         0             0
+    15 \gold_io_enq_ready                                1         1             1
+    15 \io_deq_ready                                     1         1             1
+    15 \io_enq_bits                                      0         0      00000000
+    15 \io_enq_valid                                     0         0             0
+    15 \pilot_difference                                 0         0             0
+    15 \pilot_past_valid                                 1         1             1
+    15 \reset                                            0         0             0
+  ---- --------------------------------------- ----------- --------- -------------
+    16 \bad_dut.clock                                    0         0             0
+    16 \bad_dut.do_enq                                   0         0             0
+    16 \bad_dut.io_deq_bits                            136        88      10001000
+    16 \bad_dut.io_deq_ready                             0         0             0
+    16 \bad_dut.io_deq_valid                             0         0             0
+    16 \bad_dut.io_enq_bits                              0         0      00000000
+    16 \bad_dut.io_enq_ready                             1         1             1
+    16 \bad_dut.io_enq_ready_0                           1         1             1
+    16 \bad_dut.io_enq_valid                             0         0             0
+    16 \bad_dut.maybe_full                               0         0             0
+    16 \bad_dut.ram                                    136        88      10001000
+    16 \bad_dut.reset                                    1         1             1
+    16 \bad_io_deq_bits                                136        88      10001000
+    16 \bad_io_deq_valid                                 0         0             0
+    16 \bad_io_enq_ready                                 1         1             1
+    16 \clock                                            0         0             0
+    16 \gold_dut.clock                                   0         0             0
+    16 \gold_dut.do_enq                                  0         0             0
+    16 \gold_dut.io_deq_bits                           136        88      10001000
+    16 \gold_dut.io_deq_ready                            0         0             0
+    16 \gold_dut.io_deq_valid                            0         0             0
+    16 \gold_dut.io_enq_bits                             0         0      00000000
+    16 \gold_dut.io_enq_ready                            1         1             1
+    16 \gold_dut.io_enq_ready_0                          1         1             1
+    16 \gold_dut.io_enq_valid                            0         0             0
+    16 \gold_dut.maybe_full                              0         0             0
+    16 \gold_dut.ram                                   136        88      10001000
+    16 \gold_dut.reset                                   1         1             1
+    16 \gold_io_deq_bits                               136        88      10001000
+    16 \gold_io_deq_valid                                0         0             0
+    16 \gold_io_enq_ready                                1         1             1
+    16 \io_deq_ready                                     0         0             0
+    16 \io_enq_bits                                      0         0      00000000
+    16 \io_enq_valid                                     0         0             0
+    16 \pilot_difference                                 0         0             0
+    16 \pilot_past_valid                                 1         1             1
+    16 \reset                                            1         1             1
+Dumping SAT model to VCD file /nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/traces/M_Q1_PIPE__interface_difference.vcd
+Dumping SAT model to WaveJSON file '/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/traces/M_Q1_PIPE__interface_difference.json'.

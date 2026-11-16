@@ -1,0 +1,18 @@
+{
+  "target_id": "EX_01",
+  "parent_id": "EX_01",
+  "top": "ExclusiveMonitorEntry",
+  "title": "非对应请求不能成功",
+  "contract": "无有效请求或请求实体与当前条目不匹配时，不产生独占成功。",
+  "source_lines": [
+    24,
+    72
+  ],
+  "source_type": "rtl_derived_candidate_contract",
+  "spec_review_status": "pending_external_spec_review",
+  "reference": {
+    "timing": "overlap",
+    "antecedent": "!corrReq",
+    "consequent": "!io_req_exok"
+  }
+}

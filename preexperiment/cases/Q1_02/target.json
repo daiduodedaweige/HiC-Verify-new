@@ -1,0 +1,20 @@
+{
+  "target_id": "Q1_02",
+  "parent_id": "Q1_02",
+  "top": "Queue1_UInt8",
+  "title": "阻塞时保持有效",
+  "contract": "已有数据且下游未接受时，下一采样周期仍有有效数据。",
+  "source_lines": [
+    14,
+    18,
+    22,
+    41
+  ],
+  "source_type": "rtl_derived_candidate_contract",
+  "spec_review_status": "pending_external_spec_review",
+  "reference": {
+    "timing": "next",
+    "antecedent": "io_deq_valid && !io_deq_ready",
+    "consequent": "io_deq_valid"
+  }
+}

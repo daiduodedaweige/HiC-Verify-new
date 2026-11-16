@@ -1,0 +1,662 @@
+
+-- Executing script file `/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q1_01__reference__cover/query.ys' --
+
+1. Executing Verilog-2005 frontend: /nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q1_01__reference__cover/design.sv
+Parsing formal SystemVerilog input from `/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q1_01__reference__cover/design.sv' to AST representation.
+Generating RTLIL representation for module `\Queue1_UInt8'.
+Successfully finished Verilog frontend.
+
+2. Executing PREP pass.
+
+2.1. Executing HIERARCHY pass (managing design hierarchy).
+
+2.1.1. Analyzing design hierarchy..
+Top module:  \Queue1_UInt8
+
+2.1.2. Analyzing design hierarchy..
+Top module:  \Queue1_UInt8
+Removed 0 unused modules.
+Module Queue1_UInt8 directly or indirectly contains formal properties -> setting "keep" attribute.
+
+2.2. Executing PROC pass (convert processes to netlists).
+
+2.2.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+2.2.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 1 switch rules as full_case in process $proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q1_01__reference__cover/design.sv:18$4 in module Queue1_UInt8.
+Removed a total of 0 dead cases.
+
+2.2.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 0 redundant assignments.
+Promoted 4 assignments to connections.
+
+2.2.4. Executing PROC_INIT pass (extract init attributes).
+Found init rule in `\Queue1_UInt8.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q1_01__reference__cover/design.sv:51$23'.
+  Set init value: \pilot_active = 1'0
+Found init rule in `\Queue1_UInt8.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q1_01__reference__cover/design.sv:46$22'.
+  Set init value: \pilot_past_valid = 1'0
+
+2.2.5. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \reset in `\Queue1_UInt8.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q1_01__reference__cover/design.sv:18$4'.
+
+2.2.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~4 debug messages>
+
+2.2.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\Queue1_UInt8.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q1_01__reference__cover/design.sv:51$23'.
+Creating decoders for process `\Queue1_UInt8.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q1_01__reference__cover/design.sv:46$22'.
+Creating decoders for process `\Queue1_UInt8.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q1_01__reference__cover/design.sv:52$11'.
+     1/1: $assert$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q1_01__reference__cover/design.sv:54$17_EN
+Creating decoders for process `\Queue1_UInt8.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q1_01__reference__cover/design.sv:47$8'.
+     1/1: $assume$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q1_01__reference__cover/design.sv:49$10_EN
+Creating decoders for process `\Queue1_UInt8.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q1_01__reference__cover/design.sv:24$7'.
+     1/1: $0\ram[7:0]
+Creating decoders for process `\Queue1_UInt8.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q1_01__reference__cover/design.sv:18$4'.
+     1/1: $0\maybe_full[0:0]
+
+2.2.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+2.2.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\Queue1_UInt8.\pilot_active' using process `\Queue1_UInt8.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q1_01__reference__cover/design.sv:52$11'.
+  created $dff cell `$procdff$32' with positive edge clock.
+Creating register for signal `\Queue1_UInt8.\pilot_past_valid' using process `\Queue1_UInt8.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q1_01__reference__cover/design.sv:47$8'.
+  created $dff cell `$procdff$33' with positive edge clock.
+Creating register for signal `\Queue1_UInt8.\ram' using process `\Queue1_UInt8.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q1_01__reference__cover/design.sv:24$7'.
+  created $dff cell `$procdff$34' with positive edge clock.
+Creating register for signal `\Queue1_UInt8.\maybe_full' using process `\Queue1_UInt8.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q1_01__reference__cover/design.sv:18$4'.
+  created $adff cell `$procdff$37' with positive edge clock and positive level reset.
+
+2.2.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+2.2.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Removing empty process `Queue1_UInt8.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q1_01__reference__cover/design.sv:51$23'.
+Removing empty process `Queue1_UInt8.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q1_01__reference__cover/design.sv:46$22'.
+Found and cleaned up 1 empty switch in `\Queue1_UInt8.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q1_01__reference__cover/design.sv:52$11'.
+Removing empty process `Queue1_UInt8.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q1_01__reference__cover/design.sv:52$11'.
+Found and cleaned up 1 empty switch in `\Queue1_UInt8.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q1_01__reference__cover/design.sv:47$8'.
+Removing empty process `Queue1_UInt8.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q1_01__reference__cover/design.sv:47$8'.
+Found and cleaned up 1 empty switch in `\Queue1_UInt8.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q1_01__reference__cover/design.sv:24$7'.
+Removing empty process `Queue1_UInt8.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q1_01__reference__cover/design.sv:24$7'.
+Found and cleaned up 1 empty switch in `\Queue1_UInt8.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q1_01__reference__cover/design.sv:18$4'.
+Removing empty process `Queue1_UInt8.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q1_01__reference__cover/design.sv:18$4'.
+Cleaned up 4 empty switches.
+
+2.2.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module Queue1_UInt8.
+<suppressed ~4 debug messages>
+
+2.3. Executing FUTURE pass.
+
+2.4. Executing OPT_EXPR pass (perform const folding).
+Optimizing module Queue1_UInt8.
+
+2.5. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \Queue1_UInt8..
+Removed 1 unused cells and 18 unused wires.
+<suppressed ~2 debug messages>
+
+2.6. Executing CHECK pass (checking for obvious problems).
+Checking module Queue1_UInt8...
+Found and reported 0 problems.
+
+2.7. Executing OPT pass (performing simple optimizations).
+
+2.7.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module Queue1_UInt8.
+
+2.7.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\Queue1_UInt8'.
+<suppressed ~6 debug messages>
+Removed a total of 2 cells.
+
+2.7.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \Queue1_UInt8..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~4 debug messages>
+
+2.7.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \Queue1_UInt8.
+Performed a total of 0 changes.
+
+2.7.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\Queue1_UInt8'.
+Removed a total of 0 cells.
+
+2.7.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \Queue1_UInt8..
+Removed 0 unused cells and 2 unused wires.
+<suppressed ~1 debug messages>
+
+2.7.7. Executing OPT_EXPR pass (perform const folding).
+Optimizing module Queue1_UInt8.
+
+2.7.8. Rerunning OPT passes. (Maybe there is more to do..)
+
+2.7.9. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \Queue1_UInt8..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~4 debug messages>
+
+2.7.10. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \Queue1_UInt8.
+Performed a total of 0 changes.
+
+2.7.11. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\Queue1_UInt8'.
+Removed a total of 0 cells.
+
+2.7.12. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \Queue1_UInt8..
+
+2.7.13. Executing OPT_EXPR pass (perform const folding).
+Optimizing module Queue1_UInt8.
+
+2.7.14. Finished OPT passes. (There is nothing left to do.)
+
+2.8. Executing WREDUCE pass (reducing word size of cells).
+
+2.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \Queue1_UInt8..
+
+2.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+2.11. Executing OPT pass (performing simple optimizations).
+
+2.11.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module Queue1_UInt8.
+
+2.11.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\Queue1_UInt8'.
+Removed a total of 0 cells.
+
+2.11.3. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \Queue1_UInt8..
+
+2.11.4. Finished fast OPT passes.
+
+2.12. Printing statistics.
+
+=== Queue1_UInt8 ===
+
+   Number of wires:                 26
+   Number of wire bits:             54
+   Number of public wires:          14
+   Number of public wire bits:      35
+   Number of ports:                  8
+   Number of port bits:             22
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 20
+     $adff                           1
+     $and                            2
+     $check                          2
+     $dff                            3
+     $eq                             1
+     $logic_and                      1
+     $logic_not                      2
+     $logic_or                       1
+     $mux                            4
+     $ne                             1
+     $not                            1
+     $or                             1
+
+2.13. Executing CHECK pass (checking for obvious problems).
+Checking module Queue1_UInt8...
+Found and reported 0 problems.
+
+3. Executing FLATTEN pass (flatten design).
+
+4. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+
+5. Executing ASYNC2SYNC pass.
+Replacing Queue1_UInt8.$procdff$37 ($adff): ARST=\reset, D=$0\maybe_full[0:0], Q=\maybe_full
+
+6. Executing DFFUNMAP pass (unmap clock enable and synchronous reset from FFs).
+
+7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \Queue1_UInt8..
+Removed 6 unused cells and 6 unused wires.
+<suppressed ~7 debug messages>
+
+8. Executing SAT pass (solving SAT problems in the circuit).
+
+Setting up time step 1:
+Final constraint equation: { } = { }
+Imported 25 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:110:execute$48 when $auto$async2sync.cc:101:execute$44.
+Import set-constraint from init attribute: $auto$async2sync.cc:101:execute$38 = 1'0
+Import set-constraint from init attribute: $auto$async2sync.cc:101:execute$44 = 1'0
+Import set-constraint from init attribute: $auto$async2sync.cc:110:execute$42 = 1'1
+Import set-constraint from init attribute: $auto$async2sync.cc:110:execute$48 = 1'1
+Import set-constraint from init attribute: \pilot_active = 1'0
+Import set-constraint from init attribute: \pilot_past_valid = 1'0
+Final init constraint equation: { \pilot_past_valid \pilot_active $auto$async2sync.cc:110:execute$48 $auto$async2sync.cc:110:execute$42 $auto$async2sync.cc:101:execute$44 $auto$async2sync.cc:101:execute$38 } = 6'001100
+Import proof-constraint: \pilot_active = 1'0
+Final proof equation: \pilot_active = 1'0
+
+Setting up time step 2:
+Final constraint equation: { } = { }
+Imported 25 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:110:execute$48 when $auto$async2sync.cc:101:execute$44.
+Import proof-constraint: \pilot_active = 1'0
+Final proof equation: \pilot_active = 1'0
+
+Setting up time step 3:
+Final constraint equation: { } = { }
+Imported 25 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:110:execute$48 when $auto$async2sync.cc:101:execute$44.
+Import proof-constraint: \pilot_active = 1'0
+Final proof equation: \pilot_active = 1'0
+
+Setting up time step 4:
+Final constraint equation: { } = { }
+Imported 25 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:110:execute$48 when $auto$async2sync.cc:101:execute$44.
+Import proof-constraint: \pilot_active = 1'0
+Final proof equation: \pilot_active = 1'0
+
+Setting up time step 5:
+Final constraint equation: { } = { }
+Imported 25 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:110:execute$48 when $auto$async2sync.cc:101:execute$44.
+Import proof-constraint: \pilot_active = 1'0
+Final proof equation: \pilot_active = 1'0
+
+Setting up time step 6:
+Final constraint equation: { } = { }
+Imported 25 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:110:execute$48 when $auto$async2sync.cc:101:execute$44.
+Import proof-constraint: \pilot_active = 1'0
+Final proof equation: \pilot_active = 1'0
+
+Setting up time step 7:
+Final constraint equation: { } = { }
+Imported 25 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:110:execute$48 when $auto$async2sync.cc:101:execute$44.
+Import proof-constraint: \pilot_active = 1'0
+Final proof equation: \pilot_active = 1'0
+
+Setting up time step 8:
+Final constraint equation: { } = { }
+Imported 25 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:110:execute$48 when $auto$async2sync.cc:101:execute$44.
+Import proof-constraint: \pilot_active = 1'0
+Final proof equation: \pilot_active = 1'0
+
+Setting up time step 9:
+Final constraint equation: { } = { }
+Imported 25 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:110:execute$48 when $auto$async2sync.cc:101:execute$44.
+Import proof-constraint: \pilot_active = 1'0
+Final proof equation: \pilot_active = 1'0
+
+Setting up time step 10:
+Final constraint equation: { } = { }
+Imported 25 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:110:execute$48 when $auto$async2sync.cc:101:execute$44.
+Import proof-constraint: \pilot_active = 1'0
+Final proof equation: \pilot_active = 1'0
+
+Setting up time step 11:
+Final constraint equation: { } = { }
+Imported 25 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:110:execute$48 when $auto$async2sync.cc:101:execute$44.
+Import proof-constraint: \pilot_active = 1'0
+Final proof equation: \pilot_active = 1'0
+
+Setting up time step 12:
+Final constraint equation: { } = { }
+Imported 25 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:110:execute$48 when $auto$async2sync.cc:101:execute$44.
+Import proof-constraint: \pilot_active = 1'0
+Final proof equation: \pilot_active = 1'0
+
+Setting up time step 13:
+Final constraint equation: { } = { }
+Imported 25 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:110:execute$48 when $auto$async2sync.cc:101:execute$44.
+Import proof-constraint: \pilot_active = 1'0
+Final proof equation: \pilot_active = 1'0
+
+Setting up time step 14:
+Final constraint equation: { } = { }
+Imported 25 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:110:execute$48 when $auto$async2sync.cc:101:execute$44.
+Import proof-constraint: \pilot_active = 1'0
+Final proof equation: \pilot_active = 1'0
+
+Setting up time step 15:
+Final constraint equation: { } = { }
+Imported 25 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:110:execute$48 when $auto$async2sync.cc:101:execute$44.
+Import proof-constraint: \pilot_active = 1'0
+Final proof equation: \pilot_active = 1'0
+
+Setting up time step 16:
+Final constraint equation: { } = { }
+Imported 25 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:110:execute$48 when $auto$async2sync.cc:101:execute$44.
+Import proof-constraint: \pilot_active = 1'0
+Final proof equation: \pilot_active = 1'0
+Import show expression: \pilot_active
+Import show expression: \clock
+Import show expression: \io_deq_ready
+Import show expression: \io_enq_bits
+Import show expression: \io_enq_valid
+Import show expression: \reset
+Import show expression: \io_deq_bits
+Import show expression: \io_deq_valid
+Import show expression: \io_enq_ready
+Import show expression: $auto$async2sync.cc:228:execute$50
+Import show expression: \ram
+Import show expression: \pilot_past_valid
+Import show expression: \pilot_active
+Import show expression: $auto$async2sync.cc:110:execute$48
+Import show expression: $auto$async2sync.cc:110:execute$42
+Import show expression: $auto$async2sync.cc:101:execute$44
+Import show expression: $auto$async2sync.cc:101:execute$38
+
+Solving problem with 3359 variables and 8319 clauses..
+SAT proof finished - model found: FAIL!
+
+   ______                   ___       ___       _ _            _ _ 
+  (_____ \                 / __)     / __)     (_) |          | | |
+   _____) )___ ___   ___ _| |__    _| |__ _____ _| | _____  __| | |
+  |  ____/ ___) _ \ / _ (_   __)  (_   __|____ | | || ___ |/ _  |_|
+  | |   | |  | |_| | |_| || |       | |  / ___ | | || ____( (_| |_ 
+  |_|   |_|   \___/ \___/ |_|       |_|  \_____|_|\_)_____)\____|_|
+
+
+  Time Signal Name                                     Dec       Hex           Bin
+  ---- --------------------------------------- ----------- --------- -------------
+  init $auto$async2sync.cc:101:execute$38                0         0             0
+  init $auto$async2sync.cc:101:execute$44                0         0             0
+  init $auto$async2sync.cc:110:execute$42                1         1             1
+  init $auto$async2sync.cc:110:execute$48                1         1             1
+  init $auto$async2sync.cc:228:execute$50                0         0             0
+  init \pilot_active                                     0         0             0
+  init \pilot_past_valid                                 0         0             0
+  init \ram                                              0         0      00000000
+  ---- --------------------------------------- ----------- --------- -------------
+     1 $auto$async2sync.cc:101:execute$38                0         0             0
+     1 $auto$async2sync.cc:101:execute$44                0         0             0
+     1 $auto$async2sync.cc:110:execute$42                1         1             1
+     1 $auto$async2sync.cc:110:execute$48                1         1             1
+     1 $auto$async2sync.cc:228:execute$50                0         0             0
+     1 \clock                                            0         0             0
+     1 \io_deq_bits                                      0         0      00000000
+     1 \io_deq_ready                                     0         0             0
+     1 \io_deq_valid                                     0         0             0
+     1 \io_enq_bits                                      0         0      00000000
+     1 \io_enq_ready                                     1         1             1
+     1 \io_enq_valid                                     0         0             0
+     1 \pilot_active                                     0         0             0
+     1 \pilot_past_valid                                 0         0             0
+     1 \ram                                              0         0      00000000
+     1 \reset                                            1         1             1
+  ---- --------------------------------------- ----------- --------- -------------
+     2 $auto$async2sync.cc:101:execute$38                0         0             0
+     2 $auto$async2sync.cc:101:execute$44                1         1             1
+     2 $auto$async2sync.cc:110:execute$42                1         1             1
+     2 $auto$async2sync.cc:110:execute$48                1         1             1
+     2 $auto$async2sync.cc:228:execute$50                0         0             0
+     2 \clock                                            0         0             0
+     2 \io_deq_bits                                      0         0      00000000
+     2 \io_deq_ready                                     0         0             0
+     2 \io_deq_valid                                     0         0             0
+     2 \io_enq_bits                                      0         0      00000000
+     2 \io_enq_ready                                     1         1             1
+     2 \io_enq_valid                                     0         0             0
+     2 \pilot_active                                     0         0             0
+     2 \pilot_past_valid                                 1         1             1
+     2 \ram                                              0         0      00000000
+     2 \reset                                            0         0             0
+  ---- --------------------------------------- ----------- --------- -------------
+     3 $auto$async2sync.cc:101:execute$38                1         1             1
+     3 $auto$async2sync.cc:101:execute$44                0         0             0
+     3 $auto$async2sync.cc:110:execute$42                1         1             1
+     3 $auto$async2sync.cc:110:execute$48                0         0             0
+     3 $auto$async2sync.cc:228:execute$50                0         0             0
+     3 \clock                                            0         0             0
+     3 \io_deq_bits                                      0         0      00000000
+     3 \io_deq_ready                                     0         0             0
+     3 \io_deq_valid                                     0         0             0
+     3 \io_enq_bits                                      0         0      00000000
+     3 \io_enq_ready                                     1         1             1
+     3 \io_enq_valid                                     0         0             0
+     3 \pilot_active                                     1         1             1
+     3 \pilot_past_valid                                 1         1             1
+     3 \ram                                              0         0      00000000
+     3 \reset                                            1         1             1
+  ---- --------------------------------------- ----------- --------- -------------
+     4 $auto$async2sync.cc:101:execute$38                0         0             0
+     4 $auto$async2sync.cc:101:execute$44                0         0             0
+     4 $auto$async2sync.cc:110:execute$42                1         1             1
+     4 $auto$async2sync.cc:110:execute$48                1         1             1
+     4 $auto$async2sync.cc:228:execute$50                0         0             0
+     4 \clock                                            0         0             0
+     4 \io_deq_bits                                      0         0      00000000
+     4 \io_deq_ready                                     0         0             0
+     4 \io_deq_valid                                     0         0             0
+     4 \io_enq_bits                                      0         0      00000000
+     4 \io_enq_ready                                     1         1             1
+     4 \io_enq_valid                                     0         0             0
+     4 \pilot_active                                     0         0             0
+     4 \pilot_past_valid                                 1         1             1
+     4 \ram                                              0         0      00000000
+     4 \reset                                            1         1             1
+  ---- --------------------------------------- ----------- --------- -------------
+     5 $auto$async2sync.cc:101:execute$38                0         0             0
+     5 $auto$async2sync.cc:101:execute$44                0         0             0
+     5 $auto$async2sync.cc:110:execute$42                1         1             1
+     5 $auto$async2sync.cc:110:execute$48                1         1             1
+     5 $auto$async2sync.cc:228:execute$50                0         0             0
+     5 \clock                                            0         0             0
+     5 \io_deq_bits                                      0         0      00000000
+     5 \io_deq_ready                                     0         0             0
+     5 \io_deq_valid                                     0         0             0
+     5 \io_enq_bits                                      0         0      00000000
+     5 \io_enq_ready                                     1         1             1
+     5 \io_enq_valid                                     0         0             0
+     5 \pilot_active                                     0         0             0
+     5 \pilot_past_valid                                 1         1             1
+     5 \ram                                              0         0      00000000
+     5 \reset                                            1         1             1
+  ---- --------------------------------------- ----------- --------- -------------
+     6 $auto$async2sync.cc:101:execute$38                0         0             0
+     6 $auto$async2sync.cc:101:execute$44                0         0             0
+     6 $auto$async2sync.cc:110:execute$42                1         1             1
+     6 $auto$async2sync.cc:110:execute$48                1         1             1
+     6 $auto$async2sync.cc:228:execute$50                0         0             0
+     6 \clock                                            0         0             0
+     6 \io_deq_bits                                      0         0      00000000
+     6 \io_deq_ready                                     0         0             0
+     6 \io_deq_valid                                     0         0             0
+     6 \io_enq_bits                                      0         0      00000000
+     6 \io_enq_ready                                     1         1             1
+     6 \io_enq_valid                                     0         0             0
+     6 \pilot_active                                     0         0             0
+     6 \pilot_past_valid                                 1         1             1
+     6 \ram                                              0         0      00000000
+     6 \reset                                            1         1             1
+  ---- --------------------------------------- ----------- --------- -------------
+     7 $auto$async2sync.cc:101:execute$38                0         0             0
+     7 $auto$async2sync.cc:101:execute$44                0         0             0
+     7 $auto$async2sync.cc:110:execute$42                1         1             1
+     7 $auto$async2sync.cc:110:execute$48                1         1             1
+     7 $auto$async2sync.cc:228:execute$50                0         0             0
+     7 \clock                                            0         0             0
+     7 \io_deq_bits                                      0         0      00000000
+     7 \io_deq_ready                                     0         0             0
+     7 \io_deq_valid                                     0         0             0
+     7 \io_enq_bits                                      0         0      00000000
+     7 \io_enq_ready                                     1         1             1
+     7 \io_enq_valid                                     0         0             0
+     7 \pilot_active                                     0         0             0
+     7 \pilot_past_valid                                 1         1             1
+     7 \ram                                              0         0      00000000
+     7 \reset                                            1         1             1
+  ---- --------------------------------------- ----------- --------- -------------
+     8 $auto$async2sync.cc:101:execute$38                0         0             0
+     8 $auto$async2sync.cc:101:execute$44                0         0             0
+     8 $auto$async2sync.cc:110:execute$42                1         1             1
+     8 $auto$async2sync.cc:110:execute$48                1         1             1
+     8 $auto$async2sync.cc:228:execute$50                0         0             0
+     8 \clock                                            0         0             0
+     8 \io_deq_bits                                      0         0      00000000
+     8 \io_deq_ready                                     0         0             0
+     8 \io_deq_valid                                     0         0             0
+     8 \io_enq_bits                                      0         0      00000000
+     8 \io_enq_ready                                     1         1             1
+     8 \io_enq_valid                                     0         0             0
+     8 \pilot_active                                     0         0             0
+     8 \pilot_past_valid                                 1         1             1
+     8 \ram                                              0         0      00000000
+     8 \reset                                            1         1             1
+  ---- --------------------------------------- ----------- --------- -------------
+     9 $auto$async2sync.cc:101:execute$38                0         0             0
+     9 $auto$async2sync.cc:101:execute$44                0         0             0
+     9 $auto$async2sync.cc:110:execute$42                1         1             1
+     9 $auto$async2sync.cc:110:execute$48                1         1             1
+     9 $auto$async2sync.cc:228:execute$50                0         0             0
+     9 \clock                                            0         0             0
+     9 \io_deq_bits                                      0         0      00000000
+     9 \io_deq_ready                                     0         0             0
+     9 \io_deq_valid                                     0         0             0
+     9 \io_enq_bits                                      0         0      00000000
+     9 \io_enq_ready                                     1         1             1
+     9 \io_enq_valid                                     0         0             0
+     9 \pilot_active                                     0         0             0
+     9 \pilot_past_valid                                 1         1             1
+     9 \ram                                              0         0      00000000
+     9 \reset                                            1         1             1
+  ---- --------------------------------------- ----------- --------- -------------
+    10 $auto$async2sync.cc:101:execute$38                0         0             0
+    10 $auto$async2sync.cc:101:execute$44                0         0             0
+    10 $auto$async2sync.cc:110:execute$42                1         1             1
+    10 $auto$async2sync.cc:110:execute$48                1         1             1
+    10 $auto$async2sync.cc:228:execute$50                0         0             0
+    10 \clock                                            0         0             0
+    10 \io_deq_bits                                      0         0      00000000
+    10 \io_deq_ready                                     0         0             0
+    10 \io_deq_valid                                     0         0             0
+    10 \io_enq_bits                                      0         0      00000000
+    10 \io_enq_ready                                     1         1             1
+    10 \io_enq_valid                                     0         0             0
+    10 \pilot_active                                     0         0             0
+    10 \pilot_past_valid                                 1         1             1
+    10 \ram                                              0         0      00000000
+    10 \reset                                            1         1             1
+  ---- --------------------------------------- ----------- --------- -------------
+    11 $auto$async2sync.cc:101:execute$38                0         0             0
+    11 $auto$async2sync.cc:101:execute$44                0         0             0
+    11 $auto$async2sync.cc:110:execute$42                1         1             1
+    11 $auto$async2sync.cc:110:execute$48                1         1             1
+    11 $auto$async2sync.cc:228:execute$50                0         0             0
+    11 \clock                                            0         0             0
+    11 \io_deq_bits                                      0         0      00000000
+    11 \io_deq_ready                                     0         0             0
+    11 \io_deq_valid                                     0         0             0
+    11 \io_enq_bits                                      0         0      00000000
+    11 \io_enq_ready                                     1         1             1
+    11 \io_enq_valid                                     0         0             0
+    11 \pilot_active                                     0         0             0
+    11 \pilot_past_valid                                 1         1             1
+    11 \ram                                              0         0      00000000
+    11 \reset                                            1         1             1
+  ---- --------------------------------------- ----------- --------- -------------
+    12 $auto$async2sync.cc:101:execute$38                0         0             0
+    12 $auto$async2sync.cc:101:execute$44                0         0             0
+    12 $auto$async2sync.cc:110:execute$42                1         1             1
+    12 $auto$async2sync.cc:110:execute$48                1         1             1
+    12 $auto$async2sync.cc:228:execute$50                0         0             0
+    12 \clock                                            0         0             0
+    12 \io_deq_bits                                      0         0      00000000
+    12 \io_deq_ready                                     0         0             0
+    12 \io_deq_valid                                     0         0             0
+    12 \io_enq_bits                                      0         0      00000000
+    12 \io_enq_ready                                     1         1             1
+    12 \io_enq_valid                                     0         0             0
+    12 \pilot_active                                     0         0             0
+    12 \pilot_past_valid                                 1         1             1
+    12 \ram                                              0         0      00000000
+    12 \reset                                            1         1             1
+  ---- --------------------------------------- ----------- --------- -------------
+    13 $auto$async2sync.cc:101:execute$38                0         0             0
+    13 $auto$async2sync.cc:101:execute$44                0         0             0
+    13 $auto$async2sync.cc:110:execute$42                1         1             1
+    13 $auto$async2sync.cc:110:execute$48                1         1             1
+    13 $auto$async2sync.cc:228:execute$50                0         0             0
+    13 \clock                                            0         0             0
+    13 \io_deq_bits                                      0         0      00000000
+    13 \io_deq_ready                                     0         0             0
+    13 \io_deq_valid                                     0         0             0
+    13 \io_enq_bits                                      0         0      00000000
+    13 \io_enq_ready                                     1         1             1
+    13 \io_enq_valid                                     0         0             0
+    13 \pilot_active                                     0         0             0
+    13 \pilot_past_valid                                 1         1             1
+    13 \ram                                              0         0      00000000
+    13 \reset                                            1         1             1
+  ---- --------------------------------------- ----------- --------- -------------
+    14 $auto$async2sync.cc:101:execute$38                0         0             0
+    14 $auto$async2sync.cc:101:execute$44                0         0             0
+    14 $auto$async2sync.cc:110:execute$42                1         1             1
+    14 $auto$async2sync.cc:110:execute$48                1         1             1
+    14 $auto$async2sync.cc:228:execute$50                0         0             0
+    14 \clock                                            0         0             0
+    14 \io_deq_bits                                      0         0      00000000
+    14 \io_deq_ready                                     0         0             0
+    14 \io_deq_valid                                     0         0             0
+    14 \io_enq_bits                                      0         0      00000000
+    14 \io_enq_ready                                     1         1             1
+    14 \io_enq_valid                                     0         0             0
+    14 \pilot_active                                     0         0             0
+    14 \pilot_past_valid                                 1         1             1
+    14 \ram                                              0         0      00000000
+    14 \reset                                            1         1             1
+  ---- --------------------------------------- ----------- --------- -------------
+    15 $auto$async2sync.cc:101:execute$38                0         0             0
+    15 $auto$async2sync.cc:101:execute$44                0         0             0
+    15 $auto$async2sync.cc:110:execute$42                1         1             1
+    15 $auto$async2sync.cc:110:execute$48                1         1             1
+    15 $auto$async2sync.cc:228:execute$50                0         0             0
+    15 \clock                                            0         0             0
+    15 \io_deq_bits                                      0         0      00000000
+    15 \io_deq_ready                                     0         0             0
+    15 \io_deq_valid                                     0         0             0
+    15 \io_enq_bits                                      0         0      00000000
+    15 \io_enq_ready                                     1         1             1
+    15 \io_enq_valid                                     0         0             0
+    15 \pilot_active                                     0         0             0
+    15 \pilot_past_valid                                 1         1             1
+    15 \ram                                              0         0      00000000
+    15 \reset                                            1         1             1
+  ---- --------------------------------------- ----------- --------- -------------
+    16 $auto$async2sync.cc:101:execute$38                0         0             0
+    16 $auto$async2sync.cc:101:execute$44                0         0             0
+    16 $auto$async2sync.cc:110:execute$42                1         1             1
+    16 $auto$async2sync.cc:110:execute$48                1         1             1
+    16 $auto$async2sync.cc:228:execute$50                0         0             0
+    16 \clock                                            0         0             0
+    16 \io_deq_bits                                      0         0      00000000
+    16 \io_deq_ready                                     0         0             0
+    16 \io_deq_valid                                     0         0             0
+    16 \io_enq_bits                                      0         0      00000000
+    16 \io_enq_ready                                     1         1             1
+    16 \io_enq_valid                                     0         0             0
+    16 \pilot_active                                     0         0             0
+    16 \pilot_past_valid                                 1         1             1
+    16 \ram                                              0         0      00000000
+    16 \reset                                            1         1             1
+Dumping SAT model to VCD file /nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/traces/Q1_01__reference__cover.vcd
+Dumping SAT model to WaveJSON file '/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/traces/Q1_01__reference__cover.json'.

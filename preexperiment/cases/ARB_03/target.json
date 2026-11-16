@@ -1,0 +1,18 @@
+{
+  "target_id": "ARB_03",
+  "parent_id": "ARB_03",
+  "top": "XsRRArbiter",
+  "title": "输入零有效载荷转发",
+  "contract": "输入 0 被接受时，输出有效且载荷来自输入 0。",
+  "source_lines": [
+    54,
+    58
+  ],
+  "source_type": "rtl_derived_candidate_contract",
+  "spec_review_status": "pending_external_spec_review",
+  "reference": {
+    "timing": "overlap",
+    "antecedent": "io_in_0_valid && io_in_0_ready",
+    "consequent": "io_out_valid && io_out_bits_Payload == io_in_0_bits_Payload"
+  }
+}

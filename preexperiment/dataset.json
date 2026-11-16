@@ -1,0 +1,611 @@
+{
+  "schema_version": 1,
+  "modules": {
+    "Queue1_UInt8": {
+      "category": "单项流水队列",
+      "reason": "44 行，无子模块；可检查满空、背压、同时出入队和数据采样。",
+      "dependencies": [],
+      "clocked": true,
+      "notes": "满时允许随出队同时入队；空时没有组合数据直通。",
+      "original": "rtl/Queue1_UInt8.sv",
+      "source_sha256": "34213835465a25256286192f38dcec7effde3a0203fea5805a821f4f97abfd6a",
+      "lines": 44,
+      "reference": "rtl_reference/Queue1_UInt8.sv",
+      "dependency_sha256": {}
+    },
+    "Queue6_UInt2": {
+      "category": "六项直通队列",
+      "reason": "67 行，仅依赖一个 6×2 RAM；增加指针回绕和空队列直通场景。",
+      "dependencies": [
+        "ram_6x2.sv"
+      ],
+      "clocked": true,
+      "notes": "空时 valid/data 可组合直通；不能直接照搬单项队列的所有时序性质。",
+      "original": "rtl/Queue6_UInt2.sv",
+      "source_sha256": "bd3ba6da7b2f0589914010be9b3e2d3aea115bae7740b39982934a8d216fdb5d",
+      "lines": 67,
+      "reference": "rtl_reference/Queue6_UInt2.sv",
+      "dependency_sha256": {
+        "ram_6x2.sv": "a53217f88cf210ee013e0e98ae7c55e10860d43b3c052415760df49d349e09eb"
+      }
+    },
+    "XsRRArbiter": {
+      "category": "双输入轮询仲裁器",
+      "reason": "64 行，无子模块；适合检查接受互斥、事务字段转发和授权状态更新。",
+      "dependencies": [],
+      "clocked": true,
+      "notes": "空闲时两个 ready 可能同时为高；互斥对象是实际接受的传输。",
+      "original": "rtl/XsRRArbiter.sv",
+      "source_sha256": "2d274b464eb4edbd3acb721ce716c60a4563178a5ebe8806bbe8e3e614b83e62",
+      "lines": 64,
+      "reference": "rtl_reference/XsRRArbiter.sv",
+      "dependency_sha256": {}
+    },
+    "ExclusiveMonitorEntry": {
+      "category": "独占监视条目",
+      "reason": "75 行，无子模块；适合检查实体匹配、标签匹配和停用状态转换。",
+      "dependencies": [],
+      "clocked": true,
+      "notes": "标签寄存器没有复位值，只在对应请求到达后检查其采样关系。",
+      "original": "rtl/ExclusiveMonitorEntry.sv",
+      "source_sha256": "7412ccf5acf3eaa3a61e67960dd7323ea17c6d530f5ff4d6f71273b0434f60d1",
+      "lines": 75,
+      "reference": "rtl_reference/ExclusiveMonitorEntry.sv",
+      "dependency_sha256": {}
+    },
+    "PriorityEncoderOneHotLow8": {
+      "category": "低位优先独热编码器",
+      "reason": "18 行，无状态、无依赖；用于最先跑通工具和评价流程。",
+      "dependencies": [],
+      "clocked": false,
+      "notes": "纯组合模块，不为它引入虚构的 DUT 时钟或复位。",
+      "original": "rtl/PriorityEncoderOneHotLow8.sv",
+      "source_sha256": "e34981bc73e11b8c33c456c31a2650b8214f8a50bf17c77f83cd3af277ed4f6b",
+      "lines": 18,
+      "reference": "rtl_reference/PriorityEncoderOneHotLow8.sv",
+      "dependency_sha256": {}
+    }
+  },
+  "targets": [
+    {
+      "target_id": "Q1_01",
+      "parent_id": "Q1_01",
+      "top": "Queue1_UInt8",
+      "title": "流水入队就绪关系",
+      "contract": "队列未满或当前可以出队时允许入队；满且阻塞时禁止入队。",
+      "source_lines": [
+        14,
+        16,
+        40,
+        41
+      ],
+      "source_type": "rtl_derived_candidate_contract",
+      "spec_review_status": "pending_external_spec_review",
+      "reference": {
+        "timing": "overlap",
+        "antecedent": "1'b1",
+        "consequent": "io_enq_ready == (io_deq_ready || !io_deq_valid)"
+      }
+    },
+    {
+      "target_id": "Q1_02",
+      "parent_id": "Q1_02",
+      "top": "Queue1_UInt8",
+      "title": "阻塞时保持有效",
+      "contract": "已有数据且下游未接受时，下一采样周期仍有有效数据。",
+      "source_lines": [
+        14,
+        18,
+        22,
+        41
+      ],
+      "source_type": "rtl_derived_candidate_contract",
+      "spec_review_status": "pending_external_spec_review",
+      "reference": {
+        "timing": "next",
+        "antecedent": "io_deq_valid && !io_deq_ready",
+        "consequent": "io_deq_valid"
+      }
+    },
+    {
+      "target_id": "Q1_03",
+      "parent_id": "Q1_03",
+      "top": "Queue1_UInt8",
+      "title": "阻塞时保持数据",
+      "contract": "已有数据且下游未接受时，下一采样周期的数据不变；接受后允许更新。",
+      "source_lines": [
+        15,
+        16,
+        24,
+        26,
+        42
+      ],
+      "source_type": "rtl_derived_candidate_contract",
+      "spec_review_status": "pending_external_spec_review",
+      "reference": {
+        "timing": "next",
+        "antecedent": "io_deq_valid && !io_deq_ready",
+        "consequent": "$stable(io_deq_bits)"
+      }
+    },
+    {
+      "target_id": "Q1_04",
+      "parent_id": "Q1_04",
+      "top": "Queue1_UInt8",
+      "title": "接受后下一周期有效",
+      "contract": "本周期接受入队后，下一采样周期输出有效；空队列不要求当拍有效。",
+      "source_lines": [
+        15,
+        18,
+        22,
+        41
+      ],
+      "source_type": "rtl_derived_candidate_contract",
+      "spec_review_status": "pending_external_spec_review",
+      "reference": {
+        "timing": "next",
+        "antecedent": "io_enq_ready && io_enq_valid",
+        "consequent": "io_deq_valid"
+      }
+    },
+    {
+      "target_id": "Q1_05",
+      "parent_id": "Q1_05",
+      "top": "Queue1_UInt8",
+      "title": "入队数据采样",
+      "contract": "下一采样周期输出的是接受入队时的数据，不是下一周期的输入数据。",
+      "source_lines": [
+        15,
+        24,
+        26,
+        42
+      ],
+      "source_type": "rtl_derived_candidate_contract",
+      "spec_review_status": "pending_external_spec_review",
+      "reference": {
+        "timing": "next",
+        "antecedent": "io_enq_ready && io_enq_valid",
+        "consequent": "io_deq_bits == $past(io_enq_bits)"
+      }
+    },
+    {
+      "target_id": "Q6_01",
+      "parent_id": "Q6_01",
+      "top": "Queue6_UInt2",
+      "title": "非满时允许入队",
+      "contract": "存储未满时入队 ready 为高；存储满时不允许继续入队。",
+      "source_lines": [
+        18,
+        20,
+        63
+      ],
+      "source_type": "rtl_derived_candidate_contract",
+      "spec_review_status": "pending_external_spec_review",
+      "reference": {
+        "timing": "overlap",
+        "antecedent": "!full",
+        "consequent": "io_enq_ready"
+      }
+    },
+    {
+      "target_id": "Q6_02",
+      "parent_id": "Q6_02",
+      "top": "Queue6_UInt2",
+      "title": "空队列组合直通",
+      "contract": "空队列收到有效输入时，valid 和数据当拍直通，而不是延迟一拍。",
+      "source_lines": [
+        19,
+        21,
+        64,
+        65
+      ],
+      "source_type": "rtl_derived_candidate_contract",
+      "spec_review_status": "pending_external_spec_review",
+      "reference": {
+        "timing": "overlap",
+        "antecedent": "empty && io_enq_valid",
+        "consequent": "io_deq_valid && io_deq_bits == io_enq_bits"
+      }
+    },
+    {
+      "target_id": "Q6_03",
+      "parent_id": "Q6_03",
+      "top": "Queue6_UInt2",
+      "title": "已存储队首阻塞保持",
+      "contract": "已经存入队列的数据在未出队时保持；实际出队后允许换为下一个数据。",
+      "source_lines": [
+        22,
+        23,
+        33,
+        56,
+        65
+      ],
+      "source_type": "rtl_derived_candidate_contract",
+      "spec_review_status": "pending_external_spec_review",
+      "reference": {
+        "timing": "next",
+        "antecedent": "!empty && !io_deq_ready",
+        "consequent": "io_deq_valid && $stable(io_deq_bits)"
+      },
+      "proof_invariants": [
+        {
+          "name": "queue_pointer_ranges",
+          "expression": "enq_ptr_value < 3'd6 && deq_ptr_value < 3'd6",
+          "also_checked_as": "Q6_05",
+          "method": "proved jointly with target; never assumed"
+        }
+      ]
+    },
+    {
+      "target_id": "Q6_04",
+      "parent_id": "Q6_04",
+      "top": "Queue6_UInt2",
+      "title": "入队指针末项回绕",
+      "contract": "六项存储在索引 5 完成写入后，下一采样周期入队指针回到 0。",
+      "source_lines": [
+        24,
+        32
+      ],
+      "source_type": "rtl_derived_candidate_contract",
+      "spec_review_status": "pending_external_spec_review",
+      "reference": {
+        "timing": "next",
+        "antecedent": "do_enq && enq_ptr_value == 3'd5",
+        "consequent": "enq_ptr_value == 3'd0"
+      }
+    },
+    {
+      "target_id": "Q6_05",
+      "parent_id": "Q6_05",
+      "top": "Queue6_UInt2",
+      "title": "两个指针均在合法范围",
+      "contract": "复位建立的状态中，两指针始终取 0 到 5；索引 5 是合法状态。",
+      "source_lines": [
+        24,
+        35
+      ],
+      "source_type": "rtl_derived_candidate_contract",
+      "spec_review_status": "pending_external_spec_review",
+      "reference": {
+        "timing": "overlap",
+        "antecedent": "1'b1",
+        "consequent": "enq_ptr_value < 3'd6 && deq_ptr_value < 3'd6"
+      }
+    },
+    {
+      "target_id": "ARB_01",
+      "parent_id": "ARB_01",
+      "top": "XsRRArbiter",
+      "title": "输出有效性",
+      "contract": "任一输入有效即存在有效输出，无须两个输入同时有效。",
+      "source_lines": [
+        32,
+        36,
+        56
+      ],
+      "source_type": "rtl_derived_candidate_contract",
+      "spec_review_status": "pending_external_spec_review",
+      "reference": {
+        "timing": "overlap",
+        "antecedent": "1'b1",
+        "consequent": "io_out_valid == (io_in_0_valid || io_in_1_valid)"
+      }
+    },
+    {
+      "target_id": "ARB_02",
+      "parent_id": "ARB_02",
+      "top": "XsRRArbiter",
+      "title": "实际接受传输互斥",
+      "contract": "两个输入不能同时完成有效传输；空闲输入的 ready 不要求互斥。",
+      "source_lines": [
+        54,
+        55
+      ],
+      "source_type": "rtl_derived_candidate_contract",
+      "spec_review_status": "pending_external_spec_review",
+      "reference": {
+        "timing": "overlap",
+        "antecedent": "1'b1",
+        "consequent": "!(io_in_0_valid && io_in_0_ready && io_in_1_valid && io_in_1_ready)"
+      }
+    },
+    {
+      "target_id": "ARB_03",
+      "parent_id": "ARB_03",
+      "top": "XsRRArbiter",
+      "title": "输入零有效载荷转发",
+      "contract": "输入 0 被接受时，输出有效且载荷来自输入 0。",
+      "source_lines": [
+        54,
+        58
+      ],
+      "source_type": "rtl_derived_candidate_contract",
+      "spec_review_status": "pending_external_spec_review",
+      "reference": {
+        "timing": "overlap",
+        "antecedent": "io_in_0_valid && io_in_0_ready",
+        "consequent": "io_out_valid && io_out_bits_Payload == io_in_0_bits_Payload"
+      }
+    },
+    {
+      "target_id": "ARB_04",
+      "parent_id": "ARB_04",
+      "top": "XsRRArbiter",
+      "title": "输入一事务身份转发",
+      "contract": "输入 1 被接受时，输出事务 ID 来自输入 1，不得混用输入 0 的身份。",
+      "source_lines": [
+        55,
+        59
+      ],
+      "source_type": "rtl_derived_candidate_contract",
+      "spec_review_status": "pending_external_spec_review",
+      "reference": {
+        "timing": "overlap",
+        "antecedent": "io_in_1_valid && io_in_1_ready",
+        "consequent": "io_out_valid && io_out_bits_TxnID == io_in_1_bits_TxnID"
+      }
+    },
+    {
+      "target_id": "ARB_05",
+      "parent_id": "ARB_05",
+      "top": "XsRRArbiter",
+      "title": "轮询状态仅在接受时更新",
+      "contract": "输出完成传输后记录本次选择；只有 valid 而没有 ready 时不保证更新授权历史。",
+      "source_lines": [
+        33,
+        41
+      ],
+      "source_type": "rtl_derived_candidate_contract",
+      "spec_review_status": "pending_external_spec_review",
+      "reference": {
+        "timing": "next",
+        "antecedent": "io_out_valid && io_out_ready",
+        "consequent": "arb_ctrl_validMask_grantMask_lastGrant == $past(arb_io_chosen_choice)"
+      }
+    },
+    {
+      "target_id": "EX_01",
+      "parent_id": "EX_01",
+      "top": "ExclusiveMonitorEntry",
+      "title": "非对应请求不能成功",
+      "contract": "无有效请求或请求实体与当前条目不匹配时，不产生独占成功。",
+      "source_lines": [
+        24,
+        72
+      ],
+      "source_type": "rtl_derived_candidate_contract",
+      "spec_review_status": "pending_external_spec_review",
+      "reference": {
+        "timing": "overlap",
+        "antecedent": "!corrReq",
+        "consequent": "!io_req_exok"
+      }
+    },
+    {
+      "target_id": "EX_02",
+      "parent_id": "EX_02",
+      "top": "ExclusiveMonitorEntry",
+      "title": "对应加载允许成功",
+      "contract": "对应实体的加载请求可成功；存储请求还需要工作状态和标签匹配。",
+      "source_lines": [
+        24,
+        72
+      ],
+      "source_type": "rtl_derived_candidate_contract",
+      "spec_review_status": "pending_external_spec_review",
+      "reference": {
+        "timing": "overlap",
+        "antecedent": "corrReq && io_req_ld",
+        "consequent": "io_req_exok"
+      }
+    },
+    {
+      "target_id": "EX_03",
+      "parent_id": "EX_03",
+      "top": "ExclusiveMonitorEntry",
+      "title": "无预留或标签不符时拒绝存储",
+      "contract": "对应实体的存储请求，在未工作或标签不匹配时不能独占成功；有效预留的匹配存储允许成功。",
+      "source_lines": [
+        29,
+        32,
+        48,
+        50,
+        72
+      ],
+      "source_type": "rtl_derived_candidate_contract",
+      "spec_review_status": "pending_external_spec_review",
+      "reference": {
+        "timing": "overlap",
+        "antecedent": "corrReq && !io_req_ld && (!working || !tagMatch)",
+        "consequent": "!io_req_exok"
+      }
+    },
+    {
+      "target_id": "EX_04",
+      "parent_id": "EX_04",
+      "top": "ExclusiveMonitorEntry",
+      "title": "停用后清除工作状态",
+      "contract": "停用在下一采样周期清除工作状态，即使同时存在对应请求也一样。",
+      "source_lines": [
+        48,
+        50
+      ],
+      "source_type": "rtl_derived_candidate_contract",
+      "spec_review_status": "pending_external_spec_review",
+      "reference": {
+        "timing": "next",
+        "antecedent": "io_deact",
+        "consequent": "!working"
+      }
+    },
+    {
+      "target_id": "EX_05",
+      "parent_id": "EX_05",
+      "top": "ExclusiveMonitorEntry",
+      "title": "对应请求记录地址标签",
+      "contract": "对应请求到达后，地址标签记录该请求的地址字段，不是逻辑处理器字段。",
+      "source_lines": [
+        35,
+        41
+      ],
+      "source_type": "rtl_derived_candidate_contract",
+      "spec_review_status": "pending_external_spec_review",
+      "reference": {
+        "timing": "next",
+        "antecedent": "corrReq",
+        "consequent": "tag_adr == $past(io_req_tag_adr)"
+      }
+    },
+    {
+      "target_id": "ENC_01",
+      "parent_id": "ENC_01",
+      "top": "PriorityEncoderOneHotLow8",
+      "title": "零输入产生零编码",
+      "contract": "没有任何输入位为 1 时，输出为 0。",
+      "source_lines": [
+        16
+      ],
+      "source_type": "rtl_derived_candidate_contract",
+      "spec_review_status": "pending_external_spec_review",
+      "reference": {
+        "timing": "comb",
+        "antecedent": "i_data == 8'h00",
+        "consequent": "o_code == 8'h00"
+      }
+    },
+    {
+      "target_id": "ENC_02",
+      "parent_id": "ENC_02",
+      "top": "PriorityEncoderOneHotLow8",
+      "title": "最低位具有最高优先级",
+      "contract": "输入位 0 有效时，无论其他输入位如何，输出均选择位 0。",
+      "source_lines": [
+        8
+      ],
+      "source_type": "rtl_derived_candidate_contract",
+      "spec_review_status": "pending_external_spec_review",
+      "reference": {
+        "timing": "comb",
+        "antecedent": "i_data[0]",
+        "consequent": "o_code == 8'h01"
+      }
+    },
+    {
+      "target_id": "ENC_03",
+      "parent_id": "ENC_03",
+      "top": "PriorityEncoderOneHotLow8",
+      "title": "输出只能选择有效输入位",
+      "contract": "输出只能选中输入中为 1 的位，但多位输入有效时输出不需要复制所有位。",
+      "source_lines": [
+        7,
+        16
+      ],
+      "source_type": "rtl_derived_candidate_contract",
+      "spec_review_status": "pending_external_spec_review",
+      "reference": {
+        "timing": "comb",
+        "antecedent": "1'b1",
+        "consequent": "(o_code & ~i_data) == 8'h00"
+      }
+    },
+    {
+      "target_id": "ENC_04",
+      "parent_id": "ENC_04",
+      "top": "PriorityEncoderOneHotLow8",
+      "title": "输出允许零或独热",
+      "contract": "输出最多一位为 1；输入全零时允许输出全零。",
+      "source_lines": [
+        7,
+        16
+      ],
+      "source_type": "rtl_derived_candidate_contract",
+      "spec_review_status": "pending_external_spec_review",
+      "reference": {
+        "timing": "comb",
+        "antecedent": "1'b1",
+        "consequent": "$onehot0(o_code)"
+      }
+    },
+    {
+      "target_id": "ENC_05",
+      "parent_id": "ENC_05",
+      "top": "PriorityEncoderOneHotLow8",
+      "title": "位一选择需要排除更低位",
+      "contract": "位 1 有效且位 0 无效时选择位 1；位 0 同时有效时应选择位 0。",
+      "source_lines": [
+        8,
+        9
+      ],
+      "source_type": "rtl_derived_candidate_contract",
+      "spec_review_status": "pending_external_spec_review",
+      "reference": {
+        "timing": "comb",
+        "antecedent": "!i_data[0] && i_data[1]",
+        "consequent": "o_code == 8'h02"
+      }
+    }
+  ],
+  "rtl_mutants": [
+    {
+      "mutant_id": "M_Q1_PIPE",
+      "target_id": "Q1_01",
+      "top": "Queue1_UInt8",
+      "description": "删除满队列随出队同时入队的路径",
+      "path": "rtl_mutants/M_Q1_PIPE/Queue1_UInt8.sv",
+      "source_sha256": "34213835465a25256286192f38dcec7effde3a0203fea5805a821f4f97abfd6a",
+      "mutant_sha256": "1d7359e30ef22ce311d4c799a55d9b54a4666eb8b5ea6dcdf4909f841601899d",
+      "changed_line": 16,
+      "role": "controlled_rtl_mutation",
+      "validation_status": "see results/summary.json"
+    },
+    {
+      "mutant_id": "M_Q6_WRAP",
+      "target_id": "Q6_05",
+      "top": "Queue6_UInt2",
+      "description": "末项回绕到非法索引 6",
+      "path": "rtl_mutants/M_Q6_WRAP/Queue6_UInt2.sv",
+      "source_sha256": "bd3ba6da7b2f0589914010be9b3e2d3aea115bae7740b39982934a8d216fdb5d",
+      "mutant_sha256": "9dd7cf7f2e4b376129ce9e48e146e9f1067b1aa50dc1d1227138d84c6ff121b3",
+      "changed_line": 31,
+      "role": "controlled_rtl_mutation",
+      "validation_status": "see results/summary.json"
+    },
+    {
+      "mutant_id": "M_ARB_ID",
+      "target_id": "ARB_04",
+      "top": "XsRRArbiter",
+      "description": "输入一事务错误使用输入零 ID",
+      "path": "rtl_mutants/M_ARB_ID/XsRRArbiter.sv",
+      "source_sha256": "2d274b464eb4edbd3acb721ce716c60a4563178a5ebe8806bbe8e3e614b83e62",
+      "mutant_sha256": "9f6e182ed25c0eb4ab6fd97be1ddcb6fbfaa3f1743e34b2ecd9f303fd8ca0ab7",
+      "changed_line": 59,
+      "role": "controlled_rtl_mutation",
+      "validation_status": "see results/summary.json"
+    },
+    {
+      "mutant_id": "M_EX_TAG",
+      "target_id": "EX_03",
+      "top": "ExclusiveMonitorEntry",
+      "description": "独占存储遗漏标签匹配条件",
+      "path": "rtl_mutants/M_EX_TAG/ExclusiveMonitorEntry.sv",
+      "source_sha256": "7412ccf5acf3eaa3a61e67960dd7323ea17c6d530f5ff4d6f71273b0434f60d1",
+      "mutant_sha256": "e9a78397a455bd25b50f6b57c7d7cdd66117769bf5912e517e153df93357c482",
+      "changed_line": 72,
+      "role": "controlled_rtl_mutation",
+      "validation_status": "see results/summary.json"
+    },
+    {
+      "mutant_id": "M_ENC_PRIORITY",
+      "target_id": "ENC_02",
+      "top": "PriorityEncoderOneHotLow8",
+      "description": "交换最低两位优先级",
+      "path": "rtl_mutants/M_ENC_PRIORITY/PriorityEncoderOneHotLow8.sv",
+      "source_sha256": "e34981bc73e11b8c33c456c31a2650b8214f8a50bf17c77f83cd3af277ed4f6b",
+      "mutant_sha256": "d5ea669069c09c595d48f2096d2613b5e853f3376c39358f12e06bde1523e188",
+      "changed_line": 8,
+      "role": "controlled_rtl_mutation",
+      "validation_status": "see results/summary.json"
+    }
+  ],
+  "provenance": "Controlled RTL mutants; local reference contracts await external-spec review."
+}

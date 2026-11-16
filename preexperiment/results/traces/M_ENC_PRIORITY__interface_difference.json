@@ -1,0 +1,14 @@
+{ "signal": [
+    { "name": "pilot_difference", "wave": "14" },
+    { "name": "i_data", "wave": "=4", "data": ["00000011", ""] },
+    { "name": "gold_o_code", "wave": "=4", "data": ["00000001", ""] },
+    { "name": "gold_dut.o_code", "wave": "=4", "data": ["00000001", ""] },
+    { "name": "gold_dut.i_data", "wave": "=4", "data": ["00000011", ""] },
+    { "name": "bad_o_code", "wave": "=4", "data": ["00000010", ""] },
+    { "name": "bad_dut.o_code", "wave": "=4", "data": ["00000010", ""] },
+    { "name": "bad_dut.i_data", "wave": "=4", "data": ["00000011", ""] }
+  ],
+  "config": {
+    "hscale": 2.00
+  }
+}

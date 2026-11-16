@@ -1,0 +1,1004 @@
+
+-- Executing script file `/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_04__reference__cover/query.ys' --
+
+1. Executing Verilog-2005 frontend: /nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_04__reference__cover/design.sv
+Parsing formal SystemVerilog input from `/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_04__reference__cover/design.sv' to AST representation.
+Generating RTLIL representation for module `\ExclusiveMonitorEntry'.
+Successfully finished Verilog frontend.
+
+2. Executing PREP pass.
+
+2.1. Executing HIERARCHY pass (managing design hierarchy).
+
+2.1.1. Analyzing design hierarchy..
+Top module:  \ExclusiveMonitorEntry
+
+2.1.2. Analyzing design hierarchy..
+Top module:  \ExclusiveMonitorEntry
+Removed 0 unused modules.
+Module ExclusiveMonitorEntry directly or indirectly contains formal properties -> setting "keep" attribute.
+
+2.2. Executing PROC pass (convert processes to netlists).
+
+2.2.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+2.2.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 2 switch rules as full_case in process $proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_04__reference__cover/design.sv:40$15 in module ExclusiveMonitorEntry.
+Removed a total of 0 dead cases.
+
+2.2.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 2 redundant assignments.
+Promoted 8 assignments to connections.
+
+2.2.4. Executing PROC_INIT pass (extract init attributes).
+Found init rule in `\ExclusiveMonitorEntry.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_04__reference__cover/design.sv:82$60'.
+  Set init value: \pilot_active = 1'0
+Found init rule in `\ExclusiveMonitorEntry.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_04__reference__cover/design.sv:77$59'.
+  Set init value: \pilot_past_valid = 1'0
+
+2.2.5. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \reset in `\ExclusiveMonitorEntry.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_04__reference__cover/design.sv:40$15'.
+
+2.2.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~5 debug messages>
+
+2.2.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\ExclusiveMonitorEntry.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_04__reference__cover/design.sv:82$60'.
+Creating decoders for process `\ExclusiveMonitorEntry.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_04__reference__cover/design.sv:77$59'.
+Creating decoders for process `\ExclusiveMonitorEntry.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_04__reference__cover/design.sv:83$41'.
+     1/1: $assert$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_04__reference__cover/design.sv:85$55_EN
+Creating decoders for process `\ExclusiveMonitorEntry.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_04__reference__cover/design.sv:78$38'.
+     1/1: $assume$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_04__reference__cover/design.sv:80$40_EN
+Creating decoders for process `\ExclusiveMonitorEntry.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_04__reference__cover/design.sv:40$15'.
+     1/3: $0\io_starving_REG[0:0]
+     2/3: $0\working[0:0]
+     3/3: $0\retry[7:0]
+Creating decoders for process `\ExclusiveMonitorEntry.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_04__reference__cover/design.sv:32$14'.
+     1/4: $0\tag_sze[2:0]
+     2/4: $0\tag_mem[3:0]
+     3/4: $0\tag_adr[7:0]
+     4/4: $0\tag_lpid[7:0]
+
+2.2.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+2.2.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\ExclusiveMonitorEntry.\pilot_active' using process `\ExclusiveMonitorEntry.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_04__reference__cover/design.sv:83$41'.
+  created $dff cell `$procdff$78' with positive edge clock.
+Creating register for signal `\ExclusiveMonitorEntry.$past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_04__reference__cover/design.sv:84$1$0' using process `\ExclusiveMonitorEntry.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_04__reference__cover/design.sv:83$41'.
+  created $dff cell `$procdff$79' with positive edge clock.
+Creating register for signal `\ExclusiveMonitorEntry.$past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_04__reference__cover/design.sv:84$2$0' using process `\ExclusiveMonitorEntry.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_04__reference__cover/design.sv:83$41'.
+  created $dff cell `$procdff$80' with positive edge clock.
+Creating register for signal `\ExclusiveMonitorEntry.$past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_04__reference__cover/design.sv:85$3$0' using process `\ExclusiveMonitorEntry.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_04__reference__cover/design.sv:83$41'.
+  created $dff cell `$procdff$81' with positive edge clock.
+Creating register for signal `\ExclusiveMonitorEntry.$past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_04__reference__cover/design.sv:85$4$0' using process `\ExclusiveMonitorEntry.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_04__reference__cover/design.sv:83$41'.
+  created $dff cell `$procdff$82' with positive edge clock.
+Creating register for signal `\ExclusiveMonitorEntry.\pilot_past_valid' using process `\ExclusiveMonitorEntry.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_04__reference__cover/design.sv:78$38'.
+  created $dff cell `$procdff$83' with positive edge clock.
+Creating register for signal `\ExclusiveMonitorEntry.\working' using process `\ExclusiveMonitorEntry.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_04__reference__cover/design.sv:40$15'.
+  created $adff cell `$procdff$86' with positive edge clock and positive level reset.
+Creating register for signal `\ExclusiveMonitorEntry.\retry' using process `\ExclusiveMonitorEntry.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_04__reference__cover/design.sv:40$15'.
+  created $adff cell `$procdff$89' with positive edge clock and positive level reset.
+Creating register for signal `\ExclusiveMonitorEntry.\io_starving_REG' using process `\ExclusiveMonitorEntry.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_04__reference__cover/design.sv:40$15'.
+  created $adff cell `$procdff$92' with positive edge clock and positive level reset.
+Creating register for signal `\ExclusiveMonitorEntry.\tag_lpid' using process `\ExclusiveMonitorEntry.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_04__reference__cover/design.sv:32$14'.
+  created $dff cell `$procdff$93' with positive edge clock.
+Creating register for signal `\ExclusiveMonitorEntry.\tag_adr' using process `\ExclusiveMonitorEntry.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_04__reference__cover/design.sv:32$14'.
+  created $dff cell `$procdff$94' with positive edge clock.
+Creating register for signal `\ExclusiveMonitorEntry.\tag_mem' using process `\ExclusiveMonitorEntry.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_04__reference__cover/design.sv:32$14'.
+  created $dff cell `$procdff$95' with positive edge clock.
+Creating register for signal `\ExclusiveMonitorEntry.\tag_sze' using process `\ExclusiveMonitorEntry.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_04__reference__cover/design.sv:32$14'.
+  created $dff cell `$procdff$96' with positive edge clock.
+
+2.2.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+2.2.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Removing empty process `ExclusiveMonitorEntry.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_04__reference__cover/design.sv:82$60'.
+Removing empty process `ExclusiveMonitorEntry.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_04__reference__cover/design.sv:77$59'.
+Found and cleaned up 1 empty switch in `\ExclusiveMonitorEntry.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_04__reference__cover/design.sv:83$41'.
+Removing empty process `ExclusiveMonitorEntry.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_04__reference__cover/design.sv:83$41'.
+Found and cleaned up 1 empty switch in `\ExclusiveMonitorEntry.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_04__reference__cover/design.sv:78$38'.
+Removing empty process `ExclusiveMonitorEntry.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_04__reference__cover/design.sv:78$38'.
+Found and cleaned up 2 empty switches in `\ExclusiveMonitorEntry.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_04__reference__cover/design.sv:40$15'.
+Removing empty process `ExclusiveMonitorEntry.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_04__reference__cover/design.sv:40$15'.
+Found and cleaned up 1 empty switch in `\ExclusiveMonitorEntry.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_04__reference__cover/design.sv:32$14'.
+Removing empty process `ExclusiveMonitorEntry.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_04__reference__cover/design.sv:32$14'.
+Cleaned up 5 empty switches.
+
+2.2.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ExclusiveMonitorEntry.
+<suppressed ~4 debug messages>
+
+2.3. Executing FUTURE pass.
+
+2.4. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ExclusiveMonitorEntry.
+
+2.5. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ExclusiveMonitorEntry..
+Removed 1 unused cells and 32 unused wires.
+<suppressed ~2 debug messages>
+
+2.6. Executing CHECK pass (checking for obvious problems).
+Checking module ExclusiveMonitorEntry...
+Found and reported 0 problems.
+
+2.7. Executing OPT pass (performing simple optimizations).
+
+2.7.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ExclusiveMonitorEntry.
+
+2.7.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ExclusiveMonitorEntry'.
+<suppressed ~6 debug messages>
+Removed a total of 2 cells.
+
+2.7.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \ExclusiveMonitorEntry..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~7 debug messages>
+
+2.7.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \ExclusiveMonitorEntry.
+Performed a total of 0 changes.
+
+2.7.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ExclusiveMonitorEntry'.
+Removed a total of 0 cells.
+
+2.7.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ExclusiveMonitorEntry..
+Removed 0 unused cells and 2 unused wires.
+<suppressed ~1 debug messages>
+
+2.7.7. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ExclusiveMonitorEntry.
+
+2.7.8. Rerunning OPT passes. (Maybe there is more to do..)
+
+2.7.9. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \ExclusiveMonitorEntry..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~7 debug messages>
+
+2.7.10. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \ExclusiveMonitorEntry.
+Performed a total of 0 changes.
+
+2.7.11. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ExclusiveMonitorEntry'.
+Removed a total of 0 cells.
+
+2.7.12. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ExclusiveMonitorEntry..
+
+2.7.13. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ExclusiveMonitorEntry.
+
+2.7.14. Finished OPT passes. (There is nothing left to do.)
+
+2.8. Executing WREDUCE pass (reducing word size of cells).
+Removed top 7 bits (of 8) from port B of cell ExclusiveMonitorEntry.$add$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_04__reference__cover/design.sv:53$34 ($add).
+
+2.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ExclusiveMonitorEntry..
+
+2.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+2.11. Executing OPT pass (performing simple optimizations).
+
+2.11.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ExclusiveMonitorEntry.
+
+2.11.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ExclusiveMonitorEntry'.
+Removed a total of 0 cells.
+
+2.11.3. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ExclusiveMonitorEntry..
+
+2.11.4. Finished fast OPT passes.
+
+2.12. Printing statistics.
+
+=== ExclusiveMonitorEntry ===
+
+   Number of wires:                 78
+   Number of wire bits:            181
+   Number of public wires:          28
+   Number of public wire bits:      91
+   Number of ports:                 17
+   Number of port bits:             54
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 64
+     $add                            1
+     $adff                           3
+     $and                           15
+     $check                          2
+     $dff                           10
+     $eq                             5
+     $logic_and                      4
+     $logic_not                      5
+     $logic_or                       1
+     $mux                            8
+     $ne                             1
+     $not                            5
+     $or                             4
+
+2.13. Executing CHECK pass (checking for obvious problems).
+Checking module ExclusiveMonitorEntry...
+Found and reported 0 problems.
+
+3. Executing FLATTEN pass (flatten design).
+
+4. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+
+5. Executing ASYNC2SYNC pass.
+Replacing ExclusiveMonitorEntry.$procdff$86 ($adff): ARST=\reset, D=$0\working[0:0], Q=\working
+Replacing ExclusiveMonitorEntry.$procdff$89 ($adff): ARST=\reset, D=$0\retry[7:0], Q=\retry
+Replacing ExclusiveMonitorEntry.$procdff$92 ($adff): ARST=\reset, D=\retry [7], Q=\io_starving_REG
+
+6. Executing DFFUNMAP pass (unmap clock enable and synchronous reset from FFs).
+
+7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ExclusiveMonitorEntry..
+Removed 6 unused cells and 6 unused wires.
+<suppressed ~7 debug messages>
+
+8. Executing SAT pass (solving SAT problems in the circuit).
+
+Setting up time step 1:
+Final constraint equation: { } = { }
+Imported 73 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:110:execute$107 when $auto$async2sync.cc:101:execute$103.
+Import set-constraint from init attribute: $auto$async2sync.cc:101:execute$103 = 1'0
+Import set-constraint from init attribute: $auto$async2sync.cc:101:execute$97 = 1'0
+Import set-constraint from init attribute: $auto$async2sync.cc:110:execute$101 = 1'1
+Import set-constraint from init attribute: $auto$async2sync.cc:110:execute$107 = 1'1
+Import set-constraint from init attribute: \pilot_active = 1'0
+Import set-constraint from init attribute: \pilot_past_valid = 1'0
+Final init constraint equation: { \pilot_past_valid \pilot_active $auto$async2sync.cc:110:execute$107 $auto$async2sync.cc:110:execute$101 $auto$async2sync.cc:101:execute$97 $auto$async2sync.cc:101:execute$103 } = 6'001100
+Import proof-constraint: \pilot_active = 1'0
+Final proof equation: \pilot_active = 1'0
+
+Setting up time step 2:
+Final constraint equation: { } = { }
+Imported 73 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:110:execute$107 when $auto$async2sync.cc:101:execute$103.
+Import proof-constraint: \pilot_active = 1'0
+Final proof equation: \pilot_active = 1'0
+
+Setting up time step 3:
+Final constraint equation: { } = { }
+Imported 73 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:110:execute$107 when $auto$async2sync.cc:101:execute$103.
+Import proof-constraint: \pilot_active = 1'0
+Final proof equation: \pilot_active = 1'0
+
+Setting up time step 4:
+Final constraint equation: { } = { }
+Imported 73 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:110:execute$107 when $auto$async2sync.cc:101:execute$103.
+Import proof-constraint: \pilot_active = 1'0
+Final proof equation: \pilot_active = 1'0
+
+Setting up time step 5:
+Final constraint equation: { } = { }
+Imported 73 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:110:execute$107 when $auto$async2sync.cc:101:execute$103.
+Import proof-constraint: \pilot_active = 1'0
+Final proof equation: \pilot_active = 1'0
+
+Setting up time step 6:
+Final constraint equation: { } = { }
+Imported 73 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:110:execute$107 when $auto$async2sync.cc:101:execute$103.
+Import proof-constraint: \pilot_active = 1'0
+Final proof equation: \pilot_active = 1'0
+
+Setting up time step 7:
+Final constraint equation: { } = { }
+Imported 73 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:110:execute$107 when $auto$async2sync.cc:101:execute$103.
+Import proof-constraint: \pilot_active = 1'0
+Final proof equation: \pilot_active = 1'0
+
+Setting up time step 8:
+Final constraint equation: { } = { }
+Imported 73 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:110:execute$107 when $auto$async2sync.cc:101:execute$103.
+Import proof-constraint: \pilot_active = 1'0
+Final proof equation: \pilot_active = 1'0
+
+Setting up time step 9:
+Final constraint equation: { } = { }
+Imported 73 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:110:execute$107 when $auto$async2sync.cc:101:execute$103.
+Import proof-constraint: \pilot_active = 1'0
+Final proof equation: \pilot_active = 1'0
+
+Setting up time step 10:
+Final constraint equation: { } = { }
+Imported 73 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:110:execute$107 when $auto$async2sync.cc:101:execute$103.
+Import proof-constraint: \pilot_active = 1'0
+Final proof equation: \pilot_active = 1'0
+
+Setting up time step 11:
+Final constraint equation: { } = { }
+Imported 73 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:110:execute$107 when $auto$async2sync.cc:101:execute$103.
+Import proof-constraint: \pilot_active = 1'0
+Final proof equation: \pilot_active = 1'0
+
+Setting up time step 12:
+Final constraint equation: { } = { }
+Imported 73 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:110:execute$107 when $auto$async2sync.cc:101:execute$103.
+Import proof-constraint: \pilot_active = 1'0
+Final proof equation: \pilot_active = 1'0
+
+Setting up time step 13:
+Final constraint equation: { } = { }
+Imported 73 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:110:execute$107 when $auto$async2sync.cc:101:execute$103.
+Import proof-constraint: \pilot_active = 1'0
+Final proof equation: \pilot_active = 1'0
+
+Setting up time step 14:
+Final constraint equation: { } = { }
+Imported 73 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:110:execute$107 when $auto$async2sync.cc:101:execute$103.
+Import proof-constraint: \pilot_active = 1'0
+Final proof equation: \pilot_active = 1'0
+
+Setting up time step 15:
+Final constraint equation: { } = { }
+Imported 73 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:110:execute$107 when $auto$async2sync.cc:101:execute$103.
+Import proof-constraint: \pilot_active = 1'0
+Final proof equation: \pilot_active = 1'0
+
+Setting up time step 16:
+Final constraint equation: { } = { }
+Imported 73 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:110:execute$107 when $auto$async2sync.cc:101:execute$103.
+Import proof-constraint: \pilot_active = 1'0
+Final proof equation: \pilot_active = 1'0
+Import show expression: \pilot_active
+Import show expression: \clock
+Import show expression: \io_clear
+Import show expression: \io_deact
+Import show expression: \io_eid
+Import show expression: \io_req_eid
+Import show expression: \io_req_ld
+Import show expression: \io_req_succ
+Import show expression: \io_req_tag_adr
+Import show expression: \io_req_tag_lpid
+Import show expression: \io_req_tag_mem
+Import show expression: \io_req_tag_sze
+Import show expression: \io_req_vld
+Import show expression: \io_rsp_succ
+Import show expression: \io_rsp_vld
+Import show expression: \reset
+Import show expression: \io_req_exok
+Import show expression: \io_starving
+Import show expression: \tag_sze
+Import show expression: \tag_mem
+Import show expression: \tag_adr
+Import show expression: \tag_lpid
+Import show expression: $auto$async2sync.cc:228:execute$113
+Import show expression: $auto$async2sync.cc:228:execute$111
+Import show expression: $auto$async2sync.cc:228:execute$109
+Import show expression: \pilot_past_valid
+Import show expression: $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_04__reference__cover/design.sv:85$4$0
+Import show expression: $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_04__reference__cover/design.sv:85$3$0
+Import show expression: $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_04__reference__cover/design.sv:84$2$0
+Import show expression: $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_04__reference__cover/design.sv:84$1$0
+Import show expression: \pilot_active
+Import show expression: $auto$async2sync.cc:110:execute$107
+Import show expression: $auto$async2sync.cc:110:execute$101
+Import show expression: $auto$async2sync.cc:101:execute$97
+Import show expression: $auto$async2sync.cc:101:execute$103
+
+Solving problem with 15643 variables and 39943 clauses..
+SAT proof finished - model found: FAIL!
+
+   ______                   ___       ___       _ _            _ _ 
+  (_____ \                 / __)     / __)     (_) |          | | |
+   _____) )___ ___   ___ _| |__    _| |__ _____ _| | _____  __| | |
+  |  ____/ ___) _ \ / _ (_   __)  (_   __|____ | | || ___ |/ _  |_|
+  | |   | |  | |_| | |_| || |       | |  / ___ | | || ____( (_| |_ 
+  |_|   |_|   \___/ \___/ |_|       |_|  \_____|_|\_)_____)\____|_|
+
+
+  Time Signal Name                                                                                                                       Dec       Hex           Bin
+  ---- ------------------------------------------------------------------------------------------------------------------------- ----------- --------- -------------
+  init $auto$async2sync.cc:101:execute$103                                                                                                 0         0             0
+  init $auto$async2sync.cc:101:execute$97                                                                                                  0         0             0
+  init $auto$async2sync.cc:110:execute$101                                                                                                 1         1             1
+  init $auto$async2sync.cc:110:execute$107                                                                                                 1         1             1
+  init $auto$async2sync.cc:228:execute$109                                                                                                 0         0             0
+  init $auto$async2sync.cc:228:execute$111                                                                                                 0         0      00000000
+  init $auto$async2sync.cc:228:execute$113                                                                                                 0         0             0
+  init $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_04__reference__cover/design.sv:84$1$0                0         0             0
+  init $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_04__reference__cover/design.sv:84$2$0                0         0             0
+  init $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_04__reference__cover/design.sv:85$3$0                1         1             1
+  init $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_04__reference__cover/design.sv:85$4$0                0         0             0
+  init \pilot_active                                                                                                                       0         0             0
+  init \pilot_past_valid                                                                                                                   0         0             0
+  init \tag_adr                                                                                                                           17        11      00010001
+  init \tag_lpid                                                                                                                           8         8      00001000
+  init \tag_mem                                                                                                                            0         0          0000
+  init \tag_sze                                                                                                                            4         4           100
+  ---- ------------------------------------------------------------------------------------------------------------------------- ----------- --------- -------------
+     1 $auto$async2sync.cc:101:execute$103                                                                                                 0         0             0
+     1 $auto$async2sync.cc:101:execute$97                                                                                                  0         0             0
+     1 $auto$async2sync.cc:110:execute$101                                                                                                 1         1             1
+     1 $auto$async2sync.cc:110:execute$107                                                                                                 1         1             1
+     1 $auto$async2sync.cc:228:execute$109                                                                                                 0         0             0
+     1 $auto$async2sync.cc:228:execute$111                                                                                                 0         0      00000000
+     1 $auto$async2sync.cc:228:execute$113                                                                                                 0         0             0
+     1 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_04__reference__cover/design.sv:84$1$0                0         0             0
+     1 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_04__reference__cover/design.sv:84$2$0                0         0             0
+     1 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_04__reference__cover/design.sv:85$3$0                1         1             1
+     1 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_04__reference__cover/design.sv:85$4$0                0         0             0
+     1 \clock                                                                                                                              0         0             0
+     1 \io_clear                                                                                                                           0         0             0
+     1 \io_deact                                                                                                                           0         0             0
+     1 \io_eid                                                                                                                           295       127    0100100111
+     1 \io_req_eid                                                                                                                        24        18    0000011000
+     1 \io_req_exok                                                                                                                        0         0             0
+     1 \io_req_ld                                                                                                                          0         0             0
+     1 \io_req_succ                                                                                                                        0         0             0
+     1 \io_req_tag_adr                                                                                                                   142        8e      10001110
+     1 \io_req_tag_lpid                                                                                                                   81        51      01010001
+     1 \io_req_tag_mem                                                                                                                     4         4          0100
+     1 \io_req_tag_sze                                                                                                                     0         0           000
+     1 \io_req_vld                                                                                                                         0         0             0
+     1 \io_rsp_succ                                                                                                                        0         0             0
+     1 \io_rsp_vld                                                                                                                         0         0             0
+     1 \io_starving                                                                                                                        0         0             0
+     1 \pilot_active                                                                                                                       0         0             0
+     1 \pilot_past_valid                                                                                                                   0         0             0
+     1 \reset                                                                                                                              1         1             1
+     1 \tag_adr                                                                                                                           17        11      00010001
+     1 \tag_lpid                                                                                                                           8         8      00001000
+     1 \tag_mem                                                                                                                            0         0          0000
+     1 \tag_sze                                                                                                                            4         4           100
+  ---- ------------------------------------------------------------------------------------------------------------------------- ----------- --------- -------------
+     2 $auto$async2sync.cc:101:execute$103                                                                                                 1         1             1
+     2 $auto$async2sync.cc:101:execute$97                                                                                                  0         0             0
+     2 $auto$async2sync.cc:110:execute$101                                                                                                 1         1             1
+     2 $auto$async2sync.cc:110:execute$107                                                                                                 1         1             1
+     2 $auto$async2sync.cc:228:execute$109                                                                                                 0         0             0
+     2 $auto$async2sync.cc:228:execute$111                                                                                                 0         0      00000000
+     2 $auto$async2sync.cc:228:execute$113                                                                                                 0         0             0
+     2 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_04__reference__cover/design.sv:84$1$0                1         1             1
+     2 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_04__reference__cover/design.sv:84$2$0                0         0             0
+     2 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_04__reference__cover/design.sv:85$3$0                1         1             1
+     2 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_04__reference__cover/design.sv:85$4$0                0         0             0
+     2 \clock                                                                                                                              0         0             0
+     2 \io_clear                                                                                                                           0         0             0
+     2 \io_deact                                                                                                                           1         1             1
+     2 \io_eid                                                                                                                           608       260    1001100000
+     2 \io_req_eid                                                                                                                       412       19c    0110011100
+     2 \io_req_exok                                                                                                                        0         0             0
+     2 \io_req_ld                                                                                                                          0         0             0
+     2 \io_req_succ                                                                                                                        0         0             0
+     2 \io_req_tag_adr                                                                                                                   102        66      01100110
+     2 \io_req_tag_lpid                                                                                                                  242        f2      11110010
+     2 \io_req_tag_mem                                                                                                                     6         6          0110
+     2 \io_req_tag_sze                                                                                                                     2         2           010
+     2 \io_req_vld                                                                                                                         0         0             0
+     2 \io_rsp_succ                                                                                                                        1         1             1
+     2 \io_rsp_vld                                                                                                                         0         0             0
+     2 \io_starving                                                                                                                        0         0             0
+     2 \pilot_active                                                                                                                       0         0             0
+     2 \pilot_past_valid                                                                                                                   1         1             1
+     2 \reset                                                                                                                              0         0             0
+     2 \tag_adr                                                                                                                           17        11      00010001
+     2 \tag_lpid                                                                                                                           8         8      00001000
+     2 \tag_mem                                                                                                                            0         0          0000
+     2 \tag_sze                                                                                                                            4         4           100
+  ---- ------------------------------------------------------------------------------------------------------------------------- ----------- --------- -------------
+     3 $auto$async2sync.cc:101:execute$103                                                                                                 0         0             0
+     3 $auto$async2sync.cc:101:execute$97                                                                                                  0         0             0
+     3 $auto$async2sync.cc:110:execute$101                                                                                                 1         1             1
+     3 $auto$async2sync.cc:110:execute$107                                                                                                 0         0             0
+     3 $auto$async2sync.cc:228:execute$109                                                                                                 0         0             0
+     3 $auto$async2sync.cc:228:execute$111                                                                                                 0         0      00000000
+     3 $auto$async2sync.cc:228:execute$113                                                                                                 0         0             0
+     3 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_04__reference__cover/design.sv:84$1$0                0         0             0
+     3 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_04__reference__cover/design.sv:84$2$0                1         1             1
+     3 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_04__reference__cover/design.sv:85$3$0                0         0             0
+     3 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_04__reference__cover/design.sv:85$4$0                1         1             1
+     3 \clock                                                                                                                              0         0             0
+     3 \io_clear                                                                                                                           0         0             0
+     3 \io_deact                                                                                                                           0         0             0
+     3 \io_eid                                                                                                                             3         3    0000000011
+     3 \io_req_eid                                                                                                                       488       1e8    0111101000
+     3 \io_req_exok                                                                                                                        0         0             0
+     3 \io_req_ld                                                                                                                          0         0             0
+     3 \io_req_succ                                                                                                                        0         0             0
+     3 \io_req_tag_adr                                                                                                                    46        2e      00101110
+     3 \io_req_tag_lpid                                                                                                                  181        b5      10110101
+     3 \io_req_tag_mem                                                                                                                     9         9          1001
+     3 \io_req_tag_sze                                                                                                                     0         0           000
+     3 \io_req_vld                                                                                                                         0         0             0
+     3 \io_rsp_succ                                                                                                                        1         1             1
+     3 \io_rsp_vld                                                                                                                         0         0             0
+     3 \io_starving                                                                                                                        0         0             0
+     3 \pilot_active                                                                                                                       0         0             0
+     3 \pilot_past_valid                                                                                                                   1         1             1
+     3 \reset                                                                                                                              0         0             0
+     3 \tag_adr                                                                                                                           17        11      00010001
+     3 \tag_lpid                                                                                                                           8         8      00001000
+     3 \tag_mem                                                                                                                            0         0          0000
+     3 \tag_sze                                                                                                                            4         4           100
+  ---- ------------------------------------------------------------------------------------------------------------------------- ----------- --------- -------------
+     4 $auto$async2sync.cc:101:execute$103                                                                                                 0         0             0
+     4 $auto$async2sync.cc:101:execute$97                                                                                                  1         1             1
+     4 $auto$async2sync.cc:110:execute$101                                                                                                 1         1             1
+     4 $auto$async2sync.cc:110:execute$107                                                                                                 0         0             0
+     4 $auto$async2sync.cc:228:execute$109                                                                                                 0         0             0
+     4 $auto$async2sync.cc:228:execute$111                                                                                                 0         0      00000000
+     4 $auto$async2sync.cc:228:execute$113                                                                                                 0         0             0
+     4 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_04__reference__cover/design.sv:84$1$0                0         0             0
+     4 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_04__reference__cover/design.sv:84$2$0                0         0             0
+     4 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_04__reference__cover/design.sv:85$3$0                0         0             0
+     4 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_04__reference__cover/design.sv:85$4$0                0         0             0
+     4 \clock                                                                                                                              0         0             0
+     4 \io_clear                                                                                                                           0         0             0
+     4 \io_deact                                                                                                                           1         1             1
+     4 \io_eid                                                                                                                             0         0    0000000000
+     4 \io_req_eid                                                                                                                         0         0    0000000000
+     4 \io_req_exok                                                                                                                        1         1             1
+     4 \io_req_ld                                                                                                                          1         1             1
+     4 \io_req_succ                                                                                                                        0         0             0
+     4 \io_req_tag_adr                                                                                                                   238        ee      11101110
+     4 \io_req_tag_lpid                                                                                                                   99        63      01100011
+     4 \io_req_tag_mem                                                                                                                    12         c          1100
+     4 \io_req_tag_sze                                                                                                                     2         2           010
+     4 \io_req_vld                                                                                                                         1         1             1
+     4 \io_rsp_succ                                                                                                                        1         1             1
+     4 \io_rsp_vld                                                                                                                         0         0             0
+     4 \io_starving                                                                                                                        0         0             0
+     4 \pilot_active                                                                                                                       1         1             1
+     4 \pilot_past_valid                                                                                                                   1         1             1
+     4 \reset                                                                                                                              1         1             1
+     4 \tag_adr                                                                                                                           17        11      00010001
+     4 \tag_lpid                                                                                                                           8         8      00001000
+     4 \tag_mem                                                                                                                            0         0          0000
+     4 \tag_sze                                                                                                                            4         4           100
+  ---- ------------------------------------------------------------------------------------------------------------------------- ----------- --------- -------------
+     5 $auto$async2sync.cc:101:execute$103                                                                                                 0         0             0
+     5 $auto$async2sync.cc:101:execute$97                                                                                                  0         0             0
+     5 $auto$async2sync.cc:110:execute$101                                                                                                 1         1             1
+     5 $auto$async2sync.cc:110:execute$107                                                                                                 1         1             1
+     5 $auto$async2sync.cc:228:execute$109                                                                                                 0         0             0
+     5 $auto$async2sync.cc:228:execute$111                                                                                                 0         0      00000000
+     5 $auto$async2sync.cc:228:execute$113                                                                                                 0         0             0
+     5 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_04__reference__cover/design.sv:84$1$0                1         1             1
+     5 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_04__reference__cover/design.sv:84$2$0                1         1             1
+     5 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_04__reference__cover/design.sv:85$3$0                1         1             1
+     5 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_04__reference__cover/design.sv:85$4$0                1         1             1
+     5 \clock                                                                                                                              0         0             0
+     5 \io_clear                                                                                                                           0         0             0
+     5 \io_deact                                                                                                                           0         0             0
+     5 \io_eid                                                                                                                             0         0    0000000000
+     5 \io_req_eid                                                                                                                         0         0    0000000000
+     5 \io_req_exok                                                                                                                        0         0             0
+     5 \io_req_ld                                                                                                                          0         0             0
+     5 \io_req_succ                                                                                                                        0         0             0
+     5 \io_req_tag_adr                                                                                                                     0         0      00000000
+     5 \io_req_tag_lpid                                                                                                                    0         0      00000000
+     5 \io_req_tag_mem                                                                                                                     0         0          0000
+     5 \io_req_tag_sze                                                                                                                     0         0           000
+     5 \io_req_vld                                                                                                                         1         1             1
+     5 \io_rsp_succ                                                                                                                        1         1             1
+     5 \io_rsp_vld                                                                                                                         0         0             0
+     5 \io_starving                                                                                                                        0         0             0
+     5 \pilot_active                                                                                                                       0         0             0
+     5 \pilot_past_valid                                                                                                                   1         1             1
+     5 \reset                                                                                                                              0         0             0
+     5 \tag_adr                                                                                                                          238        ee      11101110
+     5 \tag_lpid                                                                                                                          99        63      01100011
+     5 \tag_mem                                                                                                                           12         c          1100
+     5 \tag_sze                                                                                                                            2         2           010
+  ---- ------------------------------------------------------------------------------------------------------------------------- ----------- --------- -------------
+     6 $auto$async2sync.cc:101:execute$103                                                                                                 0         0             0
+     6 $auto$async2sync.cc:101:execute$97                                                                                                  0         0             0
+     6 $auto$async2sync.cc:110:execute$101                                                                                                 1         1             1
+     6 $auto$async2sync.cc:110:execute$107                                                                                                 0         0             0
+     6 $auto$async2sync.cc:228:execute$109                                                                                                 1         1             1
+     6 $auto$async2sync.cc:228:execute$111                                                                                                 0         0      00000000
+     6 $auto$async2sync.cc:228:execute$113                                                                                                 0         0             0
+     6 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_04__reference__cover/design.sv:84$1$0                0         0             0
+     6 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_04__reference__cover/design.sv:84$2$0                0         0             0
+     6 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_04__reference__cover/design.sv:85$3$0                0         0             0
+     6 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_04__reference__cover/design.sv:85$4$0                0         0             0
+     6 \clock                                                                                                                              0         0             0
+     6 \io_clear                                                                                                                           0         0             0
+     6 \io_deact                                                                                                                           0         0             0
+     6 \io_eid                                                                                                                           128        80    0010000000
+     6 \io_req_eid                                                                                                                       830       33e    1100111110
+     6 \io_req_exok                                                                                                                        0         0             0
+     6 \io_req_ld                                                                                                                          0         0             0
+     6 \io_req_succ                                                                                                                        0         0             0
+     6 \io_req_tag_adr                                                                                                                   250        fa      11111010
+     6 \io_req_tag_lpid                                                                                                                  249        f9      11111001
+     6 \io_req_tag_mem                                                                                                                     5         5          0101
+     6 \io_req_tag_sze                                                                                                                     2         2           010
+     6 \io_req_vld                                                                                                                         0         0             0
+     6 \io_rsp_succ                                                                                                                        1         1             1
+     6 \io_rsp_vld                                                                                                                         0         0             0
+     6 \io_starving                                                                                                                        0         0             0
+     6 \pilot_active                                                                                                                       0         0             0
+     6 \pilot_past_valid                                                                                                                   1         1             1
+     6 \reset                                                                                                                              0         0             0
+     6 \tag_adr                                                                                                                            0         0      00000000
+     6 \tag_lpid                                                                                                                           0         0      00000000
+     6 \tag_mem                                                                                                                            0         0          0000
+     6 \tag_sze                                                                                                                            0         0           000
+  ---- ------------------------------------------------------------------------------------------------------------------------- ----------- --------- -------------
+     7 $auto$async2sync.cc:101:execute$103                                                                                                 0         0             0
+     7 $auto$async2sync.cc:101:execute$97                                                                                                  1         1             1
+     7 $auto$async2sync.cc:110:execute$101                                                                                                 1         1             1
+     7 $auto$async2sync.cc:110:execute$107                                                                                                 0         0             0
+     7 $auto$async2sync.cc:228:execute$109                                                                                                 1         1             1
+     7 $auto$async2sync.cc:228:execute$111                                                                                                 0         0      00000000
+     7 $auto$async2sync.cc:228:execute$113                                                                                                 0         0             0
+     7 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_04__reference__cover/design.sv:84$1$0                0         0             0
+     7 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_04__reference__cover/design.sv:84$2$0                0         0             0
+     7 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_04__reference__cover/design.sv:85$3$0                0         0             0
+     7 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_04__reference__cover/design.sv:85$4$0                0         0             0
+     7 \clock                                                                                                                              0         0             0
+     7 \io_clear                                                                                                                           0         0             0
+     7 \io_deact                                                                                                                           0         0             0
+     7 \io_eid                                                                                                                             1         1    0000000001
+     7 \io_req_eid                                                                                                                      1016       3f8    1111111000
+     7 \io_req_exok                                                                                                                        0         0             0
+     7 \io_req_ld                                                                                                                          0         0             0
+     7 \io_req_succ                                                                                                                        0         0             0
+     7 \io_req_tag_adr                                                                                                                   123        7b      01111011
+     7 \io_req_tag_lpid                                                                                                                  215        d7      11010111
+     7 \io_req_tag_mem                                                                                                                     3         3          0011
+     7 \io_req_tag_sze                                                                                                                     2         2           010
+     7 \io_req_vld                                                                                                                         0         0             0
+     7 \io_rsp_succ                                                                                                                        1         1             1
+     7 \io_rsp_vld                                                                                                                         0         0             0
+     7 \io_starving                                                                                                                        0         0             0
+     7 \pilot_active                                                                                                                       0         0             0
+     7 \pilot_past_valid                                                                                                                   1         1             1
+     7 \reset                                                                                                                              0         0             0
+     7 \tag_adr                                                                                                                            0         0      00000000
+     7 \tag_lpid                                                                                                                           0         0      00000000
+     7 \tag_mem                                                                                                                            0         0          0000
+     7 \tag_sze                                                                                                                            0         0           000
+  ---- ------------------------------------------------------------------------------------------------------------------------- ----------- --------- -------------
+     8 $auto$async2sync.cc:101:execute$103                                                                                                 0         0             0
+     8 $auto$async2sync.cc:101:execute$97                                                                                                  1         1             1
+     8 $auto$async2sync.cc:110:execute$101                                                                                                 1         1             1
+     8 $auto$async2sync.cc:110:execute$107                                                                                                 0         0             0
+     8 $auto$async2sync.cc:228:execute$109                                                                                                 1         1             1
+     8 $auto$async2sync.cc:228:execute$111                                                                                                 0         0      00000000
+     8 $auto$async2sync.cc:228:execute$113                                                                                                 0         0             0
+     8 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_04__reference__cover/design.sv:84$1$0                0         0             0
+     8 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_04__reference__cover/design.sv:84$2$0                0         0             0
+     8 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_04__reference__cover/design.sv:85$3$0                0         0             0
+     8 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_04__reference__cover/design.sv:85$4$0                0         0             0
+     8 \clock                                                                                                                              0         0             0
+     8 \io_clear                                                                                                                           0         0             0
+     8 \io_deact                                                                                                                           0         0             0
+     8 \io_eid                                                                                                                             0         0    0000000000
+     8 \io_req_eid                                                                                                                       503       1f7    0111110111
+     8 \io_req_exok                                                                                                                        0         0             0
+     8 \io_req_ld                                                                                                                          0         0             0
+     8 \io_req_succ                                                                                                                        0         0             0
+     8 \io_req_tag_adr                                                                                                                   243        f3      11110011
+     8 \io_req_tag_lpid                                                                                                                   44        2c      00101100
+     8 \io_req_tag_mem                                                                                                                     9         9          1001
+     8 \io_req_tag_sze                                                                                                                     2         2           010
+     8 \io_req_vld                                                                                                                         0         0             0
+     8 \io_rsp_succ                                                                                                                        1         1             1
+     8 \io_rsp_vld                                                                                                                         0         0             0
+     8 \io_starving                                                                                                                        0         0             0
+     8 \pilot_active                                                                                                                       0         0             0
+     8 \pilot_past_valid                                                                                                                   1         1             1
+     8 \reset                                                                                                                              0         0             0
+     8 \tag_adr                                                                                                                            0         0      00000000
+     8 \tag_lpid                                                                                                                           0         0      00000000
+     8 \tag_mem                                                                                                                            0         0          0000
+     8 \tag_sze                                                                                                                            0         0           000
+  ---- ------------------------------------------------------------------------------------------------------------------------- ----------- --------- -------------
+     9 $auto$async2sync.cc:101:execute$103                                                                                                 0         0             0
+     9 $auto$async2sync.cc:101:execute$97                                                                                                  1         1             1
+     9 $auto$async2sync.cc:110:execute$101                                                                                                 1         1             1
+     9 $auto$async2sync.cc:110:execute$107                                                                                                 0         0             0
+     9 $auto$async2sync.cc:228:execute$109                                                                                                 1         1             1
+     9 $auto$async2sync.cc:228:execute$111                                                                                                 0         0      00000000
+     9 $auto$async2sync.cc:228:execute$113                                                                                                 0         0             0
+     9 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_04__reference__cover/design.sv:84$1$0                0         0             0
+     9 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_04__reference__cover/design.sv:84$2$0                0         0             0
+     9 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_04__reference__cover/design.sv:85$3$0                0         0             0
+     9 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_04__reference__cover/design.sv:85$4$0                0         0             0
+     9 \clock                                                                                                                              0         0             0
+     9 \io_clear                                                                                                                           0         0             0
+     9 \io_deact                                                                                                                           0         0             0
+     9 \io_eid                                                                                                                             0         0    0000000000
+     9 \io_req_eid                                                                                                                       763       2fb    1011111011
+     9 \io_req_exok                                                                                                                        0         0             0
+     9 \io_req_ld                                                                                                                          0         0             0
+     9 \io_req_succ                                                                                                                        0         0             0
+     9 \io_req_tag_adr                                                                                                                   126        7e      01111110
+     9 \io_req_tag_lpid                                                                                                                  252        fc      11111100
+     9 \io_req_tag_mem                                                                                                                     9         9          1001
+     9 \io_req_tag_sze                                                                                                                     2         2           010
+     9 \io_req_vld                                                                                                                         0         0             0
+     9 \io_rsp_succ                                                                                                                        1         1             1
+     9 \io_rsp_vld                                                                                                                         0         0             0
+     9 \io_starving                                                                                                                        0         0             0
+     9 \pilot_active                                                                                                                       0         0             0
+     9 \pilot_past_valid                                                                                                                   1         1             1
+     9 \reset                                                                                                                              0         0             0
+     9 \tag_adr                                                                                                                            0         0      00000000
+     9 \tag_lpid                                                                                                                           0         0      00000000
+     9 \tag_mem                                                                                                                            0         0          0000
+     9 \tag_sze                                                                                                                            0         0           000
+  ---- ------------------------------------------------------------------------------------------------------------------------- ----------- --------- -------------
+    10 $auto$async2sync.cc:101:execute$103                                                                                                 0         0             0
+    10 $auto$async2sync.cc:101:execute$97                                                                                                  1         1             1
+    10 $auto$async2sync.cc:110:execute$101                                                                                                 1         1             1
+    10 $auto$async2sync.cc:110:execute$107                                                                                                 0         0             0
+    10 $auto$async2sync.cc:228:execute$109                                                                                                 1         1             1
+    10 $auto$async2sync.cc:228:execute$111                                                                                                 0         0      00000000
+    10 $auto$async2sync.cc:228:execute$113                                                                                                 0         0             0
+    10 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_04__reference__cover/design.sv:84$1$0                0         0             0
+    10 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_04__reference__cover/design.sv:84$2$0                0         0             0
+    10 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_04__reference__cover/design.sv:85$3$0                0         0             0
+    10 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_04__reference__cover/design.sv:85$4$0                0         0             0
+    10 \clock                                                                                                                              0         0             0
+    10 \io_clear                                                                                                                           0         0             0
+    10 \io_deact                                                                                                                           0         0             0
+    10 \io_eid                                                                                                                             0         0    0000000000
+    10 \io_req_eid                                                                                                                       887       377    1101110111
+    10 \io_req_exok                                                                                                                        0         0             0
+    10 \io_req_ld                                                                                                                          0         0             0
+    10 \io_req_succ                                                                                                                        0         0             0
+    10 \io_req_tag_adr                                                                                                                   125        7d      01111101
+    10 \io_req_tag_lpid                                                                                                                  125        7d      01111101
+    10 \io_req_tag_mem                                                                                                                     9         9          1001
+    10 \io_req_tag_sze                                                                                                                     1         1           001
+    10 \io_req_vld                                                                                                                         0         0             0
+    10 \io_rsp_succ                                                                                                                        1         1             1
+    10 \io_rsp_vld                                                                                                                         0         0             0
+    10 \io_starving                                                                                                                        0         0             0
+    10 \pilot_active                                                                                                                       0         0             0
+    10 \pilot_past_valid                                                                                                                   1         1             1
+    10 \reset                                                                                                                              0         0             0
+    10 \tag_adr                                                                                                                            0         0      00000000
+    10 \tag_lpid                                                                                                                           0         0      00000000
+    10 \tag_mem                                                                                                                            0         0          0000
+    10 \tag_sze                                                                                                                            0         0           000
+  ---- ------------------------------------------------------------------------------------------------------------------------- ----------- --------- -------------
+    11 $auto$async2sync.cc:101:execute$103                                                                                                 0         0             0
+    11 $auto$async2sync.cc:101:execute$97                                                                                                  1         1             1
+    11 $auto$async2sync.cc:110:execute$101                                                                                                 1         1             1
+    11 $auto$async2sync.cc:110:execute$107                                                                                                 0         0             0
+    11 $auto$async2sync.cc:228:execute$109                                                                                                 1         1             1
+    11 $auto$async2sync.cc:228:execute$111                                                                                                 0         0      00000000
+    11 $auto$async2sync.cc:228:execute$113                                                                                                 0         0             0
+    11 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_04__reference__cover/design.sv:84$1$0                0         0             0
+    11 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_04__reference__cover/design.sv:84$2$0                0         0             0
+    11 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_04__reference__cover/design.sv:85$3$0                0         0             0
+    11 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_04__reference__cover/design.sv:85$4$0                0         0             0
+    11 \clock                                                                                                                              0         0             0
+    11 \io_clear                                                                                                                           0         0             0
+    11 \io_deact                                                                                                                           0         0             0
+    11 \io_eid                                                                                                                             0         0    0000000000
+    11 \io_req_eid                                                                                                                      1020       3fc    1111111100
+    11 \io_req_exok                                                                                                                        0         0             0
+    11 \io_req_ld                                                                                                                          0         0             0
+    11 \io_req_succ                                                                                                                        0         0             0
+    11 \io_req_tag_adr                                                                                                                   238        ee      11101110
+    11 \io_req_tag_lpid                                                                                                                   63        3f      00111111
+    11 \io_req_tag_mem                                                                                                                     9         9          1001
+    11 \io_req_tag_sze                                                                                                                     1         1           001
+    11 \io_req_vld                                                                                                                         0         0             0
+    11 \io_rsp_succ                                                                                                                        1         1             1
+    11 \io_rsp_vld                                                                                                                         0         0             0
+    11 \io_starving                                                                                                                        0         0             0
+    11 \pilot_active                                                                                                                       0         0             0
+    11 \pilot_past_valid                                                                                                                   1         1             1
+    11 \reset                                                                                                                              0         0             0
+    11 \tag_adr                                                                                                                            0         0      00000000
+    11 \tag_lpid                                                                                                                           0         0      00000000
+    11 \tag_mem                                                                                                                            0         0          0000
+    11 \tag_sze                                                                                                                            0         0           000
+  ---- ------------------------------------------------------------------------------------------------------------------------- ----------- --------- -------------
+    12 $auto$async2sync.cc:101:execute$103                                                                                                 0         0             0
+    12 $auto$async2sync.cc:101:execute$97                                                                                                  1         1             1
+    12 $auto$async2sync.cc:110:execute$101                                                                                                 1         1             1
+    12 $auto$async2sync.cc:110:execute$107                                                                                                 0         0             0
+    12 $auto$async2sync.cc:228:execute$109                                                                                                 1         1             1
+    12 $auto$async2sync.cc:228:execute$111                                                                                                 0         0      00000000
+    12 $auto$async2sync.cc:228:execute$113                                                                                                 0         0             0
+    12 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_04__reference__cover/design.sv:84$1$0                0         0             0
+    12 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_04__reference__cover/design.sv:84$2$0                0         0             0
+    12 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_04__reference__cover/design.sv:85$3$0                0         0             0
+    12 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_04__reference__cover/design.sv:85$4$0                0         0             0
+    12 \clock                                                                                                                              0         0             0
+    12 \io_clear                                                                                                                           0         0             0
+    12 \io_deact                                                                                                                           0         0             0
+    12 \io_eid                                                                                                                             0         0    0000000000
+    12 \io_req_eid                                                                                                                       957       3bd    1110111101
+    12 \io_req_exok                                                                                                                        0         0             0
+    12 \io_req_ld                                                                                                                          0         0             0
+    12 \io_req_succ                                                                                                                        0         0             0
+    12 \io_req_tag_adr                                                                                                                   126        7e      01111110
+    12 \io_req_tag_lpid                                                                                                                   63        3f      00111111
+    12 \io_req_tag_mem                                                                                                                    12         c          1100
+    12 \io_req_tag_sze                                                                                                                     1         1           001
+    12 \io_req_vld                                                                                                                         0         0             0
+    12 \io_rsp_succ                                                                                                                        1         1             1
+    12 \io_rsp_vld                                                                                                                         0         0             0
+    12 \io_starving                                                                                                                        0         0             0
+    12 \pilot_active                                                                                                                       0         0             0
+    12 \pilot_past_valid                                                                                                                   1         1             1
+    12 \reset                                                                                                                              0         0             0
+    12 \tag_adr                                                                                                                            0         0      00000000
+    12 \tag_lpid                                                                                                                           0         0      00000000
+    12 \tag_mem                                                                                                                            0         0          0000
+    12 \tag_sze                                                                                                                            0         0           000
+  ---- ------------------------------------------------------------------------------------------------------------------------- ----------- --------- -------------
+    13 $auto$async2sync.cc:101:execute$103                                                                                                 0         0             0
+    13 $auto$async2sync.cc:101:execute$97                                                                                                  1         1             1
+    13 $auto$async2sync.cc:110:execute$101                                                                                                 1         1             1
+    13 $auto$async2sync.cc:110:execute$107                                                                                                 0         0             0
+    13 $auto$async2sync.cc:228:execute$109                                                                                                 1         1             1
+    13 $auto$async2sync.cc:228:execute$111                                                                                                 0         0      00000000
+    13 $auto$async2sync.cc:228:execute$113                                                                                                 0         0             0
+    13 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_04__reference__cover/design.sv:84$1$0                0         0             0
+    13 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_04__reference__cover/design.sv:84$2$0                0         0             0
+    13 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_04__reference__cover/design.sv:85$3$0                0         0             0
+    13 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_04__reference__cover/design.sv:85$4$0                0         0             0
+    13 \clock                                                                                                                              0         0             0
+    13 \io_clear                                                                                                                           0         0             0
+    13 \io_deact                                                                                                                           0         0             0
+    13 \io_eid                                                                                                                             0         0    0000000000
+    13 \io_req_eid                                                                                                                       383       17f    0101111111
+    13 \io_req_exok                                                                                                                        0         0             0
+    13 \io_req_ld                                                                                                                          0         0             0
+    13 \io_req_succ                                                                                                                        0         0             0
+    13 \io_req_tag_adr                                                                                                                   119        77      01110111
+    13 \io_req_tag_lpid                                                                                                                  189        bd      10111101
+    13 \io_req_tag_mem                                                                                                                     5         5          0101
+    13 \io_req_tag_sze                                                                                                                     1         1           001
+    13 \io_req_vld                                                                                                                         0         0             0
+    13 \io_rsp_succ                                                                                                                        1         1             1
+    13 \io_rsp_vld                                                                                                                         0         0             0
+    13 \io_starving                                                                                                                        0         0             0
+    13 \pilot_active                                                                                                                       0         0             0
+    13 \pilot_past_valid                                                                                                                   1         1             1
+    13 \reset                                                                                                                              0         0             0
+    13 \tag_adr                                                                                                                            0         0      00000000
+    13 \tag_lpid                                                                                                                           0         0      00000000
+    13 \tag_mem                                                                                                                            0         0          0000
+    13 \tag_sze                                                                                                                            0         0           000
+  ---- ------------------------------------------------------------------------------------------------------------------------- ----------- --------- -------------
+    14 $auto$async2sync.cc:101:execute$103                                                                                                 0         0             0
+    14 $auto$async2sync.cc:101:execute$97                                                                                                  1         1             1
+    14 $auto$async2sync.cc:110:execute$101                                                                                                 1         1             1
+    14 $auto$async2sync.cc:110:execute$107                                                                                                 0         0             0
+    14 $auto$async2sync.cc:228:execute$109                                                                                                 1         1             1
+    14 $auto$async2sync.cc:228:execute$111                                                                                                 0         0      00000000
+    14 $auto$async2sync.cc:228:execute$113                                                                                                 0         0             0
+    14 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_04__reference__cover/design.sv:84$1$0                0         0             0
+    14 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_04__reference__cover/design.sv:84$2$0                0         0             0
+    14 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_04__reference__cover/design.sv:85$3$0                0         0             0
+    14 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_04__reference__cover/design.sv:85$4$0                0         0             0
+    14 \clock                                                                                                                              0         0             0
+    14 \io_clear                                                                                                                           0         0             0
+    14 \io_deact                                                                                                                           0         0             0
+    14 \io_eid                                                                                                                             0         0    0000000000
+    14 \io_req_eid                                                                                                                       639       27f    1001111111
+    14 \io_req_exok                                                                                                                        0         0             0
+    14 \io_req_ld                                                                                                                          0         0             0
+    14 \io_req_succ                                                                                                                        0         0             0
+    14 \io_req_tag_adr                                                                                                                   221        dd      11011101
+    14 \io_req_tag_lpid                                                                                                                  235        eb      11101011
+    14 \io_req_tag_mem                                                                                                                    10         a          1010
+    14 \io_req_tag_sze                                                                                                                     4         4           100
+    14 \io_req_vld                                                                                                                         0         0             0
+    14 \io_rsp_succ                                                                                                                        1         1             1
+    14 \io_rsp_vld                                                                                                                         0         0             0
+    14 \io_starving                                                                                                                        0         0             0
+    14 \pilot_active                                                                                                                       0         0             0
+    14 \pilot_past_valid                                                                                                                   1         1             1
+    14 \reset                                                                                                                              0         0             0
+    14 \tag_adr                                                                                                                            0         0      00000000
+    14 \tag_lpid                                                                                                                           0         0      00000000
+    14 \tag_mem                                                                                                                            0         0          0000
+    14 \tag_sze                                                                                                                            0         0           000
+  ---- ------------------------------------------------------------------------------------------------------------------------- ----------- --------- -------------
+    15 $auto$async2sync.cc:101:execute$103                                                                                                 0         0             0
+    15 $auto$async2sync.cc:101:execute$97                                                                                                  1         1             1
+    15 $auto$async2sync.cc:110:execute$101                                                                                                 1         1             1
+    15 $auto$async2sync.cc:110:execute$107                                                                                                 0         0             0
+    15 $auto$async2sync.cc:228:execute$109                                                                                                 1         1             1
+    15 $auto$async2sync.cc:228:execute$111                                                                                                 0         0      00000000
+    15 $auto$async2sync.cc:228:execute$113                                                                                                 0         0             0
+    15 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_04__reference__cover/design.sv:84$1$0                0         0             0
+    15 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_04__reference__cover/design.sv:84$2$0                0         0             0
+    15 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_04__reference__cover/design.sv:85$3$0                0         0             0
+    15 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_04__reference__cover/design.sv:85$4$0                0         0             0
+    15 \clock                                                                                                                              0         0             0
+    15 \io_clear                                                                                                                           0         0             0
+    15 \io_deact                                                                                                                           0         0             0
+    15 \io_eid                                                                                                                             0         0    0000000000
+    15 \io_req_eid                                                                                                                       943       3af    1110101111
+    15 \io_req_exok                                                                                                                        0         0             0
+    15 \io_req_ld                                                                                                                          0         0             0
+    15 \io_req_succ                                                                                                                        0         0             0
+    15 \io_req_tag_adr                                                                                                                    95        5f      01011111
+    15 \io_req_tag_lpid                                                                                                                  252        fc      11111100
+    15 \io_req_tag_mem                                                                                                                     9         9          1001
+    15 \io_req_tag_sze                                                                                                                     2         2           010
+    15 \io_req_vld                                                                                                                         0         0             0
+    15 \io_rsp_succ                                                                                                                        1         1             1
+    15 \io_rsp_vld                                                                                                                         0         0             0
+    15 \io_starving                                                                                                                        0         0             0
+    15 \pilot_active                                                                                                                       0         0             0
+    15 \pilot_past_valid                                                                                                                   1         1             1
+    15 \reset                                                                                                                              0         0             0
+    15 \tag_adr                                                                                                                            0         0      00000000
+    15 \tag_lpid                                                                                                                           0         0      00000000
+    15 \tag_mem                                                                                                                            0         0          0000
+    15 \tag_sze                                                                                                                            0         0           000
+  ---- ------------------------------------------------------------------------------------------------------------------------- ----------- --------- -------------
+    16 $auto$async2sync.cc:101:execute$103                                                                                                 0         0             0
+    16 $auto$async2sync.cc:101:execute$97                                                                                                  1         1             1
+    16 $auto$async2sync.cc:110:execute$101                                                                                                 1         1             1
+    16 $auto$async2sync.cc:110:execute$107                                                                                                 0         0             0
+    16 $auto$async2sync.cc:228:execute$109                                                                                                 1         1             1
+    16 $auto$async2sync.cc:228:execute$111                                                                                                 0         0      00000000
+    16 $auto$async2sync.cc:228:execute$113                                                                                                 0         0             0
+    16 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_04__reference__cover/design.sv:84$1$0                0         0             0
+    16 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_04__reference__cover/design.sv:84$2$0                0         0             0
+    16 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_04__reference__cover/design.sv:85$3$0                0         0             0
+    16 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_04__reference__cover/design.sv:85$4$0                0         0             0
+    16 \clock                                                                                                                              0         0             0
+    16 \io_clear                                                                                                                           0         0             0
+    16 \io_deact                                                                                                                           0         0             0
+    16 \io_eid                                                                                                                             0         0    0000000000
+    16 \io_req_eid                                                                                                                       503       1f7    0111110111
+    16 \io_req_exok                                                                                                                        0         0             0
+    16 \io_req_ld                                                                                                                          0         0             0
+    16 \io_req_succ                                                                                                                        0         0             0
+    16 \io_req_tag_adr                                                                                                                   252        fc      11111100
+    16 \io_req_tag_lpid                                                                                                                  215        d7      11010111
+    16 \io_req_tag_mem                                                                                                                     6         6          0110
+    16 \io_req_tag_sze                                                                                                                     2         2           010
+    16 \io_req_vld                                                                                                                         0         0             0
+    16 \io_rsp_succ                                                                                                                        1         1             1
+    16 \io_rsp_vld                                                                                                                         0         0             0
+    16 \io_starving                                                                                                                        0         0             0
+    16 \pilot_active                                                                                                                       0         0             0
+    16 \pilot_past_valid                                                                                                                   1         1             1
+    16 \reset                                                                                                                              0         0             0
+    16 \tag_adr                                                                                                                            0         0      00000000
+    16 \tag_lpid                                                                                                                           0         0      00000000
+    16 \tag_mem                                                                                                                            0         0          0000
+    16 \tag_sze                                                                                                                            0         0           000
+Dumping SAT model to VCD file /nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/traces/EX_04__reference__cover.vcd
+Dumping SAT model to WaveJSON file '/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/traces/EX_04__reference__cover.json'.

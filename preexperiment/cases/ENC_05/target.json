@@ -1,0 +1,18 @@
+{
+  "target_id": "ENC_05",
+  "parent_id": "ENC_05",
+  "top": "PriorityEncoderOneHotLow8",
+  "title": "位一选择需要排除更低位",
+  "contract": "位 1 有效且位 0 无效时选择位 1；位 0 同时有效时应选择位 0。",
+  "source_lines": [
+    8,
+    9
+  ],
+  "source_type": "rtl_derived_candidate_contract",
+  "spec_review_status": "pending_external_spec_review",
+  "reference": {
+    "timing": "comb",
+    "antecedent": "!i_data[0] && i_data[1]",
+    "consequent": "o_code == 8'h02"
+  }
+}

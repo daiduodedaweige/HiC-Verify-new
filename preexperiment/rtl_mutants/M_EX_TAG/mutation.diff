@@ -1,0 +1,11 @@
+--- rtl_reference/ExclusiveMonitorEntry.sv
++++ rtl_mutants/M_EX_TAG/ExclusiveMonitorEntry.sv
+@@ -69,7 +69,7 @@
+       `FIRRTL_AFTER_INITIAL
+     `endif // FIRRTL_AFTER_INITIAL
+   `endif // ENABLE_INITIAL_REG_
+-  assign io_req_exok = corrReq & (io_req_ld | working & tagMatch);
++  assign io_req_exok = corrReq & (io_req_ld | working);
+   assign io_starving = io_starving_REG;
+ endmodule
+ 

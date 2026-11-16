@@ -1,0 +1,13 @@
+--- rtl_reference/PriorityEncoderOneHotLow8.sv
++++ rtl_mutants/M_ENC_PRIORITY/PriorityEncoderOneHotLow8.sv
+@@ -5,8 +5,8 @@
+   output logic [7:0] o_code
+ );
+   always_comb begin
+-    priority if(i_data[0]) o_code = 8'h01;
+-    else if(i_data[1]) o_code = 8'h02;
++    priority if(i_data[1]) o_code = 8'h02;
++    else if(i_data[0]) o_code = 8'h01;
+     else if(i_data[2]) o_code = 8'h04;
+     else if(i_data[3]) o_code = 8'h08;
+     else if(i_data[4]) o_code = 8'h10;

@@ -1,0 +1,12 @@
+{
+  "mutant_id": "M_EX_TAG",
+  "target_id": "EX_03",
+  "top": "ExclusiveMonitorEntry",
+  "description": "独占存储遗漏标签匹配条件",
+  "path": "rtl_mutants/M_EX_TAG/ExclusiveMonitorEntry.sv",
+  "source_sha256": "7412ccf5acf3eaa3a61e67960dd7323ea17c6d530f5ff4d6f71273b0434f60d1",
+  "mutant_sha256": "e9a78397a455bd25b50f6b57c7d7cdd66117769bf5912e517e153df93357c482",
+  "changed_line": 72,
+  "role": "controlled_rtl_mutation",
+  "validation_status": "see results/summary.json"
+}

@@ -1,0 +1,570 @@
+
+-- Executing script file `/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_05__reference__assert/query.ys' --
+
+1. Executing Verilog-2005 frontend: /nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_05__reference__assert/design.sv
+Parsing formal SystemVerilog input from `/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_05__reference__assert/design.sv' to AST representation.
+Generating RTLIL representation for module `\ExclusiveMonitorEntry'.
+Successfully finished Verilog frontend.
+
+2. Executing PREP pass.
+
+2.1. Executing HIERARCHY pass (managing design hierarchy).
+
+2.1.1. Analyzing design hierarchy..
+Top module:  \ExclusiveMonitorEntry
+
+2.1.2. Analyzing design hierarchy..
+Top module:  \ExclusiveMonitorEntry
+Removed 0 unused modules.
+Module ExclusiveMonitorEntry directly or indirectly contains formal properties -> setting "keep" attribute.
+
+2.2. Executing PROC pass (convert processes to netlists).
+
+2.2.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+2.2.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 2 switch rules as full_case in process $proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_05__reference__assert/design.sv:40$16 in module ExclusiveMonitorEntry.
+Removed a total of 0 dead cases.
+
+2.2.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 2 redundant assignments.
+Promoted 9 assignments to connections.
+
+2.2.4. Executing PROC_INIT pass (extract init attributes).
+Found init rule in `\ExclusiveMonitorEntry.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_05__reference__assert/design.sv:82$62'.
+  Set init value: \pilot_active = 1'0
+Found init rule in `\ExclusiveMonitorEntry.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_05__reference__assert/design.sv:77$61'.
+  Set init value: \pilot_past_valid = 1'0
+
+2.2.5. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \reset in `\ExclusiveMonitorEntry.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_05__reference__assert/design.sv:40$16'.
+
+2.2.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~5 debug messages>
+
+2.2.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\ExclusiveMonitorEntry.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_05__reference__assert/design.sv:82$62'.
+Creating decoders for process `\ExclusiveMonitorEntry.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_05__reference__assert/design.sv:77$61'.
+Creating decoders for process `\ExclusiveMonitorEntry.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_05__reference__assert/design.sv:83$42'.
+     1/1: $assert$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_05__reference__assert/design.sv:85$57_EN
+Creating decoders for process `\ExclusiveMonitorEntry.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_05__reference__assert/design.sv:78$39'.
+     1/1: $assume$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_05__reference__assert/design.sv:80$41_EN
+Creating decoders for process `\ExclusiveMonitorEntry.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_05__reference__assert/design.sv:40$16'.
+     1/3: $0\io_starving_REG[0:0]
+     2/3: $0\working[0:0]
+     3/3: $0\retry[7:0]
+Creating decoders for process `\ExclusiveMonitorEntry.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_05__reference__assert/design.sv:32$15'.
+     1/4: $0\tag_sze[2:0]
+     2/4: $0\tag_mem[3:0]
+     3/4: $0\tag_adr[7:0]
+     4/4: $0\tag_lpid[7:0]
+
+2.2.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+2.2.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\ExclusiveMonitorEntry.\pilot_active' using process `\ExclusiveMonitorEntry.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_05__reference__assert/design.sv:83$42'.
+  created $dff cell `$procdff$80' with positive edge clock.
+Creating register for signal `\ExclusiveMonitorEntry.$past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_05__reference__assert/design.sv:84$1$0' using process `\ExclusiveMonitorEntry.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_05__reference__assert/design.sv:83$42'.
+  created $dff cell `$procdff$81' with positive edge clock.
+Creating register for signal `\ExclusiveMonitorEntry.$past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_05__reference__assert/design.sv:84$2$0' using process `\ExclusiveMonitorEntry.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_05__reference__assert/design.sv:83$42'.
+  created $dff cell `$procdff$82' with positive edge clock.
+Creating register for signal `\ExclusiveMonitorEntry.$past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_05__reference__assert/design.sv:85$3$0' using process `\ExclusiveMonitorEntry.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_05__reference__assert/design.sv:83$42'.
+  created $dff cell `$procdff$83' with positive edge clock.
+Creating register for signal `\ExclusiveMonitorEntry.$past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_05__reference__assert/design.sv:85$4$0' using process `\ExclusiveMonitorEntry.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_05__reference__assert/design.sv:83$42'.
+  created $dff cell `$procdff$84' with positive edge clock.
+Creating register for signal `\ExclusiveMonitorEntry.$past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_05__reference__assert/design.sv:85$5$0' using process `\ExclusiveMonitorEntry.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_05__reference__assert/design.sv:83$42'.
+  created $dff cell `$procdff$85' with positive edge clock.
+Creating register for signal `\ExclusiveMonitorEntry.\pilot_past_valid' using process `\ExclusiveMonitorEntry.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_05__reference__assert/design.sv:78$39'.
+  created $dff cell `$procdff$86' with positive edge clock.
+Creating register for signal `\ExclusiveMonitorEntry.\working' using process `\ExclusiveMonitorEntry.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_05__reference__assert/design.sv:40$16'.
+  created $adff cell `$procdff$89' with positive edge clock and positive level reset.
+Creating register for signal `\ExclusiveMonitorEntry.\retry' using process `\ExclusiveMonitorEntry.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_05__reference__assert/design.sv:40$16'.
+  created $adff cell `$procdff$92' with positive edge clock and positive level reset.
+Creating register for signal `\ExclusiveMonitorEntry.\io_starving_REG' using process `\ExclusiveMonitorEntry.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_05__reference__assert/design.sv:40$16'.
+  created $adff cell `$procdff$95' with positive edge clock and positive level reset.
+Creating register for signal `\ExclusiveMonitorEntry.\tag_lpid' using process `\ExclusiveMonitorEntry.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_05__reference__assert/design.sv:32$15'.
+  created $dff cell `$procdff$96' with positive edge clock.
+Creating register for signal `\ExclusiveMonitorEntry.\tag_adr' using process `\ExclusiveMonitorEntry.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_05__reference__assert/design.sv:32$15'.
+  created $dff cell `$procdff$97' with positive edge clock.
+Creating register for signal `\ExclusiveMonitorEntry.\tag_mem' using process `\ExclusiveMonitorEntry.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_05__reference__assert/design.sv:32$15'.
+  created $dff cell `$procdff$98' with positive edge clock.
+Creating register for signal `\ExclusiveMonitorEntry.\tag_sze' using process `\ExclusiveMonitorEntry.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_05__reference__assert/design.sv:32$15'.
+  created $dff cell `$procdff$99' with positive edge clock.
+
+2.2.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+2.2.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Removing empty process `ExclusiveMonitorEntry.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_05__reference__assert/design.sv:82$62'.
+Removing empty process `ExclusiveMonitorEntry.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_05__reference__assert/design.sv:77$61'.
+Found and cleaned up 1 empty switch in `\ExclusiveMonitorEntry.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_05__reference__assert/design.sv:83$42'.
+Removing empty process `ExclusiveMonitorEntry.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_05__reference__assert/design.sv:83$42'.
+Found and cleaned up 1 empty switch in `\ExclusiveMonitorEntry.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_05__reference__assert/design.sv:78$39'.
+Removing empty process `ExclusiveMonitorEntry.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_05__reference__assert/design.sv:78$39'.
+Found and cleaned up 2 empty switches in `\ExclusiveMonitorEntry.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_05__reference__assert/design.sv:40$16'.
+Removing empty process `ExclusiveMonitorEntry.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_05__reference__assert/design.sv:40$16'.
+Found and cleaned up 1 empty switch in `\ExclusiveMonitorEntry.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_05__reference__assert/design.sv:32$15'.
+Removing empty process `ExclusiveMonitorEntry.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_05__reference__assert/design.sv:32$15'.
+Cleaned up 5 empty switches.
+
+2.2.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ExclusiveMonitorEntry.
+<suppressed ~4 debug messages>
+
+2.3. Executing FUTURE pass.
+
+2.4. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ExclusiveMonitorEntry.
+
+2.5. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ExclusiveMonitorEntry..
+Removed 1 unused cells and 33 unused wires.
+<suppressed ~2 debug messages>
+
+2.6. Executing CHECK pass (checking for obvious problems).
+Checking module ExclusiveMonitorEntry...
+Found and reported 0 problems.
+
+2.7. Executing OPT pass (performing simple optimizations).
+
+2.7.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ExclusiveMonitorEntry.
+
+2.7.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ExclusiveMonitorEntry'.
+<suppressed ~6 debug messages>
+Removed a total of 2 cells.
+
+2.7.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \ExclusiveMonitorEntry..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~7 debug messages>
+
+2.7.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \ExclusiveMonitorEntry.
+Performed a total of 0 changes.
+
+2.7.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ExclusiveMonitorEntry'.
+Removed a total of 0 cells.
+
+2.7.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ExclusiveMonitorEntry..
+Removed 0 unused cells and 2 unused wires.
+<suppressed ~1 debug messages>
+
+2.7.7. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ExclusiveMonitorEntry.
+
+2.7.8. Rerunning OPT passes. (Maybe there is more to do..)
+
+2.7.9. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \ExclusiveMonitorEntry..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~7 debug messages>
+
+2.7.10. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \ExclusiveMonitorEntry.
+Performed a total of 0 changes.
+
+2.7.11. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ExclusiveMonitorEntry'.
+Removed a total of 0 cells.
+
+2.7.12. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ExclusiveMonitorEntry..
+
+2.7.13. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ExclusiveMonitorEntry.
+
+2.7.14. Finished OPT passes. (There is nothing left to do.)
+
+2.8. Executing WREDUCE pass (reducing word size of cells).
+Removed top 7 bits (of 8) from port B of cell ExclusiveMonitorEntry.$add$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_05__reference__assert/design.sv:53$35 ($add).
+
+2.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ExclusiveMonitorEntry..
+
+2.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+2.11. Executing OPT pass (performing simple optimizations).
+
+2.11.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ExclusiveMonitorEntry.
+
+2.11.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ExclusiveMonitorEntry'.
+Removed a total of 0 cells.
+
+2.11.3. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ExclusiveMonitorEntry..
+
+2.11.4. Finished fast OPT passes.
+
+2.12. Printing statistics.
+
+=== ExclusiveMonitorEntry ===
+
+   Number of wires:                 79
+   Number of wire bits:            189
+   Number of public wires:          28
+   Number of public wire bits:      91
+   Number of ports:                 17
+   Number of port bits:             54
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 65
+     $add                            1
+     $adff                           3
+     $and                           15
+     $check                          2
+     $dff                           11
+     $eq                             6
+     $logic_and                      4
+     $logic_not                      4
+     $logic_or                       1
+     $mux                            8
+     $ne                             1
+     $not                            5
+     $or                             4
+
+2.13. Executing CHECK pass (checking for obvious problems).
+Checking module ExclusiveMonitorEntry...
+Found and reported 0 problems.
+
+3. Executing FLATTEN pass (flatten design).
+
+4. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+
+5. Executing ASYNC2SYNC pass.
+Replacing ExclusiveMonitorEntry.$procdff$89 ($adff): ARST=\reset, D=$0\working[0:0], Q=\working
+Replacing ExclusiveMonitorEntry.$procdff$92 ($adff): ARST=\reset, D=$0\retry[7:0], Q=\retry
+Replacing ExclusiveMonitorEntry.$procdff$95 ($adff): ARST=\reset, D=\retry [7], Q=\io_starving_REG
+
+6. Executing DFFUNMAP pass (unmap clock enable and synchronous reset from FFs).
+
+7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ExclusiveMonitorEntry..
+Removed 6 unused cells and 6 unused wires.
+<suppressed ~7 debug messages>
+
+8. Executing SAT pass (solving SAT problems in the circuit).
+
+Setting up time step 1:
+Final constraint equation: { } = { }
+Imported 75 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:110:execute$110 when $auto$async2sync.cc:101:execute$106.
+Import set-constraint from init attribute: $auto$async2sync.cc:101:execute$100 = 1'0
+Import set-constraint from init attribute: $auto$async2sync.cc:101:execute$106 = 1'0
+Import set-constraint from init attribute: $auto$async2sync.cc:110:execute$104 = 1'1
+Import set-constraint from init attribute: $auto$async2sync.cc:110:execute$110 = 1'1
+Import set-constraint from init attribute: \pilot_active = 1'0
+Import set-constraint from init attribute: \pilot_past_valid = 1'0
+Final init constraint equation: { \pilot_past_valid \pilot_active $auto$async2sync.cc:110:execute$110 $auto$async2sync.cc:110:execute$104 $auto$async2sync.cc:101:execute$106 $auto$async2sync.cc:101:execute$100 } = 6'001100
+
+Setting up time step 2:
+Final constraint equation: { } = { }
+Imported 75 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:110:execute$110 when $auto$async2sync.cc:101:execute$106.
+
+Setting up time step 1:
+Final constraint equation: { } = { }
+Imported 75 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:110:execute$110 when $auto$async2sync.cc:101:execute$106.
+Import proof for assert: $auto$async2sync.cc:110:execute$104 when $auto$async2sync.cc:101:execute$100.
+
+** Trying induction with length 1 **
+
+Setting up time step 3:
+Final constraint equation: { } = { }
+Imported 75 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:110:execute$110 when $auto$async2sync.cc:101:execute$106.
+Import proof for assert: $auto$async2sync.cc:110:execute$104 when $auto$async2sync.cc:101:execute$100.
+Import show expression: \pilot_active
+Import show expression: \clock
+Import show expression: \io_clear
+Import show expression: \io_deact
+Import show expression: \io_eid
+Import show expression: \io_req_eid
+Import show expression: \io_req_ld
+Import show expression: \io_req_succ
+Import show expression: \io_req_tag_adr
+Import show expression: \io_req_tag_lpid
+Import show expression: \io_req_tag_mem
+Import show expression: \io_req_tag_sze
+Import show expression: \io_req_vld
+Import show expression: \io_rsp_succ
+Import show expression: \io_rsp_vld
+Import show expression: \reset
+Import show expression: \io_req_exok
+Import show expression: \io_starving
+Import show expression: \tag_sze
+Import show expression: \tag_mem
+Import show expression: \tag_adr
+Import show expression: \tag_lpid
+Import show expression: $auto$async2sync.cc:228:execute$116
+Import show expression: $auto$async2sync.cc:228:execute$114
+Import show expression: $auto$async2sync.cc:228:execute$112
+Import show expression: \pilot_past_valid
+Import show expression: $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_05__reference__assert/design.sv:85$5$0
+Import show expression: $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_05__reference__assert/design.sv:85$4$0
+Import show expression: $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_05__reference__assert/design.sv:85$3$0
+Import show expression: $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_05__reference__assert/design.sv:84$2$0
+Import show expression: $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_05__reference__assert/design.sv:84$1$0
+Import show expression: \pilot_active
+Import show expression: $auto$async2sync.cc:110:execute$110
+Import show expression: $auto$async2sync.cc:110:execute$104
+Import show expression: $auto$async2sync.cc:101:execute$106
+Import show expression: $auto$async2sync.cc:101:execute$100
+
+[base case 1] Solving problem with 2980 variables and 7556 clauses..
+Base case for induction length 1 proven.
+
+Setting up time step 2:
+Final constraint equation: { } = { }
+Imported 75 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:110:execute$110 when $auto$async2sync.cc:101:execute$106.
+Import proof for assert: $auto$async2sync.cc:110:execute$104 when $auto$async2sync.cc:101:execute$100.
+Import show expression: \pilot_active
+Import show expression: \clock
+Import show expression: \io_clear
+Import show expression: \io_deact
+Import show expression: \io_eid
+Import show expression: \io_req_eid
+Import show expression: \io_req_ld
+Import show expression: \io_req_succ
+Import show expression: \io_req_tag_adr
+Import show expression: \io_req_tag_lpid
+Import show expression: \io_req_tag_mem
+Import show expression: \io_req_tag_sze
+Import show expression: \io_req_vld
+Import show expression: \io_rsp_succ
+Import show expression: \io_rsp_vld
+Import show expression: \reset
+Import show expression: \io_req_exok
+Import show expression: \io_starving
+Import show expression: \tag_sze
+Import show expression: \tag_mem
+Import show expression: \tag_adr
+Import show expression: \tag_lpid
+Import show expression: $auto$async2sync.cc:228:execute$116
+Import show expression: $auto$async2sync.cc:228:execute$114
+Import show expression: $auto$async2sync.cc:228:execute$112
+Import show expression: \pilot_past_valid
+Import show expression: $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_05__reference__assert/design.sv:85$5$0
+Import show expression: $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_05__reference__assert/design.sv:85$4$0
+Import show expression: $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_05__reference__assert/design.sv:85$3$0
+Import show expression: $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_05__reference__assert/design.sv:84$2$0
+Import show expression: $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_05__reference__assert/design.sv:84$1$0
+Import show expression: \pilot_active
+Import show expression: $auto$async2sync.cc:110:execute$110
+Import show expression: $auto$async2sync.cc:110:execute$104
+Import show expression: $auto$async2sync.cc:101:execute$106
+Import show expression: $auto$async2sync.cc:101:execute$100
+
+[induction step 1] Solving problem with 1930 variables and 4846 clauses..
+Induction step failed. Incrementing induction length.
+
+  Time Signal Name                                                                                                                        Dec       Hex           Bin
+  ---- -------------------------------------------------------------------------------------------------------------------------- ----------- --------- -------------
+  init $auto$async2sync.cc:101:execute$100                                                                                                  0         0             0
+  init $auto$async2sync.cc:101:execute$106                                                                                                  0         0             0
+  init $auto$async2sync.cc:110:execute$104                                                                                                  0         0             0
+  init $auto$async2sync.cc:110:execute$110                                                                                                  0         0             0
+  init $auto$async2sync.cc:228:execute$112                                                                                                  1         1             1
+  init $auto$async2sync.cc:228:execute$114                                                                                                  0         0      00000000
+  init $auto$async2sync.cc:228:execute$116                                                                                                  0         0             0
+  init $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_05__reference__assert/design.sv:84$1$0                0         0             0
+  init $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_05__reference__assert/design.sv:84$2$0                0         0             0
+  init $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_05__reference__assert/design.sv:85$3$0                0         0             0
+  init $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_05__reference__assert/design.sv:85$4$0                1         1             1
+  init $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_05__reference__assert/design.sv:85$5$0                0         0      00000000
+  init \pilot_active                                                                                                                        0         0             0
+  init \pilot_past_valid                                                                                                                    1         1             1
+  init \tag_adr                                                                                                                           235        eb      11101011
+  init \tag_lpid                                                                                                                           12         c      00001100
+  init \tag_mem                                                                                                                             0         0          0000
+  init \tag_sze                                                                                                                             0         0           000
+  ---- -------------------------------------------------------------------------------------------------------------------------- ----------- --------- -------------
+     1 $auto$async2sync.cc:101:execute$100                                                                                                  0         0             0
+     1 $auto$async2sync.cc:101:execute$106                                                                                                  0         0             0
+     1 $auto$async2sync.cc:110:execute$104                                                                                                  0         0             0
+     1 $auto$async2sync.cc:110:execute$110                                                                                                  0         0             0
+     1 $auto$async2sync.cc:228:execute$112                                                                                                  1         1             1
+     1 $auto$async2sync.cc:228:execute$114                                                                                                  0         0      00000000
+     1 $auto$async2sync.cc:228:execute$116                                                                                                  0         0             0
+     1 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_05__reference__assert/design.sv:84$1$0                0         0             0
+     1 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_05__reference__assert/design.sv:84$2$0                0         0             0
+     1 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_05__reference__assert/design.sv:85$3$0                0         0             0
+     1 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_05__reference__assert/design.sv:85$4$0                1         1             1
+     1 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_05__reference__assert/design.sv:85$5$0                0         0      00000000
+     1 \clock                                                                                                                               0         0             0
+     1 \io_clear                                                                                                                            0         0             0
+     1 \io_deact                                                                                                                            1         1             1
+     1 \io_eid                                                                                                                              0         0    0000000000
+     1 \io_req_eid                                                                                                                          0         0    0000000000
+     1 \io_req_exok                                                                                                                         0         0             0
+     1 \io_req_ld                                                                                                                           0         0             0
+     1 \io_req_succ                                                                                                                         0         0             0
+     1 \io_req_tag_adr                                                                                                                    247        f7      11110111
+     1 \io_req_tag_lpid                                                                                                                   243        f3      11110011
+     1 \io_req_tag_mem                                                                                                                      6         6          0110
+     1 \io_req_tag_sze                                                                                                                      1         1           001
+     1 \io_req_vld                                                                                                                          1         1             1
+     1 \io_rsp_succ                                                                                                                         1         1             1
+     1 \io_rsp_vld                                                                                                                          0         0             0
+     1 \io_starving                                                                                                                         0         0             0
+     1 \pilot_active                                                                                                                        0         0             0
+     1 \pilot_past_valid                                                                                                                    1         1             1
+     1 \reset                                                                                                                               0         0             0
+     1 \tag_adr                                                                                                                           235        eb      11101011
+     1 \tag_lpid                                                                                                                           12         c      00001100
+     1 \tag_mem                                                                                                                             0         0          0000
+     1 \tag_sze                                                                                                                             0         0           000
+  ---- -------------------------------------------------------------------------------------------------------------------------- ----------- --------- -------------
+     2 $auto$async2sync.cc:101:execute$100                                                                                                  1         1             1
+     2 $auto$async2sync.cc:101:execute$106                                                                                                  0         0             0
+     2 $auto$async2sync.cc:110:execute$104                                                                                                  0         0             0
+     2 $auto$async2sync.cc:110:execute$110                                                                                                  0         0             0
+     2 $auto$async2sync.cc:228:execute$112                                                                                                  0         0             0
+     2 $auto$async2sync.cc:228:execute$114                                                                                                  0         0      00000000
+     2 $auto$async2sync.cc:228:execute$116                                                                                                  0         0             0
+     2 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_05__reference__assert/design.sv:84$1$0                0         0             0
+     2 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_05__reference__assert/design.sv:84$2$0                1         1             1
+     2 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_05__reference__assert/design.sv:85$3$0                0         0             0
+     2 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_05__reference__assert/design.sv:85$4$0                1         1             1
+     2 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_05__reference__assert/design.sv:85$5$0              247        f7      11110111
+     2 \clock                                                                                                                               0         0             0
+     2 \io_clear                                                                                                                            0         0             0
+     2 \io_deact                                                                                                                            0         0             0
+     2 \io_eid                                                                                                                              0         0    0000000000
+     2 \io_req_eid                                                                                                                          0         0    0000000000
+     2 \io_req_exok                                                                                                                         0         0             0
+     2 \io_req_ld                                                                                                                           0         0             0
+     2 \io_req_succ                                                                                                                         0         0             0
+     2 \io_req_tag_adr                                                                                                                      0         0      00000000
+     2 \io_req_tag_lpid                                                                                                                     0         0      00000000
+     2 \io_req_tag_mem                                                                                                                      0         0          0000
+     2 \io_req_tag_sze                                                                                                                      0         0           000
+     2 \io_req_vld                                                                                                                          1         1             1
+     2 \io_rsp_succ                                                                                                                         1         1             1
+     2 \io_rsp_vld                                                                                                                          0         0             0
+     2 \io_starving                                                                                                                         0         0             0
+     2 \pilot_active                                                                                                                        0         0             0
+     2 \pilot_past_valid                                                                                                                    1         1             1
+     2 \reset                                                                                                                               1         1             1
+     2 \tag_adr                                                                                                                           247        f7      11110111
+     2 \tag_lpid                                                                                                                          243        f3      11110011
+     2 \tag_mem                                                                                                                             6         6          0110
+     2 \tag_sze                                                                                                                             1         1           001
+
+** Trying induction with length 2 **
+
+Setting up time step 4:
+Final constraint equation: { } = { }
+Imported 75 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:110:execute$110 when $auto$async2sync.cc:101:execute$106.
+Import proof for assert: $auto$async2sync.cc:110:execute$104 when $auto$async2sync.cc:101:execute$100.
+Import show expression: \pilot_active
+Import show expression: \clock
+Import show expression: \io_clear
+Import show expression: \io_deact
+Import show expression: \io_eid
+Import show expression: \io_req_eid
+Import show expression: \io_req_ld
+Import show expression: \io_req_succ
+Import show expression: \io_req_tag_adr
+Import show expression: \io_req_tag_lpid
+Import show expression: \io_req_tag_mem
+Import show expression: \io_req_tag_sze
+Import show expression: \io_req_vld
+Import show expression: \io_rsp_succ
+Import show expression: \io_rsp_vld
+Import show expression: \reset
+Import show expression: \io_req_exok
+Import show expression: \io_starving
+Import show expression: \tag_sze
+Import show expression: \tag_mem
+Import show expression: \tag_adr
+Import show expression: \tag_lpid
+Import show expression: $auto$async2sync.cc:228:execute$116
+Import show expression: $auto$async2sync.cc:228:execute$114
+Import show expression: $auto$async2sync.cc:228:execute$112
+Import show expression: \pilot_past_valid
+Import show expression: $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_05__reference__assert/design.sv:85$5$0
+Import show expression: $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_05__reference__assert/design.sv:85$4$0
+Import show expression: $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_05__reference__assert/design.sv:85$3$0
+Import show expression: $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_05__reference__assert/design.sv:84$2$0
+Import show expression: $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_05__reference__assert/design.sv:84$1$0
+Import show expression: \pilot_active
+Import show expression: $auto$async2sync.cc:110:execute$110
+Import show expression: $auto$async2sync.cc:110:execute$104
+Import show expression: $auto$async2sync.cc:101:execute$106
+Import show expression: $auto$async2sync.cc:101:execute$100
+
+[base case 2] Solving problem with 4175 variables and 10747 clauses..
+Base case for induction length 2 proven.
+
+Setting up time step 3:
+Final constraint equation: { } = { }
+Imported 75 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:110:execute$110 when $auto$async2sync.cc:101:execute$106.
+Import proof for assert: $auto$async2sync.cc:110:execute$104 when $auto$async2sync.cc:101:execute$100.
+Import show expression: \pilot_active
+Import show expression: \clock
+Import show expression: \io_clear
+Import show expression: \io_deact
+Import show expression: \io_eid
+Import show expression: \io_req_eid
+Import show expression: \io_req_ld
+Import show expression: \io_req_succ
+Import show expression: \io_req_tag_adr
+Import show expression: \io_req_tag_lpid
+Import show expression: \io_req_tag_mem
+Import show expression: \io_req_tag_sze
+Import show expression: \io_req_vld
+Import show expression: \io_rsp_succ
+Import show expression: \io_rsp_vld
+Import show expression: \reset
+Import show expression: \io_req_exok
+Import show expression: \io_starving
+Import show expression: \tag_sze
+Import show expression: \tag_mem
+Import show expression: \tag_adr
+Import show expression: \tag_lpid
+Import show expression: $auto$async2sync.cc:228:execute$116
+Import show expression: $auto$async2sync.cc:228:execute$114
+Import show expression: $auto$async2sync.cc:228:execute$112
+Import show expression: \pilot_past_valid
+Import show expression: $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_05__reference__assert/design.sv:85$5$0
+Import show expression: $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_05__reference__assert/design.sv:85$4$0
+Import show expression: $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_05__reference__assert/design.sv:85$3$0
+Import show expression: $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_05__reference__assert/design.sv:84$2$0
+Import show expression: $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/EX_05__reference__assert/design.sv:84$1$0
+Import show expression: \pilot_active
+Import show expression: $auto$async2sync.cc:110:execute$110
+Import show expression: $auto$async2sync.cc:110:execute$104
+Import show expression: $auto$async2sync.cc:101:execute$106
+Import show expression: $auto$async2sync.cc:101:execute$100
+
+[induction step 2] Solving problem with 3279 variables and 8549 clauses..
+Induction step proven: SUCCESS!
+
+                  /$$$$$$      /$$$$$$$$     /$$$$$$$    
+                 /$$__  $$    | $$_____/    | $$__  $$   
+                | $$  \ $$    | $$          | $$  \ $$   
+                | $$  | $$    | $$$$$       | $$  | $$   
+                | $$  | $$    | $$__/       | $$  | $$   
+                | $$/$$ $$    | $$          | $$  | $$   
+                |  $$$$$$/ /$$| $$$$$$$$ /$$| $$$$$$$//$$
+                 \____ $$$|__/|________/|__/|_______/|__/
+                       \__/                              
+

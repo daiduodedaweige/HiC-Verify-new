@@ -1,0 +1,11 @@
+--- rtl_reference/Queue1_UInt8.sv
++++ rtl_mutants/M_Q1_PIPE/Queue1_UInt8.sv
+@@ -13,7 +13,7 @@
+   wire       io_enq_ready_0;
+   reg        maybe_full;
+   wire       do_enq = io_enq_ready_0 & io_enq_valid;
+-  assign io_enq_ready_0 = io_deq_ready | ~maybe_full;
++  assign io_enq_ready_0 = ~maybe_full;
+   reg  [7:0] ram;
+   always @(posedge clock or posedge reset) begin
+     if (reset)

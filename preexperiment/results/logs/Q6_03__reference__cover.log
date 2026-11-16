@@ -1,0 +1,1041 @@
+
+-- Executing script file `/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/query.ys' --
+
+1. Executing Verilog-2005 frontend: /nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv
+Parsing formal SystemVerilog input from `/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv' to AST representation.
+Generating RTLIL representation for module `\Queue6_UInt2'.
+Successfully finished Verilog frontend.
+
+2. Executing Verilog-2005 frontend: /nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/rtl_reference/ram_6x2.sv
+Parsing formal SystemVerilog input from `/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/rtl_reference/ram_6x2.sv' to AST representation.
+Generating RTLIL representation for module `\ram_6x2'.
+Successfully finished Verilog frontend.
+
+3. Executing PREP pass.
+
+3.1. Executing HIERARCHY pass (managing design hierarchy).
+
+3.1.1. Analyzing design hierarchy..
+Top module:  \Queue6_UInt2
+Used module:     \ram_6x2
+
+3.1.2. Analyzing design hierarchy..
+Top module:  \Queue6_UInt2
+Used module:     \ram_6x2
+Removed 0 unused modules.
+Module Queue6_UInt2 directly or indirectly contains formal properties -> setting "keep" attribute.
+
+3.2. Executing PROC pass (convert processes to netlists).
+
+3.2.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+3.2.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 1 switch rules as full_case in process $proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/rtl_reference/ram_6x2.sv:16$69 in module ram_6x2.
+Marked 1 switch rules as full_case in process $proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:23$20 in module Queue6_UInt2.
+Removed a total of 0 dead cases.
+
+3.2.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 0 redundant assignments.
+Promoted 12 assignments to connections.
+
+3.2.4. Executing PROC_INIT pass (extract init attributes).
+Found init rule in `\Queue6_UInt2.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:74$67'.
+  Set init value: \pilot_active = 1'0
+Found init rule in `\Queue6_UInt2.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:69$66'.
+  Set init value: \pilot_past_valid = 1'0
+
+3.2.5. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \reset in `\Queue6_UInt2.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:23$20'.
+
+3.2.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~7 debug messages>
+
+3.2.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\ram_6x2.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/rtl_reference/ram_6x2.sv:16$69'.
+     1/3: $1$memwr$\Memory$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/rtl_reference/ram_6x2.sv:18$68_EN[1:0]$75
+     2/3: $1$memwr$\Memory$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/rtl_reference/ram_6x2.sv:18$68_DATA[1:0]$74
+     3/3: $1$memwr$\Memory$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/rtl_reference/ram_6x2.sv:18$68_ADDR[2:0]$73
+Creating decoders for process `\Queue6_UInt2.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:74$67'.
+Creating decoders for process `\Queue6_UInt2.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:69$66'.
+Creating decoders for process `\Queue6_UInt2.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:79$59'.
+     1/1: $assert$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:80$62_EN
+Creating decoders for process `\Queue6_UInt2.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:75$33'.
+     1/1: $assert$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:77$48_EN
+Creating decoders for process `\Queue6_UInt2.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:70$30'.
+     1/1: $assume$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:72$32_EN
+Creating decoders for process `\Queue6_UInt2.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:23$20'.
+     1/3: $0\maybe_full[0:0]
+     2/3: $0\deq_ptr_value[2:0]
+     3/3: $0\enq_ptr_value[2:0]
+
+3.2.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+3.2.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\ram_6x2.$memwr$\Memory$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/rtl_reference/ram_6x2.sv:18$68_ADDR' using process `\ram_6x2.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/rtl_reference/ram_6x2.sv:16$69'.
+  created $dff cell `$procdff$98' with positive edge clock.
+Creating register for signal `\ram_6x2.$memwr$\Memory$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/rtl_reference/ram_6x2.sv:18$68_DATA' using process `\ram_6x2.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/rtl_reference/ram_6x2.sv:16$69'.
+  created $dff cell `$procdff$99' with positive edge clock.
+Creating register for signal `\ram_6x2.$memwr$\Memory$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/rtl_reference/ram_6x2.sv:18$68_EN' using process `\ram_6x2.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/rtl_reference/ram_6x2.sv:16$69'.
+  created $dff cell `$procdff$100' with positive edge clock.
+Creating register for signal `\Queue6_UInt2.\pilot_active' using process `\Queue6_UInt2.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:75$33'.
+  created $dff cell `$procdff$101' with positive edge clock.
+Creating register for signal `\Queue6_UInt2.$past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:76$1$0' using process `\Queue6_UInt2.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:75$33'.
+  created $dff cell `$procdff$102' with positive edge clock.
+Creating register for signal `\Queue6_UInt2.$past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:76$2$0' using process `\Queue6_UInt2.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:75$33'.
+  created $dff cell `$procdff$103' with positive edge clock.
+Creating register for signal `\Queue6_UInt2.$past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:77$3$0' using process `\Queue6_UInt2.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:75$33'.
+  created $dff cell `$procdff$104' with positive edge clock.
+Creating register for signal `\Queue6_UInt2.$past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:77$4$0' using process `\Queue6_UInt2.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:75$33'.
+  created $dff cell `$procdff$105' with positive edge clock.
+Creating register for signal `\Queue6_UInt2.$past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:77$5$0' using process `\Queue6_UInt2.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:75$33'.
+  created $dff cell `$procdff$106' with positive edge clock.
+Creating register for signal `\Queue6_UInt2.\pilot_past_valid' using process `\Queue6_UInt2.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:70$30'.
+  created $dff cell `$procdff$107' with positive edge clock.
+Creating register for signal `\Queue6_UInt2.\enq_ptr_value' using process `\Queue6_UInt2.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:23$20'.
+  created $adff cell `$procdff$110' with positive edge clock and positive level reset.
+Creating register for signal `\Queue6_UInt2.\deq_ptr_value' using process `\Queue6_UInt2.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:23$20'.
+  created $adff cell `$procdff$113' with positive edge clock and positive level reset.
+Creating register for signal `\Queue6_UInt2.\maybe_full' using process `\Queue6_UInt2.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:23$20'.
+  created $adff cell `$procdff$116' with positive edge clock and positive level reset.
+
+3.2.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+3.2.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 1 empty switch in `\ram_6x2.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/rtl_reference/ram_6x2.sv:16$69'.
+Removing empty process `ram_6x2.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/rtl_reference/ram_6x2.sv:16$69'.
+Removing empty process `Queue6_UInt2.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:74$67'.
+Removing empty process `Queue6_UInt2.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:69$66'.
+Found and cleaned up 1 empty switch in `\Queue6_UInt2.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:79$59'.
+Removing empty process `Queue6_UInt2.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:79$59'.
+Found and cleaned up 1 empty switch in `\Queue6_UInt2.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:75$33'.
+Removing empty process `Queue6_UInt2.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:75$33'.
+Found and cleaned up 1 empty switch in `\Queue6_UInt2.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:70$30'.
+Removing empty process `Queue6_UInt2.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:70$30'.
+Found and cleaned up 3 empty switches in `\Queue6_UInt2.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:23$20'.
+Removing empty process `Queue6_UInt2.$proc$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:23$20'.
+Cleaned up 7 empty switches.
+
+3.2.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ram_6x2.
+Optimizing module Queue6_UInt2.
+<suppressed ~4 debug messages>
+
+3.3. Executing FUTURE pass.
+
+3.4. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ram_6x2.
+Optimizing module Queue6_UInt2.
+
+3.5. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ram_6x2..
+Finding unused cells or wires in module \Queue6_UInt2..
+Removed 4 unused cells and 46 unused wires.
+<suppressed ~6 debug messages>
+
+3.6. Executing CHECK pass (checking for obvious problems).
+Checking module Queue6_UInt2...
+Checking module ram_6x2...
+Found and reported 0 problems.
+
+3.7. Executing OPT pass (performing simple optimizations).
+
+3.7.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module Queue6_UInt2.
+Optimizing module ram_6x2.
+
+3.7.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\Queue6_UInt2'.
+<suppressed ~27 debug messages>
+Finding identical cells in module `\ram_6x2'.
+Removed a total of 9 cells.
+
+3.7.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \Queue6_UInt2..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \ram_6x2..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~10 debug messages>
+
+3.7.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \Queue6_UInt2.
+  Optimizing cells in module \ram_6x2.
+    Consolidated identical input bits for $mux cell $procmux$78:
+      Old ports: A=2'00, B=2'11, Y=$0$memwr$\Memory$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/rtl_reference/ram_6x2.sv:18$68_EN[1:0]$72
+      New ports: A=1'0, B=1'1, Y=$0$memwr$\Memory$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/rtl_reference/ram_6x2.sv:18$68_EN[1:0]$72 [0]
+      New connections: $0$memwr$\Memory$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/rtl_reference/ram_6x2.sv:18$68_EN[1:0]$72 [1] = $0$memwr$\Memory$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/rtl_reference/ram_6x2.sv:18$68_EN[1:0]$72 [0]
+  Optimizing cells in module \ram_6x2.
+Performed a total of 1 changes.
+
+3.7.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\Queue6_UInt2'.
+Finding identical cells in module `\ram_6x2'.
+Removed a total of 0 cells.
+
+3.7.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \Queue6_UInt2..
+Finding unused cells or wires in module \ram_6x2..
+Removed 0 unused cells and 9 unused wires.
+<suppressed ~1 debug messages>
+
+3.7.7. Executing OPT_EXPR pass (perform const folding).
+Optimizing module Queue6_UInt2.
+Optimizing module ram_6x2.
+
+3.7.8. Rerunning OPT passes. (Maybe there is more to do..)
+
+3.7.9. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \Queue6_UInt2..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \ram_6x2..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~10 debug messages>
+
+3.7.10. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \Queue6_UInt2.
+  Optimizing cells in module \ram_6x2.
+Performed a total of 0 changes.
+
+3.7.11. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\Queue6_UInt2'.
+Finding identical cells in module `\ram_6x2'.
+Removed a total of 0 cells.
+
+3.7.12. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \Queue6_UInt2..
+Finding unused cells or wires in module \ram_6x2..
+
+3.7.13. Executing OPT_EXPR pass (perform const folding).
+Optimizing module Queue6_UInt2.
+Optimizing module ram_6x2.
+
+3.7.14. Finished OPT passes. (There is nothing left to do.)
+
+3.8. Executing WREDUCE pass (reducing word size of cells).
+Removed top 2 bits (of 3) from port B of cell Queue6_UInt2.$add$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:31$22 ($add).
+Removed top 2 bits (of 3) from port B of cell Queue6_UInt2.$add$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:33$25 ($add).
+
+3.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \Queue6_UInt2..
+Finding unused cells or wires in module \ram_6x2..
+
+3.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+3.11. Executing OPT pass (performing simple optimizations).
+
+3.11.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module Queue6_UInt2.
+Optimizing module ram_6x2.
+
+3.11.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\Queue6_UInt2'.
+Finding identical cells in module `\ram_6x2'.
+Removed a total of 0 cells.
+
+3.11.3. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \Queue6_UInt2..
+Finding unused cells or wires in module \ram_6x2..
+
+3.11.4. Finished fast OPT passes.
+
+3.12. Printing statistics.
+
+=== Queue6_UInt2 ===
+
+   Number of wires:                 61
+   Number of wire bits:             81
+   Number of public wires:          20
+   Number of public wire bits:      27
+   Number of ports:                  8
+   Number of port bits:             10
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 58
+     $add                            2
+     $adff                           3
+     $and                            7
+     $check                          3
+     $dff                            7
+     $eq                             4
+     $logic_and                      7
+     $logic_not                      6
+     $logic_or                       1
+     $lt                             2
+     $mux                            9
+     $ne                             1
+     $not                            4
+     $or                             1
+     ram_6x2                         1
+
+=== ram_6x2 ===
+
+   Number of wires:                 11
+   Number of wire bits:             21
+   Number of public wires:           8
+   Number of public wire bits:      14
+   Number of ports:                  8
+   Number of port bits:             14
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  4
+     $mem_v2                         1
+     $mux                            3
+
+=== design hierarchy ===
+
+   Queue6_UInt2                      1
+     ram_6x2                         1
+
+   Number of wires:                 72
+   Number of wire bits:            102
+   Number of public wires:          28
+   Number of public wire bits:      41
+   Number of ports:                 16
+   Number of port bits:             24
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 61
+     $add                            2
+     $adff                           3
+     $and                            7
+     $check                          3
+     $dff                            7
+     $eq                             4
+     $logic_and                      7
+     $logic_not                      6
+     $logic_or                       1
+     $lt                             2
+     $mem_v2                         1
+     $mux                           12
+     $ne                             1
+     $not                            4
+     $or                             1
+
+3.13. Executing CHECK pass (checking for obvious problems).
+Checking module Queue6_UInt2...
+Checking module ram_6x2...
+Found and reported 0 problems.
+
+4. Executing FLATTEN pass (flatten design).
+Deleting now unused module ram_6x2.
+<suppressed ~1 debug messages>
+
+5. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+Mapping memory \ram_ext.Memory in module \Queue6_UInt2:
+  created 6 $dff cells and 0 static cells of width 2.
+  read interface: 0 $dff and 7 $mux cells.
+  write interface: 6 write mux blocks.
+
+6. Executing ASYNC2SYNC pass.
+Replacing Queue6_UInt2.$procdff$110 ($adff): ARST=\reset, D=$0\enq_ptr_value[2:0], Q=\enq_ptr_value
+Replacing Queue6_UInt2.$procdff$113 ($adff): ARST=\reset, D=$0\deq_ptr_value[2:0], Q=\deq_ptr_value
+Replacing Queue6_UInt2.$procdff$116 ($adff): ARST=\reset, D=$0\maybe_full[0:0], Q=\maybe_full
+
+7. Executing DFFUNMAP pass (unmap clock enable and synchronous reset from FFs).
+
+8. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \Queue6_UInt2..
+Removed 9 unused cells and 21 unused wires.
+<suppressed ~10 debug messages>
+
+9. Executing SAT pass (solving SAT problems in the circuit).
+
+Setting up time step 1:
+Final constraint equation: { } = { }
+Imported 111 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:110:execute$222 when $auto$async2sync.cc:101:execute$218.
+Import set-constraint from init attribute: $auto$async2sync.cc:101:execute$206 = 1'0
+Import set-constraint from init attribute: $auto$async2sync.cc:101:execute$212 = 1'0
+Import set-constraint from init attribute: $auto$async2sync.cc:101:execute$218 = 1'0
+Import set-constraint from init attribute: $auto$async2sync.cc:110:execute$210 = 1'1
+Import set-constraint from init attribute: $auto$async2sync.cc:110:execute$216 = 1'1
+Import set-constraint from init attribute: $auto$async2sync.cc:110:execute$222 = 1'1
+Import set-constraint from init attribute: \pilot_active = 1'0
+Import set-constraint from init attribute: \pilot_past_valid = 1'0
+Final init constraint equation: { \pilot_past_valid \pilot_active $auto$async2sync.cc:110:execute$222 $auto$async2sync.cc:110:execute$216 $auto$async2sync.cc:110:execute$210 $auto$async2sync.cc:101:execute$218 $auto$async2sync.cc:101:execute$212 $auto$async2sync.cc:101:execute$206 } = 8'00111000
+Import proof-constraint: \pilot_active = 1'0
+Final proof equation: \pilot_active = 1'0
+
+Setting up time step 2:
+Final constraint equation: { } = { }
+Imported 111 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:110:execute$222 when $auto$async2sync.cc:101:execute$218.
+Import proof-constraint: \pilot_active = 1'0
+Final proof equation: \pilot_active = 1'0
+
+Setting up time step 3:
+Final constraint equation: { } = { }
+Imported 111 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:110:execute$222 when $auto$async2sync.cc:101:execute$218.
+Import proof-constraint: \pilot_active = 1'0
+Final proof equation: \pilot_active = 1'0
+
+Setting up time step 4:
+Final constraint equation: { } = { }
+Imported 111 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:110:execute$222 when $auto$async2sync.cc:101:execute$218.
+Import proof-constraint: \pilot_active = 1'0
+Final proof equation: \pilot_active = 1'0
+
+Setting up time step 5:
+Final constraint equation: { } = { }
+Imported 111 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:110:execute$222 when $auto$async2sync.cc:101:execute$218.
+Import proof-constraint: \pilot_active = 1'0
+Final proof equation: \pilot_active = 1'0
+
+Setting up time step 6:
+Final constraint equation: { } = { }
+Imported 111 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:110:execute$222 when $auto$async2sync.cc:101:execute$218.
+Import proof-constraint: \pilot_active = 1'0
+Final proof equation: \pilot_active = 1'0
+
+Setting up time step 7:
+Final constraint equation: { } = { }
+Imported 111 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:110:execute$222 when $auto$async2sync.cc:101:execute$218.
+Import proof-constraint: \pilot_active = 1'0
+Final proof equation: \pilot_active = 1'0
+
+Setting up time step 8:
+Final constraint equation: { } = { }
+Imported 111 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:110:execute$222 when $auto$async2sync.cc:101:execute$218.
+Import proof-constraint: \pilot_active = 1'0
+Final proof equation: \pilot_active = 1'0
+
+Setting up time step 9:
+Final constraint equation: { } = { }
+Imported 111 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:110:execute$222 when $auto$async2sync.cc:101:execute$218.
+Import proof-constraint: \pilot_active = 1'0
+Final proof equation: \pilot_active = 1'0
+
+Setting up time step 10:
+Final constraint equation: { } = { }
+Imported 111 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:110:execute$222 when $auto$async2sync.cc:101:execute$218.
+Import proof-constraint: \pilot_active = 1'0
+Final proof equation: \pilot_active = 1'0
+
+Setting up time step 11:
+Final constraint equation: { } = { }
+Imported 111 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:110:execute$222 when $auto$async2sync.cc:101:execute$218.
+Import proof-constraint: \pilot_active = 1'0
+Final proof equation: \pilot_active = 1'0
+
+Setting up time step 12:
+Final constraint equation: { } = { }
+Imported 111 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:110:execute$222 when $auto$async2sync.cc:101:execute$218.
+Import proof-constraint: \pilot_active = 1'0
+Final proof equation: \pilot_active = 1'0
+
+Setting up time step 13:
+Final constraint equation: { } = { }
+Imported 111 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:110:execute$222 when $auto$async2sync.cc:101:execute$218.
+Import proof-constraint: \pilot_active = 1'0
+Final proof equation: \pilot_active = 1'0
+
+Setting up time step 14:
+Final constraint equation: { } = { }
+Imported 111 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:110:execute$222 when $auto$async2sync.cc:101:execute$218.
+Import proof-constraint: \pilot_active = 1'0
+Final proof equation: \pilot_active = 1'0
+
+Setting up time step 15:
+Final constraint equation: { } = { }
+Imported 111 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:110:execute$222 when $auto$async2sync.cc:101:execute$218.
+Import proof-constraint: \pilot_active = 1'0
+Final proof equation: \pilot_active = 1'0
+
+Setting up time step 16:
+Final constraint equation: { } = { }
+Imported 111 cells to SAT database.
+Import constraint from assume cell: $auto$async2sync.cc:110:execute$222 when $auto$async2sync.cc:101:execute$218.
+Import proof-constraint: \pilot_active = 1'0
+Final proof equation: \pilot_active = 1'0
+Import show expression: \pilot_active
+Import show expression: \clock
+Import show expression: \io_deq_ready
+Import show expression: \io_enq_bits
+Import show expression: \io_enq_valid
+Import show expression: \reset
+Import show expression: \io_deq_bits
+Import show expression: \io_deq_valid
+Import show expression: \io_enq_ready
+Import show expression: $auto$async2sync.cc:228:execute$228
+Import show expression: $auto$async2sync.cc:228:execute$226
+Import show expression: $auto$async2sync.cc:228:execute$224
+Import show expression: \pilot_past_valid
+Import show expression: $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:77$5$0
+Import show expression: $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:77$4$0
+Import show expression: $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:77$3$0
+Import show expression: $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:76$2$0
+Import show expression: $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:76$1$0
+Import show expression: \pilot_active
+Import show expression: \ram_ext.Memory[5]
+Import show expression: \ram_ext.Memory[4]
+Import show expression: \ram_ext.Memory[3]
+Import show expression: \ram_ext.Memory[2]
+Import show expression: \ram_ext.Memory[1]
+Import show expression: \ram_ext.Memory[0]
+Import show expression: $auto$async2sync.cc:110:execute$222
+Import show expression: $auto$async2sync.cc:110:execute$216
+Import show expression: $auto$async2sync.cc:110:execute$210
+Import show expression: $auto$async2sync.cc:101:execute$218
+Import show expression: $auto$async2sync.cc:101:execute$212
+Import show expression: $auto$async2sync.cc:101:execute$206
+
+Solving problem with 14477 variables and 37993 clauses..
+SAT proof finished - model found: FAIL!
+
+   ______                   ___       ___       _ _            _ _ 
+  (_____ \                 / __)     / __)     (_) |          | | |
+   _____) )___ ___   ___ _| |__    _| |__ _____ _| | _____  __| | |
+  |  ____/ ___) _ \ / _ (_   __)  (_   __|____ | | || ___ |/ _  |_|
+  | |   | |  | |_| | |_| || |       | |  / ___ | | || ____( (_| |_ 
+  |_|   |_|   \___/ \___/ |_|       |_|  \_____|_|\_)_____)\____|_|
+
+
+  Time Signal Name                                                                                                                       Dec       Hex           Bin
+  ---- ------------------------------------------------------------------------------------------------------------------------- ----------- --------- -------------
+  init $auto$async2sync.cc:101:execute$206                                                                                                 0         0             0
+  init $auto$async2sync.cc:101:execute$212                                                                                                 0         0             0
+  init $auto$async2sync.cc:101:execute$218                                                                                                 0         0             0
+  init $auto$async2sync.cc:110:execute$210                                                                                                 1         1             1
+  init $auto$async2sync.cc:110:execute$216                                                                                                 1         1             1
+  init $auto$async2sync.cc:110:execute$222                                                                                                 1         1             1
+  init $auto$async2sync.cc:228:execute$224                                                                                                 0         0           000
+  init $auto$async2sync.cc:228:execute$226                                                                                                 0         0           000
+  init $auto$async2sync.cc:228:execute$228                                                                                                 0         0             0
+  init $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:76$1$0                1         1             1
+  init $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:76$2$0                0         0             0
+  init $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:77$3$0                0         0             0
+  init $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:77$4$0                1         1             1
+  init $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:77$5$0                1         1            01
+  init \pilot_active                                                                                                                       0         0             0
+  init \pilot_past_valid                                                                                                                   0         0             0
+  init \ram_ext.Memory[0]                                                                                                                  0         0            00
+  init \ram_ext.Memory[1]                                                                                                                  0         0            00
+  init \ram_ext.Memory[2]                                                                                                                  0         0            00
+  init \ram_ext.Memory[3]                                                                                                                  0         0            00
+  init \ram_ext.Memory[4]                                                                                                                  0         0            00
+  init \ram_ext.Memory[5]                                                                                                                  0         0            00
+  ---- ------------------------------------------------------------------------------------------------------------------------- ----------- --------- -------------
+     1 $auto$async2sync.cc:101:execute$206                                                                                                 0         0             0
+     1 $auto$async2sync.cc:101:execute$212                                                                                                 0         0             0
+     1 $auto$async2sync.cc:101:execute$218                                                                                                 0         0             0
+     1 $auto$async2sync.cc:110:execute$210                                                                                                 1         1             1
+     1 $auto$async2sync.cc:110:execute$216                                                                                                 1         1             1
+     1 $auto$async2sync.cc:110:execute$222                                                                                                 1         1             1
+     1 $auto$async2sync.cc:228:execute$224                                                                                                 0         0           000
+     1 $auto$async2sync.cc:228:execute$226                                                                                                 0         0           000
+     1 $auto$async2sync.cc:228:execute$228                                                                                                 0         0             0
+     1 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:76$1$0                1         1             1
+     1 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:76$2$0                0         0             0
+     1 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:77$3$0                0         0             0
+     1 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:77$4$0                1         1             1
+     1 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:77$5$0                1         1            01
+     1 \clock                                                                                                                              0         0             0
+     1 \io_deq_bits                                                                                                                        0         0            00
+     1 \io_deq_ready                                                                                                                       0         0             0
+     1 \io_deq_valid                                                                                                                       0         0             0
+     1 \io_enq_bits                                                                                                                        0         0            00
+     1 \io_enq_ready                                                                                                                       1         1             1
+     1 \io_enq_valid                                                                                                                       0         0             0
+     1 \pilot_active                                                                                                                       0         0             0
+     1 \pilot_past_valid                                                                                                                   0         0             0
+     1 \ram_ext.Memory[0]                                                                                                                  0         0            00
+     1 \ram_ext.Memory[1]                                                                                                                  0         0            00
+     1 \ram_ext.Memory[2]                                                                                                                  0         0            00
+     1 \ram_ext.Memory[3]                                                                                                                  0         0            00
+     1 \ram_ext.Memory[4]                                                                                                                  0         0            00
+     1 \ram_ext.Memory[5]                                                                                                                  0         0            00
+     1 \reset                                                                                                                              1         1             1
+  ---- ------------------------------------------------------------------------------------------------------------------------- ----------- --------- -------------
+     2 $auto$async2sync.cc:101:execute$206                                                                                                 0         0             0
+     2 $auto$async2sync.cc:101:execute$212                                                                                                 0         0             0
+     2 $auto$async2sync.cc:101:execute$218                                                                                                 1         1             1
+     2 $auto$async2sync.cc:110:execute$210                                                                                                 0         0             0
+     2 $auto$async2sync.cc:110:execute$216                                                                                                 1         1             1
+     2 $auto$async2sync.cc:110:execute$222                                                                                                 1         1             1
+     2 $auto$async2sync.cc:228:execute$224                                                                                                 0         0           000
+     2 $auto$async2sync.cc:228:execute$226                                                                                                 0         0           000
+     2 $auto$async2sync.cc:228:execute$228                                                                                                 0         0             0
+     2 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:76$1$0                1         1             1
+     2 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:76$2$0                0         0             0
+     2 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:77$3$0                1         1             1
+     2 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:77$4$0                0         0             0
+     2 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:77$5$0                0         0            00
+     2 \clock                                                                                                                              0         0             0
+     2 \io_deq_bits                                                                                                                        1         1            01
+     2 \io_deq_ready                                                                                                                       0         0             0
+     2 \io_deq_valid                                                                                                                       1         1             1
+     2 \io_enq_bits                                                                                                                        1         1            01
+     2 \io_enq_ready                                                                                                                       1         1             1
+     2 \io_enq_valid                                                                                                                       1         1             1
+     2 \pilot_active                                                                                                                       0         0             0
+     2 \pilot_past_valid                                                                                                                   1         1             1
+     2 \ram_ext.Memory[0]                                                                                                                  0         0            00
+     2 \ram_ext.Memory[1]                                                                                                                  0         0            00
+     2 \ram_ext.Memory[2]                                                                                                                  0         0            00
+     2 \ram_ext.Memory[3]                                                                                                                  0         0            00
+     2 \ram_ext.Memory[4]                                                                                                                  0         0            00
+     2 \ram_ext.Memory[5]                                                                                                                  0         0            00
+     2 \reset                                                                                                                              0         0             0
+  ---- ------------------------------------------------------------------------------------------------------------------------- ----------- --------- -------------
+     3 $auto$async2sync.cc:101:execute$206                                                                                                 0         0             0
+     3 $auto$async2sync.cc:101:execute$212                                                                                                 1         1             1
+     3 $auto$async2sync.cc:101:execute$218                                                                                                 0         0             0
+     3 $auto$async2sync.cc:110:execute$210                                                                                                 1         1             1
+     3 $auto$async2sync.cc:110:execute$216                                                                                                 1         1             1
+     3 $auto$async2sync.cc:110:execute$222                                                                                                 0         0             0
+     3 $auto$async2sync.cc:228:execute$224                                                                                                 1         1           001
+     3 $auto$async2sync.cc:228:execute$226                                                                                                 0         0           000
+     3 $auto$async2sync.cc:228:execute$228                                                                                                 1         1             1
+     3 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:76$1$0                0         0             0
+     3 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:76$2$0                0         0             0
+     3 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:77$3$0                0         0             0
+     3 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:77$4$0                0         0             0
+     3 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:77$5$0                1         1            01
+     3 \clock                                                                                                                              0         0             0
+     3 \io_deq_bits                                                                                                                        1         1            01
+     3 \io_deq_ready                                                                                                                       0         0             0
+     3 \io_deq_valid                                                                                                                       1         1             1
+     3 \io_enq_bits                                                                                                                        0         0            00
+     3 \io_enq_ready                                                                                                                       1         1             1
+     3 \io_enq_valid                                                                                                                       1         1             1
+     3 \pilot_active                                                                                                                       0         0             0
+     3 \pilot_past_valid                                                                                                                   1         1             1
+     3 \ram_ext.Memory[0]                                                                                                                  1         1            01
+     3 \ram_ext.Memory[1]                                                                                                                  0         0            00
+     3 \ram_ext.Memory[2]                                                                                                                  0         0            00
+     3 \ram_ext.Memory[3]                                                                                                                  0         0            00
+     3 \ram_ext.Memory[4]                                                                                                                  0         0            00
+     3 \ram_ext.Memory[5]                                                                                                                  0         0            00
+     3 \reset                                                                                                                              0         0             0
+  ---- ------------------------------------------------------------------------------------------------------------------------- ----------- --------- -------------
+     4 $auto$async2sync.cc:101:execute$206                                                                                                 1         1             1
+     4 $auto$async2sync.cc:101:execute$212                                                                                                 1         1             1
+     4 $auto$async2sync.cc:101:execute$218                                                                                                 0         0             0
+     4 $auto$async2sync.cc:110:execute$210                                                                                                 1         1             1
+     4 $auto$async2sync.cc:110:execute$216                                                                                                 1         1             1
+     4 $auto$async2sync.cc:110:execute$222                                                                                                 0         0             0
+     4 $auto$async2sync.cc:228:execute$224                                                                                                 2         2           010
+     4 $auto$async2sync.cc:228:execute$226                                                                                                 0         0           000
+     4 $auto$async2sync.cc:228:execute$228                                                                                                 1         1             1
+     4 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:76$1$0                0         0             0
+     4 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:76$2$0                1         1             1
+     4 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:77$3$0                0         0             0
+     4 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:77$4$0                1         1             1
+     4 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:77$5$0                1         1            01
+     4 \clock                                                                                                                              0         0             0
+     4 \io_deq_bits                                                                                                                        1         1            01
+     4 \io_deq_ready                                                                                                                       0         0             0
+     4 \io_deq_valid                                                                                                                       1         1             1
+     4 \io_enq_bits                                                                                                                        1         1            01
+     4 \io_enq_ready                                                                                                                       1         1             1
+     4 \io_enq_valid                                                                                                                       1         1             1
+     4 \pilot_active                                                                                                                       0         0             0
+     4 \pilot_past_valid                                                                                                                   1         1             1
+     4 \ram_ext.Memory[0]                                                                                                                  1         1            01
+     4 \ram_ext.Memory[1]                                                                                                                  0         0            00
+     4 \ram_ext.Memory[2]                                                                                                                  0         0            00
+     4 \ram_ext.Memory[3]                                                                                                                  0         0            00
+     4 \ram_ext.Memory[4]                                                                                                                  0         0            00
+     4 \ram_ext.Memory[5]                                                                                                                  0         0            00
+     4 \reset                                                                                                                              0         0             0
+  ---- ------------------------------------------------------------------------------------------------------------------------- ----------- --------- -------------
+     5 $auto$async2sync.cc:101:execute$206                                                                                                 1         1             1
+     5 $auto$async2sync.cc:101:execute$212                                                                                                 1         1             1
+     5 $auto$async2sync.cc:101:execute$218                                                                                                 0         0             0
+     5 $auto$async2sync.cc:110:execute$210                                                                                                 1         1             1
+     5 $auto$async2sync.cc:110:execute$216                                                                                                 1         1             1
+     5 $auto$async2sync.cc:110:execute$222                                                                                                 0         0             0
+     5 $auto$async2sync.cc:228:execute$224                                                                                                 3         3           011
+     5 $auto$async2sync.cc:228:execute$226                                                                                                 0         0           000
+     5 $auto$async2sync.cc:228:execute$228                                                                                                 1         1             1
+     5 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:76$1$0                0         0             0
+     5 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:76$2$0                1         1             1
+     5 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:77$3$0                0         0             0
+     5 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:77$4$0                1         1             1
+     5 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:77$5$0                1         1            01
+     5 \clock                                                                                                                              0         0             0
+     5 \io_deq_bits                                                                                                                        1         1            01
+     5 \io_deq_ready                                                                                                                       0         0             0
+     5 \io_deq_valid                                                                                                                       1         1             1
+     5 \io_enq_bits                                                                                                                        0         0            00
+     5 \io_enq_ready                                                                                                                       1         1             1
+     5 \io_enq_valid                                                                                                                       1         1             1
+     5 \pilot_active                                                                                                                       1         1             1
+     5 \pilot_past_valid                                                                                                                   1         1             1
+     5 \ram_ext.Memory[0]                                                                                                                  1         1            01
+     5 \ram_ext.Memory[1]                                                                                                                  0         0            00
+     5 \ram_ext.Memory[2]                                                                                                                  1         1            01
+     5 \ram_ext.Memory[3]                                                                                                                  0         0            00
+     5 \ram_ext.Memory[4]                                                                                                                  0         0            00
+     5 \ram_ext.Memory[5]                                                                                                                  0         0            00
+     5 \reset                                                                                                                              0         0             0
+  ---- ------------------------------------------------------------------------------------------------------------------------- ----------- --------- -------------
+     6 $auto$async2sync.cc:101:execute$206                                                                                                 1         1             1
+     6 $auto$async2sync.cc:101:execute$212                                                                                                 1         1             1
+     6 $auto$async2sync.cc:101:execute$218                                                                                                 0         0             0
+     6 $auto$async2sync.cc:110:execute$210                                                                                                 1         1             1
+     6 $auto$async2sync.cc:110:execute$216                                                                                                 1         1             1
+     6 $auto$async2sync.cc:110:execute$222                                                                                                 0         0             0
+     6 $auto$async2sync.cc:228:execute$224                                                                                                 4         4           100
+     6 $auto$async2sync.cc:228:execute$226                                                                                                 0         0           000
+     6 $auto$async2sync.cc:228:execute$228                                                                                                 1         1             1
+     6 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:76$1$0                0         0             0
+     6 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:76$2$0                1         1             1
+     6 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:77$3$0                0         0             0
+     6 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:77$4$0                1         1             1
+     6 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:77$5$0                1         1            01
+     6 \clock                                                                                                                              0         0             0
+     6 \io_deq_bits                                                                                                                        1         1            01
+     6 \io_deq_ready                                                                                                                       0         0             0
+     6 \io_deq_valid                                                                                                                       1         1             1
+     6 \io_enq_bits                                                                                                                        0         0            00
+     6 \io_enq_ready                                                                                                                       1         1             1
+     6 \io_enq_valid                                                                                                                       1         1             1
+     6 \pilot_active                                                                                                                       1         1             1
+     6 \pilot_past_valid                                                                                                                   1         1             1
+     6 \ram_ext.Memory[0]                                                                                                                  1         1            01
+     6 \ram_ext.Memory[1]                                                                                                                  0         0            00
+     6 \ram_ext.Memory[2]                                                                                                                  1         1            01
+     6 \ram_ext.Memory[3]                                                                                                                  0         0            00
+     6 \ram_ext.Memory[4]                                                                                                                  0         0            00
+     6 \ram_ext.Memory[5]                                                                                                                  0         0            00
+     6 \reset                                                                                                                              0         0             0
+  ---- ------------------------------------------------------------------------------------------------------------------------- ----------- --------- -------------
+     7 $auto$async2sync.cc:101:execute$206                                                                                                 1         1             1
+     7 $auto$async2sync.cc:101:execute$212                                                                                                 1         1             1
+     7 $auto$async2sync.cc:101:execute$218                                                                                                 0         0             0
+     7 $auto$async2sync.cc:110:execute$210                                                                                                 1         1             1
+     7 $auto$async2sync.cc:110:execute$216                                                                                                 1         1             1
+     7 $auto$async2sync.cc:110:execute$222                                                                                                 0         0             0
+     7 $auto$async2sync.cc:228:execute$224                                                                                                 5         5           101
+     7 $auto$async2sync.cc:228:execute$226                                                                                                 0         0           000
+     7 $auto$async2sync.cc:228:execute$228                                                                                                 1         1             1
+     7 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:76$1$0                0         0             0
+     7 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:76$2$0                1         1             1
+     7 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:77$3$0                0         0             0
+     7 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:77$4$0                1         1             1
+     7 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:77$5$0                1         1            01
+     7 \clock                                                                                                                              0         0             0
+     7 \io_deq_bits                                                                                                                        1         1            01
+     7 \io_deq_ready                                                                                                                       1         1             1
+     7 \io_deq_valid                                                                                                                       1         1             1
+     7 \io_enq_bits                                                                                                                        1         1            01
+     7 \io_enq_ready                                                                                                                       1         1             1
+     7 \io_enq_valid                                                                                                                       1         1             1
+     7 \pilot_active                                                                                                                       1         1             1
+     7 \pilot_past_valid                                                                                                                   1         1             1
+     7 \ram_ext.Memory[0]                                                                                                                  1         1            01
+     7 \ram_ext.Memory[1]                                                                                                                  0         0            00
+     7 \ram_ext.Memory[2]                                                                                                                  1         1            01
+     7 \ram_ext.Memory[3]                                                                                                                  0         0            00
+     7 \ram_ext.Memory[4]                                                                                                                  0         0            00
+     7 \ram_ext.Memory[5]                                                                                                                  0         0            00
+     7 \reset                                                                                                                              0         0             0
+  ---- ------------------------------------------------------------------------------------------------------------------------- ----------- --------- -------------
+     8 $auto$async2sync.cc:101:execute$206                                                                                                 1         1             1
+     8 $auto$async2sync.cc:101:execute$212                                                                                                 1         1             1
+     8 $auto$async2sync.cc:101:execute$218                                                                                                 0         0             0
+     8 $auto$async2sync.cc:110:execute$210                                                                                                 1         1             1
+     8 $auto$async2sync.cc:110:execute$216                                                                                                 1         1             1
+     8 $auto$async2sync.cc:110:execute$222                                                                                                 0         0             0
+     8 $auto$async2sync.cc:228:execute$224                                                                                                 0         0           000
+     8 $auto$async2sync.cc:228:execute$226                                                                                                 1         1           001
+     8 $auto$async2sync.cc:228:execute$228                                                                                                 1         1             1
+     8 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:76$1$0                0         0             0
+     8 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:76$2$0                0         0             0
+     8 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:77$3$0                0         0             0
+     8 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:77$4$0                0         0             0
+     8 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:77$5$0                1         1            01
+     8 \clock                                                                                                                              0         0             0
+     8 \io_deq_bits                                                                                                                        0         0            00
+     8 \io_deq_ready                                                                                                                       1         1             1
+     8 \io_deq_valid                                                                                                                       1         1             1
+     8 \io_enq_bits                                                                                                                        0         0            00
+     8 \io_enq_ready                                                                                                                       1         1             1
+     8 \io_enq_valid                                                                                                                       0         0             0
+     8 \pilot_active                                                                                                                       1         1             1
+     8 \pilot_past_valid                                                                                                                   1         1             1
+     8 \ram_ext.Memory[0]                                                                                                                  1         1            01
+     8 \ram_ext.Memory[1]                                                                                                                  0         0            00
+     8 \ram_ext.Memory[2]                                                                                                                  1         1            01
+     8 \ram_ext.Memory[3]                                                                                                                  0         0            00
+     8 \ram_ext.Memory[4]                                                                                                                  0         0            00
+     8 \ram_ext.Memory[5]                                                                                                                  1         1            01
+     8 \reset                                                                                                                              0         0             0
+  ---- ------------------------------------------------------------------------------------------------------------------------- ----------- --------- -------------
+     9 $auto$async2sync.cc:101:execute$206                                                                                                 1         1             1
+     9 $auto$async2sync.cc:101:execute$212                                                                                                 1         1             1
+     9 $auto$async2sync.cc:101:execute$218                                                                                                 0         0             0
+     9 $auto$async2sync.cc:110:execute$210                                                                                                 1         1             1
+     9 $auto$async2sync.cc:110:execute$216                                                                                                 1         1             1
+     9 $auto$async2sync.cc:110:execute$222                                                                                                 0         0             0
+     9 $auto$async2sync.cc:228:execute$224                                                                                                 0         0           000
+     9 $auto$async2sync.cc:228:execute$226                                                                                                 2         2           010
+     9 $auto$async2sync.cc:228:execute$228                                                                                                 0         0             0
+     9 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:76$1$0                0         0             0
+     9 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:76$2$0                0         0             0
+     9 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:77$3$0                0         0             0
+     9 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:77$4$0                0         0             0
+     9 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:77$5$0                0         0            00
+     9 \clock                                                                                                                              0         0             0
+     9 \io_deq_bits                                                                                                                        1         1            01
+     9 \io_deq_ready                                                                                                                       0         0             0
+     9 \io_deq_valid                                                                                                                       1         1             1
+     9 \io_enq_bits                                                                                                                        1         1            01
+     9 \io_enq_ready                                                                                                                       1         1             1
+     9 \io_enq_valid                                                                                                                       1         1             1
+     9 \pilot_active                                                                                                                       0         0             0
+     9 \pilot_past_valid                                                                                                                   1         1             1
+     9 \ram_ext.Memory[0]                                                                                                                  1         1            01
+     9 \ram_ext.Memory[1]                                                                                                                  0         0            00
+     9 \ram_ext.Memory[2]                                                                                                                  1         1            01
+     9 \ram_ext.Memory[3]                                                                                                                  0         0            00
+     9 \ram_ext.Memory[4]                                                                                                                  0         0            00
+     9 \ram_ext.Memory[5]                                                                                                                  1         1            01
+     9 \reset                                                                                                                              0         0             0
+  ---- ------------------------------------------------------------------------------------------------------------------------- ----------- --------- -------------
+    10 $auto$async2sync.cc:101:execute$206                                                                                                 1         1             1
+    10 $auto$async2sync.cc:101:execute$212                                                                                                 1         1             1
+    10 $auto$async2sync.cc:101:execute$218                                                                                                 0         0             0
+    10 $auto$async2sync.cc:110:execute$210                                                                                                 1         1             1
+    10 $auto$async2sync.cc:110:execute$216                                                                                                 1         1             1
+    10 $auto$async2sync.cc:110:execute$222                                                                                                 0         0             0
+    10 $auto$async2sync.cc:228:execute$224                                                                                                 1         1           001
+    10 $auto$async2sync.cc:228:execute$226                                                                                                 2         2           010
+    10 $auto$async2sync.cc:228:execute$228                                                                                                 1         1             1
+    10 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:76$1$0                0         0             0
+    10 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:76$2$0                1         1             1
+    10 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:77$3$0                0         0             0
+    10 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:77$4$0                1         1             1
+    10 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:77$5$0                1         1            01
+    10 \clock                                                                                                                              0         0             0
+    10 \io_deq_bits                                                                                                                        1         1            01
+    10 \io_deq_ready                                                                                                                       1         1             1
+    10 \io_deq_valid                                                                                                                       1         1             1
+    10 \io_enq_bits                                                                                                                        1         1            01
+    10 \io_enq_ready                                                                                                                       1         1             1
+    10 \io_enq_valid                                                                                                                       1         1             1
+    10 \pilot_active                                                                                                                       0         0             0
+    10 \pilot_past_valid                                                                                                                   1         1             1
+    10 \ram_ext.Memory[0]                                                                                                                  1         1            01
+    10 \ram_ext.Memory[1]                                                                                                                  0         0            00
+    10 \ram_ext.Memory[2]                                                                                                                  1         1            01
+    10 \ram_ext.Memory[3]                                                                                                                  0         0            00
+    10 \ram_ext.Memory[4]                                                                                                                  0         0            00
+    10 \ram_ext.Memory[5]                                                                                                                  1         1            01
+    10 \reset                                                                                                                              0         0             0
+  ---- ------------------------------------------------------------------------------------------------------------------------- ----------- --------- -------------
+    11 $auto$async2sync.cc:101:execute$206                                                                                                 1         1             1
+    11 $auto$async2sync.cc:101:execute$212                                                                                                 1         1             1
+    11 $auto$async2sync.cc:101:execute$218                                                                                                 0         0             0
+    11 $auto$async2sync.cc:110:execute$210                                                                                                 1         1             1
+    11 $auto$async2sync.cc:110:execute$216                                                                                                 1         1             1
+    11 $auto$async2sync.cc:110:execute$222                                                                                                 0         0             0
+    11 $auto$async2sync.cc:228:execute$224                                                                                                 2         2           010
+    11 $auto$async2sync.cc:228:execute$226                                                                                                 3         3           011
+    11 $auto$async2sync.cc:228:execute$228                                                                                                 1         1             1
+    11 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:76$1$0                0         0             0
+    11 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:76$2$0                0         0             0
+    11 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:77$3$0                0         0             0
+    11 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:77$4$0                0         0             0
+    11 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:77$5$0                1         1            01
+    11 \clock                                                                                                                              0         0             0
+    11 \io_deq_bits                                                                                                                        0         0            00
+    11 \io_deq_ready                                                                                                                       1         1             1
+    11 \io_deq_valid                                                                                                                       1         1             1
+    11 \io_enq_bits                                                                                                                        0         0            00
+    11 \io_enq_ready                                                                                                                       1         1             1
+    11 \io_enq_valid                                                                                                                       1         1             1
+    11 \pilot_active                                                                                                                       1         1             1
+    11 \pilot_past_valid                                                                                                                   1         1             1
+    11 \ram_ext.Memory[0]                                                                                                                  1         1            01
+    11 \ram_ext.Memory[1]                                                                                                                  1         1            01
+    11 \ram_ext.Memory[2]                                                                                                                  1         1            01
+    11 \ram_ext.Memory[3]                                                                                                                  0         0            00
+    11 \ram_ext.Memory[4]                                                                                                                  0         0            00
+    11 \ram_ext.Memory[5]                                                                                                                  1         1            01
+    11 \reset                                                                                                                              0         0             0
+  ---- ------------------------------------------------------------------------------------------------------------------------- ----------- --------- -------------
+    12 $auto$async2sync.cc:101:execute$206                                                                                                 1         1             1
+    12 $auto$async2sync.cc:101:execute$212                                                                                                 1         1             1
+    12 $auto$async2sync.cc:101:execute$218                                                                                                 0         0             0
+    12 $auto$async2sync.cc:110:execute$210                                                                                                 1         1             1
+    12 $auto$async2sync.cc:110:execute$216                                                                                                 1         1             1
+    12 $auto$async2sync.cc:110:execute$222                                                                                                 0         0             0
+    12 $auto$async2sync.cc:228:execute$224                                                                                                 3         3           011
+    12 $auto$async2sync.cc:228:execute$226                                                                                                 4         4           100
+    12 $auto$async2sync.cc:228:execute$228                                                                                                 1         1             1
+    12 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:76$1$0                0         0             0
+    12 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:76$2$0                0         0             0
+    12 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:77$3$0                0         0             0
+    12 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:77$4$0                0         0             0
+    12 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:77$5$0                0         0            00
+    12 \clock                                                                                                                              0         0             0
+    12 \io_deq_bits                                                                                                                        0         0            00
+    12 \io_deq_ready                                                                                                                       0         0             0
+    12 \io_deq_valid                                                                                                                       1         1             1
+    12 \io_enq_bits                                                                                                                        0         0            00
+    12 \io_enq_ready                                                                                                                       1         1             1
+    12 \io_enq_valid                                                                                                                       1         1             1
+    12 \pilot_active                                                                                                                       0         0             0
+    12 \pilot_past_valid                                                                                                                   1         1             1
+    12 \ram_ext.Memory[0]                                                                                                                  1         1            01
+    12 \ram_ext.Memory[1]                                                                                                                  1         1            01
+    12 \ram_ext.Memory[2]                                                                                                                  0         0            00
+    12 \ram_ext.Memory[3]                                                                                                                  0         0            00
+    12 \ram_ext.Memory[4]                                                                                                                  0         0            00
+    12 \ram_ext.Memory[5]                                                                                                                  1         1            01
+    12 \reset                                                                                                                              0         0             0
+  ---- ------------------------------------------------------------------------------------------------------------------------- ----------- --------- -------------
+    13 $auto$async2sync.cc:101:execute$206                                                                                                 1         1             1
+    13 $auto$async2sync.cc:101:execute$212                                                                                                 1         1             1
+    13 $auto$async2sync.cc:101:execute$218                                                                                                 0         0             0
+    13 $auto$async2sync.cc:110:execute$210                                                                                                 1         1             1
+    13 $auto$async2sync.cc:110:execute$216                                                                                                 1         1             1
+    13 $auto$async2sync.cc:110:execute$222                                                                                                 0         0             0
+    13 $auto$async2sync.cc:228:execute$224                                                                                                 4         4           100
+    13 $auto$async2sync.cc:228:execute$226                                                                                                 4         4           100
+    13 $auto$async2sync.cc:228:execute$228                                                                                                 1         1             1
+    13 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:76$1$0                0         0             0
+    13 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:76$2$0                1         1             1
+    13 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:77$3$0                0         0             0
+    13 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:77$4$0                1         1             1
+    13 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:77$5$0                0         0            00
+    13 \clock                                                                                                                              0         0             0
+    13 \io_deq_bits                                                                                                                        0         0            00
+    13 \io_deq_ready                                                                                                                       0         0             0
+    13 \io_deq_valid                                                                                                                       1         1             1
+    13 \io_enq_bits                                                                                                                        0         0            00
+    13 \io_enq_ready                                                                                                                       0         0             0
+    13 \io_enq_valid                                                                                                                       0         0             0
+    13 \pilot_active                                                                                                                       0         0             0
+    13 \pilot_past_valid                                                                                                                   1         1             1
+    13 \ram_ext.Memory[0]                                                                                                                  1         1            01
+    13 \ram_ext.Memory[1]                                                                                                                  1         1            01
+    13 \ram_ext.Memory[2]                                                                                                                  0         0            00
+    13 \ram_ext.Memory[3]                                                                                                                  0         0            00
+    13 \ram_ext.Memory[4]                                                                                                                  0         0            00
+    13 \ram_ext.Memory[5]                                                                                                                  1         1            01
+    13 \reset                                                                                                                              0         0             0
+  ---- ------------------------------------------------------------------------------------------------------------------------- ----------- --------- -------------
+    14 $auto$async2sync.cc:101:execute$206                                                                                                 1         1             1
+    14 $auto$async2sync.cc:101:execute$212                                                                                                 1         1             1
+    14 $auto$async2sync.cc:101:execute$218                                                                                                 0         0             0
+    14 $auto$async2sync.cc:110:execute$210                                                                                                 1         1             1
+    14 $auto$async2sync.cc:110:execute$216                                                                                                 1         1             1
+    14 $auto$async2sync.cc:110:execute$222                                                                                                 0         0             0
+    14 $auto$async2sync.cc:228:execute$224                                                                                                 4         4           100
+    14 $auto$async2sync.cc:228:execute$226                                                                                                 4         4           100
+    14 $auto$async2sync.cc:228:execute$228                                                                                                 1         1             1
+    14 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:76$1$0                0         0             0
+    14 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:76$2$0                1         1             1
+    14 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:77$3$0                0         0             0
+    14 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:77$4$0                1         1             1
+    14 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:77$5$0                0         0            00
+    14 \clock                                                                                                                              0         0             0
+    14 \io_deq_bits                                                                                                                        0         0            00
+    14 \io_deq_ready                                                                                                                       1         1             1
+    14 \io_deq_valid                                                                                                                       1         1             1
+    14 \io_enq_bits                                                                                                                        0         0            00
+    14 \io_enq_ready                                                                                                                       0         0             0
+    14 \io_enq_valid                                                                                                                       0         0             0
+    14 \pilot_active                                                                                                                       1         1             1
+    14 \pilot_past_valid                                                                                                                   1         1             1
+    14 \ram_ext.Memory[0]                                                                                                                  1         1            01
+    14 \ram_ext.Memory[1]                                                                                                                  1         1            01
+    14 \ram_ext.Memory[2]                                                                                                                  0         0            00
+    14 \ram_ext.Memory[3]                                                                                                                  0         0            00
+    14 \ram_ext.Memory[4]                                                                                                                  0         0            00
+    14 \ram_ext.Memory[5]                                                                                                                  1         1            01
+    14 \reset                                                                                                                              0         0             0
+  ---- ------------------------------------------------------------------------------------------------------------------------- ----------- --------- -------------
+    15 $auto$async2sync.cc:101:execute$206                                                                                                 1         1             1
+    15 $auto$async2sync.cc:101:execute$212                                                                                                 1         1             1
+    15 $auto$async2sync.cc:101:execute$218                                                                                                 0         0             0
+    15 $auto$async2sync.cc:110:execute$210                                                                                                 1         1             1
+    15 $auto$async2sync.cc:110:execute$216                                                                                                 1         1             1
+    15 $auto$async2sync.cc:110:execute$222                                                                                                 0         0             0
+    15 $auto$async2sync.cc:228:execute$224                                                                                                 4         4           100
+    15 $auto$async2sync.cc:228:execute$226                                                                                                 5         5           101
+    15 $auto$async2sync.cc:228:execute$228                                                                                                 0         0             0
+    15 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:76$1$0                0         0             0
+    15 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:76$2$0                0         0             0
+    15 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:77$3$0                0         0             0
+    15 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:77$4$0                0         0             0
+    15 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:77$5$0                0         0            00
+    15 \clock                                                                                                                              0         0             0
+    15 \io_deq_bits                                                                                                                        1         1            01
+    15 \io_deq_ready                                                                                                                       0         0             0
+    15 \io_deq_valid                                                                                                                       1         1             1
+    15 \io_enq_bits                                                                                                                        0         0            00
+    15 \io_enq_ready                                                                                                                       1         1             1
+    15 \io_enq_valid                                                                                                                       1         1             1
+    15 \pilot_active                                                                                                                       1         1             1
+    15 \pilot_past_valid                                                                                                                   1         1             1
+    15 \ram_ext.Memory[0]                                                                                                                  1         1            01
+    15 \ram_ext.Memory[1]                                                                                                                  1         1            01
+    15 \ram_ext.Memory[2]                                                                                                                  0         0            00
+    15 \ram_ext.Memory[3]                                                                                                                  0         0            00
+    15 \ram_ext.Memory[4]                                                                                                                  0         0            00
+    15 \ram_ext.Memory[5]                                                                                                                  1         1            01
+    15 \reset                                                                                                                              0         0             0
+  ---- ------------------------------------------------------------------------------------------------------------------------- ----------- --------- -------------
+    16 $auto$async2sync.cc:101:execute$206                                                                                                 1         1             1
+    16 $auto$async2sync.cc:101:execute$212                                                                                                 1         1             1
+    16 $auto$async2sync.cc:101:execute$218                                                                                                 0         0             0
+    16 $auto$async2sync.cc:110:execute$210                                                                                                 1         1             1
+    16 $auto$async2sync.cc:110:execute$216                                                                                                 1         1             1
+    16 $auto$async2sync.cc:110:execute$222                                                                                                 0         0             0
+    16 $auto$async2sync.cc:228:execute$224                                                                                                 5         5           101
+    16 $auto$async2sync.cc:228:execute$226                                                                                                 5         5           101
+    16 $auto$async2sync.cc:228:execute$228                                                                                                 1         1             1
+    16 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:76$1$0                0         0             0
+    16 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:76$2$0                1         1             1
+    16 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:77$3$0                0         0             0
+    16 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:77$4$0                1         1             1
+    16 $past$/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/work/Q6_03__reference__cover/design.sv:77$5$0                1         1            01
+    16 \clock                                                                                                                              0         0             0
+    16 \io_deq_bits                                                                                                                        1         1            01
+    16 \io_deq_ready                                                                                                                       1         1             1
+    16 \io_deq_valid                                                                                                                       1         1             1
+    16 \io_enq_bits                                                                                                                        0         0            00
+    16 \io_enq_ready                                                                                                                       0         0             0
+    16 \io_enq_valid                                                                                                                       0         0             0
+    16 \pilot_active                                                                                                                       0         0             0
+    16 \pilot_past_valid                                                                                                                   1         1             1
+    16 \ram_ext.Memory[0]                                                                                                                  1         1            01
+    16 \ram_ext.Memory[1]                                                                                                                  1         1            01
+    16 \ram_ext.Memory[2]                                                                                                                  0         0            00
+    16 \ram_ext.Memory[3]                                                                                                                  0         0            00
+    16 \ram_ext.Memory[4]                                                                                                                  0         0            00
+    16 \ram_ext.Memory[5]                                                                                                                  1         1            01
+    16 \reset                                                                                                                              0         0             0
+Dumping SAT model to VCD file /nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/traces/Q6_03__reference__cover.vcd
+Dumping SAT model to WaveJSON file '/nfs/home/weijing/workspace/HiC-Verify-new/preexperiment/results/traces/Q6_03__reference__cover.json'.

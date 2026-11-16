@@ -1,0 +1,11 @@
+--- rtl_reference/XsRRArbiter.sv
++++ rtl_mutants/M_ARB_ID/XsRRArbiter.sv
+@@ -56,7 +56,7 @@
+   assign io_out_valid = arb_io_out_valid;
+   assign io_out_bits_TgtRS = arb_io_chosen_choice ? io_in_1_bits_TgtRS : io_in_0_bits_TgtRS;
+   assign io_out_bits_Payload = arb_io_chosen_choice ? io_in_1_bits_Payload : io_in_0_bits_Payload;
+-  assign io_out_bits_TxnID = arb_io_chosen_choice ? io_in_1_bits_TxnID : io_in_0_bits_TxnID;
++  assign io_out_bits_TxnID = io_in_0_bits_TxnID;
+   assign io_out_bits_SrcID = arb_io_chosen_choice ? io_in_1_bits_SrcID : io_in_0_bits_SrcID;
+   assign io_out_bits_TgtID = arb_io_chosen_choice ? io_in_1_bits_TgtID : io_in_0_bits_TgtID;
+   assign io_out_bits_QoS = arb_io_chosen_choice ? io_in_1_bits_QoS : io_in_0_bits_QoS;
